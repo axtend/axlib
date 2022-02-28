@@ -44,7 +44,7 @@ use sp_runtime::{
 	Perbill,
 };
 use sp_std::prelude::*;
-use wasm_instrument::axia_wasm::elements::{BlockType, BrTableData, Instruction, ValueType};
+use wasm_instrument::parity_wasm::elements::{BlockType, BrTableData, Instruction, ValueType};
 
 /// How many batches we do per API benchmark.
 const API_BENCHMARK_BATCHES: u32 = 20;

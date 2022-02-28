@@ -17,7 +17,7 @@
 
 use std::{fmt::Debug, str::FromStr};
 
-use axia_scale_codec::Decode;
+use parity_scale_codec::Decode;
 use sc_executor::NativeExecutionDispatch;
 use sc_service::Configuration;
 use sp_runtime::traits::{Block as BlockT, NumberFor};

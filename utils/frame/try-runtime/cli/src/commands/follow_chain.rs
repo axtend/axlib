@@ -23,7 +23,7 @@ use jsonrpsee::{
 	types::{traits::SubscriptionClient, Subscription},
 	ws_client::WsClientBuilder,
 };
-use axia_scale_codec::Decode;
+use parity_scale_codec::Decode;
 use remote_externalities::{rpc_api, Builder, Mode, OnlineConfig};
 use sc_executor::NativeExecutionDispatch;
 use sc_service::Configuration;

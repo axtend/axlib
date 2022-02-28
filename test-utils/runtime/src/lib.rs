@@ -164,7 +164,7 @@ pub enum Extrinsic {
 	Store(Vec<u8>),
 }
 
-axia_util_mem::malloc_size_of_is_0!(Extrinsic); // non-opaque extrinsic does not need this
+parity_util_mem::malloc_size_of_is_0!(Extrinsic); // non-opaque extrinsic does not need this
 
 #[cfg(feature = "std")]
 impl serde::Serialize for Extrinsic {

@@ -37,7 +37,7 @@ use sp_std::vec::Vec;
 #[cfg(feature = "std")]
 use std::convert::TryFrom;
 #[cfg(feature = "std")]
-use axlib_bip39::mini_secret_from_entropy;
+use substrate_bip39::mini_secret_from_entropy;
 
 use crate::{
 	crypto::{

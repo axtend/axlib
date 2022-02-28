@@ -19,7 +19,7 @@
 use super::RuntimeBlob;
 use crate::error::{self, Error};
 use std::mem;
-use wasm_instrument::axia_wasm::elements::Instruction;
+use wasm_instrument::parity_wasm::elements::Instruction;
 
 /// This is a snapshot of data segments specialzied for a particular instantiation.
 ///

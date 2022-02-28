@@ -800,8 +800,8 @@ impl OpaqueExtrinsic {
 }
 
 #[cfg(feature = "std")]
-impl axia_util_mem::MallocSizeOf for OpaqueExtrinsic {
-	fn size_of(&self, ops: &mut axia_util_mem::MallocSizeOfOps) -> usize {
+impl parity_util_mem::MallocSizeOf for OpaqueExtrinsic {
+	fn size_of(&self, ops: &mut parity_util_mem::MallocSizeOfOps) -> usize {
 		self.0.size_of(ops)
 	}
 }

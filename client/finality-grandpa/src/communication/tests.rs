@@ -24,7 +24,7 @@ use super::{
 };
 use crate::{communication::grandpa_protocol_name, environment::SharedVoterSetState};
 use futures::prelude::*;
-use axia_scale_codec::Encode;
+use parity_scale_codec::Encode;
 use sc_network::{config::Role, Event as NetworkEvent, ObservedRole, PeerId};
 use sc_network_gossip::Validator;
 use sc_network_test::{Block, Hash};

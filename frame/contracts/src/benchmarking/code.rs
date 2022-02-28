@@ -33,7 +33,7 @@ use sp_sandbox::{
 	SandboxEnvironmentBuilder, SandboxMemory,
 };
 use sp_std::{borrow::ToOwned, prelude::*};
-use wasm_instrument::axia_wasm::{
+use wasm_instrument::parity_wasm::{
 	builder,
 	elements::{
 		self, BlockType, CustomSection, External, FuncBody, Instruction, Instructions, Module,

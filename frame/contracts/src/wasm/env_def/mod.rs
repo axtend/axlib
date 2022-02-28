@@ -19,7 +19,7 @@ use super::Runtime;
 use crate::exec::Ext;
 
 use sp_sandbox::Value;
-use wasm_instrument::axia_wasm::elements::{FunctionType, ValueType};
+use wasm_instrument::parity_wasm::elements::{FunctionType, ValueType};
 
 #[macro_use]
 pub mod macros;

@@ -265,7 +265,7 @@
 //!     -s snap \
 //! ```
 
-use axia_scale_codec::Decode;
+use parity_scale_codec::Decode;
 use remote_externalities::{
 	Builder, Mode, OfflineConfig, OnlineConfig, SnapshotConfig, TestExternalities,
 };
@@ -725,7 +725,7 @@ pub(crate) fn state_machine_call_with_proof<Block: BlockT, D: NativeExecutionDis
 	data: &[u8],
 	extensions: Extensions,
 ) -> sc_cli::Result<(OverlayedChanges, Vec<u8>)> {
-	use axia_scale_codec::Encode;
+	use parity_scale_codec::Encode;
 	use sp_core::hexdisplay::HexDisplay;
 
 	let mut changes = Default::default();

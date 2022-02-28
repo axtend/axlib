@@ -47,7 +47,7 @@ use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
 use sp_runtime_interface::pass_by::PassByInner;
 use sp_std::ops::Deref;
 #[cfg(feature = "std")]
-use axlib_bip39::seed_from_entropy;
+use substrate_bip39::seed_from_entropy;
 
 /// An identifier used to match public keys against ed25519 keys
 pub const CRYPTO_ID: CryptoTypeId = CryptoTypeId(*b"ed25");

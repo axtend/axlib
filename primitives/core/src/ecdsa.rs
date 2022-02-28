@@ -395,7 +395,7 @@ impl TraitPair for Pair {
 		phrase: &str,
 		password: Option<&str>,
 	) -> Result<(Pair, Seed), SecretStringError> {
-		let big_seed = axlib_bip39::seed_from_entropy(
+		let big_seed = substrate_bip39::seed_from_entropy(
 			Mnemonic::from_phrase(phrase, Language::English)
 				.map_err(|_| SecretStringError::InvalidPhrase)?
 				.entropy(),

@@ -28,7 +28,7 @@ use crate::{
 use codec::{Encode, MaxEncodedLen};
 use sp_runtime::traits::Hash;
 use sp_std::prelude::*;
-use wasm_instrument::axia_wasm::elements::{
+use wasm_instrument::parity_wasm::elements::{
 	self, External, Internal, MemoryType, Type, ValueType,
 };
 

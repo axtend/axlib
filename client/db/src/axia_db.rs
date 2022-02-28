@@ -22,9 +22,9 @@ use crate::{
 /// A `Database` adapter for parity-db.
 use sp_database::{error::DatabaseError, Change, ColumnId, Database, Transaction};
 
-struct DbAdapter(axia_db::Db);
+struct DbAdapter(parity_db::Db);
 
-fn handle_err<T>(result: axia_db::Result<T>) -> T {
+fn handle_err<T>(result: parity_db::Result<T>) -> T {
 	match result {
 		Ok(r) => r,
 		Err(e) => {
@@ -38,8 +38,8 @@ pub fn open<H: Clone + AsRef<[u8]>>(
 	path: &std::path::Path,
 	db_type: DatabaseType,
 	create: bool,
-) -> axia_db::Result<std::sync::Arc<dyn Database<H>>> {
-	let mut config = axia_db::Options::with_columns(path, NUM_COLUMNS as u8);
+) -> parity_db::Result<std::sync::Arc<dyn Database<H>>> {
+	let mut config = parity_db::Options::with_columns(path, NUM_COLUMNS as u8);
 
 	match db_type {
 		DatabaseType::Full => {
@@ -53,7 +53,7 @@ pub fn open<H: Clone + AsRef<[u8]>>(
 
 			for i in indexes {
 				let mut column = &mut config.columns[i as usize];
-				column.compression = axia_db::CompressionType::Lz4;
+				column.compression = parity_db::CompressionType::Lz4;
 			}
 
 			let mut state_col = &mut config.columns[columns::STATE as usize];
@@ -64,9 +64,9 @@ pub fn open<H: Clone + AsRef<[u8]>>(
 	}
 
 	let db = if create {
-		axia_db::Db::open_or_create(&config)?
+		parity_db::Db::open_or_create(&config)?
 	} else {
-		axia_db::Db::open(&config)?
+		parity_db::Db::open(&config)?
 	};
 
 	Ok(std::sync::Arc::new(DbAdapter(db)))
