@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -86,7 +86,7 @@ impl PeerInfoBehaviour {
 	/// Builds a new `PeerInfoBehaviour`.
 	pub fn new(user_agent: String, local_public_key: PublicKey) -> Self {
 		let identify = {
-			let cfg = IdentifyConfig::new("/substrate/1.0".to_string(), local_public_key)
+			let cfg = IdentifyConfig::new("/axlib/1.0".to_string(), local_public_key)
 				.with_agent_version(user_agent);
 			Identify::new(cfg)
 		};

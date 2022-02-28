@@ -1,11 +1,11 @@
 [package]
-name = "substrate-build-script-utils"
+name = "axlib-build-script-utils"
 version = "3.0.0"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axiatech/axlib/"
 description = "Crate with utility functions for `build.rs` scripts."
 readme = "README.md"
 

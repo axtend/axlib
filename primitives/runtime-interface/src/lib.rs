@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Substrate runtime interface
+//! Axlib runtime interface
 //!
 //! This crate provides types, traits and macros around runtime interfaces. A runtime interface is
-//! a fixed interface between a Substrate runtime and a Substrate node. For a native runtime the
+//! a fixed interface between a Axlib runtime and a Axlib node. For a native runtime the
 //! interface maps to a direct function call of the implementation. For a wasm runtime the interface
 //! maps to an external function call. These external functions are exported by the wasm executor
 //! and they map to the same implementation as the native calls.
@@ -121,7 +121,7 @@ pub use sp_std;
 
 /// Attribute macro for transforming a trait declaration into a runtime interface.
 ///
-/// A runtime interface is a fixed interface between a Substrate compatible runtime and the
+/// A runtime interface is a fixed interface between a Axlib compatible runtime and the
 /// native node. This interface is callable from a native and a wasm runtime. The macro will
 /// generate the corresponding code for the native implementation and the code for calling from
 /// the wasm side to the native implementation.

@@ -46,15 +46,15 @@ cargo run --release -- --chain=sc.json -d /tmp/charlie --storage-chain --keep-bl
 To store data use the `transactionStorage.store` extrinsic. And IPFS CID can be generated from the Blake2-256 hash of the data.
 
 ```js
-const util_crypto = require('@polkadot/util-crypto');
-const keyring_api = require('@polkadot/keyring');
-const polkadot_api = require('@polkadot/api');
+const util_crypto = require('@polkaaxc/util-crypto');
+const keyring_api = require('@polkaaxc/keyring');
+const polkaaxc_api = require('@polkaaxc/api');
 const fs = require('fs');
 const multihash = require('multihashes');
 const CID = require('cids')
 
-const wsProvider = new polkadot_api.WsProvider();
-const api = await polkadot_api.ApiPromise.create({ provider: wsProvider });
+const wsProvider = new polkaaxc_api.WsProvider();
+const api = await polkaaxc_api.ApiPromise.create({ provider: wsProvider });
 
 const keyring = new keyring_api.Keyring({ type: "sr25519" });
 const alice = keyring.addFromUri("//Alice");
@@ -71,7 +71,7 @@ const txHash = await api.tx.transactionStorage.store('0x' + file.toString('hex')
 Data can be queried over IPFS
 
 ```bash
-ipfs swarm connect <substrate peer address>
+ipfs swarm connect <axlib peer address>
 ipfs block get /ipfs/<CID> > kitten.jpeg
 ```
 

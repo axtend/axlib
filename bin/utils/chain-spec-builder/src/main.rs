@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -231,7 +231,7 @@ fn print_seeds(
 fn main() -> Result<(), String> {
 	#[cfg(build_type = "debug")]
 	println!(
-		"The chain spec builder builds a chain specification that includes a Substrate runtime \
+		"The chain spec builder builds a chain specification that includes a Axlib runtime \
 		 compiled as WASM. To ensure proper functioning of the included runtime compile (or run) \
 		 the chain spec builder binary in `--release` mode.\n",
 	);

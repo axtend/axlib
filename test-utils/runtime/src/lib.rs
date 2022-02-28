@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! The Substrate runtime. This can be compiled with `#[no_std]`, ready for Wasm.
+//! The Axlib runtime. This can be compiled with `#[no_std]`, ready for Wasm.
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
@@ -98,7 +98,7 @@ pub fn wasm_binary_logging_disabled_unwrap() -> &'static [u8] {
 #[sp_version::runtime_version]
 pub const VERSION: RuntimeVersion = RuntimeVersion {
 	spec_name: create_runtime_str!("test"),
-	impl_name: create_runtime_str!("parity-test"),
+	impl_name: create_runtime_str!("axia-test"),
 	authoring_version: 1,
 	spec_version: 2,
 	impl_version: 2,
@@ -164,7 +164,7 @@ pub enum Extrinsic {
 	Store(Vec<u8>),
 }
 
-parity_util_mem::malloc_size_of_is_0!(Extrinsic); // non-opaque extrinsic does not need this
+axia_util_mem::malloc_size_of_is_0!(Extrinsic); // non-opaque extrinsic does not need this
 
 #[cfg(feature = "std")]
 impl serde::Serialize for Extrinsic {
@@ -1271,7 +1271,7 @@ mod tests {
 	use sp_core::storage::well_known_keys::HEAP_PAGES;
 	use sp_runtime::generic::BlockId;
 	use sp_state_machine::ExecutionStrategy;
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		prelude::*, runtime::TestAPI, DefaultTestClientBuilderExt, TestClientBuilder,
 	};
 

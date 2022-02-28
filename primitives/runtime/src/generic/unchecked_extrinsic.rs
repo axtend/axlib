@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -88,12 +88,12 @@ where
 }
 
 #[cfg(feature = "std")]
-impl<Address, Call, Signature, Extra> parity_util_mem::MallocSizeOf
+impl<Address, Call, Signature, Extra> axia_util_mem::MallocSizeOf
 	for UncheckedExtrinsic<Address, Call, Signature, Extra>
 where
 	Extra: SignedExtension,
 {
-	fn size_of(&self, _ops: &mut parity_util_mem::MallocSizeOfOps) -> usize {
+	fn size_of(&self, _ops: &mut axia_util_mem::MallocSizeOfOps) -> usize {
 		// Instantiated only in runtime.
 		0
 	}

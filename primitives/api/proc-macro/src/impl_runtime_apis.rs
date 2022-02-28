@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -185,7 +185,7 @@ fn generate_wasm_interface(impls: &[ItemImpl]) -> Result<TokenStream> {
 						#c::init_runtime_logger();
 
 						let output = (move || { #impl_ })();
-						#c::to_substrate_wasm_fn_return_value(&output)
+						#c::to_axlib_wasm_fn_return_value(&output)
 					}
 				)
 			});

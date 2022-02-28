@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate Client
+//! Axlib Client
 
 use super::{
 	block_rules::{BlockRules, LookupResult as BlockLookupResult},
@@ -46,7 +46,7 @@ use sc_consensus::{
 	BlockCheckParams, BlockImportParams, ForkChoiceStrategy, ImportResult, StateAction,
 };
 use sc_executor::{RuntimeVersion, RuntimeVersionOf};
-use sc_telemetry::{telemetry, TelemetryHandle, SUBSTRATE_INFO};
+use sc_telemetry::{telemetry, TelemetryHandle, AXLIB_INFO};
 use sp_api::{
 	ApiExt, ApiRef, CallApiAt, CallApiAtParams, ConstructRuntimeApi, Core as CoreApi,
 	ProvideRuntimeApi,
@@ -98,7 +98,7 @@ use {
 
 type NotificationSinks<T> = Mutex<Vec<TracingUnboundedSender<T>>>;
 
-/// Substrate Client
+/// Axlib Client
 pub struct Client<B, E, Block, RA>
 where
 	Block: BlockT,
@@ -317,7 +317,7 @@ where
 	Block: BlockT,
 	Block::Header: Clone,
 {
-	/// Creates new Substrate Client with given blockchain and code executor.
+	/// Creates new Axlib Client with given blockchain and code executor.
 	pub fn new(
 		backend: Arc<B>,
 		executor: E,
@@ -484,7 +484,7 @@ where
 				if origin != BlockOrigin::NetworkInitialSync || rand::thread_rng().gen_bool(0.1) {
 					telemetry!(
 						self.telemetry;
-						SUBSTRATE_INFO;
+						AXLIB_INFO;
 						"block.import";
 						"height" => height,
 						"best" => ?hash,
@@ -918,7 +918,7 @@ where
 
 		telemetry!(
 			self.telemetry;
-			SUBSTRATE_INFO;
+			AXLIB_INFO;
 			"notify.finalized";
 			"height" => format!("{}", header.number()),
 			"best" => ?last,

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@ use jsonrpsee::{
 	types::{traits::SubscriptionClient, Subscription},
 	ws_client::WsClientBuilder,
 };
-use parity_scale_codec::Decode;
+use axia_scale_codec::Decode;
 use remote_externalities::{rpc_api, Builder, Mode, OnlineConfig};
 use sc_executor::NativeExecutionDispatch;
 use sc_service::Configuration;

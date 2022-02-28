@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -133,11 +133,11 @@ pub struct Pool<B: ChainApi> {
 	validated_pool: Arc<ValidatedPool<B>>,
 }
 
-impl<B: ChainApi> parity_util_mem::MallocSizeOf for Pool<B>
+impl<B: ChainApi> axia_util_mem::MallocSizeOf for Pool<B>
 where
-	ExtrinsicFor<B>: parity_util_mem::MallocSizeOf,
+	ExtrinsicFor<B>: axia_util_mem::MallocSizeOf,
 {
-	fn size_of(&self, ops: &mut parity_util_mem::MallocSizeOfOps) -> usize {
+	fn size_of(&self, ops: &mut axia_util_mem::MallocSizeOfOps) -> usize {
 		self.validated_pool.size_of(ops)
 	}
 }
@@ -447,7 +447,7 @@ mod tests {
 	use sc_transaction_pool_api::TransactionStatus;
 	use sp_runtime::transaction_validity::TransactionSource;
 	use std::{collections::HashMap, time::Instant};
-	use substrate_test_runtime::{AccountId, Extrinsic, Transfer, H256};
+	use axlib_test_runtime::{AccountId, Extrinsic, Transfer, H256};
 
 	const SOURCE: TransactionSource = TransactionSource::External;
 

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +49,7 @@ pub type Result<T> = result::Result<T, String>;
 #[cfg(not(feature = "std"))]
 pub type Result<T> = result::Result<T, &'static str>;
 
-/// Value types supported by Substrate on the boundary between host/Wasm.
+/// Value types supported by Axlib on the boundary between host/Wasm.
 #[derive(Copy, Clone, PartialEq, Debug, Eq)]
 pub enum ValueType {
 	/// An `i32` value type.
@@ -87,7 +87,7 @@ impl sp_std::convert::TryFrom<u8> for ValueType {
 	}
 }
 
-/// Values supported by Substrate on the boundary between host/Wasm.
+/// Values supported by Axlib on the boundary between host/Wasm.
 #[derive(PartialEq, Debug, Clone, Copy, codec::Encode, codec::Decode)]
 pub enum Value {
 	/// A 32-bit integer.

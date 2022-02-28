@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -45,7 +45,7 @@ use sc_network::{
 	warp_request_handler::{self, RequestHandler as WarpSyncRequestHandler, WarpSyncProvider},
 	NetworkService,
 };
-use sc_telemetry::{telemetry, ConnectionMessage, Telemetry, TelemetryHandle, SUBSTRATE_INFO};
+use sc_telemetry::{telemetry, ConnectionMessage, Telemetry, TelemetryHandle, AXLIB_INFO};
 use sc_transaction_pool_api::MaintainedTransactionPool;
 use sc_utils::mpsc::{tracing_unbounded, TracingUnboundedSender};
 use sp_api::{CallApiAt, ProvideRuntimeApi};
@@ -462,7 +462,7 @@ where
 	TBl::Header: Unpin,
 	TBackend: 'static + sc_client_api::backend::Backend<TBl> + Send,
 	TExPool: MaintainedTransactionPool<Block = TBl, Hash = <TBl as BlockT>::Hash>
-		+ parity_util_mem::MallocSizeOf
+		+ axia_util_mem::MallocSizeOf
 		+ 'static,
 	TRpc: sc_rpc::RpcExtension<sc_rpc::Metadata>,
 {
@@ -595,7 +595,7 @@ async fn transaction_notifications<TBl, TExPool>(
 			let status = transaction_pool.status();
 			telemetry!(
 				telemetry;
-				SUBSTRATE_INFO;
+				AXLIB_INFO;
 				"txpool.import";
 				"ready" => status.ready,
 				"future" => status.future,
@@ -893,7 +893,7 @@ where
 
 	// TODO: Normally, one is supposed to pass a list of notifications protocols supported by the
 	// node through the `NetworkConfiguration` struct. But because this function doesn't know in
-	// advance which components, such as GrandPa or Polkadot, will be plugged on top of the
+	// advance which components, such as GrandPa or Axia, will be plugged on top of the
 	// service, it is unfortunately not possible to do so without some deep refactoring. To bypass
 	// this problem, the `NetworkService` provides a `register_notifications_protocol` method that
 	// can be called even after the network has been initialized. However, we want to avoid the
@@ -904,7 +904,7 @@ where
 	// This entire hack should eventually be removed in favour of passing the list of protocols
 	// through the configuration.
 	//
-	// See also https://github.com/paritytech/substrate/issues/6827
+	// See also https://github.com/axiatech/axlib/issues/6827
 	let (network_start_tx, network_start_rx) = oneshot::channel();
 
 	// The network worker is responsible for gathering all network messages and processing

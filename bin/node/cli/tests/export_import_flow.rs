@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -96,7 +96,7 @@ impl<'a> ExportImportRevertExecutor<'a> {
 		};
 
 		// Running the command and capturing the output.
-		let output = Command::new(cargo_bin("substrate"))
+		let output = Command::new(cargo_bin("axlib"))
 			.args(&arguments)
 			.arg(&base_path)
 			.arg(&self.exported_blocks_file)
@@ -160,7 +160,7 @@ impl<'a> ExportImportRevertExecutor<'a> {
 
 	/// Runs the `revert` command.
 	fn run_revert(&self) {
-		let output = Command::new(cargo_bin("substrate"))
+		let output = Command::new(cargo_bin("axlib"))
 			.args(&["revert", "--dev", "--pruning", "archive", "-d"])
 			.arg(&self.base_path.path())
 			.output()

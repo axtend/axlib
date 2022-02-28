@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! A set of constant values used in substrate runtime.
+//! A set of constant values used in axlib runtime.
 
 /// Money matters.
 pub mod currency {
@@ -50,7 +50,7 @@ pub mod time {
 	/// always be assigned, in which case `MILLISECS_PER_BLOCK` and
 	/// `SLOT_DURATION` should have the same value.
 	///
-	/// <https://research.web3.foundation/en/latest/polkadot/block-production/Babe.html#-6.-practical-results>
+	/// <https://research.web3.foundation/en/latest/polkaaxc/block-production/Babe.html#-6.-practical-results>
 	pub const MILLISECS_PER_BLOCK: Moment = 3000;
 	pub const SECS_PER_BLOCK: Moment = MILLISECS_PER_BLOCK / 1000;
 

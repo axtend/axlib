@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +37,7 @@ use sp_std::vec::Vec;
 #[cfg(feature = "std")]
 use std::convert::TryFrom;
 #[cfg(feature = "std")]
-use substrate_bip39::mini_secret_from_entropy;
+use axlib_bip39::mini_secret_from_entropy;
 
 use crate::{
 	crypto::{
@@ -58,7 +58,7 @@ use sp_runtime_interface::pass_by::PassByInner;
 
 // signing context
 #[cfg(feature = "full_crypto")]
-const SIGNING_CTX: &[u8] = b"substrate";
+const SIGNING_CTX: &[u8] = b"axlib";
 
 /// An identifier used to match public keys against sr25519 keys
 pub const CRYPTO_ID: CryptoTypeId = CryptoTypeId(*b"sr25");
@@ -871,8 +871,8 @@ mod test {
 		let js_signature = Signature::from_raw(hex!(
 			"28a854d54903e056f89581c691c1f7d2ff39f8f896c9e9c22475e60902cc2b3547199e0e91fa32902028f2ca2355e8cdd16cfe19ba5e8b658c94aa80f3b81a00"
 		));
-		assert!(Pair::verify_deprecated(&js_signature, b"SUBSTRATE", &public));
-		assert!(!Pair::verify(&js_signature, b"SUBSTRATE", &public));
+		assert!(Pair::verify_deprecated(&js_signature, b"AXLIB", &public));
+		assert!(!Pair::verify(&js_signature, b"AXLIB", &public));
 	}
 
 	#[test]

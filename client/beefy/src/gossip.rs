@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -115,7 +115,7 @@ where
 	// This is a preliminary fix and the detailed description why we are
 	// doing this can be found as part of the issue below
 	//
-	// https://github.com/paritytech/grandpa-bridge-gadget/issues/237
+	// https://github.com/axiatech/grandpa-bridge-gadget/issues/237
 	//
 	fn is_live(known_votes: &KnownVotes<B>, round: &NumberFor<B>) -> bool {
 		let unseen_round = if let Some(max_known_round) = known_votes.keys().last() {

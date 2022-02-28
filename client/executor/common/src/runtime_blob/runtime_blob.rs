@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 use crate::error::WasmError;
 use wasm_instrument::{
 	export_mutable_globals,
-	parity_wasm::elements::{deserialize_buffer, serialize, DataSegment, Internal, Module},
+	axia_wasm::elements::{deserialize_buffer, serialize, DataSegment, Internal, Module},
 };
 
 /// A bunch of information collected from a WebAssembly module.

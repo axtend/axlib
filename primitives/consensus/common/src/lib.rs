@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Common utilities for building and using consensus engines in substrate.
+//! Common utilities for building and using consensus engines in axlib.
 //!
 //! Much of this crate is _unstable_ and thus the API is likely to undergo
 //! change. Implementors of traits should not rely on the interfaces to remain
@@ -136,7 +136,7 @@ pub trait ProofRecording: Send + Sync + private::Sealed + 'static {
 	const ENABLED: bool;
 	/// Convert the given `storage_proof` into [`Self::Proof`].
 	///
-	/// Internally Substrate uses `Option<StorageProof>` to express the both states of proof
+	/// Internally Axlib uses `Option<StorageProof>` to express the both states of proof
 	/// recording (for now) and as [`Self::Proof`] is some different type, we need to provide a
 	/// function to convert this value.
 	///

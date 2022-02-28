@@ -16,6 +16,6 @@ calling the wasm VM.
 Examples of possible use-cases for this library are not limited to the following:
 
 - implementing smart-contract runtimes that use wasm for contract code
-- executing a wasm substrate runtime inside of a wasm parachain
+- executing a wasm axlib runtime inside of a wasm allychain
 
 License: Apache-2.0

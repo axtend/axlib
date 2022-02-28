@@ -1,12 +1,12 @@
 [package]
 name = "sp-runtime-interface-test-wasm-deprecated"
 version = "2.0.0"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 build = "build.rs"
 license = "Apache-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axiatech/axlib/"
 publish = false
 
 [package.metadata.docs.rs]
@@ -19,7 +19,7 @@ sp-io = { version = "5.0.0", default-features = false, path = "../../io" }
 sp-core = { version = "5.0.0", default-features = false, path = "../../core" }
 
 [build-dependencies]
-substrate-wasm-builder = { version = "5.0.0-dev", path = "../../../utils/wasm-builder" }
+axlib-wasm-builder = { version = "5.0.0-dev", path = "../../../utils/wasm-builder" }
 
 [features]
 default = [ "std" ]

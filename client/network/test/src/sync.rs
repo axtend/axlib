@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ use super::*;
 use futures::{executor::block_on, Future};
 use sp_consensus::{block_validation::Validation, BlockOrigin};
 use sp_runtime::Justifications;
-use substrate_test_runtime::Header;
+use axlib_test_runtime::Header;
 
 fn test_ancestor_search_when_common_is(n: usize) {
 	sp_tracing::try_init_simple();
@@ -1215,7 +1215,7 @@ fn warp_sync() {
 fn syncs_huge_blocks() {
 	use sp_core::storage::well_known_keys::HEAP_PAGES;
 	use sp_runtime::codec::Encode;
-	use substrate_test_runtime_client::BlockBuilderExt;
+	use axlib_test_runtime_client::BlockBuilderExt;
 
 	sp_tracing::try_init_simple();
 	let mut net = TestNet::new(2);

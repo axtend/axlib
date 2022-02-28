@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -171,7 +171,7 @@ pub mod pallet {
 
 	#[pallet::extra_constants]
 	impl<T: Config> Pallet<T> {
-		// TODO: rename to snake case after https://github.com/paritytech/substrate/issues/8826 fixed.
+		// TODO: rename to snake case after https://github.com/axiatech/axlib/issues/8826 fixed.
 		#[allow(non_snake_case)]
 		fn MaxVestingSchedules() -> u32 {
 			T::MAX_VESTING_SCHEDULES

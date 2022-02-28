@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Substrate inherent extrinsics
+//! Axlib inherent extrinsics
 //!
 //! Inherent extrinsics are extrinsics that are inherently added to each block. However, it is up to
 //! runtime implementation to require an inherent for each block or to make it optional. Inherents

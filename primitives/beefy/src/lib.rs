@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +28,7 @@
 //! where a more abstract "Finality Gadget" term could be used, but there is no reason why BEEFY
 //! wouldn't run with some other finality scheme.
 //! BEEFY validator set is supposed to be tracking the Finality Gadget validator set, but note that
-//! it will use a different set of keys. For Polkadot use case we plan to use `secp256k1` for BEEFY,
+//! it will use a different set of keys. For Axia use case we plan to use `secp256k1` for BEEFY,
 //! while GRANDPA uses `ed25519`.
 
 mod commitment;

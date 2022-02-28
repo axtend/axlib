@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -717,7 +717,7 @@ pub fn create_runtime(
 		DataSegmentsSnapshot::take(&blob).map_err(|e| WasmError::Other(e.to_string()))?;
 
 	let module =
-		Module::from_parity_wasm_module(blob.into_inner()).map_err(|_| WasmError::InvalidModule)?;
+		Module::from_axia_wasm_module(blob.into_inner()).map_err(|_| WasmError::InvalidModule)?;
 
 	let global_vals_snapshot = {
 		let (instance, _, _) = instantiate_module(

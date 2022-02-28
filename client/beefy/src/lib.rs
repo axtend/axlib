@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -48,7 +48,7 @@ pub(crate) mod beefy_protocol_name {
 
 	const NAME: &'static str = "/beefy/1";
 	/// Old names for the notifications protocol, used for backward compatibility.
-	pub(crate) const LEGACY_NAMES: [&'static str; 1] = ["/paritytech/beefy/1"];
+	pub(crate) const LEGACY_NAMES: [&'static str; 1] = ["/axiatech/beefy/1"];
 
 	/// Name of the notifications protocol used by BEEFY.
 	///

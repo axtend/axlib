@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -188,24 +188,24 @@ mod tests {
 	#[test]
 	fn generate_key_respects_network_override() {
 		let seed =
-			generate_key::<sr25519::Pair>("ab", Ss58AddressFormatRegistry::PolkadotAccount.into())
+			generate_key::<sr25519::Pair>("ab", Ss58AddressFormatRegistry::AxiaAccount.into())
 				.unwrap();
 		assert!(sr25519::Pair::from_seed_slice(&hex::decode(&seed[2..]).unwrap())
 			.unwrap()
 			.public()
-			.to_ss58check_with_version(Ss58AddressFormatRegistry::PolkadotAccount.into())
+			.to_ss58check_with_version(Ss58AddressFormatRegistry::AxiaAccount.into())
 			.contains("ab"));
 	}
 
 	#[test]
 	fn test_score_1_char_100() {
-		let score = calculate_score("j", "5jolkadotwHY5k9GpdTgpqs9xjuNvtv8EcwCFpEeyEf3KHim");
+		let score = calculate_score("j", "5jolkaaxcwHY5k9GpdTgpqs9xjuNvtv8EcwCFpEeyEf3KHim");
 		assert_eq!(score, 94);
 	}
 
 	#[test]
 	fn test_score_100() {
-		let score = calculate_score("Polkadot", "5PolkadotwHY5k9GpdTgpqs9xjuNvtv8EcwCFpEeyEf3KHim");
+		let score = calculate_score("Axia", "5AxiawHY5k9GpdTgpqs9xjuNvtv8EcwCFpEeyEf3KHim");
 		assert_eq!(score, 430);
 	}
 
@@ -213,7 +213,7 @@ mod tests {
 	fn test_score_50_2() {
 		// 50% for the position + 50% for the size
 		assert_eq!(
-			calculate_score("Polkadot", "5PolkXXXXwHY5k9GpdTgpqs9xjuNvtv8EcwCFpEeyEf3KHim"),
+			calculate_score("Axia", "5PolkXXXXwHY5k9GpdTgpqs9xjuNvtv8EcwCFpEeyEf3KHim"),
 			238
 		);
 	}
@@ -221,7 +221,7 @@ mod tests {
 	#[test]
 	fn test_score_0() {
 		assert_eq!(
-			calculate_score("Polkadot", "5GUWv4bLCchGUHJrzULXnh4JgXsMpTKRnjuXTY7Qo1Kh9uYK"),
+			calculate_score("Axia", "5GUWv4bLCchGUHJrzULXnh4JgXsMpTKRnjuXTY7Qo1Kh9uYK"),
 			0
 		);
 	}

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate service. Starts a thread that spins up the network, client, and extrinsic pool.
+//! Axlib service. Starts a thread that spins up the network, client, and extrinsic pool.
 //! Manages communication between them.
 
 #![warn(missing_docs)]
@@ -538,7 +538,7 @@ mod tests {
 	use sc_transaction_pool::BasicPool;
 	use sp_consensus::SelectChain;
 	use sp_runtime::traits::BlindCheckable;
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		prelude::*,
 		runtime::{Extrinsic, Transfer},
 	};

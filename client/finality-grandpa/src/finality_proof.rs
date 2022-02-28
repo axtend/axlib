@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -39,7 +39,7 @@
 use log::{trace, warn};
 use std::sync::Arc;
 
-use parity_scale_codec::{Decode, Encode};
+use axia_scale_codec::{Decode, Encode};
 use sc_client_api::backend::Backend;
 use sp_blockchain::{Backend as BlockchainBackend, HeaderBackend};
 use sp_finality_grandpa::GRANDPA_ENGINE_ID;
@@ -247,7 +247,7 @@ pub(crate) mod tests {
 	use sp_core::crypto::UncheckedFrom;
 	use sp_finality_grandpa::GRANDPA_ENGINE_ID as ID;
 	use sp_keyring::Ed25519Keyring;
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		runtime::{Block, Header, H256},
 		Backend as TestBackend, ClientBlockImportExt, ClientExt, DefaultTestClientBuilderExt,
 		TestClient, TestClientBuilder, TestClientBuilderExt,

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -75,7 +75,7 @@ pub struct RandomnessFromTwoEpochsAgo<T>(sp_std::marker::PhantomData<T>);
 /// Adversaries should not possess many block production slots towards the beginning or
 /// end of every epoch, but they possess some influence over when they possess more slots.
 ///
-/// As an example usage, we determine parachain auctions ending times in Polkadot using
+/// As an example usage, we determine allychain auctions ending times in Axia using
 /// `RandomnessFromOneEpochAgo` because it reduces bias from `CurrentBlockRandomness` and
 /// does not require the extra finality delay of `RandomnessFromTwoEpochsAgo`.
 pub struct RandomnessFromOneEpochAgo<T>(sp_std::marker::PhantomData<T>);
@@ -104,10 +104,10 @@ pub struct RandomnessFromOneEpochAgo<T>(sp_std::marker::PhantomData<T>);
 /// remains constrained by declared staking, while a randomness source like block hash is
 /// only constrained by adversaries' unknowable computational power.
 ///
-/// As an example use, parachains could assign block production slots based upon the
+/// As an example use, allychains could assign block production slots based upon the
 /// `CurrentBlockRandomness` of their relay parent or relay parent's parent, provided the
-/// parachain registers collators but avoids censorship sensitive functionality like
-/// slashing. Any parachain with slashing could operate BABE itself or perhaps better yet
+/// allychain registers collators but avoids censorship sensitive functionality like
+/// slashing. Any allychain with slashing could operate BABE itself or perhaps better yet
 /// a BABE-like approach that derives its `CurrentBlockRandomness`, and authorizes block
 /// production, based upon the relay parent's `CurrentBlockRandomness` or more likely the
 /// relay parent's `RandomnessFromTwoEpochsAgo`.

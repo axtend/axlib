@@ -32,7 +32,7 @@ its duties properly.
 ### Goals
 <!-- Original author of paragraph: @gavofyork -->
 
-The staking system in Substrate NPoS is designed to make the following possible:
+The staking system in Axlib NPoS is designed to make the following possible:
 
 - Stake funds that are controlled by a cold wallet.
 - Withdraw some, or deposit more, funds without interrupting the role of an entity.
@@ -184,7 +184,7 @@ Validators and nominators are rewarded at the end of each era. The total reward 
 calculated using the era duration and the staking rate (the total amount of tokens staked by
 nominators and validators, divided by the total token supply). It aims to incentivize toward a
 defined staking rate. The full specification can be found
-[here](https://research.web3.foundation/en/latest/polkadot/economics/1-token-economics.html#inflation-model).
+[here](https://research.web3.foundation/en/latest/polkaaxc/economics/1-token-economics.html#inflation-model).
 
 Total reward is split among validators and their nominators depending on the number of points
 they received during the era. Points are added to a validator using

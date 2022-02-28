@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +49,7 @@
 //! ### Goals
 //! <!-- Original author of paragraph: @gavofyork -->
 //!
-//! The staking system in Substrate NPoS is designed to make the following possible:
+//! The staking system in Axlib NPoS is designed to make the following possible:
 //!
 //! - Stake funds that are controlled by a cold wallet.
 //! - Withdraw some, or deposit more, funds without interrupting the role of an entity.
@@ -209,7 +209,7 @@
 //! calculated using the era duration and the staking rate (the total amount of tokens staked by
 //! nominators and validators, divided by the total token supply). It aims to incentivize toward a
 //! defined staking rate. The full specification can be found
-//! [here](https://research.web3.foundation/en/latest/polkadot/Token%20Economics.html#inflation-model).
+//! [here](https://research.web3.foundation/en/latest/polkaaxc/Token%20Economics.html#inflation-model).
 //!
 //! Total reward is split among validators and their nominators depending on the number of points
 //! they received during the era. Points are added to a validator using

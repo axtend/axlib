@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -239,7 +239,7 @@ impl sp_std::fmt::Debug for PublicError {
 
 /// Key that can be encoded to/from SS58.
 ///
-/// See <https://docs.substrate.io/v3/advanced/ss58/>
+/// See <https://docs.axlib.io/v3/advanced/ss58/>
 /// for information on the codec.
 #[cfg(feature = "full_crypto")]
 pub trait Ss58Codec: Sized + AsMut<[u8]> + AsRef<[u8]> + ByteArray {
@@ -376,7 +376,7 @@ fn ss58hash(data: &[u8]) -> blake2_rfc::blake2b::Blake2bResult {
 /// Default prefix number
 #[cfg(feature = "std")]
 static DEFAULT_VERSION: core::sync::atomic::AtomicU16 = std::sync::atomic::AtomicU16::new(
-	from_known_address_format(Ss58AddressFormatRegistry::SubstrateAccount),
+	from_known_address_format(Ss58AddressFormatRegistry::AxlibAccount),
 );
 
 /// Returns default SS58 format used by the current active process.
@@ -738,7 +738,7 @@ mod dummy {
 ///   - the phrase may be followed by one or more items delimited by `/` characters.
 ///   - the path may be followed by `///`, in which case everything after the `///` is treated
 /// as a password.
-/// - If `string` begins with a `/` character it is prefixed with the Substrate public `DEV_PHRASE`
+/// - If `string` begins with a `/` character it is prefixed with the Axlib public `DEV_PHRASE`
 ///   and interpreted as above.
 ///
 /// In this case they are interpreted as HDKD junctions; purely numeric items are interpreted as
@@ -917,7 +917,7 @@ pub trait Pair: CryptoType + Sized + Clone + Send + Sync + 'static {
 	///   - the phrase may be followed by one or more items delimited by `/` characters.
 	///   - the path may be followed by `///`, in which case everything after the `///` is treated
 	/// as a password.
-	/// - If `s` begins with a `/` character it is prefixed with the Substrate public `DEV_PHRASE`
+	/// - If `s` begins with a `/` character it is prefixed with the Axlib public `DEV_PHRASE`
 	///   and
 	/// interpreted as above.
 	///
@@ -1109,7 +1109,7 @@ pub mod key_types {
 	pub const BABE: KeyTypeId = KeyTypeId(*b"babe");
 	/// Key type for Grandpa module, built-in. Identified as `gran`.
 	pub const GRANDPA: KeyTypeId = KeyTypeId(*b"gran");
-	/// Key type for controlling an account in a Substrate runtime, built-in. Identified as `acco`.
+	/// Key type for controlling an account in a Axlib runtime, built-in. Identified as `acco`.
 	pub const ACCOUNT: KeyTypeId = KeyTypeId(*b"acco");
 	/// Key type for Aura module, built-in. Identified as `aura`.
 	pub const AURA: KeyTypeId = KeyTypeId(*b"aura");
@@ -1304,11 +1304,11 @@ mod tests {
 			})
 		);
 		assert_eq!(
-			TestPair::from_string("hello world/DOT", None),
+			TestPair::from_string("hello world/AXC", None),
 			Ok(TestPair::Standard {
 				phrase: "hello world".to_owned(),
 				password: None,
-				path: vec![DeriveJunction::soft("DOT")]
+				path: vec![DeriveJunction::soft("AXC")]
 			})
 		);
 		assert_eq!(
@@ -1320,27 +1320,27 @@ mod tests {
 			})
 		);
 		assert_eq!(
-			TestPair::from_string("hello world//DOT", None),
+			TestPair::from_string("hello world//AXC", None),
 			Ok(TestPair::Standard {
 				phrase: "hello world".to_owned(),
 				password: None,
-				path: vec![DeriveJunction::hard("DOT")]
+				path: vec![DeriveJunction::hard("AXC")]
 			})
 		);
 		assert_eq!(
-			TestPair::from_string("hello world//1/DOT", None),
+			TestPair::from_string("hello world//1/AXC", None),
 			Ok(TestPair::Standard {
 				phrase: "hello world".to_owned(),
 				password: None,
-				path: vec![DeriveJunction::hard(1), DeriveJunction::soft("DOT")]
+				path: vec![DeriveJunction::hard(1), DeriveJunction::soft("AXC")]
 			})
 		);
 		assert_eq!(
-			TestPair::from_string("hello world//DOT/1", None),
+			TestPair::from_string("hello world//AXC/1", None),
 			Ok(TestPair::Standard {
 				phrase: "hello world".to_owned(),
 				password: None,
-				path: vec![DeriveJunction::hard("DOT"), DeriveJunction::soft(1)]
+				path: vec![DeriveJunction::hard("AXC"), DeriveJunction::soft(1)]
 			})
 		);
 		assert_eq!(
@@ -1352,19 +1352,19 @@ mod tests {
 			})
 		);
 		assert_eq!(
-			TestPair::from_string("hello world//1/DOT///password", None),
+			TestPair::from_string("hello world//1/AXC///password", None),
 			Ok(TestPair::Standard {
 				phrase: "hello world".to_owned(),
 				password: Some("password".to_owned()),
-				path: vec![DeriveJunction::hard(1), DeriveJunction::soft("DOT")]
+				path: vec![DeriveJunction::hard(1), DeriveJunction::soft("AXC")]
 			})
 		);
 		assert_eq!(
-			TestPair::from_string("hello world/1//DOT///password", None),
+			TestPair::from_string("hello world/1//AXC///password", None),
 			Ok(TestPair::Standard {
 				phrase: "hello world".to_owned(),
 				password: Some("password".to_owned()),
-				path: vec![DeriveJunction::soft(1), DeriveJunction::hard("DOT")]
+				path: vec![DeriveJunction::soft(1), DeriveJunction::hard("AXC")]
 			})
 		);
 	}

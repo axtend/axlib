@@ -1,8 +1,8 @@
 # Keys and Security
 
 The following information is not exhaustive but meant to prevent the most common mistakes.
-You can read more about security and risks in the [Polkadot Wiki](https://wiki.polkadot.network/docs/learn-account-generation).
-The Polkadot network has a few **test networks**, e.g. **Westend**. Test networks are a great way to experiment and learn safely as you can lose tokens on those networks without any financial consequences.
+You can read more about security and risks in the [Axia Wiki](https://wiki.polkaaxc.network/docs/learn-account-generation).
+The Axia network has a few **test networks**, e.g. **Alphanet**. Test networks are a great way to experiment and learn safely as you can lose tokens on those networks without any financial consequences.
 
 `subkey` generates and provides 2 pieces of **secret** information:
 - **secret phrase**: a bunch of words, exactly 12 by default (can be 12, 15, 18, 21 or 24)

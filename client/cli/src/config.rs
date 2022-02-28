@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,11 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Configuration trait for a CLI based on substrate
+//! Configuration trait for a CLI based on axlib
 
 use crate::{
 	arg_enums::Database, error::Result, DatabaseParams, ImportParams, KeystoreParams,
-	NetworkParams, NodeKeyParams, OffchainWorkerParams, PruningParams, SharedParams, SubstrateCli,
+	NetworkParams, NodeKeyParams, OffchainWorkerParams, PruningParams, SharedParams, AxlibCli,
 };
 use log::warn;
 use names::{Generator, Name};
@@ -45,33 +45,33 @@ pub(crate) const DEFAULT_NETWORK_CONFIG_PATH: &'static str = "network";
 /// The recommended open file descriptor limit to be configured for the process.
 const RECOMMENDED_OPEN_FILE_DESCRIPTOR_LIMIT: u64 = 10_000;
 
-/// Default configuration values used by Substrate
+/// Default configuration values used by Axlib
 ///
 /// These values will be used by [`CliConfiguration`] to set
 /// default values for e.g. the listen port or the RPC port.
 pub trait DefaultConfigurationValues {
-	/// The port Substrate should listen on for p2p connections.
+	/// The port Axlib should listen on for p2p connections.
 	///
 	/// By default this is `30333`.
 	fn p2p_listen_port() -> u16 {
 		30333
 	}
 
-	/// The port Substrate should listen on for websocket connections.
+	/// The port Axlib should listen on for websocket connections.
 	///
 	/// By default this is `9944`.
 	fn rpc_ws_listen_port() -> u16 {
 		9944
 	}
 
-	/// The port Substrate should listen on for http connections.
+	/// The port Axlib should listen on for http connections.
 	///
 	/// By default this is `9933`.
 	fn rpc_http_listen_port() -> u16 {
 		9933
 	}
 
-	/// The port Substrate should listen on for prometheus connections.
+	/// The port Axlib should listen on for prometheus connections.
 	///
 	/// By default this is `9615`.
 	fn prometheus_listen_port() -> u16 {
@@ -226,11 +226,11 @@ pub trait CliConfiguration<DCV: DefaultConfigurationValues = ()>: Sized {
 			Role::Full | Role::Authority => "full",
 		};
 		let rocksdb_path = base_path.join("db").join(role_dir);
-		let paritydb_path = base_path.join("paritydb").join(role_dir);
+		let axiadb_path = base_path.join("axiadb").join(role_dir);
 		Ok(match database {
 			Database::RocksDb => DatabaseSource::RocksDb { path: rocksdb_path, cache_size },
-			Database::ParityDb => DatabaseSource::ParityDb { path: paritydb_path },
-			Database::Auto => DatabaseSource::Auto { paritydb_path, rocksdb_path, cache_size },
+			Database::AxiaDb => DatabaseSource::AxiaDb { path: axiadb_path },
+			Database::Auto => DatabaseSource::Auto { axiadb_path, rocksdb_path, cache_size },
 		})
 	}
 
@@ -471,7 +471,7 @@ pub trait CliConfiguration<DCV: DefaultConfigurationValues = ()>: Sized {
 	}
 
 	/// Create a Configuration object from the current object
-	fn create_configuration<C: SubstrateCli>(
+	fn create_configuration<C: AxlibCli>(
 		&self,
 		cli: &C,
 		tokio_handle: tokio::runtime::Handle,
@@ -576,7 +576,7 @@ pub trait CliConfiguration<DCV: DefaultConfigurationValues = ()>: Sized {
 		Ok(self.shared_params().disable_log_color())
 	}
 
-	/// Initialize substrate. This must be done only once per process.
+	/// Initialize axlib. This must be done only once per process.
 	///
 	/// This method:
 	///

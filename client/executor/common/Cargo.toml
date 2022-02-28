@@ -1,11 +1,11 @@
 [package]
 name = "sc-executor-common"
 version = "0.10.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axiatech/axlib/"
 description = "A set of common definitions that are needed for defining execution engines."
 documentation = "https://docs.rs/sc-executor-common/"
 readme = "README.md"

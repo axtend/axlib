@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -405,7 +405,7 @@ mod tests {
 	use sc_network::PeerId;
 	use sc_utils::mpsc::tracing_unbounded;
 	use sp_blockchain::HeaderBackend as _;
-	use substrate_test_runtime_client::{TestClientBuilder, TestClientBuilderExt};
+	use axlib_test_runtime_client::{TestClientBuilder, TestClientBuilderExt};
 
 	use futures::executor;
 

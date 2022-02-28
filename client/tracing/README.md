@@ -1,4 +1,4 @@
-Instrumentation implementation for substrate.
+Instrumentation implementation for axlib.
 
 This crate is unstable and the API and usage may change.
 

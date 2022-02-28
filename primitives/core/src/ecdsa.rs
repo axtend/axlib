@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -395,7 +395,7 @@ impl TraitPair for Pair {
 		phrase: &str,
 		password: Option<&str>,
 	) -> Result<(Pair, Seed), SecretStringError> {
-		let big_seed = substrate_bip39::seed_from_entropy(
+		let big_seed = axlib_bip39::seed_from_entropy(
 			Mnemonic::from_phrase(phrase, Language::English)
 				.map_err(|_| SecretStringError::InvalidPhrase)?
 				.entropy(),
@@ -729,7 +729,7 @@ mod test {
 	fn ss58check_full_roundtrip_works() {
 		let pair = Pair::from_seed(b"12345678901234567890123456789012");
 		let public = pair.public();
-		let format = Ss58AddressFormatRegistry::PolkadotAccount.into();
+		let format = Ss58AddressFormatRegistry::AxiaAccount.into();
 		let s = public.to_ss58check_with_version(format);
 		let (k, f) = Public::from_ss58check_with_version(&s).unwrap();
 		assert_eq!(k, public);

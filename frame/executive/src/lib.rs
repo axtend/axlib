@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,7 +44,7 @@
 //!
 //! ## Usage
 //!
-//! The default Substrate node template declares the [`Executive`](./struct.Executive.html) type in
+//! The default Axlib node template declares the [`Executive`](./struct.Executive.html) type in
 //! its library.
 //!
 //! ### Example

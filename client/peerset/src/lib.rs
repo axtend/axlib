@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@
 //!
 //! The PSM handles *sets* of nodes. A set of nodes is defined as the nodes that are believed to
 //! support a certain capability, such as handling blocks and transactions of a specific chain,
-//! or collating a certain parachain.
+//! or collating a certain allychain.
 //!
 //! For each node in each set, the peerset holds a flag specifying whether the node is
 //! connected to us or not.

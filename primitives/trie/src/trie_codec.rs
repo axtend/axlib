@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@
 //! Compact proof support.
 //!
 //! This uses compact proof from trie crate and extends
-//! it to substrate specific layout and child trie system.
+//! it to axlib specific layout and child trie system.
 
 use crate::{
 	CompactProof, HashDBT, StorageProof, TrieConfiguration, TrieError, TrieHash, EMPTY_PREFIX,

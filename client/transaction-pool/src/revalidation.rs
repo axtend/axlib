@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -347,7 +347,7 @@ mod tests {
 	use futures::executor::block_on;
 	use sc_transaction_pool_api::TransactionSource;
 	use sp_runtime::generic::BlockId;
-	use substrate_test_runtime::{AccountId, Transfer, H256};
+	use axlib_test_runtime::{AccountId, Transfer, H256};
 
 	#[test]
 	fn revalidation_queue_works() {

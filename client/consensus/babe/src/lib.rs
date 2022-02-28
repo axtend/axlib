@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -54,14 +54,14 @@
 //! The secondary slots supports either a `SecondaryPlain` or `SecondaryVRF`
 //! variant. Comparing with `SecondaryPlain` variant, the `SecondaryVRF` variant
 //! generates an additional VRF output. The output is not included in beacon
-//! randomness, but can be consumed by parachains.
+//! randomness, but can be consumed by allychains.
 //!
 //! The fork choice rule is weight-based, where weight equals the number of
 //! primary blocks in the chain. We will pick the heaviest chain (more primary
 //! blocks) and will go with the longest one in case of a tie.
 //!
 //! An in-depth description and analysis of the protocol can be found here:
-//! <https://research.web3.foundation/en/latest/polkadot/block-production/Babe.html>
+//! <https://research.web3.foundation/en/latest/polkaaxc/block-production/Babe.html>
 
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
@@ -333,7 +333,7 @@ pub static INTERMEDIATE_KEY: &[u8] = b"babe1";
 /// Create with [`Self::get`].
 // FIXME: Once Rust has higher-kinded types, the duplication between this
 // and `super::babe::Config` can be eliminated.
-// https://github.com/paritytech/substrate/issues/2434
+// https://github.com/axiatech/axlib/issues/2434
 #[derive(Clone)]
 pub struct Config(sc_consensus_slots::SlotDuration<BabeGenesisConfiguration>);
 

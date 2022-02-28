@@ -1,12 +1,12 @@
 [package]
 name = "frame-support-test-compile-pass"
 version = "4.0.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
 publish = false
-homepage = "https://substrate.dev"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.dev"
+repository = "https://github.com/axiatech/axlib/"
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

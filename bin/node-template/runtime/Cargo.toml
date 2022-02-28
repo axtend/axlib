@@ -1,13 +1,13 @@
 [package]
 name = "node-template-runtime"
 version = "4.0.0-dev"
-description = "A fresh FRAME-based Substrate node, ready for hacking."
-authors = ["Substrate DevHub <https://github.com/substrate-developer-hub>"]
-homepage = "https://substrate.io/"
+description = "A fresh FRAME-based Axlib node, ready for hacking."
+authors = ["Axlib DevHub <https://github.com/axlib-developer-hub>"]
+homepage = "https://axlib.io/"
 edition = "2021"
 license = "Unlicense"
 publish = false
-repository = "https://github.com/substrate-developer-hub/substrate-node-template/"
+repository = "https://github.com/axlib-developer-hub/axlib-node-template/"
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
@@ -51,7 +51,7 @@ hex-literal = { version = "0.3.4", optional = true }
 pallet-template = { version = "4.0.0-dev", default-features = false, path = "../pallets/template" }
 
 [build-dependencies]
-substrate-wasm-builder = { version = "5.0.0-dev", path = "../../../utils/wasm-builder" }
+axlib-wasm-builder = { version = "5.0.0-dev", path = "../../../utils/wasm-builder" }
 
 [features]
 default = ["std"]

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -144,12 +144,12 @@ fn new_account_info(free_dollars: u128) -> Vec<u8> {
 
 #[test]
 fn transaction_fee_is_correct() {
-	// This uses the exact values of substrate-node.
+	// This uses the exact values of axlib-node.
 	//
 	// weight of transfer call as of now: 1_000_000
 	// if weight of the cheapest weight would be 10^7, this would be 10^9, which is:
-	//   - 1 MILLICENTS in substrate node.
-	//   - 1 milli-dot based on current polkadot runtime.
+	//   - 1 MILLICENTS in axlib node.
+	//   - 1 milli-axc based on current polkaaxc runtime.
 	// (this baed on assigning 0.1 CENT to the cheapest tx with `weight = 100`)
 	let mut t = new_test_ext(compact_code_unwrap());
 	t.insert(<frame_system::Account<Runtime>>::hashed_key_for(alice()), new_account_info(100));

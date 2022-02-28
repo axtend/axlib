@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,13 +18,13 @@
 //! # System Pallet
 //!
 //! The System pallet provides low-level access to core types and cross-cutting utilities.
-//! It acts as the base layer for other pallets to interact with the Substrate framework components.
+//! It acts as the base layer for other pallets to interact with the Axlib framework components.
 //!
 //! - [`Config`]
 //!
 //! ## Overview
 //!
-//! The System pallet defines the core data types used in a Substrate runtime.
+//! The System pallet defines the core data types used in a Axlib runtime.
 //! It also provides several utility functions (see [`Pallet`]) for other FRAME pallets.
 //!
 //! In addition, it manages the storage items for extrinsics data, indexes, event records, and
@@ -342,7 +342,7 @@ pub mod pallet {
 		/// The default (`()`) implementation is responsible for setting the correct storage
 		/// entry and emitting corresponding event and log item. (see
 		/// [`Pallet::update_code_in_storage`]).
-		/// It's unlikely that this needs to be customized, unless you are writing a parachain using
+		/// It's unlikely that this needs to be customized, unless you are writing a allychain using
 		/// `Cumulus`, where the actual code change is deferred.
 		type OnSetCode: SetCode<Self>;
 
@@ -953,7 +953,7 @@ impl<T: Config> Pallet<T> {
 	///
 	/// Note this function almost never should be used directly. It is exposed
 	/// for `OnSetCode` implementations that defer actual code being written to
-	/// the storage (for instance in case of parachains).
+	/// the storage (for instance in case of allychains).
 	pub fn update_code_in_storage(code: &[u8]) -> DispatchResult {
 		storage::unhashed::put_raw(well_known_keys::CODE, code);
 		Self::deposit_log(generic::DigestItem::RuntimeEnvironmentUpdated);

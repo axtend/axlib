@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -609,7 +609,7 @@ mod std_features {
 	);
 
 	// FIXME: this could be done a lot in 0.2 if they opt for using `Cow<str,'static>` instead
-	// 			https://github.com/paritytech/substrate/issues/7134
+	// 			https://github.com/axiatech/axlib/issues/7134
 	impl From<&crate::WasmMetadata> for &'static tracing_core::Metadata<'static> {
 		fn from(wm: &crate::WasmMetadata) -> &'static tracing_core::Metadata<'static> {
 			match (&wm.level, wm.is_span) {

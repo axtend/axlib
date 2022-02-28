@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +28,7 @@ pub mod snapshot;
 
 /// A wrapper for a runtime that the functions of this crate expect.
 ///
-/// For example, this can be the `Runtime` type of the Polkadot runtime.
+/// For example, this can be the `Runtime` type of the Axia runtime.
 pub trait RuntimeT:
 	pallet_staking::Config + pallet_bags_list::Config + frame_system::Config
 {
@@ -55,7 +55,7 @@ pub fn display_and_check_bags<Runtime: RuntimeT>(currency_unit: u64, currency_na
 	let mut rebaggable = 0;
 	let mut active_bags = 0;
 	for vote_weight_thresh in <Runtime as pallet_bags_list::Config>::BagThresholds::get() {
-		// threshold in terms of UNITS (e.g. KSM, DOT etc)
+		// threshold in terms of UNITS (e.g. KSM, AXC etc)
 		let vote_weight_thresh_as_unit = *vote_weight_thresh as f64 / currency_unit as f64;
 		let pretty_thresh = format!("Threshold: {}. {}", vote_weight_thresh_as_unit, currency_name);
 

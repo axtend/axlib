@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,12 +24,12 @@
 //! these tools were designed to work together in unison.
 //!
 //! The pallet provides a standardized MMR Leaf format that is can be used
-//! to bridge BEEFY+MMR-based networks (both standalone and polkadot-like).
+//! to bridge BEEFY+MMR-based networks (both standalone and polkaaxc-like).
 //!
 //! The MMR leaf contains:
 //! 1. Block number and parent block hash.
 //! 2. Merkle Tree Root Hash of next BEEFY validator set.
-//! 3. Merkle Tree Root Hash of current parachain heads state.
+//! 3. Merkle Tree Root Hash of current allychain heads state.
 //!
 //! and thanks to versioning can be easily updated in the future.
 
@@ -94,17 +94,17 @@ type MerkleRootOf<T> = <T as pallet_mmr::Config>::Hash;
 type ParaId = u32;
 type ParaHead = Vec<u8>;
 
-/// A type that is able to return current list of parachain heads that end up in the MMR leaf.
-pub trait ParachainHeadsProvider {
-	/// Return a list of tuples containing a `ParaId` and Parachain Header data (ParaHead).
+/// A type that is able to return current list of allychain heads that end up in the MMR leaf.
+pub trait AllychainHeadsProvider {
+	/// Return a list of tuples containing a `ParaId` and Allychain Header data (ParaHead).
 	///
 	/// The returned data does not have to be sorted.
-	fn parachain_heads() -> Vec<(ParaId, ParaHead)>;
+	fn allychain_heads() -> Vec<(ParaId, ParaHead)>;
 }
 
-/// A default implementation for runtimes without parachains.
-impl ParachainHeadsProvider for () {
-	fn parachain_heads() -> Vec<(ParaId, ParaHead)> {
+/// A default implementation for runtimes without allychains.
+impl AllychainHeadsProvider for () {
+	fn allychain_heads() -> Vec<(ParaId, ParaHead)> {
 		Default::default()
 	}
 }
@@ -135,16 +135,16 @@ pub mod pallet {
 		///
 		/// For instance for ECDSA (secp256k1) we want to store uncompressed public keys (65 bytes)
 		/// and later to Ethereum Addresses (160 bits) to simplify using them on Ethereum chain,
-		/// but the rest of the Substrate codebase is storing them compressed (33 bytes) for
+		/// but the rest of the Axlib codebase is storing them compressed (33 bytes) for
 		/// efficiency reasons.
 		type BeefyAuthorityToMerkleLeaf: Convert<<Self as pallet_beefy::Config>::BeefyId, Vec<u8>>;
 
-		/// Retrieve a list of current parachain heads.
+		/// Retrieve a list of current allychain heads.
 		///
 		/// The trait is implemented for `paras` module, but since not all chains might have
-		/// parachains, and we want to keep the MMR leaf structure uniform, it's possible to use
+		/// allychains, and we want to keep the MMR leaf structure uniform, it's possible to use
 		/// `()` as well to simply put dummy data to the leaf.
-		type ParachainHeads: ParachainHeadsProvider;
+		type AllychainHeads: AllychainHeadsProvider;
 	}
 
 	/// Details of next BEEFY authority set.
@@ -170,7 +170,7 @@ where
 		MmrLeaf {
 			version: T::LeafVersion::get(),
 			parent_number_and_hash: frame_system::Pallet::<T>::leaf_data(),
-			parachain_heads: Pallet::<T>::parachain_heads_merkle_root(),
+			allychain_heads: Pallet::<T>::allychain_heads_merkle_root(),
 			beefy_next_authority_set: Pallet::<T>::update_beefy_next_authority_set(),
 		}
 	}
@@ -189,18 +189,18 @@ impl<T: Config> Pallet<T>
 where
 	MerkleRootOf<T>: From<beefy_merkle_tree::Hash> + Into<beefy_merkle_tree::Hash>,
 {
-	/// Returns latest root hash of a merkle tree constructed from all active parachain headers.
+	/// Returns latest root hash of a merkle tree constructed from all active allychain headers.
 	///
 	/// The leafs are sorted by `ParaId` to allow more efficient lookups and non-existence proofs.
 	///
-	/// NOTE this does not include parathreads - only parachains are part of the merkle tree.
+	/// NOTE this does not include parathreads - only allychains are part of the merkle tree.
 	///
 	/// NOTE This is an initial and inefficient implementation, which re-constructs
 	/// the merkle tree every block. Instead we should update the merkle root in
 	/// [Self::on_initialize] call of this pallet and update the merkle tree efficiently (use
 	/// on-chain storage to persist inner nodes).
-	fn parachain_heads_merkle_root() -> MerkleRootOf<T> {
-		let mut para_heads = T::ParachainHeads::parachain_heads();
+	fn allychain_heads_merkle_root() -> MerkleRootOf<T> {
+		let mut para_heads = T::AllychainHeads::allychain_heads();
 		para_heads.sort();
 		let para_heads = para_heads.into_iter().map(|pair| pair.encode());
 		beefy_merkle_tree::merkle_root::<Self, _, _>(para_heads).into()

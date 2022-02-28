@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,7 @@
 //! into a WASM file.
 
 use codec::Encode;
-use parity_wasm::elements::{deserialize_buffer, serialize, Module};
+use axia_wasm::elements::{deserialize_buffer, serialize, Module};
 
 #[derive(Clone, Copy, Eq, PartialEq, Debug, thiserror::Error)]
 pub enum Error {

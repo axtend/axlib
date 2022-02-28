@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Substrate state machine implementation.
+//! Axlib state machine implementation.
 
 #![warn(missing_docs)]
 #![cfg_attr(not(feature = "std"), no_std)]
@@ -286,7 +286,7 @@ mod execution {
 		ExecutionManager::AlwaysWasm(BackendTrustLevel::Untrusted)
 	}
 
-	/// The substrate state machine.
+	/// The axlib state machine.
 	pub struct StateMachine<'a, B, H, Exec>
 	where
 		H: Hasher,
@@ -324,7 +324,7 @@ mod execution {
 		Exec: CodeExecutor + Clone + 'static,
 		B: Backend<H>,
 	{
-		/// Creates new substrate state machine.
+		/// Creates new axlib state machine.
 		pub fn new(
 			backend: &'a B,
 			overlay: &'a mut OverlayedChanges,

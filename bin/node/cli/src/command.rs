@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -19,16 +19,16 @@
 use crate::{chain_spec, service, service::new_partial, Cli, Subcommand};
 use node_executor::ExecutorDispatch;
 use node_runtime::{Block, RuntimeApi};
-use sc_cli::{ChainSpec, Result, RuntimeVersion, SubstrateCli};
+use sc_cli::{ChainSpec, Result, RuntimeVersion, AxlibCli};
 use sc_service::PartialComponents;
 
-impl SubstrateCli for Cli {
+impl AxlibCli for Cli {
 	fn impl_name() -> String {
-		"Substrate Node".into()
+		"Axlib Node".into()
 	}
 
 	fn impl_version() -> String {
-		env!("SUBSTRATE_CLI_IMPL_VERSION").into()
+		env!("AXLIB_CLI_IMPL_VERSION").into()
 	}
 
 	fn description() -> String {
@@ -40,7 +40,7 @@ impl SubstrateCli for Cli {
 	}
 
 	fn support_url() -> String {
-		"https://github.com/paritytech/substrate/issues/new".into()
+		"https://github.com/axiatech/axlib/issues/new".into()
 	}
 
 	fn copyright_start_year() -> i32 {

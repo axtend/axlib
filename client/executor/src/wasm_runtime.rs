@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Traits and accessor functions for calling into the Substrate Wasm runtime.
+//! Traits and accessor functions for calling into the Axlib Wasm runtime.
 //!
 //! The primary means of accessing the runtimes is through a cache which saves the reusable
 //! components of the runtime that are expensive to initialize.
@@ -454,7 +454,7 @@ mod tests {
 	use sp_api::{Core, RuntimeApiInfo};
 	use sp_runtime::RuntimeString;
 	use sp_wasm_interface::HostFunctions;
-	use substrate_test_runtime::Block;
+	use axlib_test_runtime::Block;
 
 	#[derive(Encode)]
 	pub struct OldRuntimeVersion {
@@ -468,7 +468,7 @@ mod tests {
 
 	#[test]
 	fn host_functions_are_equal() {
-		let host_functions = sp_io::SubstrateHostFunctions::host_functions();
+		let host_functions = sp_io::AxlibHostFunctions::host_functions();
 
 		let equal = &host_functions[..] == &host_functions[..];
 		assert!(equal, "Host functions are not equal");
@@ -540,7 +540,7 @@ mod tests {
 	#[test]
 	fn embed_runtime_version_works() {
 		let wasm = sp_maybe_compressed_blob::decompress(
-			substrate_test_runtime::wasm_binary_unwrap(),
+			axlib_test_runtime::wasm_binary_unwrap(),
 			sp_maybe_compressed_blob::CODE_BLOB_BOMB_LIMIT,
 		)
 		.expect("Decompressing works");

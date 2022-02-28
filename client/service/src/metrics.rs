@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ use futures_timer::Delay;
 use prometheus_endpoint::{register, Gauge, GaugeVec, Opts, PrometheusError, Registry, U64};
 use sc_client_api::{ClientInfo, UsageProvider};
 use sc_network::{config::Role, NetworkService, NetworkStatus};
-use sc_telemetry::{telemetry, TelemetryHandle, SUBSTRATE_INFO};
+use sc_telemetry::{telemetry, TelemetryHandle, AXLIB_INFO};
 use sc_transaction_pool_api::{MaintainedTransactionPool, PoolStatus};
 use sc_utils::metrics::register_globals;
 use sp_api::ProvideRuntimeApi;
@@ -55,7 +55,7 @@ impl PrometheusMetrics {
 		register(
 			Gauge::<U64>::with_opts(
 				Opts::new(
-					"substrate_build_info",
+					"axlib_build_info",
 					"A metric with a constant '1' value labeled by name, version",
 				)
 				.const_label("name", name)
@@ -66,7 +66,7 @@ impl PrometheusMetrics {
 		.set(1);
 
 		register(
-			Gauge::<U64>::new("substrate_node_roles", "The roles the node is running as")?,
+			Gauge::<U64>::new("axlib_node_roles", "The roles the node is running as")?,
 			&registry,
 		)?
 		.set(roles);
@@ -77,7 +77,7 @@ impl PrometheusMetrics {
 			SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).unwrap_or_default();
 		register(
 			Gauge::<U64>::new(
-				"substrate_process_start_time_seconds",
+				"axlib_process_start_time_seconds",
 				"Number of seconds between the UNIX epoch and the moment the process started",
 			)?,
 			registry,
@@ -88,20 +88,20 @@ impl PrometheusMetrics {
 			// generic internals
 			block_height: register(
 				GaugeVec::new(
-					Opts::new("substrate_block_height", "Block height info of the chain"),
+					Opts::new("axlib_block_height", "Block height info of the chain"),
 					&["status"],
 				)?,
 				registry,
 			)?,
 
 			number_leaves: register(
-				Gauge::new("substrate_number_leaves", "Number of known chain leaves (aka forks)")?,
+				Gauge::new("axlib_number_leaves", "Number of known chain leaves (aka forks)")?,
 				registry,
 			)?,
 
 			ready_transactions_number: register(
 				Gauge::new(
-					"substrate_ready_transactions_number",
+					"axlib_ready_transactions_number",
 					"Number of transactions in the ready queue",
 				)?,
 				registry,
@@ -109,16 +109,16 @@ impl PrometheusMetrics {
 
 			// I/ O
 			database_cache: register(
-				Gauge::new("substrate_database_cache_bytes", "RocksDB cache size in bytes")?,
+				Gauge::new("axlib_database_cache_bytes", "RocksDB cache size in bytes")?,
 				registry,
 			)?,
 			state_cache: register(
-				Gauge::new("substrate_state_cache_bytes", "State cache size in bytes")?,
+				Gauge::new("axlib_state_cache_bytes", "State cache size in bytes")?,
 				registry,
 			)?,
 			state_db: register(
 				GaugeVec::new(
-					Opts::new("substrate_state_db_cache_bytes", "State DB cache in bytes"),
+					Opts::new("axlib_state_db_cache_bytes", "State DB cache in bytes"),
 					&["subtype"],
 				)?,
 				registry,
@@ -227,7 +227,7 @@ impl MetricsService {
 		// Update/send metrics that are always available.
 		telemetry!(
 			self.telemetry;
-			SUBSTRATE_INFO;
+			AXLIB_INFO;
 			"system.interval";
 			"height" => best_number,
 			"best" => ?best_hash,
@@ -285,7 +285,7 @@ impl MetricsService {
 
 			telemetry!(
 				self.telemetry;
-				SUBSTRATE_INFO;
+				AXLIB_INFO;
 				"system.interval";
 				"peers" => num_peers,
 				"bandwidth_download" => avg_bytes_per_sec_inbound,

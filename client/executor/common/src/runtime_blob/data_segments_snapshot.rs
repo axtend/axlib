@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 use super::RuntimeBlob;
 use crate::error::{self, Error};
 use std::mem;
-use wasm_instrument::parity_wasm::elements::Instruction;
+use wasm_instrument::axia_wasm::elements::Instruction;
 
 /// This is a snapshot of data segments specialzied for a particular instantiation.
 ///
@@ -57,7 +57,7 @@ impl DataSegmentsSnapshot {
 						// In a valid wasm file, initializer expressions can only refer imported
 						// globals.
 						//
-						// At the moment of writing the Substrate Runtime Interface does not provide
+						// At the moment of writing the Axlib Runtime Interface does not provide
 						// any globals. There is nothing that prevents us from supporting this
 						// if/when we gain those.
 						return Err(Error::ImportedGlobalsUnsupported)

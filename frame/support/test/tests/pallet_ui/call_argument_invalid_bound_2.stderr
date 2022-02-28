@@ -62,8 +62,8 @@ error[E0277]: the trait bound `<T as pallet::Config>::Bar: WrapperTypeDecode` is
     |                                          ^^^ the trait `WrapperTypeDecode` is not implemented for `<T as pallet::Config>::Bar`
     |
     = note: required because of the requirements on the impl of `Decode` for `<T as pallet::Config>::Bar`
-note: required by a bound in `parity_scale_codec::Decode::decode`
+note: required by a bound in `axia_scale_codec::Decode::decode`
    --> $CARGO/parity-scale-codec-2.3.1/src/codec.rs
     |
     |     fn decode<I: Input>(input: &mut I) -> Result<Self, Error>;
-    |                  ^^^^^ required by this bound in `parity_scale_codec::Decode::decode`
+    |                  ^^^^^ required by this bound in `axia_scale_codec::Decode::decode`

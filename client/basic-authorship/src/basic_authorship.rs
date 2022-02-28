@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -574,7 +574,7 @@ mod tests {
 	use sp_consensus::{BlockOrigin, Environment, Proposer};
 	use sp_core::Pair;
 	use sp_runtime::traits::NumberFor;
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		prelude::*,
 		runtime::{Extrinsic, Transfer},
 		TestClientBuilder, TestClientBuilderExt,
@@ -615,7 +615,7 @@ mod tests {
 	#[test]
 	fn should_cease_building_block_when_deadline_is_reached() {
 		// given
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let txpool = BasicPool::new_full(
 			Default::default(),
@@ -671,7 +671,7 @@ mod tests {
 
 	#[test]
 	fn should_not_panic_when_deadline_is_reached() {
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let txpool = BasicPool::new_full(
 			Default::default(),
@@ -763,7 +763,7 @@ mod tests {
 	#[test]
 	fn should_not_remove_invalid_transactions_when_skipping() {
 		// given
-		let mut client = Arc::new(substrate_test_runtime_client::new());
+		let mut client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let txpool = BasicPool::new_full(
 			Default::default(),
@@ -855,7 +855,7 @@ mod tests {
 
 	#[test]
 	fn should_cease_building_block_when_block_limit_is_reached() {
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let txpool = BasicPool::new_full(
 			Default::default(),
@@ -943,7 +943,7 @@ mod tests {
 	#[test]
 	fn should_keep_adding_transactions_after_exhausts_resources_before_soft_deadline() {
 		// given
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let txpool = BasicPool::new_full(
 			Default::default(),
@@ -1007,7 +1007,7 @@ mod tests {
 	#[test]
 	fn should_only_skip_up_to_some_limit_after_soft_deadline() {
 		// given
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let txpool = BasicPool::new_full(
 			Default::default(),

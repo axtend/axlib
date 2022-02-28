@@ -1,3 +1,3 @@
-Substrate RPC primitives and utilities.
+Axlib RPC primitives and utilities.
 
 License: Apache-2.0

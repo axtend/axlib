@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -104,7 +104,7 @@ fn main() {
 			.iter()
 			{
 				for database_type in
-					[BenchDataBaseType::RocksDb, BenchDataBaseType::ParityDb].iter()
+					[BenchDataBaseType::RocksDb, BenchDataBaseType::AxiaDb].iter()
 				{
 					import_benchmarks.push((
 						profile,
@@ -133,7 +133,7 @@ fn main() {
 			]
 			.iter().flat_map(|size|
 			[
-				DatabaseType::RocksDb, DatabaseType::ParityDb
+				DatabaseType::RocksDb, DatabaseType::AxiaDb
 			]
 			.iter().map(move |db_type| (size, db_type)))
 			=> TrieReadBenchmarkDescription { database_size: *size, database_type: *db_type },
@@ -144,7 +144,7 @@ fn main() {
 			]
 			.iter().flat_map(|size|
 			[
-				DatabaseType::RocksDb, DatabaseType::ParityDb
+				DatabaseType::RocksDb, DatabaseType::AxiaDb
 			]
 			.iter().map(move |db_type| (size, db_type)))
 			=> TrieWriteBenchmarkDescription { database_size: *size, database_type: *db_type },

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -40,8 +40,8 @@ fn parse_knobs(
 		return Err(syn::Error::new_spanned(&sig, "No arguments expected for tests."))
 	}
 
-	let crate_name = match crate_name("substrate-test-utils") {
-		Ok(FoundCrate::Itself) => syn::Ident::new("substrate_test_utils", Span::call_site().into()),
+	let crate_name = match crate_name("axlib-test-utils") {
+		Ok(FoundCrate::Itself) => syn::Ident::new("axlib_test_utils", Span::call_site().into()),
 		Ok(FoundCrate::Name(crate_name)) => syn::Ident::new(&crate_name, Span::call_site().into()),
 		Err(e) => return Err(syn::Error::new_spanned(&sig, e)),
 	};
@@ -58,7 +58,7 @@ fn parse_knobs(
 		#vis #sig {
 			if #crate_name::tokio::time::timeout(
 				std::time::Duration::from_secs(
-					std::env::var("SUBSTRATE_TEST_TIMEOUT")
+					std::env::var("AXLIB_TEST_TIMEOUT")
 						.ok()
 						.and_then(|x| x.parse().ok())
 						.unwrap_or(600)),

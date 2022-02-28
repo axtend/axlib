@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ use finality_grandpa::{
 use futures::prelude::*;
 use futures_timer::Delay;
 use log::{debug, warn};
-use parity_scale_codec::{Decode, Encode};
+use axia_scale_codec::{Decode, Encode};
 use parking_lot::RwLock;
 use prometheus_endpoint::{register, Counter, Gauge, PrometheusError, U64};
 
@@ -106,12 +106,12 @@ impl<Block: BlockT> Encode for CompletedRounds<Block> {
 	}
 }
 
-impl<Block: BlockT> parity_scale_codec::EncodeLike for CompletedRounds<Block> {}
+impl<Block: BlockT> axia_scale_codec::EncodeLike for CompletedRounds<Block> {}
 
 impl<Block: BlockT> Decode for CompletedRounds<Block> {
-	fn decode<I: parity_scale_codec::Input>(
+	fn decode<I: axia_scale_codec::Input>(
 		value: &mut I,
-	) -> Result<Self, parity_scale_codec::Error> {
+	) -> Result<Self, axia_scale_codec::Error> {
 		<(Vec<CompletedRound<Block>>, SetId, Vec<AuthorityId>)>::decode(value)
 			.map(|(rounds, set_id, voters)| CompletedRounds { rounds, set_id, voters })
 	}
@@ -404,19 +404,19 @@ impl Metrics {
 	) -> Result<Self, PrometheusError> {
 		Ok(Self {
 			finality_grandpa_round: register(
-				Gauge::new("substrate_finality_grandpa_round", "Highest completed GRANDPA round.")?,
+				Gauge::new("axlib_finality_grandpa_round", "Highest completed GRANDPA round.")?,
 				registry,
 			)?,
 			finality_grandpa_prevotes: register(
 				Counter::new(
-					"substrate_finality_grandpa_prevotes_total",
+					"axlib_finality_grandpa_prevotes_total",
 					"Total number of GRANDPA prevotes cast locally.",
 				)?,
 				registry,
 			)?,
 			finality_grandpa_precommits: register(
 				Counter::new(
-					"substrate_finality_grandpa_precommits_total",
+					"axlib_finality_grandpa_precommits_total",
 					"Total number of GRANDPA precommits cast locally.",
 				)?,
 				registry,

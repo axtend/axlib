@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,7 +33,7 @@ use sp_sandbox::{
 	SandboxEnvironmentBuilder, SandboxMemory,
 };
 use sp_std::{borrow::ToOwned, prelude::*};
-use wasm_instrument::parity_wasm::{
+use wasm_instrument::axia_wasm::{
 	builder,
 	elements::{
 		self, BlockType, CustomSection, External, FuncBody, Instruction, Instructions, Module,

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate RPC servers.
+//! Axlib RPC servers.
 
 #![warn(missing_docs)]
 
@@ -90,7 +90,7 @@ impl ServerMetrics {
 				Ok(Self {
 					session_opened: register(
 						Counter::new(
-							"substrate_rpc_sessions_opened",
+							"axlib_rpc_sessions_opened",
 							"Number of persistent RPC sessions opened",
 						)?,
 						r,
@@ -98,7 +98,7 @@ impl ServerMetrics {
 					.into(),
 					session_closed: register(
 						Counter::new(
-							"substrate_rpc_sessions_closed",
+							"axlib_rpc_sessions_closed",
 							"Number of persistent RPC sessions closed",
 						)?,
 						r,

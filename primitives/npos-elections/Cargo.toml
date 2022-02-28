@@ -1,11 +1,11 @@
 [package]
 name = "sp-npos-elections"
 version = "4.0.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axiatech/axlib/"
 description = "NPoS election algorithm primitives"
 readme = "README.md"
 
@@ -23,7 +23,7 @@ sp-core = { version = "5.0.0", default-features = false, path = "../core" }
 sp-runtime = { version = "5.0.0", path = "../runtime", default-features = false }
 
 [dev-dependencies]
-substrate-test-utils = { version = "4.0.0-dev", path = "../../test-utils" }
+axlib-test-utils = { version = "4.0.0-dev", path = "../../test-utils" }
 rand = "0.7.3"
 
 [features]

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,7 +44,7 @@ use sp_runtime::{
 	Perbill,
 };
 use sp_std::prelude::*;
-use wasm_instrument::parity_wasm::elements::{BlockType, BrTableData, Instruction, ValueType};
+use wasm_instrument::axia_wasm::elements::{BlockType, BrTableData, Instruction, ValueType};
 
 /// How many batches we do per API benchmark.
 const API_BENCHMARK_BATCHES: u32 = 20;

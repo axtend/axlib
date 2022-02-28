@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -119,7 +119,7 @@ type BalanceOf<T> = <<T as Config>::OnChargeTransaction as OnChargeTransaction<T
 /// - in an empty chain: `p >= v * k * (-s')`.
 ///
 /// For example, when all blocks are full and there are 28800 blocks per day (default in
-/// `substrate-node`) and v == 0.00001, s' == 0.1875, we'd have:
+/// `axlib-node`) and v == 0.00001, s' == 0.1875, we'd have:
 ///
 /// p >= 0.00001 * 28800 * 0.8125
 /// p >= 0.234
@@ -127,7 +127,7 @@ type BalanceOf<T> = <<T as Config>::OnChargeTransaction as OnChargeTransaction<T
 /// Meaning that fees can change by around ~23% per day, given extreme congestion.
 ///
 /// More info can be found at:
-/// <https://research.web3.foundation/en/latest/polkadot/overview/2-token-economics.html>
+/// <https://research.web3.foundation/en/latest/polkaaxc/overview/2-token-economics.html>
 pub struct TargetedFeeAdjustment<T, S, V, M>(sp_std::marker::PhantomData<(T, S, V, M)>);
 
 /// Something that can convert the current multiplier to the next one.
@@ -297,7 +297,7 @@ pub mod pallet {
 
 	#[pallet::extra_constants]
 	impl<T: Config> Pallet<T> {
-		// TODO: rename to snake case after https://github.com/paritytech/substrate/issues/8826 fixed.
+		// TODO: rename to snake case after https://github.com/axiatech/axlib/issues/8826 fixed.
 		#[allow(non_snake_case)]
 		/// The polynomial that is applied in order to derive fee from weight.
 		fn WeightToFee() -> Vec<WeightToFeeCoefficient<BalanceOf<T>>> {

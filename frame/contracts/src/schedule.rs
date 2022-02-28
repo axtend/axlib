@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +28,7 @@ use scale_info::TypeInfo;
 use serde::{Deserialize, Serialize};
 use sp_runtime::RuntimeDebug;
 use sp_std::{marker::PhantomData, vec::Vec};
-use wasm_instrument::{gas_metering, parity_wasm::elements};
+use wasm_instrument::{gas_metering, axia_wasm::elements};
 
 /// How many API calls are executed in a single batch. The reason for increasing the amount
 /// of API calls in batches (per benchmark component increase) is so that the linear regression
@@ -101,7 +101,7 @@ pub struct Limits {
 
 	/// Maximum allowed stack height in number of elements.
 	///
-	/// See <https://wiki.parity.io/WebAssembly-StackHeight> to find out
+	/// See <https://wiki.axia.io/WebAssembly-StackHeight> to find out
 	/// how the stack frame cost is calculated. Each element can be of one of the
 	/// wasm value types. This means the maximum size per element is 64bit.
 	pub stack_height: u32,

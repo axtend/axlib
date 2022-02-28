@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Integration of the GRANDPA finality gadget into substrate.
+//! Integration of the GRANDPA finality gadget into axlib.
 //!
 //! This crate is unstable and the API and usage may change.
 //!
@@ -58,7 +58,7 @@
 
 use futures::{prelude::*, StreamExt};
 use log::{debug, error, info};
-use parity_scale_codec::Decode;
+use axia_scale_codec::Decode;
 use parking_lot::RwLock;
 use prometheus_endpoint::{PrometheusError, Registry};
 use sc_client_api::{
@@ -148,7 +148,7 @@ use std::marker::PhantomData;
 #[cfg(test)]
 mod tests;
 
-/// A GRANDPA message for a substrate chain.
+/// A GRANDPA message for a axlib chain.
 pub type Message<Block> = finality_grandpa::Message<<Block as BlockT>::Hash, NumberFor<Block>>;
 
 /// A signed message.
@@ -740,7 +740,7 @@ pub fn grandpa_peers_set_config(
 	sc_network::config::NonDefaultSetConfig {
 		notifications_protocol: protocol_name,
 		fallback_names: grandpa_protocol_name::LEGACY_NAMES.iter().map(|&n| n.into()).collect(),
-		// Notifications reach ~256kiB in size at the time of writing on Kusama and Polkadot.
+		// Notifications reach ~256kiB in size at the time of writing on AxiaTest and Axia.
 		max_notification_size: 1024 * 1024,
 		set_config: sc_network::config::SetConfig {
 			in_peers: 0,

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -154,7 +154,7 @@ struct AddExtraGenesisLine {
 	pub attrs: ext::OuterAttributes,
 	pub config_keyword: keyword::config,
 	pub extra_field: ext::Parens<Ident>,
-	pub coldot_token: Token![:],
+	pub colaxc_token: Token![:],
 	pub extra_type: syn::Type,
 	pub default_value: Opt<DeclStorageDefault>,
 }
@@ -171,7 +171,7 @@ struct DeclStorageLine {
 	pub config: Opt<DeclStorageConfig>,
 	pub max_values: Opt<DeclStorageMaxValues>,
 	pub build: Opt<DeclStorageBuild>,
-	pub coldot_token: Token![:],
+	pub colaxc_token: Token![:],
 	pub storage_type: DeclStorageType,
 	pub default_value: Opt<DeclStorageDefault>,
 }

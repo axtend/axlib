@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -72,7 +72,7 @@ pub enum AccountVote<Balance> {
 	/// A standard vote, one-way (approve or reject) with a given amount of conviction.
 	Standard { vote: Vote, balance: Balance },
 	/// A split vote with balances given for both ways, and with no conviction, useful for
-	/// parachains when voting.
+	/// allychains when voting.
 	Split { aye: Balance, nay: Balance },
 }
 

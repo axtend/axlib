@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Substrate runtime api
+//! Axlib runtime api
 //!
-//! The Substrate runtime api is the interface between the node and the runtime. There isn't a fixed
+//! The Axlib runtime api is the interface between the node and the runtime. There isn't a fixed
 //! set of runtime apis, instead it is up to the user to declare and implement these runtime apis.
 //! The declaration of a runtime api is normally done outside of a runtime, while the implementation
 //! of it has to be done in the runtime. We provide the [`decl_runtime_apis!`] macro for declaring
@@ -25,7 +25,7 @@
 //! information on how to use them and what kind of attributes we support.
 //!
 //! It is required that each runtime implements at least the [`Core`] runtime api. This runtime api
-//! provides all the core functions that Substrate expects from a runtime.
+//! provides all the core functions that Axlib expects from a runtime.
 //!
 //! # Versioning
 //!
@@ -43,7 +43,7 @@
 //!
 //! # Logging
 //!
-//! Substrate supports logging from the runtime in native and in wasm. For that purpose it provides
+//! Axlib supports logging from the runtime in native and in wasm. For that purpose it provides
 //! the [`RuntimeLogger`](sp_runtime::runtime_logger::RuntimeLogger). This runtime logger is
 //! automatically enabled for each call into the runtime through the runtime api. As logging
 //! introduces extra code that isn't actually required for the logic of your runtime and also
@@ -77,7 +77,7 @@ pub use codec::{self, Decode, DecodeLimit, Encode};
 pub use hash_db::Hasher;
 #[doc(hidden)]
 #[cfg(not(feature = "std"))]
-pub use sp_core::to_substrate_wasm_fn_return_value;
+pub use sp_core::to_axlib_wasm_fn_return_value;
 #[doc(hidden)]
 #[cfg(feature = "std")]
 pub use sp_core::NativeOrEncoded;
@@ -658,7 +658,7 @@ pub fn deserialize_runtime_api_info(bytes: [u8; RUNTIME_API_INFO_SIZE]) -> ([u8;
 }
 
 decl_runtime_apis! {
-	/// The `Core` runtime api that every Substrate runtime needs to implement.
+	/// The `Core` runtime api that every Axlib runtime needs to implement.
 	#[core_trait]
 	#[api_version(4)]
 	pub trait Core {

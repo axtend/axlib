@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -58,8 +58,8 @@ pub enum DatabaseSize {
 }
 
 lazy_static! {
-	static ref KUSAMA_STATE_DISTRIBUTION: SizePool =
-		SizePool::from_histogram(crate::state_sizes::KUSAMA_STATE_DISTRIBUTION);
+	static ref AXIATEST_STATE_DISTRIBUTION: SizePool =
+		SizePool::from_histogram(crate::state_sizes::AXIATEST_STATE_DISTRIBUTION);
 }
 
 impl DatabaseSize {
@@ -115,7 +115,7 @@ impl core::BenchmarkDescription for TrieReadBenchmarkDescription {
 		let mut database = TempDatabase::new();
 
 		let mut rng = rand::thread_rng();
-		let warmup_prefix = KUSAMA_STATE_DISTRIBUTION.key(&mut rng);
+		let warmup_prefix = AXIATEST_STATE_DISTRIBUTION.key(&mut rng);
 
 		let mut key_values = KeyValues::new();
 		let mut warmup_keys = KeyValues::new();
@@ -123,8 +123,8 @@ impl core::BenchmarkDescription for TrieReadBenchmarkDescription {
 		let every_x_key = self.database_size.keys() / SAMPLE_SIZE;
 		for idx in 0..self.database_size.keys() {
 			let kv = (
-				KUSAMA_STATE_DISTRIBUTION.key(&mut rng).to_vec(),
-				KUSAMA_STATE_DISTRIBUTION.value(&mut rng),
+				AXIATEST_STATE_DISTRIBUTION.key(&mut rng).to_vec(),
+				AXIATEST_STATE_DISTRIBUTION.value(&mut rng),
 			);
 			if idx % every_x_key == 0 {
 				// warmup keys go to separate tree with high prob
@@ -225,15 +225,15 @@ impl core::BenchmarkDescription for TrieWriteBenchmarkDescription {
 		let mut database = TempDatabase::new();
 
 		let mut rng = rand::thread_rng();
-		let warmup_prefix = KUSAMA_STATE_DISTRIBUTION.key(&mut rng);
+		let warmup_prefix = AXIATEST_STATE_DISTRIBUTION.key(&mut rng);
 
 		let mut key_values = KeyValues::new();
 		let mut warmup_keys = KeyValues::new();
 		let every_x_key = self.database_size.keys() / SAMPLE_SIZE;
 		for idx in 0..self.database_size.keys() {
 			let kv = (
-				KUSAMA_STATE_DISTRIBUTION.key(&mut rng).to_vec(),
-				KUSAMA_STATE_DISTRIBUTION.value(&mut rng),
+				AXIATEST_STATE_DISTRIBUTION.key(&mut rng).to_vec(),
+				AXIATEST_STATE_DISTRIBUTION.value(&mut rng),
 			);
 			if idx % every_x_key == 0 {
 				// warmup keys go to separate tree with high prob

@@ -1,18 +1,18 @@
-// Copyright 2020 Parity Technologies (UK) Ltd.
-// This file is part of Substrate.
+// Copyright 2020 Axia Technologies (UK) Ltd.
+// This file is part of Axlib.
 
-// Substrate is free software: you can redistribute it and/or modify
+// Axlib is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 
-// Substrate is distributed in the hope that it will be useful,
+// Axlib is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with Substrate.  If not, see <http://www.gnu.org/licenses/>.
+// along with Axlib.  If not, see <http://www.gnu.org/licenses/>.
 
 //! Helper for handling (i.e. answering) block requests from a remote peer via the
 //! `crate::request_responses::RequestResponsesBehaviour`.
@@ -301,7 +301,7 @@ impl<B: BlockT> BlockRequestHandler<B> {
 					// receiving we need to add the engine ID tag.
 					// The ID tag is hardcoded here to avoid depending on the GRANDPA crate, and
 					// will be removed once we remove the backwards compatibility.
-					// See: https://github.com/paritytech/substrate/issues/8172
+					// See: https://github.com/axiatech/axlib/issues/8172
 					let justification =
 						justifications.and_then(|just| just.into_justification(*b"FRNK"));
 

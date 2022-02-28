@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,14 +22,14 @@
 //! For that use case it's common to use some aggregated data structure (like MMR) to be
 //! used in conjunction with BEEFY, to be able to efficiently prove any past blockchain data.
 //!
-//! This module contains primitives used by Polkadot implementation of the BEEFY+MMR bridge,
-//! but we imagine they will be useful for other chains that either want to bridge with Polkadot
-//! or are completely standalone, but heavily inspired by Polkadot.
+//! This module contains primitives used by Axia implementation of the BEEFY+MMR bridge,
+//! but we imagine they will be useful for other chains that either want to bridge with Axia
+//! or are completely standalone, but heavily inspired by Axia.
 
 use codec::{Decode, Encode, MaxEncodedLen};
 use scale_info::TypeInfo;
 
-/// A standard leaf that gets added every block to the MMR constructed by Substrate's `pallet_mmr`.
+/// A standard leaf that gets added every block to the MMR constructed by Axlib's `pallet_mmr`.
 #[derive(Debug, PartialEq, Eq, Clone, Encode, Decode)]
 pub struct MmrLeaf<BlockNumber, Hash, MerkleRoot> {
 	/// Version of the leaf format.
@@ -41,8 +41,8 @@ pub struct MmrLeaf<BlockNumber, Hash, MerkleRoot> {
 	pub parent_number_and_hash: (BlockNumber, Hash),
 	/// A merkle root of the next BEEFY authority set.
 	pub beefy_next_authority_set: BeefyNextAuthoritySet<MerkleRoot>,
-	/// A merkle root of all registered parachain heads.
-	pub parachain_heads: MerkleRoot,
+	/// A merkle root of all registered allychain heads.
+	pub allychain_heads: MerkleRoot,
 }
 
 /// A MMR leaf versioning scheme.

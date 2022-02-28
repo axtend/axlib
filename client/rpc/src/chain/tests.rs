@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -23,14 +23,14 @@ use futures::executor;
 use sc_block_builder::BlockBuilderProvider;
 use sp_consensus::BlockOrigin;
 use sp_rpc::list::ListOrValue;
-use substrate_test_runtime_client::{
+use axlib_test_runtime_client::{
 	prelude::*,
 	runtime::{Block, Header, H256},
 };
 
 #[test]
 fn should_return_header() {
-	let client = Arc::new(substrate_test_runtime_client::new());
+	let client = Arc::new(axlib_test_runtime_client::new());
 	let api = new_full(client.clone(), SubscriptionManager::new(Arc::new(TaskExecutor)));
 
 	assert_matches!(
@@ -65,7 +65,7 @@ fn should_return_header() {
 
 #[test]
 fn should_return_a_block() {
-	let mut client = Arc::new(substrate_test_runtime_client::new());
+	let mut client = Arc::new(axlib_test_runtime_client::new());
 	let api = new_full(client.clone(), SubscriptionManager::new(Arc::new(TaskExecutor)));
 
 	let block = client.new_block(Default::default()).unwrap().build().unwrap().block;
@@ -113,7 +113,7 @@ fn should_return_a_block() {
 
 #[test]
 fn should_return_block_hash() {
-	let mut client = Arc::new(substrate_test_runtime_client::new());
+	let mut client = Arc::new(axlib_test_runtime_client::new());
 	let api = new_full(client.clone(), SubscriptionManager::new(Arc::new(TaskExecutor)));
 
 	assert_matches!(
@@ -155,7 +155,7 @@ fn should_return_block_hash() {
 
 #[test]
 fn should_return_finalized_hash() {
-	let mut client = Arc::new(substrate_test_runtime_client::new());
+	let mut client = Arc::new(axlib_test_runtime_client::new());
 	let api = new_full(client.clone(), SubscriptionManager::new(Arc::new(TaskExecutor)));
 
 	assert_matches!(
@@ -185,7 +185,7 @@ fn should_notify_about_latest_block() {
 	let (subscriber, id, mut transport) = Subscriber::new_test("test");
 
 	{
-		let mut client = Arc::new(substrate_test_runtime_client::new());
+		let mut client = Arc::new(axlib_test_runtime_client::new());
 		let api = new_full(client.clone(), SubscriptionManager::new(Arc::new(TaskExecutor)));
 
 		api.subscribe_all_heads(Default::default(), subscriber);
@@ -207,7 +207,7 @@ fn should_notify_about_best_block() {
 	let (subscriber, id, mut transport) = Subscriber::new_test("test");
 
 	{
-		let mut client = Arc::new(substrate_test_runtime_client::new());
+		let mut client = Arc::new(axlib_test_runtime_client::new());
 		let api = new_full(client.clone(), SubscriptionManager::new(Arc::new(TaskExecutor)));
 
 		api.subscribe_new_heads(Default::default(), subscriber);
@@ -229,7 +229,7 @@ fn should_notify_about_finalized_block() {
 	let (subscriber, id, mut transport) = Subscriber::new_test("test");
 
 	{
-		let mut client = Arc::new(substrate_test_runtime_client::new());
+		let mut client = Arc::new(axlib_test_runtime_client::new());
 		let api = new_full(client.clone(), SubscriptionManager::new(Arc::new(TaskExecutor)));
 
 		api.subscribe_finalized_heads(Default::default(), subscriber);

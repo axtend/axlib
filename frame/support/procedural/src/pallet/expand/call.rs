@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -141,7 +141,7 @@ pub fn expand_call(def: &mut Def) -> proc_macro2::TokenStream {
 
 	quote::quote_spanned!(span =>
 		#[doc(hidden)]
-		pub mod __substrate_call_check {
+		pub mod __axlib_call_check {
 			#[macro_export]
 			#[doc(hidden)]
 			macro_rules! #macro_ident {

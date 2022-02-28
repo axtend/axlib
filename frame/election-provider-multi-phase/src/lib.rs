@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -143,13 +143,13 @@
 //! select only a small number of emergency winners (which would greatly restrict the next validator
 //! set, if this pallet is used with `pallet-staking`). If the failure is for other technical
 //! reasons, then a simple and safe way to generate supports is using the staking-miner binary
-//! provided in the Polkadot repository. This binary has a subcommand named `emergency-solution`
+//! provided in the Axia repository. This binary has a subcommand named `emergency-solution`
 //! which is capable of connecting to a live network, and generating appropriate `supports` using a
 //! standard algorithm, and outputting the `supports` in hex format, ready for submission. Note that
-//! while this binary lives in the Polkadot repository, this particular subcommand of it can work
-//! against any substrate based-chain.
+//! while this binary lives in the Axia repository, this particular subcommand of it can work
+//! against any axlib based-chain.
 //!
-//! See the `staking-miner` documentation in the Polkadot repository for more information.
+//! See the `staking-miner` documentation in the Axia repository for more information.
 //!
 //! ## Feasible Solution (correct solution)
 //!
@@ -192,7 +192,7 @@
 //! ## Future Plans
 //!
 //! **Emergency-phase recovery script**: This script should be taken out of staking-miner in
-//! polkadot and ideally live in `substrate/utils/frame/elections`.
+//! polkaaxc and ideally live in `axlib/utils/frame/elections`.
 //!
 //! **Challenge Phase**. We plan on adding a third phase to the pallet, called the challenge phase.
 //! This is a phase in which no further solutions are processed, and the current best solution might
@@ -210,7 +210,7 @@
 //! portion of the bond).
 //!
 //! **Conditionally open unsigned phase**: Currently, the unsigned phase is always opened. This is
-//! useful because an honest validator will run substrate OCW code, which should be good enough to
+//! useful because an honest validator will run axlib OCW code, which should be good enough to
 //! trump a mediocre or malicious signed submission (assuming in the absence of honest signed bots).
 //! If there are signed submissions, they can be checked against an absolute measure (e.g. PJR),
 //! then we can only open the unsigned phase in extreme conditions (i.e. "no good signed solution
@@ -2103,7 +2103,7 @@ mod tests {
 
 	#[test]
 	fn number_of_voters_allowed_2sec_block() {
-		// Just a rough estimate with the substrate weights.
+		// Just a rough estimate with the axlib weights.
 		assert!(!MockWeightInfo::get());
 
 		let all_voters: u32 = 10_000;

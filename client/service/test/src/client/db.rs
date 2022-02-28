@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -19,20 +19,20 @@
 use sp_core::offchain::{storage::InMemOffchainStorage, OffchainStorage};
 use std::sync::Arc;
 
-type TestBackend = sc_client_api::in_mem::Backend<substrate_test_runtime::Block>;
+type TestBackend = sc_client_api::in_mem::Backend<axlib_test_runtime::Block>;
 
 #[test]
 fn test_leaves_with_complex_block_tree() {
 	let backend = Arc::new(TestBackend::new());
 
-	substrate_test_runtime_client::trait_tests::test_leaves_for_backend(backend);
+	axlib_test_runtime_client::trait_tests::test_leaves_for_backend(backend);
 }
 
 #[test]
 fn test_blockchain_query_by_number_gets_canonical() {
 	let backend = Arc::new(TestBackend::new());
 
-	substrate_test_runtime_client::trait_tests::test_blockchain_query_by_number_gets_canonical(
+	axlib_test_runtime_client::trait_tests::test_blockchain_query_by_number_gets_canonical(
 		backend,
 	);
 }

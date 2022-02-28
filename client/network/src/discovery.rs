@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,12 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Discovery mechanisms of Substrate.
+//! Discovery mechanisms of Axlib.
 //!
 //! The `DiscoveryBehaviour` struct implements the `NetworkBehaviour` trait of libp2p and is
 //! responsible for discovering other nodes that are part of the network.
 //!
-//! Substrate uses the following mechanisms in order to discover nodes that are part of the network:
+//! Axlib uses the following mechanisms in order to discover nodes that are part of the network:
 //!
 //! - Bootstrap nodes. These are hard-coded node identities and addresses passed in the constructor
 //! of the `DiscoveryBehaviour`. You can also call `add_known_address` later to add an entry.
@@ -1033,7 +1033,7 @@ mod tests {
 	#[test]
 	fn discovery_working() {
 		let mut first_swarm_peer_id_and_addr = None;
-		let protocol_id = ProtocolId::from("dot");
+		let protocol_id = ProtocolId::from("axc");
 
 		// Build swarms whose behaviour is `DiscoveryBehaviour`, each aware of
 		// the first swarm via `with_permanent_addresses`.

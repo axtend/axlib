@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -254,13 +254,13 @@ pub enum BasePath {
 }
 
 impl BasePath {
-	/// Create a `BasePath` instance using a temporary directory prefixed with "substrate" and use
+	/// Create a `BasePath` instance using a temporary directory prefixed with "axlib" and use
 	/// it as base path.
 	///
 	/// Note: the temporary directory will be created automatically and deleted when the `BasePath`
 	/// instance is dropped.
 	pub fn new_temp_dir() -> io::Result<BasePath> {
-		Ok(BasePath::Temporary(tempfile::Builder::new().prefix("substrate").tempdir()?))
+		Ok(BasePath::Temporary(tempfile::Builder::new().prefix("axlib").tempdir()?))
 	}
 
 	/// Create a `BasePath` instance based on an existing path on disk.

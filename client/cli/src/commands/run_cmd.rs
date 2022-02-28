@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -58,7 +58,7 @@ pub struct RunCmd {
 	///
 	/// Default is local. Note: not all RPC methods are safe to be exposed publicly. Use an RPC
 	/// proxy server to filter out dangerous methods. More details:
-	/// <https://docs.substrate.io/v3/runtime/custom-rpcs/#public-rpcs>.
+	/// <https://docs.axlib.io/v3/runtime/custom-rpcs/#public-rpcs>.
 	/// Use `--unsafe-rpc-external` to suppress the warning if you understand the risks.
 	#[clap(long)]
 	pub rpc_external: bool,
@@ -89,7 +89,7 @@ pub struct RunCmd {
 	///
 	/// Default is local. Note: not all RPC methods are safe to be exposed publicly. Use an RPC
 	/// proxy server to filter out dangerous methods. More details:
-	/// <https://docs.substrate.io/v3/runtime/custom-rpcs/#public-rpcs>.
+	/// <https://docs.axlib.io/v3/runtime/custom-rpcs/#public-rpcs>.
 	/// Use `--unsafe-ws-external` to suppress the warning if you understand the risks.
 	#[clap(long)]
 	pub ws_external: bool,
@@ -135,7 +135,7 @@ pub struct RunCmd {
 	///
 	/// A comma-separated list of origins (protocol://domain or special `null`
 	/// value). Value of `all` will disable origin validation. Default is to
-	/// allow localhost and <https://polkadot.js.org> origins. When running in
+	/// allow localhost and <https://polkaaxc.js.org> origins. When running in
 	/// --dev mode the default is to allow all origins.
 	#[clap(long, value_name = "ORIGINS", parse(from_str = parse_cors))]
 	pub rpc_cors: Option<Cors>,
@@ -156,7 +156,7 @@ pub struct RunCmd {
 	#[clap(long, value_name = "NAME")]
 	pub name: Option<String>,
 
-	/// Disable connecting to the Substrate telemetry server.
+	/// Disable connecting to the Axlib telemetry server.
 	///
 	/// Telemetry is on by default on global chains.
 	#[clap(long)]
@@ -408,7 +408,7 @@ impl CliConfiguration for RunCmd {
 						"http://127.0.0.1:*".into(),
 						"https://localhost:*".into(),
 						"https://127.0.0.1:*".into(),
-						"https://polkadot.js.org".into(),
+						"https://polkaaxc.js.org".into(),
 					])
 				}
 			})
@@ -616,7 +616,7 @@ mod tests {
 			"very very long names are really not very cool for the ui at all, really they're not"
 		)
 		.is_err());
-		assert!(is_node_name_valid("Dots.not.Ok").is_err());
+		assert!(is_node_name_valid("Axcs.not.Ok").is_err());
 		assert!(is_node_name_valid("http://visit.me").is_err());
 		assert!(is_node_name_valid("https://visit.me").is_err());
 		assert!(is_node_name_valid("www.visit.me").is_err());

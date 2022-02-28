@@ -1,8 +1,8 @@
 [package]
 name = "node-bench"
 version = "0.9.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
-description = "Substrate node integration benchmarks."
+authors = ["Axia Technologies <admin@axia.io>"]
+description = "Axlib node integration benchmarks."
 edition = "2021"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
 

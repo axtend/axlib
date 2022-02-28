@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -47,7 +47,7 @@ use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
 use sp_runtime_interface::pass_by::PassByInner;
 use sp_std::ops::Deref;
 #[cfg(feature = "std")]
-use substrate_bip39::seed_from_entropy;
+use axlib_bip39::seed_from_entropy;
 
 /// An identifier used to match public keys against ed25519 keys
 pub const CRYPTO_ID: CryptoTypeId = CryptoTypeId(*b"ed25");

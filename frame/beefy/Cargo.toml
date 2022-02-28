@@ -1,10 +1,10 @@
 [package]
 name = "pallet-beefy"
 version = "4.0.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
-repository = "https://github.com/paritytech/substrate"
+repository = "https://github.com/axiatech/axlib"
 description = "BEEFY FRAME pallet"
 
 [dependencies]

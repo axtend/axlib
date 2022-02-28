@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@
 
 //! # Remote Externalities
 //!
-//! An equivalent of `sp_io::TestExternalities` that can load its state from a remote substrate
+//! An equivalent of `sp_io::TestExternalities` that can load its state from a remote axlib
 //! based chain, or a local state snapshot file.
 
 use codec::{Decode, Encode};
@@ -54,7 +54,7 @@ type TopKeyValues = Vec<KeyValue>;
 type ChildKeyValues = Vec<(ChildInfo, Vec<KeyValue>)>;
 
 const LOG_TARGET: &str = "remote-ext";
-const DEFAULT_TARGET: &str = "wss://rpc.polkadot.io:443";
+const DEFAULT_TARGET: &str = "wss://rpc.polkaaxc.io:443";
 const BATCH_SIZE: usize = 1000;
 
 #[rpc(client)]
@@ -986,7 +986,7 @@ mod remote_tests {
 		init_logger();
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://kusama-rpc.polkadot.io:443".to_owned().into(),
+				transport: "wss://axctest-rpc.polkaaxc.io:443".to_owned().into(),
 				pallets: vec!["Council".to_owned()],
 				..Default::default()
 			}))
@@ -997,7 +997,7 @@ mod remote_tests {
 
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://rpc.polkadot.io:443".to_owned().into(),
+				transport: "wss://rpc.polkaaxc.io:443".to_owned().into(),
 				pallets: vec!["Council".to_owned()],
 				..Default::default()
 			}))
@@ -1012,7 +1012,7 @@ mod remote_tests {
 		init_logger();
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://kusama-rpc.polkadot.io:443".to_owned().into(),
+				transport: "wss://axctest-rpc.polkaaxc.io:443".to_owned().into(),
 				pallets: vec!["Proxy".to_owned(), "Multisig".to_owned()],
 				..Default::default()
 			}))
@@ -1023,7 +1023,7 @@ mod remote_tests {
 
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://rpc.polkadot.io:443".to_owned().into(),
+				transport: "wss://rpc.polkaaxc.io:443".to_owned().into(),
 				pallets: vec!["Proxy".to_owned(), "Multisig".to_owned()],
 				..Default::default()
 			}))
@@ -1078,7 +1078,7 @@ mod remote_tests {
 		init_logger();
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://rpc.polkadot.io:443".to_owned().into(),
+				transport: "wss://rpc.polkaaxc.io:443".to_owned().into(),
 				pallets: vec!["Crowdloan".to_owned()],
 				..Default::default()
 			}))

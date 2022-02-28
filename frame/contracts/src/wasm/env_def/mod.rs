@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,7 @@ use super::Runtime;
 use crate::exec::Ext;
 
 use sp_sandbox::Value;
-use wasm_instrument::parity_wasm::elements::{FunctionType, ValueType};
+use wasm_instrument::axia_wasm::elements::{FunctionType, ValueType};
 
 #[macro_use]
 pub mod macros;

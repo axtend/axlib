@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -48,7 +48,7 @@ impl RpcMetrics {
 				requests_started: register(
 					CounterVec::new(
 						Opts::new(
-							"substrate_rpc_requests_started",
+							"axlib_rpc_requests_started",
 							"Number of RPC requests (not calls) received by the server.",
 						),
 						&["protocol"],
@@ -58,7 +58,7 @@ impl RpcMetrics {
 				requests_finished: register(
 					CounterVec::new(
 						Opts::new(
-							"substrate_rpc_requests_finished",
+							"axlib_rpc_requests_finished",
 							"Number of RPC requests (not calls) processed by the server.",
 						),
 						&["protocol"],
@@ -68,7 +68,7 @@ impl RpcMetrics {
 				calls_time: register(
 					HistogramVec::new(
 						HistogramOpts::new(
-							"substrate_rpc_calls_time",
+							"axlib_rpc_calls_time",
 							"Total time [μs] of processed RPC calls",
 						),
 						&["protocol", "method"],
@@ -78,7 +78,7 @@ impl RpcMetrics {
 				calls_started: register(
 					CounterVec::new(
 						Opts::new(
-							"substrate_rpc_calls_started",
+							"axlib_rpc_calls_started",
 							"Number of received RPC calls (unique un-batched requests)",
 						),
 						&["protocol", "method"],
@@ -88,7 +88,7 @@ impl RpcMetrics {
 				calls_finished: register(
 					CounterVec::new(
 						Opts::new(
-							"substrate_rpc_calls_finished",
+							"axlib_rpc_calls_finished",
 							"Number of processed RPC calls (unique un-batched requests)",
 						),
 						&["protocol", "method", "is_error"],

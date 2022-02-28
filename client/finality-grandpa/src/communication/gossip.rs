@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -84,7 +84,7 @@
 //!
 //! We only send polite messages to peers,
 
-use parity_scale_codec::{Decode, Encode};
+use axia_scale_codec::{Decode, Encode};
 use sc_network::{ObservedRole, PeerId, ReputationChange};
 use sc_network_gossip::{MessageIntent, ValidatorContext};
 use sp_finality_grandpa::AuthorityId;
@@ -1296,7 +1296,7 @@ impl Metrics {
 			messages_validated: register(
 				CounterVec::new(
 					Opts::new(
-						"substrate_finality_grandpa_communication_gossip_validator_messages",
+						"axlib_finality_grandpa_communication_gossip_validator_messages",
 						"Number of messages validated by the finality grandpa gossip validator.",
 					),
 					&["message", "action"],

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -103,7 +103,7 @@ impl BatchVerifier {
 	) -> bool {
 		self.spawn_verification_task(
 			move || ed25519::Pair::verify(&signature, &message, &pub_key),
-			"substrate_ed25519_verify",
+			"axlib_ed25519_verify",
 		)
 	}
 
@@ -126,7 +126,7 @@ impl BatchVerifier {
 			let items = std::mem::take(&mut self.sr25519_items);
 			self.spawn_verification_task(
 				move || Self::verify_sr25519_batch(items),
-				"substrate_sr25519_verify",
+				"axlib_sr25519_verify",
 			)
 		} else {
 			true
@@ -145,7 +145,7 @@ impl BatchVerifier {
 	) -> bool {
 		self.spawn_verification_task(
 			move || ecdsa::Pair::verify(&signature, &message, &pub_key),
-			"substrate_ecdsa_verify",
+			"axlib_ecdsa_verify",
 		)
 	}
 
@@ -178,7 +178,7 @@ impl BatchVerifier {
 		if pending.len() > 0 {
 			let (sender, receiver) = std::sync::mpsc::channel();
 			self.scheduler.spawn(
-				"substrate-batch-verify-join",
+				"axlib-batch-verify-join",
 				None,
 				async move {
 					futures::future::join_all(pending).await;

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,12 +33,12 @@ use sc_client_api::{
 };
 use sp_consensus::BlockOrigin;
 use sp_runtime::{generic::BlockId, traits::Block as BlockT};
-use substrate_test_runtime::{self, Transfer};
+use axlib_test_runtime::{self, Transfer};
 
 /// helper to test the `leaves` implementation for various backends
 pub fn test_leaves_for_backend<B: 'static>(backend: Arc<B>)
 where
-	B: backend::Backend<substrate_test_runtime::Block>,
+	B: backend::Backend<axlib_test_runtime::Block>,
 {
 	// block tree:
 	// G -> A1 -> A2 -> A3 -> A4 -> A5
@@ -178,7 +178,7 @@ where
 /// helper to test the `children` implementation for various backends
 pub fn test_children_for_backend<B: 'static>(backend: Arc<B>)
 where
-	B: backend::LocalBackend<substrate_test_runtime::Block>,
+	B: backend::LocalBackend<axlib_test_runtime::Block>,
 {
 	// block tree:
 	// G -> A1 -> A2 -> A3 -> A4 -> A5
@@ -312,7 +312,7 @@ where
 
 pub fn test_blockchain_query_by_number_gets_canonical<B: 'static>(backend: Arc<B>)
 where
-	B: backend::LocalBackend<substrate_test_runtime::Block>,
+	B: backend::LocalBackend<axlib_test_runtime::Block>,
 {
 	// block tree:
 	// G -> A1 -> A2 -> A3 -> A4 -> A5

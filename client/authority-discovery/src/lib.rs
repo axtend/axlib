@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -19,9 +19,9 @@
 #![warn(missing_docs)]
 #![recursion_limit = "1024"]
 
-//! Substrate authority discovery.
+//! Axlib authority discovery.
 //!
-//! This crate enables Substrate authorities to discover and directly connect to
+//! This crate enables Axlib authorities to discover and directly connect to
 //! other authorities. It is split into two components the [`Worker`] and the
 //! [`Service`].
 //!
@@ -98,7 +98,7 @@ impl Default for WorkerConfig {
 			// interval on which to trigger new queries for the current and next authorities is a
 			// trade off between efficiency and performance.
 			//
-			// Querying 700 [`AuthorityId`]s takes ~8m on the Kusama DHT (16th Nov 2020) when
+			// Querying 700 [`AuthorityId`]s takes ~8m on the AxiaTest DHT (16th Nov 2020) when
 			// comparing `authority_discovery_authority_addresses_requested_total` and
 			// `authority_discovery_dht_event_received`.
 			max_query_interval: Duration::from_secs(10 * 60),

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2015-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2015-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Utility functions to interact with Substrate's Base-16 Modified Merkle Patricia tree ("trie").
+//! Utility functions to interact with Axlib's Base-16 Modified Merkle Patricia tree ("trie").
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
@@ -34,7 +34,7 @@ use hash_db::{Hasher, Prefix};
 pub use memory_db::prefixed_key;
 /// Various re-exports from the `memory-db` crate.
 pub use memory_db::KeyFunction;
-/// The Substrate format implementation of `NodeCodec`.
+/// The Axlib format implementation of `NodeCodec`.
 pub use node_codec::NodeCodec;
 use sp_std::{borrow::Borrow, boxed::Box, marker::PhantomData, vec::Vec};
 pub use storage_proof::{CompactProof, StorageProof};
@@ -50,13 +50,13 @@ pub use trie_db::{
 	CError, DBValue, Query, Recorder, Trie, TrieConfiguration, TrieDBIterator, TrieDBKeyIterator,
 	TrieLayout, TrieMut,
 };
-/// The Substrate format implementation of `TrieStream`.
+/// The Axlib format implementation of `TrieStream`.
 pub use trie_stream::TrieStream;
 
-/// substrate trie layout
+/// axlib trie layout
 pub struct LayoutV0<H>(sp_std::marker::PhantomData<H>);
 
-/// substrate trie layout, with external value nodes.
+/// axlib trie layout, with external value nodes.
 pub struct LayoutV1<H>(sp_std::marker::PhantomData<H>);
 
 impl<H> TrieLayout for LayoutV0<H>

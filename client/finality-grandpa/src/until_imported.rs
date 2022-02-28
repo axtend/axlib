@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -100,7 +100,7 @@ impl Metrics {
 		Ok(Self {
 			global_waiting_messages: register(
 				Gauge::new(
-					"substrate_finality_grandpa_until_imported_waiting_messages_number",
+					"axlib_finality_grandpa_until_imported_waiting_messages_number",
 					"Number of finality grandpa messages waiting within the until imported queue.",
 				)?,
 				registry,
@@ -564,7 +564,7 @@ mod tests {
 	use sc_utils::mpsc::{tracing_unbounded, TracingUnboundedSender};
 	use sp_consensus::BlockOrigin;
 	use sp_core::crypto::UncheckedFrom;
-	use substrate_test_runtime_client::runtime::{Block, Hash, Header};
+	use axlib_test_runtime_client::runtime::{Block, Hash, Header};
 
 	#[derive(Clone)]
 	struct TestChainState {

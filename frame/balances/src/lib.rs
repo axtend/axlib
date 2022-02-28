@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -986,7 +986,7 @@ impl<T: Config<I>, I: 'static> Pallet<T, I> {
 			Locks::<T, I>::remove(who);
 			if existed {
 				// TODO: use Locks::<T, I>::hashed_key
-				// https://github.com/paritytech/substrate/issues/4969
+				// https://github.com/axiatech/axlib/issues/4969
 				system::Pallet::<T>::dec_consumers(who);
 			}
 		} else {

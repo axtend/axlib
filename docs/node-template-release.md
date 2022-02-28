@@ -1,22 +1,22 @@
-# Substrate Node Template Release Process
+# Axlib Node Template Release Process
 
-1. This release process has to be run in a github checkout Substrate directory with your work
-committed into `https://github.com/paritytech/substrate/`, because the build script will check
+1. This release process has to be run in a github checkout Axlib directory with your work
+committed into `https://github.com/axiatech/axlib/`, because the build script will check
 the existence of your current git commit ID in the remote repository.
 
-	Assume you are in root directory of Substrate. Run:
+	Assume you are in root directory of Axlib. Run:
 
 	```bash
 	cd .maintain/
 	./node-template-release.sh <output tar.gz file>
 	```
 
-2. Expand the output tar gzipped file and replace files in current Substrate Node Template
+2. Expand the output tar gzipped file and replace files in current Axlib Node Template
 by running the following command.
 
 	```bash
 	# This is where the tar.gz file uncompressed
-	cd substrate-node-template
+	cd axlib-node-template
 	# rsync with force copying. Note the slash at the destination directory is important
 	rsync -avh * <destination node-template directory>/
 	# For dry-running add `-n` argument
@@ -30,12 +30,12 @@ by running the following command.
 3. There are actually three packages in the Node Template, `node-template` (the node),
 `node-template-runtime` (the runtime), and `pallet-template`, and each has its own `Cargo.toml`.
 Inside these three files, dependencies are listed in expanded form and linked to a certain git
-commit in Substrate remote repository, such as:
+commit in Axlib remote repository, such as:
 
 	```toml
 	[dev-dependencies.sp-core]
 	default-features = false
-	git = 'https://github.com/paritytech/substrate.git'
+	git = 'https://github.com/axiatech/axlib.git'
 	rev = 'c1fe59d060600a10eebb4ace277af1fee20bad17'
 	version = '3.0.0'
 	```
@@ -53,16 +53,16 @@ commit in Substrate remote repository, such as:
 	`.maintain/node-template-release`.
 
 4. Once the three `Cargo.toml`s are updated, compile and confirm that the Node Template builds. Then
-commit the changes to a new branch in [Substrate Node Template](https://github.com/substrate-developer-hub/substrate-node-template), and make a PR.
+commit the changes to a new branch in [Axlib Node Template](https://github.com/axlib-developer-hub/axlib-node-template), and make a PR.
 
-	> Note that there is a chance the code in Substrate Node Template works with the linked Substrate git
+	> Note that there is a chance the code in Axlib Node Template works with the linked Axlib git
 	commit but not with published packages due to the latest (as yet) unpublished features. In this case,
 	rollback that section of the Node Template to its previous version to ensure the Node Template builds.
 
 5. Once the PR is merged, tag the merged commit in master branch with the version number
 `vX.Y.Z+A` (e.g. `v3.0.0+1`). The `X`(major), `Y`(minor), and `Z`(patch) version number should
-follow Substrate release version. The last digit is any significant fixes made in the Substrate
-Node Template apart from Substrate. When the Substrate version is updated, this digit is reset to 0.
+follow Axlib release version. The last digit is any significant fixes made in the Axlib
+Node Template apart from Axlib. When the Axlib version is updated, this digit is reset to 0.
 
 ## Troubleshooting
 

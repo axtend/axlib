@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -66,28 +66,28 @@ impl Metrics {
 		Ok(Self {
 			block_constructed: register(
 				Histogram::with_opts(HistogramOpts::new(
-					"substrate_proposer_block_constructed",
+					"axlib_proposer_block_constructed",
 					"Histogram of time taken to construct new block",
 				))?,
 				registry,
 			)?,
 			number_of_transactions: register(
 				Gauge::new(
-					"substrate_proposer_number_of_transactions",
+					"axlib_proposer_number_of_transactions",
 					"Number of transactions included in block",
 				)?,
 				registry,
 			)?,
 			create_inherents_time: register(
 				Histogram::with_opts(HistogramOpts::new(
-					"substrate_proposer_create_inherents_time",
+					"axlib_proposer_create_inherents_time",
 					"Histogram of time taken to execute create inherents",
 				))?,
 				registry,
 			)?,
 			create_block_proposal_time: register(
 				Histogram::with_opts(HistogramOpts::new(
-					"substrate_proposer_block_proposal_time",
+					"axlib_proposer_block_proposal_time",
 					"Histogram of time taken to construct a block and prepare it for proposal",
 				))?,
 				registry,
@@ -95,7 +95,7 @@ impl Metrics {
 			end_proposing_reason: register(
 				CounterVec::new(
 					Opts::new(
-						"substrate_proposer_end_proposal_reason",
+						"axlib_proposer_end_proposal_reason",
 						"The reason why the block proposing was ended. This doesn't include errors.",
 					),
 					&["reason"],

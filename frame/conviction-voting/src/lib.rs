@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -108,7 +108,7 @@ pub mod pallet {
 
 		/// The maximum amount of tokens which may be used for voting. May just be
 		/// `Currency::total_issuance`, but you might want to reduce this in order to account for
-		/// funds in the system which are unable to vote (e.g. parachain auction deposits).
+		/// funds in the system which are unable to vote (e.g. allychain auction deposits).
 		type MaxTurnout: Get<BalanceOf<Self>>;
 
 		/// The maximum number of concurrent votes an account may have.

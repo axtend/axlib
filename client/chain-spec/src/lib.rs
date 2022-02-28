@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate chain configurations.
+//! Axlib chain configurations.
 //!
 //! This crate contains structs and utilities to declare
 //! a runtime-specific configuration file (a.k.a chain spec).
@@ -25,7 +25,7 @@
 //! [`GenericChainSpec`]. It can be extended with
 //! additional options that contain configuration specific to your chain.
 //! Usually the extension is going to be an amalgamate of types exposed
-//! by Substrate core modules. To allow the core modules to retrieve
+//! by Axlib core modules. To allow the core modules to retrieve
 //! their configuration from your extension you should use `ChainSpecExtension`
 //! macro exposed by this crate.
 //!

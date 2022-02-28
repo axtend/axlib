@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -173,7 +173,7 @@ mod tests {
 	use jsonrpc_core::{types::Params, Notification, Output};
 	use std::{collections::HashSet, convert::TryInto, sync::Arc};
 
-	use parity_scale_codec::{Decode, Encode};
+	use axia_scale_codec::{Decode, Encode};
 	use sc_block_builder::{BlockBuilder, RecordProof};
 	use sc_finality_grandpa::{
 		report, AuthorityId, FinalityProof, GrandpaJustification, GrandpaJustificationSender,
@@ -182,7 +182,7 @@ mod tests {
 	use sp_core::crypto::ByteArray;
 	use sp_keyring::Ed25519Keyring;
 	use sp_runtime::traits::{Block as BlockT, Header as HeaderT};
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		runtime::{Block, Header, H256},
 		DefaultTestClientBuilderExt, TestClientBuilder, TestClientBuilderExt,
 	};

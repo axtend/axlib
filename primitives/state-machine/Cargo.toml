@@ -1,12 +1,12 @@
 [package]
 name = "sp-state-machine"
 version = "0.11.0"
-authors = ["Parity Technologies <admin@parity.io>"]
-description = "Substrate State Machine"
+authors = ["Axia Technologies <admin@axia.io>"]
+description = "Axlib State Machine"
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axiatech/axlib/"
 documentation = "https://docs.rs/sp-state-machine"
 readme = "README.md"
 

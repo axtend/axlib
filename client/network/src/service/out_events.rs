@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 //! Registering events streams.
 //!
 //! This code holds the logic that is used for the network service to inform other parts of
-//! Substrate about what is happening.
+//! Axlib about what is happening.
 //!
 //! # Usage
 //!
@@ -192,7 +192,7 @@ impl Metrics {
 		Ok(Self {
 			events_total: register(CounterVec::new(
 				Opts::new(
-					"substrate_sub_libp2p_out_events_events_total",
+					"axlib_sub_libp2p_out_events_events_total",
 					"Number of broadcast network events that have been sent or received across all \
 					 channels"
 				),
@@ -200,7 +200,7 @@ impl Metrics {
 			)?, registry)?,
 			notifications_sizes: register(CounterVec::new(
 				Opts::new(
-					"substrate_sub_libp2p_out_events_notifications_sizes",
+					"axlib_sub_libp2p_out_events_notifications_sizes",
 					"Size of notification events that have been sent or received across all \
 					 channels"
 				),
@@ -208,7 +208,7 @@ impl Metrics {
 			)?, registry)?,
 			num_channels: register(GaugeVec::new(
 				Opts::new(
-					"substrate_sub_libp2p_out_events_num_channels",
+					"axlib_sub_libp2p_out_events_num_channels",
 					"Number of internal active channels that broadcast network events",
 				),
 				&["name"]

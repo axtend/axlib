@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -33,7 +33,7 @@ const LAST_PRUNED: &[u8] = b"last_pruned";
 const PRUNING_JOURNAL: &[u8] = b"pruning_journal";
 
 /// See module documentation.
-#[derive(parity_util_mem_derive::MallocSizeOf)]
+#[derive(axia_util_mem_derive::MallocSizeOf)]
 pub struct RefWindow<BlockHash: Hash, Key: Hash> {
 	/// A queue of keys that should be deleted for each block in the pruning window.
 	death_rows: VecDeque<DeathRow<BlockHash, Key>>,
@@ -53,7 +53,7 @@ pub struct RefWindow<BlockHash: Hash, Key: Hash> {
 	count_insertions: bool,
 }
 
-#[derive(Debug, PartialEq, Eq, parity_util_mem_derive::MallocSizeOf)]
+#[derive(Debug, PartialEq, Eq, axia_util_mem_derive::MallocSizeOf)]
 struct DeathRow<BlockHash: Hash, Key: Hash> {
 	hash: BlockHash,
 	journal_key: Vec<u8>,

@@ -1,6 +1,6 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -96,7 +96,7 @@ pub struct ExecutionExtensions<Block: traits::Block> {
 	strategies: ExecutionStrategies,
 	keystore: Option<SyncCryptoStorePtr>,
 	offchain_db: Option<Box<dyn DbExternalitiesFactory>>,
-	// FIXME: these two are only RwLock because of https://github.com/paritytech/substrate/issues/4587
+	// FIXME: these two are only RwLock because of https://github.com/axiatech/axlib/issues/4587
 	//        remove when fixed.
 	// To break retain cycle between `Client` and `TransactionPool` we require this
 	// extension to be a `Weak` reference.
