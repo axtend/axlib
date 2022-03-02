@@ -354,7 +354,7 @@ impl DatabaseSource {
 		match self {
 			// as per https://github.com/axiatech/axlib/pull/9500#discussion_r684312550
 			//
-			// IIUC this is needed for polkaaxc to create its own dbs, so until it can use axia db
+			// IIUC this is needed for axia to create its own dbs, so until it can use axia db
 			// I would think rocksdb, but later parity-db.
 			DatabaseSource::Auto { axiadb_path, .. } => Some(&axiadb_path),
 			DatabaseSource::RocksDb { path, .. } | DatabaseSource::AxiaDb { path } => Some(&path),

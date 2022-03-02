@@ -186,7 +186,7 @@ dependencies, you should use a specific Rust nightly version that is known to be
 compatible with the version of Axlib they are using; this version will vary from project to
 project and different projects may use different mechanisms to communicate this version to
 developers. For instance, the Axia client specifies this information in its
-[release notes](https://github.com/axiatech/polkaaxc/releases).
+[release notes](https://github.com/axiatech/axia/releases).
 
 ```bash
 # Specify the specific nightly toolchain in the date below:

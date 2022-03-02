@@ -46,15 +46,15 @@ cargo run --release -- --chain=sc.json -d /tmp/charlie --storage-chain --keep-bl
 To store data use the `transactionStorage.store` extrinsic. And IPFS CID can be generated from the Blake2-256 hash of the data.
 
 ```js
-const util_crypto = require('@polkaaxc/util-crypto');
-const keyring_api = require('@polkaaxc/keyring');
-const polkaaxc_api = require('@polkaaxc/api');
+const util_crypto = require('@axia/util-crypto');
+const keyring_api = require('@axia/keyring');
+const axia_api = require('@axia/api');
 const fs = require('fs');
 const multihash = require('multihashes');
 const CID = require('cids')
 
-const wsProvider = new polkaaxc_api.WsProvider();
-const api = await polkaaxc_api.ApiPromise.create({ provider: wsProvider });
+const wsProvider = new axia_api.WsProvider();
+const api = await axia_api.ApiPromise.create({ provider: wsProvider });
 
 const keyring = new keyring_api.Keyring({ type: "sr25519" });
 const alice = keyring.addFromUri("//Alice");

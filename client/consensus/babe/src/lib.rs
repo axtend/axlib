@@ -61,7 +61,7 @@
 //! blocks) and will go with the longest one in case of a tie.
 //!
 //! An in-depth description and analysis of the protocol can be found here:
-//! <https://research.web3.foundation/en/latest/polkaaxc/block-production/Babe.html>
+//! <https://research.web3.foundation/en/latest/axia/block-production/Babe.html>
 
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]

@@ -161,17 +161,17 @@
 //!
 //! ## Examples
 //!
-//! Run the migrations of the local runtime on the state of polkaaxc, from the polkaaxc repo where
-//! we have `--chain polkaaxc-dev`, on the latest finalized block's state
+//! Run the migrations of the local runtime on the state of axia, from the axia repo where
+//! we have `--chain axia-dev`, on the latest finalized block's state
 //!
 //! ```sh
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
 //!     cargo run try-runtime \
 //!     --execution Native \
-//!     --chain polkaaxc-dev \
+//!     --chain axia-dev \
 //!     on-runtime-upgrade \
 //!     live \
-//!     --uri wss://rpc.polkaaxc.io
+//!     --uri wss://rpc.axiacoin.network
 //!     # note that we don't pass any --at, nothing means latest block.
 //! ```
 //!
@@ -186,11 +186,11 @@
 //!     --no-spec-name-check \ # mind this one!
 //!     on-runtime-upgrade \
 //!     live \
-//!     --uri wss://rpc.polkaaxc.io
+//!     --uri wss://rpc.axiacoin.network
 //! ```
 //!
 //! Same as the previous one, but run it at specific block number's state. This means that this
-//! block hash's state shall not yet have been pruned in `rpc.polkaaxc.io`.
+//! block hash's state shall not yet have been pruned in `rpc.axiacoin.network`.
 //!
 //! ```sh
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
@@ -200,22 +200,22 @@
 //!     --no-spec-name-check \ # mind this one! on-runtime-upgrade \
 //!     on-runtime-upgrade \
 //!     live \
-//!     --uri wss://rpc.polkaaxc.io \
+//!     --uri wss://rpc.axiacoin.network \
 //!     --at <block-hash>
 //! ```
 //!
 //! Moving to `execute-block` and `offchain-workers`. For these commands, you always needs to
-//! specify a block hash. For the rest of these examples, we assume we're in the polkaaxc repo.
+//! specify a block hash. For the rest of these examples, we assume we're in the axia repo.
 //!
-//! First, let's assume you are in a branch that has the same spec name/version as the live polkaaxc
+//! First, let's assume you are in a branch that has the same spec name/version as the live axia
 //! network.
 //!
 //! ```sh
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
 //!     cargo run try-runtime \
 //!     --execution Wasm \
-//!     --chain polkaaxc-dev \
-//!     --uri wss://rpc.polkaaxc.io \
+//!     --chain axia-dev \
+//!     --uri wss://rpc.axiacoin.network \
 //!     execute-block \
 //!     live \
 //!     --at <block-hash>
@@ -227,7 +227,7 @@
 //! should show something among the lines of:
 //!
 //! ```text
-//! Request for native execution succeeded (native: polkaaxc-9900 (axia-polkaaxc-0.tx7.au0), chain: polkaaxc-9900 (axia-polkaaxc-0.tx7.au0))
+//! Request for native execution succeeded (native: axia-9900 (axia-axia-0.tx7.au0), chain: axia-9900 (axia-axia-0.tx7.au0))
 //! ```
 //!
 //! If you don't have matching spec versions, then are doomed to execute wasm. In this case, you can
@@ -237,10 +237,10 @@
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
 //!     cargo run try-runtime \
 //!     --execution Wasm \
-//!     --chain polkaaxc-dev \
+//!     --chain axia-dev \
 //!     execute-block \
 //!     live \
-//!     --uri wss://rpc.polkaaxc.io \
+//!     --uri wss://rpc.axiacoin.network \
 //!     --at <block-hash> \
 //!     --overwrite-wasm-code
 //! ```
@@ -255,11 +255,11 @@
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
 //!     cargo run try-runtime \
 //!     --execution Wasm \
-//!     --chain polkaaxc-dev \
-//!     --uri wss://rpc.polkaaxc.io \
+//!     --chain axia-dev \
+//!     --uri wss://rpc.axiacoin.network \
 //!     execute-block \
 //!     --block-at <x> \
-//!     --block-ws-uri wss://rpc.polkaaxc.io \
+//!     --block-ws-uri wss://rpc.axiacoin.network \
 //!     --overwrite-wasm-code \
 //!     snap \
 //!     -s snap \

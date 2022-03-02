@@ -192,7 +192,7 @@
 //! ## Future Plans
 //!
 //! **Emergency-phase recovery script**: This script should be taken out of staking-miner in
-//! polkaaxc and ideally live in `axlib/utils/frame/elections`.
+//! axia and ideally live in `axlib/utils/frame/elections`.
 //!
 //! **Challenge Phase**. We plan on adding a third phase to the pallet, called the challenge phase.
 //! This is a phase in which no further solutions are processed, and the current best solution might

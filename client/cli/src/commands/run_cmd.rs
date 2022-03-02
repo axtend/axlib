@@ -135,7 +135,7 @@ pub struct RunCmd {
 	///
 	/// A comma-separated list of origins (protocol://domain or special `null`
 	/// value). Value of `all` will disable origin validation. Default is to
-	/// allow localhost and <https://polkaaxc.js.org> origins. When running in
+	/// allow localhost and <https://axia.js.org> origins. When running in
 	/// --dev mode the default is to allow all origins.
 	#[clap(long, value_name = "ORIGINS", parse(from_str = parse_cors))]
 	pub rpc_cors: Option<Cors>,
@@ -408,7 +408,7 @@ impl CliConfiguration for RunCmd {
 						"http://127.0.0.1:*".into(),
 						"https://localhost:*".into(),
 						"https://127.0.0.1:*".into(),
-						"https://polkaaxc.js.org".into(),
+						"https://axia.js.org".into(),
 					])
 				}
 			})

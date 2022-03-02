@@ -108,7 +108,7 @@ db keystore network
 
 Once the node template is running locally, you can connect it with **Axia-JS Apps** front-end
 to interact with your chain. [Click
-here](https://polkaaxc.js.org/apps/#/explorer?rpc=ws://localhost:9944) connecting the Apps to your
+here](https://axia.js.org/apps/#/explorer?rpc=ws://localhost:9944) connecting the Apps to your
 local node template.
 
 ### Multi-Node Local Testnet
@@ -132,7 +132,7 @@ Axlib-based blockchain nodes expose a number of capabilities:
   [consensus](https://docs.axlib.io/v3/advanced/consensus) on the state of the
   network. Axlib makes it possible to supply custom consensus engines and also ships with
   several consensus mechanisms that have been built on top of
-  [Web3 Foundation research](https://research.web3.foundation/en/latest/polkaaxc/NPoS/index.html).
+  [Web3 Foundation research](https://research.web3.foundation/en/latest/axia/NPoS/index.html).
 - RPC Server: A remote procedure call (RPC) server is used to interact with Axlib nodes.
 
 There are several files in the `node` directory - take special note of the following:
@@ -182,7 +182,7 @@ the following:
 - This file configures several pallets to include in the runtime. Each pallet configuration is
   defined by a code block that begins with `impl $PALLET_NAME::Config for Runtime`.
 - The pallets are composed into a single runtime by way of the
-  [`construct_runtime!`](https://crates.axia.io/frame_support/macro.construct_runtime.html)
+  [`construct_runtime!`](https://crates.axiacoin.network/frame_support/macro.construct_runtime.html)
   macro, which is part of the core
   [FRAME Support](https://docs.axlib.io/v3/runtime/frame#support-crate)
   library.

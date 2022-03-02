@@ -2,7 +2,7 @@
 name = "sp-tracing"
 version = "4.0.0"
 license = "Apache-2.0"
-authors = ["Axia Technologies <admin@axia.io>"]
+authors = ["Axia Technologies <admin@axiacoin.network>"]
 edition = "2021"
 homepage = "https://axlib.io"
 repository = "https://github.com/axiatech/axlib/"

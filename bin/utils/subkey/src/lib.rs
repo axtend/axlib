@@ -25,7 +25,7 @@ use sc_cli::{
 #[derive(Debug, Parser)]
 #[clap(
 	name = "subkey",
-	author = "Axia Team <admin@axia.io>",
+	author = "Axia Team <admin@axiacoin.network>",
 	about = "Utility for generating and restoring with Axlib keys"
 )]
 pub enum Subkey {

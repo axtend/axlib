@@ -9,11 +9,11 @@ RUN cargo build --locked --release
 FROM docker.io/library/ubuntu:20.04
 LABEL description="Multistage Docker image for Axlib: a platform for web3" \
 	io.axia.image.type="builder" \
-	io.axia.image.authors="chevdor@gmail.com, devops-team@axia.io" \
+	io.axia.image.authors="chevdor@gmail.com, devops-team@axiacoin.network" \
 	io.axia.image.vendor="Axia Technologies" \
 	io.axia.image.description="Axlib is a next-generation framework for blockchain innovation 🚀" \
-	io.axia.image.source="https://github.com/axiatech/polkaaxc/blob/${VCS_REF}/docker/axlib_builder.Dockerfile" \
-	io.axia.image.documentation="https://github.com/axiatech/polkaaxc/"
+	io.axia.image.source="https://github.com/axiatech/axia/blob/${VCS_REF}/docker/axlib_builder.Dockerfile" \
+	io.axia.image.documentation="https://github.com/axiatech/axia/"
 
 COPY --from=builder /axlib/target/release/axlib /usr/local/bin
 COPY --from=builder /axlib/target/release/subkey /usr/local/bin

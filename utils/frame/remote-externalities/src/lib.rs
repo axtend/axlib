@@ -54,7 +54,7 @@ type TopKeyValues = Vec<KeyValue>;
 type ChildKeyValues = Vec<(ChildInfo, Vec<KeyValue>)>;
 
 const LOG_TARGET: &str = "remote-ext";
-const DEFAULT_TARGET: &str = "wss://rpc.polkaaxc.io:443";
+const DEFAULT_TARGET: &str = "wss://rpc.axiacoin.network:443";
 const BATCH_SIZE: usize = 1000;
 
 #[rpc(client)]
@@ -986,7 +986,7 @@ mod remote_tests {
 		init_logger();
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://axctest-rpc.polkaaxc.io:443".to_owned().into(),
+				transport: "wss://axctest-rpc.axiacoin.network:443".to_owned().into(),
 				pallets: vec!["Council".to_owned()],
 				..Default::default()
 			}))
@@ -997,7 +997,7 @@ mod remote_tests {
 
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://rpc.polkaaxc.io:443".to_owned().into(),
+				transport: "wss://rpc.axiacoin.network:443".to_owned().into(),
 				pallets: vec!["Council".to_owned()],
 				..Default::default()
 			}))
@@ -1012,7 +1012,7 @@ mod remote_tests {
 		init_logger();
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://axctest-rpc.polkaaxc.io:443".to_owned().into(),
+				transport: "wss://axctest-rpc.axiacoin.network:443".to_owned().into(),
 				pallets: vec!["Proxy".to_owned(), "Multisig".to_owned()],
 				..Default::default()
 			}))
@@ -1023,7 +1023,7 @@ mod remote_tests {
 
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://rpc.polkaaxc.io:443".to_owned().into(),
+				transport: "wss://rpc.axiacoin.network:443".to_owned().into(),
 				pallets: vec!["Proxy".to_owned(), "Multisig".to_owned()],
 				..Default::default()
 			}))
@@ -1078,7 +1078,7 @@ mod remote_tests {
 		init_logger();
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://rpc.polkaaxc.io:443".to_owned().into(),
+				transport: "wss://rpc.axiacoin.network:443".to_owned().into(),
 				pallets: vec!["Crowdloan".to_owned()],
 				..Default::default()
 			}))

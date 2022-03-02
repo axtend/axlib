@@ -2,7 +2,7 @@
 name = "axlib-frame-rpc-support"
 version = "3.0.0"
 authors = [
-    "Axia Technologies <admin@axia.io>",
+    "Axia Technologies <admin@axiacoin.network>",
     "Andrew Dirksen <andrew@dirksen.com>",
 ]
 edition = "2021"

@@ -24,7 +24,7 @@
 //! these tools were designed to work together in unison.
 //!
 //! The pallet provides a standardized MMR Leaf format that is can be used
-//! to bridge BEEFY+MMR-based networks (both standalone and polkaaxc-like).
+//! to bridge BEEFY+MMR-based networks (both standalone and axia-like).
 //!
 //! The MMR leaf contains:
 //! 1. Block number and parent block hash.

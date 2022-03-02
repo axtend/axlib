@@ -201,7 +201,7 @@ pub trait StateApi<Hash> {
 	/// - Run the node with the wasm blob overrides by placing them in a folder with all your
 	///   runtimes,
 	/// and passing the path of this folder to your chain, e.g.:
-	/// - `./target/release/polkaaxc --wasm-runtime-overrides /home/user/my-custom-wasm-runtimes`
+	/// - `./target/release/axia --wasm-runtime-overrides /home/user/my-custom-wasm-runtimes`
 	///
 	/// You can also find some pre-built tracing enabled wasm runtimes in [axlib-archive][2]
 	///

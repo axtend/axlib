@@ -5,7 +5,7 @@ Axia Technologies is committed to resolving security vulnerabilities in our soft
 
 ## Reporting a Vulnerability
 
-Security vulnerabilities in Axia software should be reported by email to security@axia.io. If you think your report might be eligible for the Axia Bug Bounty Program, your email should be send to bugbounty@axia.io.
+Security vulnerabilities in Axia software should be reported by email to security@axiacoin.network. If you think your report might be eligible for the Axia Bug Bounty Program, your email should be send to bugbounty@axiacoin.network.
 
 Your report should include the following:
 
