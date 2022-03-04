@@ -2,19 +2,10 @@
   "name": "Flaming Fir",
   "id": "flamingfir9",
   "chainType": "Live",
-  "bootNodes": [
-    "/dns/0.flamingfir.axiatech.net/tcp/30333/p2p/12D3KooWLK2gMLhWsYJzjW3q35zAs9FDDVqfqVfVuskiGZGRSMvR",
-    "/dns/0.flamingfir.axiatech.net/tcp/30334/ws/p2p/12D3KooWLK2gMLhWsYJzjW3q35zAs9FDDVqfqVfVuskiGZGRSMvR",
-    "/dns/1.flamingfir.axiatech.net/tcp/30333/p2p/12D3KooWHyUSQkoL1WtnhLUYHuKbowZEZW1NNJe7TePKYZf9ucBY",
-    "/dns/1.flamingfir.axiatech.net/tcp/30334/ws/p2p/12D3KooWHyUSQkoL1WtnhLUYHuKbowZEZW1NNJe7TePKYZf9ucBY",
-    "/dns/2.flamingfir.axiatech.net/tcp/30333/p2p/12D3KooWFcry65ShtPT6roTTEPXD9H89A1iA2wPKgJCgXW1yZwyy",
-    "/dns/2.flamingfir.axiatech.net/tcp/30334/ws/p2p/12D3KooWFcry65ShtPT6roTTEPXD9H89A1iA2wPKgJCgXW1yZwyy",
-    "/dns/3.flamingfir.axiatech.net/tcp/30333/p2p/12D3KooWDfFapccu3KgvWyVMdXhMGPPpKiJ1yEhSMEupBZppfi9U",
-    "/dns/3.flamingfir.axiatech.net/tcp/30334/ws/p2p/12D3KooWDfFapccu3KgvWyVMdXhMGPPpKiJ1yEhSMEupBZppfi9U"
-  ],
+  "bootNodes": [],
   "telemetryEndpoints": [
     [
-      "/dns/telemetry.axiacoin.network/tcp/443/x-axia-wss/%2Fsubmit%2F",
+      "ws://localhost:8001/submit/",
       0
     ]
   ],
