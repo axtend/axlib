@@ -7,7 +7,7 @@
 	},
 	"bootNodes": [],
 	"telemetryEndpoints": [
-		["ws://localhost:8001/submit/", 0]
+		["ws://localhost:8001/submit", 0]
 	],
 	"protocolId": "fir",
 	"genesis": {
