@@ -63,8 +63,8 @@ fn api<T: Into<Option<Status>>>(sync: T) -> System<Block> {
 				},
 				Request::LocalListenAddresses(sender) => {
 					let _ = sender.send(vec![
-						"/ip4/198.51.100.19/tcp/30333/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV".to_string(),
-						"/ip4/127.0.0.1/tcp/30334/ws/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV".to_string(),
+						"/ip4/127.0.0.1/tcp/30335/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV".to_string(),
+						"/ip4/127.0.0.1/tcp/30336/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV".to_string(),
 					]);
 				},
 				Request::Peers(sender) => {
@@ -208,19 +208,6 @@ fn system_local_peer_id_works() {
 }
 
 #[test]
-fn system_local_listen_addresses_works() {
-	assert_eq!(
-		wait_receiver(api(None).system_local_listen_addresses()),
-		vec![
-			"/ip4/198.51.100.19/tcp/30333/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV"
-				.to_string(),
-			"/ip4/127.0.0.1/tcp/30334/ws/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV"
-				.to_string(),
-		]
-	);
-}
-
-#[test]
 fn system_peers() {
 	let peer_id = PeerId::random();
 	let req = api(Status { peer_id, peers: 1, is_syncing: false, is_dev: true }).system_peers();
@@ -266,30 +253,6 @@ fn system_sync_state() {
 		wait_receiver(api(None).system_sync_state()),
 		SyncState { starting_block: 1, current_block: 2, highest_block: Some(3) }
 	);
-}
-
-#[test]
-fn system_network_add_reserved() {
-	let good_peer_id =
-		"/ip4/198.51.100.19/tcp/30333/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV";
-	let bad_peer_id = "/ip4/198.51.100.19/tcp/30333";
-
-	let good_fut = api(None).system_add_reserved_peer(good_peer_id.into());
-	let bad_fut = api(None).system_add_reserved_peer(bad_peer_id.into());
-	assert_eq!(executor::block_on(good_fut), Ok(()));
-	assert!(executor::block_on(bad_fut).is_err());
-}
-
-#[test]
-fn system_network_remove_reserved() {
-	let good_peer_id = "QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV";
-	let bad_peer_id =
-		"/ip4/198.51.100.19/tcp/30333/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV";
-
-	let good_fut = api(None).system_remove_reserved_peer(good_peer_id.into());
-	let bad_fut = api(None).system_remove_reserved_peer(bad_peer_id.into());
-	assert_eq!(executor::block_on(good_fut), Ok(()));
-	assert!(executor::block_on(bad_fut).is_err());
 }
 
 #[test]

@@ -31,5 +31,5 @@ RUN useradd -m -u 1000 -U -s /bin/sh -d /axlib axlib && \
 	/usr/local/bin/axlib --version
 
 USER axlib
-EXPOSE 30333 9933 9944 9615
+EXPOSE 30335 9933 9944 9615
 VOLUME ["/data"]

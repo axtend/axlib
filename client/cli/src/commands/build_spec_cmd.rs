@@ -39,7 +39,7 @@ pub struct BuildSpecCmd {
 
 	/// Disable adding the default bootnode to the specification.
 	///
-	/// By default the `/ip4/127.0.0.1/tcp/30333/p2p/NODE_PEER_ID` bootnode is added to the
+	/// By default the `/ip4/127.0.0.1/tcp/30335/p2p/NODE_PEER_ID` bootnode is added to the
 	/// specification when no bootnode exists.
 	#[clap(long)]
 	pub disable_default_bootnode: bool,
@@ -67,7 +67,7 @@ impl BuildSpecCmd {
 			let keys = network_config.node_key.into_keypair()?;
 			let peer_id = keys.public().to_peer_id();
 			let addr = MultiaddrWithPeerId {
-				multiaddr: build_multiaddr![Ip4([127, 0, 0, 1]), Tcp(30333u16)],
+				multiaddr: build_multiaddr![Ip4([127, 0, 0, 1]), Tcp(30335u16)],
 				peer_id,
 			};
 			spec.add_boot_node(addr)

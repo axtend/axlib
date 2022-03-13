@@ -297,7 +297,7 @@ Detailed logs may be shown by running the node with the following environment va
 
 If you want to see the multi-node consensus algorithm in action locally, then you can create a local testnet with two validator nodes for Alice and Bob, who are the initial authorities of the genesis chain specification that have been endowed with a testnet AXCs. We'll give each node a name and expose them so they are listed on link:https://telemetry.axiacoin.network/#/Local%20Testnet[Telemetry]. You'll need two terminal windows open.
 
-We'll start Alice's Axlib node first on default TCP port 30333 with her chain database stored locally at `/tmp/alice`. The Bootnode ID of her node is `QmRpheLN4JWdAnY7HGJfWFNbfkQCb6tFf4vvA6hgjMZKrR`, which is generated from the `--node-key` value that we specify below:
+We'll start Alice's Axlib node first on default TCP port 30335 with her chain database stored locally at `/tmp/alice`. The Bootnode ID of her node is `QmRpheLN4JWdAnY7HGJfWFNbfkQCb6tFf4vvA6hgjMZKrR`, which is generated from the `--node-key` value that we specify below:
 
 [source, shell]
 cargo run --release \-- \
@@ -308,12 +308,12 @@ cargo run --release \-- \
   --telemetry-url 'ws://telemetry.axiacoin.network:1024 0' \
   --validator
 
-In the second terminal, we'll run the following to start Bob's Axlib node on a different TCP port of 30334, and with his chain database stored locally at `/tmp/bob`. We'll specify a value for the `--bootnodes` option that will connect his node to Alice's Bootnode ID on TCP port 30333:
+In the second terminal, we'll run the following to start Bob's Axlib node on a different TCP port of 30334, and with his chain database stored locally at `/tmp/bob`. We'll specify a value for the `--bootnodes` option that will connect his node to Alice's Bootnode ID on TCP port 30335:
 
 [source, shell]
 cargo run --release \-- \
   --base-path /tmp/bob \
-  --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/QmRpheLN4JWdAnY7HGJfWFNbfkQCb6tFf4vvA6hgjMZKrR \
+  --bootnodes /ip4/127.0.0.1/tcp/30335/p2p/QmRpheLN4JWdAnY7HGJfWFNbfkQCb6tFf4vvA6hgjMZKrR \
   --chain=local \
   --bob \
   --port 30334 \
