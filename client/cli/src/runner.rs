@@ -187,7 +187,9 @@ impl<C: AxlibCli> Runner<C> {
 }
 
 /// Log information about the node itself.
+// axia:ref:imp
 pub fn print_node_infos<C: AxlibCli>(config: &Configuration) {
+	info!("{:?}", config);
 	info!("{}", C::impl_name());
 	info!("✌️  version {}", C::impl_version());
 	info!("❤️  by {}, {}-{}", C::author(), C::copyright_start_year(), Local::today().year());
