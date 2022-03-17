@@ -255,7 +255,6 @@ fn system_sync_state() {
 	);
 }
 
-
 #[test]
 fn system_network_reserved_peers() {
 	assert_eq!(
