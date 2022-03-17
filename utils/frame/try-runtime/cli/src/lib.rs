@@ -167,7 +167,7 @@
 //!     --chain polkadot-dev \
 //!     on-runtime-upgrade \
 //!     live \
-//!     --uri wss://rpc.polkadot.io
+//!     --uri wss://rpc.axia.io
 //!     # note that we don't pass any --at, nothing means latest block.
 //! ```
 //!
@@ -182,7 +182,7 @@
 //!     --no-spec-name-check \ # mind this one!
 //!     on-runtime-upgrade \
 //!     live \
-//!     --uri wss://rpc.polkadot.io
+//!     --uri wss://rpc.axia.io
 //! ```
 //!
 //! Same as the previous one, but run it at specific block number's state. This means that this
@@ -196,7 +196,7 @@
 //!     --no-spec-name-check \ # mind this one! on-runtime-upgrade \
 //!     on-runtime-upgrade \
 //!     live \
-//!     --uri wss://rpc.polkadot.io \
+//!     --uri wss://rpc.axia.io \
 //!     --at <block-hash>
 //! ```
 //!
@@ -211,7 +211,7 @@
 //!     cargo run try-runtime \
 //!     --execution Wasm \
 //!     --chain polkadot-dev \
-//!     --uri wss://rpc.polkadot.io \
+//!     --uri wss://rpc.axia.io \
 //!     execute-block \
 //!     live \
 //!     --at <block-hash>
@@ -236,7 +236,7 @@
 //!     --chain polkadot-dev \
 //!     execute-block \
 //!     live \
-//!     --uri wss://rpc.polkadot.io \
+//!     --uri wss://rpc.axia.io \
 //!     --at <block-hash> \
 //!     --overwrite-wasm-code
 //! ```
@@ -252,10 +252,10 @@
 //!     cargo run try-runtime \
 //!     --execution Wasm \
 //!     --chain polkadot-dev \
-//!     --uri wss://rpc.polkadot.io \
+//!     --uri wss://rpc.axia.io \
 //!     execute-block \
 //!     --block-at <x> \
-//!     --block-ws-uri wss://rpc.polkadot.io \
+//!     --block-ws-uri wss://rpc.axia.io \
 //!     --overwrite-wasm-code \
 //!     snap \
 //!     -s snap \

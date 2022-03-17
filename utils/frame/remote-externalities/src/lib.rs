@@ -40,7 +40,7 @@ pub mod rpc_api;
 type KeyPair = (StorageKey, StorageData);
 
 const LOG_TARGET: &str = "remote-ext";
-const DEFAULT_TARGET: &str = "wss://rpc.polkadot.io";
+const DEFAULT_TARGET: &str = "wss://rpc.axia.io";
 const BATCH_SIZE: usize = 1000;
 
 jsonrpsee_proc_macros::rpc_client_api! {
