@@ -54,14 +54,14 @@
 //! The secondary slots supports either a `SecondaryPlain` or `SecondaryVRF`
 //! variant. Comparing with `SecondaryPlain` variant, the `SecondaryVRF` variant
 //! generates an additional VRF output. The output is not included in beacon
-//! randomness, but can be consumed by parachains.
+//! randomness, but can be consumed by allychains.
 //!
 //! The fork choice rule is weight-based, where weight equals the number of
 //! primary blocks in the chain. We will pick the heaviest chain (more primary
 //! blocks) and will go with the longest one in case of a tie.
 //!
 //! An in-depth description and analysis of the protocol can be found here:
-//! <https://research.web3.foundation/en/latest/polkadot/block-production/Babe.html>
+//! <https://research.web3.foundation/en/latest/axia/block-production/Babe.html>
 
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]

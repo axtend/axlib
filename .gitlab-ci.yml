@@ -542,17 +542,17 @@ cargo-check-macos:
 # Arguably we could generate a job for each companion in the PR's description using Gitlab's
 # parent-child pipelines but that's more complicated.
 
-check-dependent-polkadot:
+check-dependent-axia:
   <<: *check-dependent-project
   variables:
-    DEPENDENT_REPO: polkadot
+    DEPENDENT_REPO: axia
     CARGO_UPDATE_CRATES: "sp-io"
 
 check-dependent-cumulus:
   <<: *check-dependent-project
   variables:
     DEPENDENT_REPO: cumulus
-    CARGO_UPDATE_CRATES: "sp-io polkadot-runtime-common"
+    CARGO_UPDATE_CRATES: "sp-io axia-runtime-common"
 
 
 build-linux-substrate:

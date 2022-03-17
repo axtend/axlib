@@ -44,7 +44,7 @@ pub use node_runtime::GenesisConfig;
 
 type AccountPublic = <Signature as Verify>::Signer;
 
-const STAGING_TELEMETRY_URL: &str = "wss://telemetry.polkadot.io/submit/";
+const STAGING_TELEMETRY_URL: &str = "wss://telemetry.axia.io/submit/";
 
 /// Node `ChainSpec` extensions.
 ///

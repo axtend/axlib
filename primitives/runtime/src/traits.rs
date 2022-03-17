@@ -1279,7 +1279,7 @@ pub trait AccountIdConversion<AccountId>: Sized {
 	fn try_from_sub_account<S: Decode>(x: &AccountId) -> Option<(Self, S)>;
 }
 
-/// Format is TYPE_ID ++ encode(parachain ID) ++ 00.... where 00... is indefinite trailing zeroes to
+/// Format is TYPE_ID ++ encode(allychain ID) ++ 00.... where 00... is indefinite trailing zeroes to
 /// fill AccountId.
 impl<T: Encode + Decode, Id: Encode + Decode + TypeId> AccountIdConversion<T> for Id {
 	fn into_sub_account<S: Encode>(&self, sub: S) -> T {

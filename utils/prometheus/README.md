@@ -3,7 +3,7 @@
 ## Introduction
 
 [Prometheus](https://prometheus.io/) is one of the most widely used monitoring tools for managing highly available services supported by [Cloud Native Computing Foundation](https://www.cncf.io/). By providing Prometheus metrics in Substrate, node operators can easily adopt widely used display/alert tools such
-as [Grafana](https://grafana.com/) and [Alertmanager](https://prometheus.io/docs/alerting/alertmanager/). Easy access to such monitoring tools will benefit parachain developers/operators and validators to have much higher availability of their services.
+as [Grafana](https://grafana.com/) and [Alertmanager](https://prometheus.io/docs/alerting/alertmanager/). Easy access to such monitoring tools will benefit allychain developers/operators and validators to have much higher availability of their services.
 
 Metrics will be served under `/metrics` on TCP port 9615 by default.
 
