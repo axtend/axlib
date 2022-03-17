@@ -253,19 +253,6 @@ impl fmt::Debug for ProtocolId {
 	}
 }
 
-/// Parses a string address and splits it into Multiaddress and PeerId, if
-/// valid.
-///
-/// # Example
-///
-/// ```
-/// # use sc_network::{Multiaddr, PeerId, config::parse_str_addr};
-/// let (peer_id, addr) = parse_str_addr(
-/// 	"/ip4/198.51.100.19/tcp/30333/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV"
-/// ).unwrap();
-/// assert_eq!(peer_id, "QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV".parse::<PeerId>().unwrap());
-/// assert_eq!(addr, "/ip4/198.51.100.19/tcp/30333".parse::<Multiaddr>().unwrap());
-/// ```
 pub fn parse_str_addr(addr_str: &str) -> Result<(PeerId, Multiaddr), ParseErr> {
 	let addr: Multiaddr = addr_str.parse()?;
 	parse_addr(addr)
@@ -282,19 +269,7 @@ pub fn parse_addr(mut addr: Multiaddr) -> Result<(PeerId, Multiaddr), ParseErr> 
 	Ok((who, addr))
 }
 
-/// Address of a node, including its identity.
-///
-/// This struct represents a decoded version of a multiaddress that ends with `/p2p/<peerid>`.
-///
-/// # Example
-///
-/// ```
-/// # use sc_network::{Multiaddr, PeerId, config::MultiaddrWithPeerId};
-/// let addr: MultiaddrWithPeerId =
-/// 	"/ip4/198.51.100.19/tcp/30333/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV".parse().unwrap();
-/// assert_eq!(addr.peer_id.to_base58(), "QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV");
-/// assert_eq!(addr.multiaddr.to_string(), "/ip4/198.51.100.19/tcp/30333");
-/// ```
+
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(try_from = "String", into = "String")]
 pub struct MultiaddrWithPeerId {

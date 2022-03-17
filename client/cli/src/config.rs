@@ -52,23 +52,23 @@ const RECOMMENDED_OPEN_FILE_DESCRIPTOR_LIMIT: u64 = 10_000;
 pub trait DefaultConfigurationValues {
 	/// The port Axlib should listen on for p2p connections.
 	///
-	/// By default this is `30333`.
+	/// By default this is `30335`.
 	fn p2p_listen_port() -> u16 {
-		30333
+		30335
 	}
 
 	/// The port Axlib should listen on for websocket connections.
 	///
 	/// By default this is `9944`.
 	fn rpc_ws_listen_port() -> u16 {
-		9944
+		9945
 	}
 
 	/// The port Axlib should listen on for http connections.
 	///
 	/// By default this is `9933`.
 	fn rpc_http_listen_port() -> u16 {
-		9933
+		9935
 	}
 
 	/// The port Axlib should listen on for prometheus connections.
@@ -470,6 +470,7 @@ pub trait CliConfiguration<DCV: DefaultConfigurationValues = ()>: Sized {
 		Ok(true)
 	}
 
+	// axia:ref
 	/// Create a Configuration object from the current object
 	fn create_configuration<C: AxlibCli>(
 		&self,

@@ -9,7 +9,7 @@ use sp_finality_grandpa::AuthorityId as GrandpaId;
 use sp_runtime::traits::{IdentifyAccount, Verify};
 
 // The URL for the telemetry server.
-// const STAGING_TELEMETRY_URL: &str = "ws://localhost:8001/submit/";
+// const STAGING_TELEMETRY_URL: &str = "ws://localhost:8001/";
 
 /// Specialized `ChainSpec`. This is a specialization of the general Axlib ChainSpec type.
 pub type ChainSpec = sc_service::GenericChainSpec<GenesisConfig>;

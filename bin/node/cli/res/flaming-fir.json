@@ -5,7 +5,7 @@
   "bootNodes": [],
   "telemetryEndpoints": [
     [
-      "ws://localhost:8001/submit/",
+      "ws://localhost:8001/submit",
       0
     ]
   ],

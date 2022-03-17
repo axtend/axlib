@@ -87,11 +87,6 @@ pub trait SystemApi<Hash, Number> {
 	#[rpc(name = "system_unstable_networkState", returns = "jsonrpc_core::Value")]
 	fn system_network_state(&self) -> BoxFuture<jsonrpc_core::Result<jsonrpc_core::Value>>;
 
-	/// Adds a reserved peer. Returns the empty string or an error. The string
-	/// parameter should encode a `p2p` multiaddr.
-	///
-	/// `/ip4/198.51.100.19/tcp/30333/p2p/QmSk5HQbn6LhUwDiNMseVUjuRYhEtYj4aUZ6WfWoGURpdV`
-	/// is an example of a valid, passing multiaddr with PeerId attached.
 	#[rpc(name = "system_addReservedPeer", returns = "()")]
 	fn system_add_reserved_peer(&self, peer: String) -> BoxFuture<Result<(), jsonrpc_core::Error>>;
 

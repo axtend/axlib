@@ -55,6 +55,7 @@ use std::{fmt::Debug, hash::Hash, marker::PhantomData, sync::Arc};
 /// containing the seal.
 ///
 /// This digest item will always return `Some` when used with `as_aura_seal`.
+// axia:ref:imp
 fn check_header<C, B: BlockT, P: Pair>(
 	client: &C,
 	slot_now: Slot,
