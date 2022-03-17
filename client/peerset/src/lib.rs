@@ -21,7 +21,7 @@
 //!
 //! The PSM handles *sets* of nodes. A set of nodes is defined as the nodes that are believed to
 //! support a certain capability, such as handling blocks and transactions of a specific chain,
-//! or collating a certain parachain.
+//! or collating a certain allychain.
 //!
 //! For each node in each set, the peerset holds a flag specifying whether the node is
 //! connected to us or not.

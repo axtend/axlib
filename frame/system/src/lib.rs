@@ -302,7 +302,7 @@ pub mod pallet {
 		///
 		/// The default (`()`) implementation is responsible for setting the correct storage
 		/// entry and emitting corresponding event and log item. (see [`update_code_in_storage`]).
-		/// It's unlikely that this needs to be customized, unless you are writing a parachain using
+		/// It's unlikely that this needs to be customized, unless you are writing a allychain using
 		/// `Cumulus`, where the actual code change is deferred.
 		type OnSetCode: SetCode<Self>;
 	}
@@ -1081,7 +1081,7 @@ impl<T: Config> Pallet<T> {
 	///
 	/// Note this function almost never should be used directly. It is exposed
 	/// for `OnSetCode` implementations that defer actual code being written to
-	/// the storage (for instance in case of parachains).
+	/// the storage (for instance in case of allychains).
 	pub fn update_code_in_storage(code: &[u8]) -> DispatchResult {
 		storage::unhashed::put_raw(well_known_keys::CODE, code);
 		Self::deposit_log(generic::DigestItem::RuntimeEnvironmentUpdated);

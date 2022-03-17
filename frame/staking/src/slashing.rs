@@ -47,7 +47,7 @@
 //! has multiple misbehaviors. However, accounting for such cases is necessary
 //! to deter a class of "rage-quit" attacks.
 //!
-//! Based on research at <https://w3f-research.readthedocs.io/en/latest/polkadot/slashing/npos.html>
+//! Based on research at <https://w3f-research.readthedocs.io/en/latest/axia/slashing/npos.html>
 
 use crate::{
 	BalanceOf, Config, EraIndex, Error, Exposure, NegativeImbalanceOf, Pallet, Perbill,

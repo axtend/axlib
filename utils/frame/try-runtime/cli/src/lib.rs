@@ -157,14 +157,14 @@
 //!
 //! ## Examples
 //!
-//! Run the migrations of the local runtime on the state of polkadot, from the polkadot repo where
-//! we have `--chain polkadot-dev`, on the latest finalized block's state
+//! Run the migrations of the local runtime on the state of axia, from the axia repo where
+//! we have `--chain axia-dev`, on the latest finalized block's state
 //!
 //! ```ignore
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
 //!     cargo run try-runtime \
 //!     --execution Native \
-//!     --chain polkadot-dev \
+//!     --chain axia-dev \
 //!     on-runtime-upgrade \
 //!     live \
 //!     --uri wss://rpc.axia.io
@@ -186,7 +186,7 @@
 //! ```
 //!
 //! Same as the previous one, but run it at specific block number's state. This means that this
-//! block hash's state shall not yet have been pruned in `rpc.polkadot.io`.
+//! block hash's state shall not yet have been pruned in `rpc.axia.io`.
 //!
 //! ```ignore
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
@@ -201,16 +201,16 @@
 //! ```
 //!
 //! Moving to `execute-block` and `offchain-workers`. For these commands, you always needs to
-//! specify a block hash. For the rest of these examples, we assume we're in the polkadot repo.
+//! specify a block hash. For the rest of these examples, we assume we're in the axia repo.
 //!
-//! First, let's assume you are in a branch that has the same spec name/version as the live polkadot
+//! First, let's assume you are in a branch that has the same spec name/version as the live axia
 //! network.
 //!
 //! ```ignore
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
 //!     cargo run try-runtime \
 //!     --execution Wasm \
-//!     --chain polkadot-dev \
+//!     --chain axia-dev \
 //!     --uri wss://rpc.axia.io \
 //!     execute-block \
 //!     live \
@@ -223,7 +223,7 @@
 //! should show something among the lines of:
 //!
 //! ```ignore
-//! Request for native execution succeeded (native: polkadot-9900 (parity-polkadot-0.tx7.au0), chain: polkadot-9900 (parity-polkadot-0.tx7.au0))
+//! Request for native execution succeeded (native: axia-9900 (parity-axia-0.tx7.au0), chain: axia-9900 (parity-axia-0.tx7.au0))
 //! ```
 //!
 //! If you don't have matching spec versions, then are doomed to execute wasm. In this case, you can
@@ -233,7 +233,7 @@
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
 //!     cargo run try-runtime \
 //!     --execution Wasm \
-//!     --chain polkadot-dev \
+//!     --chain axia-dev \
 //!     execute-block \
 //!     live \
 //!     --uri wss://rpc.axia.io \
@@ -251,7 +251,7 @@
 //! RUST_LOG=runtime=trace,try-runtime::cli=trace,executor=trace \
 //!     cargo run try-runtime \
 //!     --execution Wasm \
-//!     --chain polkadot-dev \
+//!     --chain axia-dev \
 //!     --uri wss://rpc.axia.io \
 //!     execute-block \
 //!     --block-at <x> \

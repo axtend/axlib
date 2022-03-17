@@ -561,10 +561,10 @@ cargo-check-macos:
 # Arguably we could generate a job for each companion in the PR's description using Gitlab's
 # parent-child pipelines but that's more complicated.
 
-check-dependent-polkadot:
+check-dependent-axia:
   <<: *check-dependent-project
   variables:
-    DEPENDENT_REPO: polkadot
+    DEPENDENT_REPO: axia
 
 check-dependent-cumulus:
   <<: *check-dependent-project

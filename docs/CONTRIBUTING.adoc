@@ -69,31 +69,31 @@ When reviewing a pull request, the end-goal is to suggest useful changes to the 
 . There exists a somewhat cleaner/better/faster way of accomplishing the same feature/fix.
 . It does not fit well with some other contributors' longer-term vision for the project.
 
-=== Updating Polkadot as well
+=== Updating Axia as well
 
-**All pull requests will be checked against either Polkadot master, or your provided Polkadot companion PR**. That is, If your PR changes the external APIs or interfaces used by Polkadot. If you tagged the PR with `breaksapi` or `breaksconsensus` this is most certainly the case, in all other cases check for it by running step 1 below.
+**All pull requests will be checked against either Axia master, or your provided Axia companion PR**. That is, If your PR changes the external APIs or interfaces used by Axia. If you tagged the PR with `breaksapi` or `breaksconsensus` this is most certainly the case, in all other cases check for it by running step 1 below.
 
-To create a Polkadot companion PR:
+To create a Axia companion PR:
 
-. Pull latest Polkadot master (or clone it, if you haven't yet).
-. Override substrate deps to point to your local path or branch using https://github.com/bkchr/diener. (E.g. from the polkadot clone dir run `diener patch --crates-to-patch ../substrate --substrate` assuming substrate clone is in a sibling dir. If you do use diener, ensure that you _do not_ commit the changes diener makes to the Cargo.tomls.)
-. Make the changes required and build polkadot locally.
-. Submit all this as a PR against the Polkadot Repo.
-. In the _description_ of your _Substrate_ PR add "polkadot companion: [Polkadot_PR_URL]"
-. Now you should see that the `check_polkadot` CI job will build your Substrate PR agains the mentioned Polkadot branch in your PR description.
-. Someone will need to approve the Polkadot PR before the Substrate CI will go green. (The Polkadot CI failing can be ignored as long as the polkadot job in the _substrate_ PR is green).
-. Wait for reviews on both the Substrate and the Polkadot PRs.
+. Pull latest Axia master (or clone it, if you haven't yet).
+. Override substrate deps to point to your local path or branch using https://github.com/bkchr/diener. (E.g. from the axia clone dir run `diener patch --crates-to-patch ../substrate --substrate` assuming substrate clone is in a sibling dir. If you do use diener, ensure that you _do not_ commit the changes diener makes to the Cargo.tomls.)
+. Make the changes required and build axia locally.
+. Submit all this as a PR against the Axia Repo.
+. In the _description_ of your _Substrate_ PR add "axia companion: [Axia_PR_URL]"
+. Now you should see that the `check_axia` CI job will build your Substrate PR agains the mentioned Axia branch in your PR description.
+. Someone will need to approve the Axia PR before the Substrate CI will go green. (The Axia CI failing can be ignored as long as the axia job in the _substrate_ PR is green).
+. Wait for reviews on both the Substrate and the Axia PRs.
 . Once the Substrate PR runs green, a member of the `parity` github group can comment on the Substrate PR with `bot merge` which will:
     - Merge the Substrate PR.
-    - The bot will push a commit to the Polkadot PR updating its Substrate reference. (effecively doing `cargo update -p sp-io`)
-    - If the polkadot PR origins from a fork then a project member may need to press `approve run` on the polkadot PR.
-    - The bot will merge the Polkadot PR once all its CI `{"build_allow_failure":false}` checks are green.
+    - The bot will push a commit to the Axia PR updating its Substrate reference. (effecively doing `cargo update -p sp-io`)
+    - If the axia PR origins from a fork then a project member may need to press `approve run` on the axia PR.
+    - The bot will merge the Axia PR once all its CI `{"build_allow_failure":false}` checks are green.
     Note: The merge-bot currently doesn't work with forks on org accounts, only individual accounts.
-	(Hint: it's recommended to use `bot merge` to merge all substrate PRs, not just ones with a polkadot companion.)
+	(Hint: it's recommended to use `bot merge` to merge all substrate PRs, not just ones with a axia companion.)
 
-If your PR is reviewed well, but a Polkadot PR is missing, signal it with https://github.com/paritytech/substrate/labels/A7-needspolkadotpr[`A7-needspolkadotpr`] to prevent it from getting automatically merged.
+If your PR is reviewed well, but a Axia PR is missing, signal it with https://github.com/paritytech/substrate/labels/A7-needsaxiapr[`A7-needsaxiapr`] to prevent it from getting automatically merged.
 
-As there might be multiple pending PRs that might conflict with one another, a) you should not merge the substrate PR until the Polkadot PR has also been reviewed and b) both should be merged pretty quickly after another to not block others.
+As there might be multiple pending PRs that might conflict with one another, a) you should not merge the substrate PR until the Axia PR has also been reviewed and b) both should be merged pretty quickly after another to not block others.
 
 == Helping out
 

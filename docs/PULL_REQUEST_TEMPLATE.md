@@ -24,8 +24,8 @@ Before you submit, please check that:
   - Any panickers in the runtime have a proof or were removed.
 - [ ] **Runtime Version:** You bumped the runtime version if there are breaking changes in the **runtime**.
 - [ ] **Docs:** You updated any rustdocs which may need to change.
-- [ ] **Polkadot Companion:** Has the PR altered the external API or interfaces used by Polkadot?
-  - [ ] If so, do you have the corresponding Polkadot PR ready?
+- [ ] **Axia Companion:** Has the PR altered the external API or interfaces used by Axia?
+  - [ ] If so, do you have the corresponding Axia PR ready?
   - [ ] Optionally: Do you have a corresponding Cumulus PR?
 
 Refer to [the contributing guide](https://github.com/paritytech/substrate/blob/master/docs/CONTRIBUTING.adoc) for details.

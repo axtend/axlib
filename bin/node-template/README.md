@@ -73,11 +73,11 @@ Start the development chain with detailed logging:
 RUST_BACKTRACE=1 ./target/release/node-template -ldebug --dev
 ```
 
-### Connect with Polkadot-JS Apps Front-end
+### Connect with Axia-JS Apps Front-end
 
-Once the node template is running locally, you can connect it with **Polkadot-JS Apps** front-end
+Once the node template is running locally, you can connect it with **Axia-JS Apps** front-end
 to interact with your chain. [Click
-here](https://polkadot.js.org/apps/#/explorer?rpc=ws://localhost:9944) connecting the Apps to your
+here](https://axia.js.org/apps/#/explorer?rpc=ws://localhost:9944) connecting the Apps to your
 local node template.
 
 ### Multi-Node Local Testnet
@@ -101,7 +101,7 @@ Substrate-based blockchain nodes expose a number of capabilities:
   [consensus](https://docs.substrate.io/v3/advanced/consensus) on the state of the
   network. Substrate makes it possible to supply custom consensus engines and also ships with
   several consensus mechanisms that have been built on top of
-  [Web3 Foundation research](https://research.web3.foundation/en/latest/polkadot/NPoS/index.html).
+  [Web3 Foundation research](https://research.web3.foundation/en/latest/axia/NPoS/index.html).
 - RPC Server: A remote procedure call (RPC) server is used to interact with Substrate nodes.
 
 There are several files in the `node` directory - take special note of the following:
