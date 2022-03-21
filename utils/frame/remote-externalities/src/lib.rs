@@ -986,7 +986,7 @@ mod remote_tests {
 		init_logger();
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://kusama-rpc.axia.io:443".to_owned().into(),
+				transport: "wss://axctest-rpc.axia.io:443".to_owned().into(),
 				pallets: vec!["Council".to_owned()],
 				..Default::default()
 			}))
@@ -1012,7 +1012,7 @@ mod remote_tests {
 		init_logger();
 		Builder::<Block>::new()
 			.mode(Mode::Online(OnlineConfig {
-				transport: "wss://kusama-rpc.axia.io:443".to_owned().into(),
+				transport: "wss://axctest-rpc.axia.io:443".to_owned().into(),
 				pallets: vec!["Proxy".to_owned(), "Multisig".to_owned()],
 				..Default::default()
 			}))

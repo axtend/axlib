@@ -1,6 +1,6 @@
 # Subkey
 
-Subkey is a commandline utility included with Substrate. It allows generating and restoring keys for Substrate based chains such as Axia, Kusama and a growing number of allychains and Substrate based projects.
+Subkey is a commandline utility included with Substrate. It allows generating and restoring keys for Substrate based chains such as Axia, AxiaTest and a growing number of allychains and Substrate based projects.
 
 `subkey` provides a few sub-commands to generate keys, check keys, sign messages, verify messages, etc...
 
@@ -67,14 +67,14 @@ The output above shows a **secret phrase** (also called **mnemonic phrase**) and
 
 The output above also show the **public key** and the **Account ID**. Those are the independant from the network where you will use the key.
 
-The **SS58 address** (or **Public Address**) of a new account is a reprensentation of the public keys of an account for a given network (for instance Kusama or Axia).
+The **SS58 address** (or **Public Address**) of a new account is a reprensentation of the public keys of an account for a given network (for instance AxiaTest or Axia).
 
 You can read more about the SS58 format in the [Substrate Docs](https://docs.substrate.io/v3/advanced/ss58/) and see the list of reserved prefixes in the [SS58 Registry](https://github.com/paritytech/ss58-registry).
 
 For instance, considering the previous seed `0xa05c75731970cc7868a2fb7cb577353cd5b31f62dccced92c441acd8fee0c92d` the SS58 addresses are:
 
 - Axia: `16m4J167Mptt8UXL8aGSAi7U2FnPpPxZHPrCgMG9KJzVoFqM`
-- Kusama: `JLNozAv8QeLSbLFwe2UvWeKKE4yvmDbfGxTuiYkF2BUMx4M`
+- AxiaTest: `JLNozAv8QeLSbLFwe2UvWeKKE4yvmDbfGxTuiYkF2BUMx4M`
 
 ### Json output
 
