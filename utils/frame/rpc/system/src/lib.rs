@@ -199,14 +199,14 @@ mod tests {
 		transaction_validity::{InvalidTransaction, TransactionValidityError},
 		ApplyExtrinsicResult,
 	};
-	use substrate_test_runtime_client::{runtime::Transfer, AccountKeyring};
+	use axlib_test_runtime_client::{runtime::Transfer, AccountKeyring};
 
 	#[test]
 	fn should_return_next_nonce_for_some_account() {
 		sp_tracing::try_init_simple();
 
 		// given
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let pool =
 			BasicPool::new_full(Default::default(), true.into(), None, spawner, client.clone());
@@ -241,7 +241,7 @@ mod tests {
 		sp_tracing::try_init_simple();
 
 		// given
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let pool =
 			BasicPool::new_full(Default::default(), true.into(), None, spawner, client.clone());
@@ -260,7 +260,7 @@ mod tests {
 		sp_tracing::try_init_simple();
 
 		// given
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let pool =
 			BasicPool::new_full(Default::default(), true.into(), None, spawner, client.clone());
@@ -289,7 +289,7 @@ mod tests {
 		sp_tracing::try_init_simple();
 
 		// given
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let pool =
 			BasicPool::new_full(Default::default(), true.into(), None, spawner, client.clone());

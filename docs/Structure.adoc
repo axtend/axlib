@@ -37,7 +37,7 @@ In the lowest level, Axlib defines primitives, interfaces and traits to implemen
 * _constraints_:
 ** crates may not (dev-)depend on any `frame-`-crates
 
-In the client you can find a set of crates to construct the outer substrate-node, implementing outer runtime interfaces, thus it depends on `runtime`. It provides the outer building blocks like transaction queue, networking layer, database backend, full* and light-client support.
+In the client you can find a set of crates to construct the outer axlib-node, implementing outer runtime interfaces, thus it depends on `runtime`. It provides the outer building blocks like transaction queue, networking layer, database backend, full* and light-client support.
 
 === FRAME (formerly `srml`)
 
@@ -62,7 +62,7 @@ There are a few crates with the `frame-` prefix. These do not contain domain-spe
 === Integration Tests
 
 * _found in_: `/test`
-* _crates prefix_: `substrate-test`
+* _crates prefix_: `axlib-test`
 * _constraints_:
 ** only helpers may be published
 ** purely testing crates must be `publish = false`
@@ -79,7 +79,7 @@ We also provide some binaries pulling from the components creating full applicat
 
 * _found in_: `/bin/node`
 
-The default (testing) application pulling together our recommended setup of substrate-client with a wasm-contracts-supporting frame-runtime.  The node pulls it all together, constructs the (upgradable) runtime, and wires up the client around it. You can find an example client, which includes a full wasm-contracts chain in  `node`. This is also what is being built and run if you do `cargo run`.
+The default (testing) application pulling together our recommended setup of axlib-client with a wasm-contracts-supporting frame-runtime.  The node pulls it all together, constructs the (upgradable) runtime, and wires up the client around it. You can find an example client, which includes a full wasm-contracts chain in  `node`. This is also what is being built and run if you do `cargo run`.
 
 ==== Node Template
 

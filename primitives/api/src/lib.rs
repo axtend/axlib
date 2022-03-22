@@ -77,7 +77,7 @@ pub use codec::{self, Decode, DecodeLimit, Encode};
 pub use hash_db::Hasher;
 #[doc(hidden)]
 #[cfg(not(feature = "std"))]
-pub use sp_core::to_substrate_wasm_fn_return_value;
+pub use sp_core::to_axlib_wasm_fn_return_value;
 #[doc(hidden)]
 #[cfg(feature = "std")]
 pub use sp_core::NativeOrEncoded;

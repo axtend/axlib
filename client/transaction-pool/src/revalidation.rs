@@ -347,7 +347,7 @@ mod tests {
 	use futures::executor::block_on;
 	use sc_transaction_pool_api::TransactionSource;
 	use sp_runtime::generic::BlockId;
-	use substrate_test_runtime::{AccountId, Transfer, H256};
+	use axlib_test_runtime::{AccountId, Transfer, H256};
 
 	#[test]
 	fn revalidation_queue_works() {

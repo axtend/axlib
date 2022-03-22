@@ -405,7 +405,7 @@ mod tests {
 	use sc_network::PeerId;
 	use sc_utils::mpsc::tracing_unbounded;
 	use sp_blockchain::HeaderBackend as _;
-	use substrate_test_runtime_client::{TestClientBuilder, TestClientBuilderExt};
+	use axlib_test_runtime_client::{TestClientBuilder, TestClientBuilderExt};
 
 	use futures::executor;
 

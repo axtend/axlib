@@ -19,20 +19,20 @@
 use sp_core::offchain::{storage::InMemOffchainStorage, OffchainStorage};
 use std::sync::Arc;
 
-type TestBackend = sc_client_api::in_mem::Backend<substrate_test_runtime::Block>;
+type TestBackend = sc_client_api::in_mem::Backend<axlib_test_runtime::Block>;
 
 #[test]
 fn test_leaves_with_complex_block_tree() {
 	let backend = Arc::new(TestBackend::new());
 
-	substrate_test_runtime_client::trait_tests::test_leaves_for_backend(backend);
+	axlib_test_runtime_client::trait_tests::test_leaves_for_backend(backend);
 }
 
 #[test]
 fn test_blockchain_query_by_number_gets_canonical() {
 	let backend = Arc::new(TestBackend::new());
 
-	substrate_test_runtime_client::trait_tests::test_blockchain_query_by_number_gets_canonical(
+	axlib_test_runtime_client::trait_tests::test_blockchain_query_by_number_gets_canonical(
 		backend,
 	);
 }

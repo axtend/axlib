@@ -26,11 +26,11 @@ use futures::prelude::*;
 use libp2p::PeerId;
 use sp_runtime::traits::{Block as BlockT, Header as _};
 use std::{borrow::Cow, sync::Arc, time::Duration};
-use substrate_test_runtime_client::{TestClientBuilder, TestClientBuilderExt as _};
+use axlib_test_runtime_client::{TestClientBuilder, TestClientBuilderExt as _};
 
 type TestNetworkService = NetworkService<
-	substrate_test_runtime_client::runtime::Block,
-	substrate_test_runtime_client::runtime::Hash,
+	axlib_test_runtime_client::runtime::Block,
+	axlib_test_runtime_client::runtime::Hash,
 >;
 
 /// Builds a full node to be used for testing. Returns the node service and its associated events

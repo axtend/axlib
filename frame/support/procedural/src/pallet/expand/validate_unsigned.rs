@@ -40,7 +40,7 @@ pub fn expand_validate_unsigned(def: &mut Def) -> TokenStream {
 
 	quote! {
 		#[doc(hidden)]
-		pub mod __substrate_validate_unsigned_check {
+		pub mod __axlib_validate_unsigned_check {
 			#[macro_export]
 			#[doc(hidden)]
 			macro_rules! #macro_ident {

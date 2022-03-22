@@ -21,7 +21,7 @@
 use sc_service::client;
 use sp_runtime::BuildStorage;
 /// Re-export test-client utilities.
-pub use substrate_test_client::*;
+pub use axlib_test_client::*;
 
 /// Call executor for `node-runtime` `TestClient`.
 pub type ExecutorDispatch = sc_executor::NativeElseWasmExecutor<node_executor::ExecutorDispatch>;
@@ -44,7 +44,7 @@ pub type Transaction = sc_client_api::backend::TransactionFor<Backend, node_prim
 #[derive(Default)]
 pub struct GenesisParameters;
 
-impl substrate_test_client::GenesisInit for GenesisParameters {
+impl axlib_test_client::GenesisInit for GenesisParameters {
 	fn genesis_storage(&self) -> Storage {
 		crate::genesis::config(None).build_storage().unwrap()
 	}
@@ -60,7 +60,7 @@ pub trait TestClientBuilderExt: Sized {
 }
 
 impl TestClientBuilderExt
-	for substrate_test_client::TestClientBuilder<
+	for axlib_test_client::TestClientBuilder<
 		node_primitives::Block,
 		client::LocalCallExecutor<node_primitives::Block, Backend, ExecutorDispatch>,
 		Backend,

@@ -207,7 +207,7 @@ mod tests {
 	use beefy_primitives::{known_payload_ids, Payload};
 	use codec::{Decode, Encode};
 	use sp_runtime::traits::{BlakeTwo256, Hash};
-	use substrate_test_runtime_client::runtime::Block;
+	use axlib_test_runtime_client::runtime::Block;
 
 	fn setup_io_handler(
 	) -> (jsonrpc_core::MetaIoHandler<sc_rpc::Metadata>, BeefySignedCommitmentSender<Block>) {

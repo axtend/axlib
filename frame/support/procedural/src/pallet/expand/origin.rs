@@ -39,7 +39,7 @@ pub fn expand_origins(def: &mut Def) -> TokenStream {
 
 	quote! {
 		#[doc(hidden)]
-		pub mod __substrate_origin_check {
+		pub mod __axlib_origin_check {
 			#[macro_export]
 			#[doc(hidden)]
 			macro_rules! #macro_ident {

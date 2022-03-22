@@ -25,8 +25,8 @@ mod block_builder_ext;
 
 pub use sc_consensus::LongestChain;
 use std::sync::Arc;
-pub use substrate_test_client::*;
-pub use substrate_test_runtime as runtime;
+pub use axlib_test_client::*;
+pub use axlib_test_runtime as runtime;
 
 pub use self::block_builder_ext::BlockBuilderExt;
 
@@ -36,7 +36,7 @@ use sp_core::{
 	Pair,
 };
 use sp_runtime::traits::{Block as BlockT, Hash as HashT, Header as HeaderT};
-use substrate_test_runtime::genesismap::{additional_storage_with_genesis, GenesisConfig};
+use axlib_test_runtime::genesismap::{additional_storage_with_genesis, GenesisConfig};
 
 /// A prelude to import in tests.
 pub mod prelude {
@@ -62,20 +62,20 @@ impl sc_executor::NativeExecutionDispatch for LocalExecutorDispatch {
 	type ExtendHostFunctions = ();
 
 	fn dispatch(method: &str, data: &[u8]) -> Option<Vec<u8>> {
-		substrate_test_runtime::api::dispatch(method, data)
+		axlib_test_runtime::api::dispatch(method, data)
 	}
 
 	fn native_version() -> sc_executor::NativeVersion {
-		substrate_test_runtime::native_version()
+		axlib_test_runtime::native_version()
 	}
 }
 
 /// Test client database backend.
-pub type Backend = substrate_test_client::Backend<substrate_test_runtime::Block>;
+pub type Backend = axlib_test_client::Backend<axlib_test_runtime::Block>;
 
 /// Test client executor.
 pub type ExecutorDispatch = client::LocalCallExecutor<
-	substrate_test_runtime::Block,
+	axlib_test_runtime::Block,
 	Backend,
 	NativeElseWasmExecutor<LocalExecutorDispatch>,
 >;
@@ -122,7 +122,7 @@ impl GenesisParameters {
 	}
 }
 
-impl substrate_test_client::GenesisInit for GenesisParameters {
+impl axlib_test_client::GenesisInit for GenesisParameters {
 	fn genesis_storage(&self) -> Storage {
 		use codec::Encode;
 
@@ -156,8 +156,8 @@ impl substrate_test_client::GenesisInit for GenesisParameters {
 }
 
 /// A `TestClient` with `test-runtime` builder.
-pub type TestClientBuilder<E, B> = substrate_test_client::TestClientBuilder<
-	substrate_test_runtime::Block,
+pub type TestClientBuilder<E, B> = axlib_test_client::TestClientBuilder<
+	axlib_test_runtime::Block,
 	E,
 	B,
 	GenesisParameters,
@@ -167,12 +167,12 @@ pub type TestClientBuilder<E, B> = substrate_test_client::TestClientBuilder<
 pub type Client<B> = client::Client<
 	B,
 	client::LocalCallExecutor<
-		substrate_test_runtime::Block,
+		axlib_test_runtime::Block,
 		B,
 		sc_executor::NativeElseWasmExecutor<LocalExecutorDispatch>,
 	>,
-	substrate_test_runtime::Block,
-	substrate_test_runtime::RuntimeApi,
+	axlib_test_runtime::Block,
+	axlib_test_runtime::RuntimeApi,
 >;
 
 /// A test client with default backend.
@@ -249,7 +249,7 @@ pub trait TestClientBuilderExt<B>: Sized {
 	/// Build the test client and longest chain selector.
 	fn build_with_longest_chain(
 		self,
-	) -> (Client<B>, sc_consensus::LongestChain<B, substrate_test_runtime::Block>);
+	) -> (Client<B>, sc_consensus::LongestChain<B, axlib_test_runtime::Block>);
 
 	/// Build the test client and the backend.
 	fn build_with_backend(self) -> (Client<B>, Arc<B>);
@@ -258,13 +258,13 @@ pub trait TestClientBuilderExt<B>: Sized {
 impl<B> TestClientBuilderExt<B>
 	for TestClientBuilder<
 		client::LocalCallExecutor<
-			substrate_test_runtime::Block,
+			axlib_test_runtime::Block,
 			B,
 			sc_executor::NativeElseWasmExecutor<LocalExecutorDispatch>,
 		>,
 		B,
 	> where
-	B: sc_client_api::backend::Backend<substrate_test_runtime::Block> + 'static,
+	B: sc_client_api::backend::Backend<axlib_test_runtime::Block> + 'static,
 {
 	fn genesis_init_mut(&mut self) -> &mut GenesisParameters {
 		Self::genesis_init_mut(self)
@@ -272,7 +272,7 @@ impl<B> TestClientBuilderExt<B>
 
 	fn build_with_longest_chain(
 		self,
-	) -> (Client<B>, sc_consensus::LongestChain<B, substrate_test_runtime::Block>) {
+	) -> (Client<B>, sc_consensus::LongestChain<B, axlib_test_runtime::Block>) {
 		self.build_with_native_executor(None)
 	}
 

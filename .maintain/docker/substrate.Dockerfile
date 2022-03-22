@@ -6,9 +6,9 @@ ARG BUILD_DATE
 
 LABEL io.parity.image.authors="devops-team@parity.io" \
 	io.parity.image.vendor="Parity Technologies" \
-	io.parity.image.title="parity/substrate" \
+	io.parity.image.title="parity/axlib" \
 	io.parity.image.description="Axlib: The platform for blockchain innovators." \
-	io.parity.image.source="https://github.com/paritytech/substrate/blob/${VCS_REF}/.maintain/docker/Dockerfile" \
+	io.parity.image.source="https://github.com/paritytech/axlib/blob/${VCS_REF}/.maintain/docker/Dockerfile" \
 	io.parity.image.revision="${VCS_REF}" \
 	io.parity.image.created="${BUILD_DATE}" \
 	io.parity.image.documentation="https://wiki.parity.io/Parity-Axlib"
@@ -28,17 +28,17 @@ RUN apt-get update && \
 	apt-get clean && \
 	find /var/lib/apt/lists/ -type f -not -name lock -delete; \
 # add user
-	useradd -m -u 1000 -U -s /bin/sh -d /substrate substrate
+	useradd -m -u 1000 -U -s /bin/sh -d /axlib substrate
 
 # add substrate binary to docker image
-COPY ./substrate /usr/local/bin
+COPY ./axlib /usr/local/bin
 
 USER substrate
 
 # check if executable works in this container
-RUN /usr/local/bin/substrate --version
+RUN /usr/local/bin/axlib --version
 
 EXPOSE 30333 9933 9944
-VOLUME ["/substrate"]
+VOLUME ["/axlib"]
 
-ENTRYPOINT ["/usr/local/bin/substrate"]
+ENTRYPOINT ["/usr/local/bin/axlib"]

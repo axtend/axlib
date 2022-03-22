@@ -35,7 +35,7 @@ use sp_version::RuntimeVersion;
 
 pub const VERSION: RuntimeVersion = RuntimeVersion {
 	spec_name: create_runtime_str!("frame-support-test-compile-pass"),
-	impl_name: create_runtime_str!("substrate-frame-support-test-compile-pass-runtime"),
+	impl_name: create_runtime_str!("axlib-frame-support-test-compile-pass-runtime"),
 	authoring_version: 0,
 	spec_version: 0,
 	impl_version: 0,

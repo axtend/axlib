@@ -1,7 +1,7 @@
 # Axlib Node Template Release Process
 
 1. This release process has to be run in a github checkout Axlib directory with your work
-committed into `https://github.com/paritytech/substrate/`, because the build script will check
+committed into `https://github.com/paritytech/axlib/`, because the build script will check
 the existence of your current git commit ID in the remote repository.
 
 	Assume you are in root directory of Axlib. Run:
@@ -16,7 +16,7 @@ by running the following command.
 
 	```bash
 	# This is where the tar.gz file uncompressed
-	cd substrate-node-template
+	cd axlib-node-template
 	# rsync with force copying. Note the slash at the destination directory is important
 	rsync -avh * <destination node-template directory>/
 	# For dry-running add `-n` argument
@@ -35,7 +35,7 @@ commit in Axlib remote repository, such as:
 	```toml
 	[dev-dependencies.sp-core]
 	default-features = false
-	git = 'https://github.com/paritytech/substrate.git'
+	git = 'https://github.com/paritytech/axlib.git'
 	rev = 'c1fe59d060600a10eebb4ace277af1fee20bad17'
 	version = '3.0.0'
 	```
@@ -53,7 +53,7 @@ commit in Axlib remote repository, such as:
 	`.maintain/node-template-release`.
 
 4. Once the three `Cargo.toml`s are updated, compile and confirm that the Node Template builds. Then
-commit the changes to a new branch in [Axlib Node Template](https://github.com/substrate-developer-hub/substrate-node-template), and make a PR.
+commit the changes to a new branch in [Axlib Node Template](https://github.com/axlib-developer-hub/axlib-node-template), and make a PR.
 
 	> Note that there is a chance the code in Axlib Node Template works with the linked Axlib git
 	commit but not with published packages due to the latest (as yet) unpublished features. In this case,

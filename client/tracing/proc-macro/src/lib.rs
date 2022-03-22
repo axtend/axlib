@@ -58,7 +58,7 @@ use syn::{Error, Expr, Ident, ItemFn};
 /// 2020-10-16 08:03:14  📋 Chain specification: Local Testnet
 /// 2020-10-16 08:03:14  🏷  Node name: nice-glove-1401
 /// 2020-10-16 08:03:14  👤 Role: LIGHT
-/// 2020-10-16 08:03:14  💾 Database: RocksDb at /tmp/substrate95w2Dk/chains/local_testnet/db
+/// 2020-10-16 08:03:14  💾 Database: RocksDb at /tmp/axlib95w2Dk/chains/local_testnet/db
 /// 2020-10-16 08:03:14  ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
 /// 2020-10-16 08:03:14  [light] 🔨 Initializing Genesis block/state (state: 0x121d…8e36, header-hash: 0x24ef…8ff6)
 /// 2020-10-16 08:03:14  [light] Loading GRANDPA authorities from genesis on what appears to be first startup.
@@ -92,7 +92,7 @@ use syn::{Error, Expr, Ident, ItemFn};
 /// 2020-10-16 08:12:57  📋 Chain specification: Local Testnet
 /// 2020-10-16 08:12:57  🏷  Node name: open-harbor-1619
 /// 2020-10-16 08:12:57  👤 Role: LIGHT
-/// 2020-10-16 08:12:57  💾 Database: RocksDb at /tmp/substrate9T9Mtb/chains/local_testnet/db
+/// 2020-10-16 08:12:57  💾 Database: RocksDb at /tmp/axlib9T9Mtb/chains/local_testnet/db
 /// 2020-10-16 08:12:57  ⛓  Native runtime: node-template-1 (node-template-1.tx1.au1)
 /// 2020-10-16 08:12:58  [open-harbor-1619] 🔨 Initializing Genesis block/state (state: 0x121d…8e36, header-hash: 0x24ef…8ff6)
 /// 2020-10-16 08:12:58  [open-harbor-1619] Loading GRANDPA authorities from genesis on what appears to be first startup.

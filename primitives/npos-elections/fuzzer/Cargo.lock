@@ -1171,7 +1171,7 @@ dependencies = [
  "sp-runtime-interface",
  "sp-std",
  "sp-storage",
- "substrate-bip39",
+ "axlib-bip39",
  "tiny-bip39",
  "tiny-keccak",
  "twox-hash",
@@ -1370,7 +1370,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 
 [[package]]
-name = "substrate-bip39"
+name = "axlib-bip39"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3be511be555a3633e71739a79e4ddff6a6aaa6579fa6114182a51d72c3eb93c5"

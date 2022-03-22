@@ -1,11 +1,11 @@
 [package]
-name = "substrate-frame-rpc-system"
+name = "axlib-frame-rpc-system"
 version = "4.0.0-dev"
 authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axtend/axlib/"
 description = "FRAME's system exposed over Axlib RPC"
 readme = "README.md"
 
@@ -30,6 +30,6 @@ sp-block-builder = { version = "4.0.0-dev", path = "../../../../primitives/block
 sc-rpc-api = { version = "0.10.0-dev", path = "../../../../client/rpc-api" }
 
 [dev-dependencies]
-substrate-test-runtime-client = { version = "2.0.0", path = "../../../../test-utils/runtime/client" }
+axlib-test-runtime-client = { version = "2.0.0", path = "../../../../test-utils/runtime/client" }
 sp-tracing = { version = "4.0.0", path = "../../../../primitives/tracing" }
 sc-transaction-pool = { version = "4.0.0-dev", path = "../../../../client/transaction-pool" }

@@ -247,7 +247,7 @@ pub(crate) mod tests {
 	use sp_core::crypto::UncheckedFrom;
 	use sp_finality_grandpa::GRANDPA_ENGINE_ID as ID;
 	use sp_keyring::Ed25519Keyring;
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		runtime::{Block, Header, H256},
 		Backend as TestBackend, ClientBlockImportExt, ClientExt, DefaultTestClientBuilderExt,
 		TestClient, TestClientBuilder, TestClientBuilderExt,

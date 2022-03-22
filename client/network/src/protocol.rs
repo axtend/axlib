@@ -132,22 +132,22 @@ impl Metrics {
 	fn register(r: &Registry) -> Result<Self, PrometheusError> {
 		Ok(Self {
 			peers: {
-				let g = Gauge::new("substrate_sync_peers", "Number of peers we sync with")?;
+				let g = Gauge::new("axlib_sync_peers", "Number of peers we sync with")?;
 				register(g, r)?
 			},
 			queued_blocks: {
 				let g =
-					Gauge::new("substrate_sync_queued_blocks", "Number of blocks in import queue")?;
+					Gauge::new("axlib_sync_queued_blocks", "Number of blocks in import queue")?;
 				register(g, r)?
 			},
 			fork_targets: {
-				let g = Gauge::new("substrate_sync_fork_targets", "Number of fork sync targets")?;
+				let g = Gauge::new("axlib_sync_fork_targets", "Number of fork sync targets")?;
 				register(g, r)?
 			},
 			justifications: {
 				let g = GaugeVec::new(
 					Opts::new(
-						"substrate_sync_extra_justifications",
+						"axlib_sync_extra_justifications",
 						"Number of extra justifications requests",
 					),
 					&["status"],
@@ -1688,7 +1688,7 @@ impl<B: BlockT> NetworkBehaviour for Protocol<B> {
 							// As a convenience, we allow opening substreams for "external"
 							// notification protocols with an empty handshake. This fetches the
 							// roles from the locally-known roles.
-							// TODO: remove this after https://github.com/paritytech/substrate/issues/5685
+							// TODO: remove this after https://github.com/paritytech/axlib/issues/5685
 							CustomMessageOutcome::NotificationStreamOpened {
 								remote: peer_id,
 								protocol: self.notification_protocols

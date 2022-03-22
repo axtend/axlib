@@ -454,7 +454,7 @@ mod tests {
 	use sp_api::{Core, RuntimeApiInfo};
 	use sp_runtime::RuntimeString;
 	use sp_wasm_interface::HostFunctions;
-	use substrate_test_runtime::Block;
+	use axlib_test_runtime::Block;
 
 	#[derive(Encode)]
 	pub struct OldRuntimeVersion {
@@ -540,7 +540,7 @@ mod tests {
 	#[test]
 	fn embed_runtime_version_works() {
 		let wasm = sp_maybe_compressed_blob::decompress(
-			substrate_test_runtime::wasm_binary_unwrap(),
+			axlib_test_runtime::wasm_binary_unwrap(),
 			sp_maybe_compressed_blob::CODE_BLOB_BOMB_LIMIT,
 		)
 		.expect("Decompressing works");

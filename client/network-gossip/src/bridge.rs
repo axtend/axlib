@@ -306,7 +306,7 @@ mod tests {
 		convert::TryInto,
 		sync::{Arc, Mutex},
 	};
-	use substrate_test_runtime_client::runtime::Block;
+	use axlib_test_runtime_client::runtime::Block;
 
 	#[derive(Clone, Default)]
 	struct TestNetwork {
@@ -360,7 +360,7 @@ mod tests {
 	/// Regression test for the case where the `GossipEngine.network_event_stream` closes. One
 	/// should not ignore a `Poll::Ready(None)` as `poll_next_unpin` will panic on subsequent calls.
 	///
-	/// See https://github.com/paritytech/substrate/issues/5000 for details.
+	/// See https://github.com/paritytech/axlib/issues/5000 for details.
 	#[test]
 	fn returns_when_network_event_stream_closes() {
 		let network = TestNetwork::default();

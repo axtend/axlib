@@ -25,7 +25,7 @@ use frame_support::{
 	Hashable,
 };
 use sp_runtime::traits::Hash;
-use substrate_test_utils::assert_eq_uvec;
+use axlib_test_utils::assert_eq_uvec;
 
 #[test]
 fn basic_scheduling_works() {

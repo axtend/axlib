@@ -271,20 +271,20 @@ mod tests {
 	use super::*;
 	use sc_executor::{NativeElseWasmExecutor, WasmExecutionMethod};
 	use std::fs::{self, File};
-	use substrate_test_runtime_client::LocalExecutorDispatch;
+	use axlib_test_runtime_client::LocalExecutorDispatch;
 
 	fn wasm_test<F>(fun: F)
 	where
 		F: Fn(&Path, &[u8], &NativeElseWasmExecutor<LocalExecutorDispatch>),
 	{
 		let exec =
-			NativeElseWasmExecutor::<substrate_test_runtime_client::LocalExecutorDispatch>::new(
+			NativeElseWasmExecutor::<axlib_test_runtime_client::LocalExecutorDispatch>::new(
 				WasmExecutionMethod::Interpreted,
 				Some(128),
 				1,
 				2,
 			);
-		let bytes = substrate_test_runtime::wasm_binary_unwrap();
+		let bytes = axlib_test_runtime::wasm_binary_unwrap();
 		let dir = tempfile::tempdir().expect("Create a temporary directory");
 		fun(dir.path(), bytes, &exec);
 		dir.close().expect("Temporary Directory should close");
@@ -301,7 +301,7 @@ mod tests {
 
 		let version = WasmOverride::runtime_version(
 			&executor,
-			substrate_test_runtime::wasm_binary_unwrap(),
+			axlib_test_runtime::wasm_binary_unwrap(),
 			&[1],
 			Some(128),
 		)
@@ -316,7 +316,7 @@ mod tests {
 			let overrides =
 				WasmOverride::scrape_overrides(dir, exec).expect("HashMap of u32 and WasmBlob");
 			let wasm = overrides.get(&2).expect("WASM binary");
-			assert_eq!(wasm.code, substrate_test_runtime::wasm_binary_unwrap().to_vec())
+			assert_eq!(wasm.code, axlib_test_runtime::wasm_binary_unwrap().to_vec())
 		});
 	}
 

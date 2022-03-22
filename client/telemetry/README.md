@@ -1,7 +1,7 @@
 # sc-telemetry
 
 Axlib's client telemetry is a part of substrate that allows ingesting telemetry data
-with for example [Axia telemetry](https://github.com/paritytech/substrate-telemetry).
+with for example [Axia telemetry](https://github.com/paritytech/axlib-telemetry).
 
 It works using Tokio's [tracing](https://github.com/tokio-rs/tracing/) library. The telemetry
 information uses tracing's logging to report the telemetry data which is then retrieved by a

@@ -588,7 +588,7 @@ mod tests {
 		task::Poll,
 		time::{Duration, Instant},
 	};
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		runtime::{Header, H256},
 		TestClient,
 	};
@@ -611,7 +611,7 @@ mod tests {
 	impl Proposer<TestBlock> for DummyProposer {
 		type Error = Error;
 		type Transaction =
-			sc_client_api::TransactionFor<substrate_test_runtime_client::Backend, TestBlock>;
+			sc_client_api::TransactionFor<axlib_test_runtime_client::Backend, TestBlock>;
 		type Proposal = future::Ready<Result<Proposal<TestBlock, Self::Transaction, ()>, Error>>;
 		type ProofRecording = DisableProofRecording;
 		type Proof = ();
@@ -794,7 +794,7 @@ mod tests {
 
 	#[test]
 	fn authorities_call_works() {
-		let client = substrate_test_runtime_client::new();
+		let client = axlib_test_runtime_client::new();
 
 		assert_eq!(client.chain_info().best_number, 0);
 		assert_eq!(

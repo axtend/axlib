@@ -363,7 +363,7 @@ where
 	let expected_full_connections = NUM_FULL_NODES - 1;
 
 	{
-		let temp = tempdir_with_prefix("substrate-connectivity-test");
+		let temp = tempdir_with_prefix("axlib-connectivity-test");
 		{
 			let mut network = TestNet::new(
 				&temp,
@@ -393,7 +393,7 @@ where
 		temp.close().expect("Error removing temp dir");
 	}
 	{
-		let temp = tempdir_with_prefix("substrate-connectivity-test");
+		let temp = tempdir_with_prefix("axlib-connectivity-test");
 		{
 			let mut network = TestNet::new(
 				&temp,
@@ -444,7 +444,7 @@ pub fn sync<G, E, Fb, F, B, ExF, U>(
 {
 	const NUM_FULL_NODES: usize = 10;
 	const NUM_BLOCKS: usize = 512;
-	let temp = tempdir_with_prefix("substrate-sync-test");
+	let temp = tempdir_with_prefix("axlib-sync-test");
 	let mut network = TestNet::new(
 		&temp,
 		spec,
@@ -513,7 +513,7 @@ pub fn consensus<G, E, Fb, F>(
 {
 	const NUM_FULL_NODES: usize = 10;
 	const NUM_BLOCKS: usize = 10; // 10 * 2 sec block production time = ~20 seconds
-	let temp = tempdir_with_prefix("substrate-consensus-test");
+	let temp = tempdir_with_prefix("axlib-consensus-test");
 	let mut network = TestNet::new(
 		&temp,
 		spec,

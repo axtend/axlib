@@ -816,7 +816,7 @@ mod tests {
 	use sp_api::{BlockId, HeaderT};
 	use sp_blockchain::Backend;
 	use sp_runtime::{ConsensusEngineId, Justifications};
-	use substrate_test_runtime::{Block, Header, H256};
+	use axlib_test_runtime::{Block, Header, H256};
 
 	pub const ID1: ConsensusEngineId = *b"TST1";
 	pub const ID2: ConsensusEngineId = *b"TST2";

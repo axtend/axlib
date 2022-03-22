@@ -454,7 +454,7 @@ impl RuntimeSpawn for RuntimeInstanceSpawn {
 					// Instantiating wasm here every time is suboptimal at the moment, shared
 					// pool of instances should be used.
 					//
-					// https://github.com/paritytech/substrate/issues/7354
+					// https://github.com/paritytech/axlib/issues/7354
 					let mut instance = match module.new_instance() {
 						Ok(instance) => instance,
 						Err(error) =>
@@ -644,11 +644,11 @@ mod tests {
 		type ExtendHostFunctions = (my_interface::HostFunctions, my_interface::HostFunctions);
 
 		fn dispatch(method: &str, data: &[u8]) -> Option<Vec<u8>> {
-			substrate_test_runtime::api::dispatch(method, data)
+			axlib_test_runtime::api::dispatch(method, data)
 		}
 
 		fn native_version() -> NativeVersion {
-			substrate_test_runtime::native_version()
+			axlib_test_runtime::native_version()
 		}
 	}
 

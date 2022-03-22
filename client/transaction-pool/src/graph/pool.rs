@@ -447,7 +447,7 @@ mod tests {
 	use sc_transaction_pool_api::TransactionStatus;
 	use sp_runtime::transaction_validity::TransactionSource;
 	use std::{collections::HashMap, time::Instant};
-	use substrate_test_runtime::{AccountId, Extrinsic, Transfer, H256};
+	use axlib_test_runtime::{AccountId, Extrinsic, Transfer, H256};
 
 	const SOURCE: TransactionSource = TransactionSource::External;
 

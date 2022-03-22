@@ -3,10 +3,10 @@ name = "sp-trie"
 version = "5.0.0"
 authors = ["Parity Technologies <admin@parity.io>"]
 description = "Patricia trie stuff using a parity-scale-codec node format"
-repository = "https://github.com/paritytech/substrate/"
+repository = "https://github.com/axtend/axlib/"
 license = "Apache-2.0"
 edition = "2021"
-homepage = "https://substrate.io"
+homepage = "https://axlib.io"
 documentation = "https://docs.rs/sp-trie"
 readme = "README.md"
 

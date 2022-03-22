@@ -357,7 +357,7 @@ fn decl_all_pallets<'a>(
 			`AllPalletsWithSystemReversed`, `AllPalletsWithoutSystemReversed`. \
 			Note that the type `frame_executive::Executive` expects one of `AllPalletsWithSystem` \
 			, `AllPalletsWithSystemReversed`, `AllPalletsReversedWithSystemFirst`. More details in \
-			https://github.com/paritytech/substrate/pull/10043")]
+			https://github.com/paritytech/axlib/pull/10043")]
 		pub type AllPallets = AllPalletsWithSystem;
 
 		/// All pallets included in the runtime as a nested tuple of types.

@@ -329,7 +329,7 @@ mod tests {
 	use sp_keyring::Ed25519Keyring;
 	use sp_runtime::{generic::BlockId, traits::Header as _};
 	use std::sync::Arc;
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		ClientBlockImportExt, ClientExt, DefaultTestClientBuilderExt, TestClientBuilder,
 		TestClientBuilderExt,
 	};

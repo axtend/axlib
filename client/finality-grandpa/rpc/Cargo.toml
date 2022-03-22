@@ -3,7 +3,7 @@ name = "sc-finality-grandpa-rpc"
 version = "0.10.0-dev"
 authors = ["Parity Technologies <admin@parity.io>"]
 description = "RPC extensions for the GRANDPA finality gadget"
-repository = "https://github.com/paritytech/substrate/"
+repository = "https://github.com/axtend/axlib/"
 edition = "2021"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
 readme = "README.md"
@@ -35,4 +35,4 @@ sc-rpc = { version = "4.0.0-dev", path = "../../rpc", features = [
 sp-core = { version = "5.0.0", path = "../../../primitives/core" }
 sp-finality-grandpa = { version = "4.0.0-dev", path = "../../../primitives/finality-grandpa" }
 sp-keyring = { version = "5.0.0", path = "../../../primitives/keyring" }
-substrate-test-runtime-client = { version = "2.0.0", path = "../../../test-utils/runtime/client" }
+axlib-test-runtime-client = { version = "2.0.0", path = "../../../test-utils/runtime/client" }

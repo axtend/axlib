@@ -17,7 +17,7 @@
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 #[test]
-fn substrate_test_utils_derive_trybuild() {
+fn axlib_test_utils_derive_trybuild() {
 	let t = trybuild::TestCases::new();
 	t.compile_fail("tests/ui/too-many-func-parameters.rs");
 }

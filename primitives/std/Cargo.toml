@@ -4,8 +4,8 @@ version = "4.0.0"
 authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axtend/axlib/"
 
 description = "Lowest-abstraction level for the Axlib runtime: just exports useful primitives from std or client/alloc to be used with any code that depends on the runtime."
 documentation = "https://docs.rs/sp-std"

@@ -52,7 +52,7 @@ use std::{
 	collections::{HashMap, HashSet},
 	pin::Pin,
 };
-use substrate_test_runtime_client::runtime::BlockNumber;
+use axlib_test_runtime_client::runtime::BlockNumber;
 use tokio::runtime::{Handle, Runtime};
 
 use authorities::AuthoritySet;
@@ -63,14 +63,14 @@ use sc_keystore::LocalKeystore;
 use sp_application_crypto::key_types::GRANDPA;
 
 type TestLinkHalf =
-	LinkHalf<Block, PeersFullClient, LongestChain<substrate_test_runtime_client::Backend, Block>>;
+	LinkHalf<Block, PeersFullClient, LongestChain<axlib_test_runtime_client::Backend, Block>>;
 type PeerData = Mutex<Option<TestLinkHalf>>;
 type GrandpaPeer = Peer<PeerData, GrandpaBlockImport>;
 type GrandpaBlockImport = crate::GrandpaBlockImport<
-	substrate_test_runtime_client::Backend,
+	axlib_test_runtime_client::Backend,
 	Block,
 	PeersFullClient,
-	LongestChain<substrate_test_runtime_client::Backend, Block>,
+	LongestChain<axlib_test_runtime_client::Backend, Block>,
 >;
 
 struct GrandpaTestNet {
@@ -1357,11 +1357,11 @@ fn voter_catches_up_to_latest_round_when_behind() {
 }
 
 type TestEnvironment<N, VR> = Environment<
-	substrate_test_runtime_client::Backend,
+	axlib_test_runtime_client::Backend,
 	Block,
 	TestClient,
 	N,
-	LongestChain<substrate_test_runtime_client::Backend, Block>,
+	LongestChain<axlib_test_runtime_client::Backend, Block>,
 	VR,
 >;
 

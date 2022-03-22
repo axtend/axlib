@@ -98,7 +98,7 @@ separate substream.
 
 Additionally, Axlib uses the following non-libp2p-standard protocols:
 
-- **`/substrate/<protocol-id>/<version>`** (where `<protocol-id>` must be replaced with the
+- **`/axlib/<protocol-id>/<version>`** (where `<protocol-id>` must be replaced with the
 protocol ID of the targeted chain, and `<version>` is a number between 2 and 6). For each
 connection we optionally keep an additional substream for all Axlib-based communications alive.
 This protocol is considered legacy, and is progressively being replaced with alternatives.

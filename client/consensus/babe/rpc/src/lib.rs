@@ -221,7 +221,7 @@ mod tests {
 	use sp_core::crypto::key_types::BABE;
 	use sp_keyring::Sr25519Keyring;
 	use sp_keystore::{SyncCryptoStore, SyncCryptoStorePtr};
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		runtime::Block, Backend, DefaultTestClientBuilderExt, TestClient, TestClientBuilder,
 		TestClientBuilderExt,
 	};

@@ -48,7 +48,7 @@ mod app {
 }
 
 /// The prefix used by BABE for its VRF keys.
-pub const BABE_VRF_PREFIX: &[u8] = b"substrate-babe-vrf";
+pub const BABE_VRF_PREFIX: &[u8] = b"axlib-babe-vrf";
 
 /// BABE VRFInOut context.
 pub static BABE_VRF_INOUT_CONTEXT: &[u8] = b"BabeVRFInOutContext";

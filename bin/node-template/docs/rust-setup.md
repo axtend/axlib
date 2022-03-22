@@ -103,7 +103,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 ## Test your set-up
 
 Now the best way to ensure that you have successfully prepared a computer for Axlib
-development is to follow the steps in [our first Axlib tutorial](https://docs.substrate.io/tutorials/v3/create-your-first-substrate-chain/).
+development is to follow the steps in [our first Axlib tutorial](https://docs.substrate.io/tutorials/v3/create-your-first-axlib-chain/).
 
 ## Troubleshooting Axlib builds
 
@@ -157,7 +157,7 @@ runtimes. You will need to configure your Rust compiler to use
 compile Axlib runtime code to the Wasm target.
 
 > There are upstream issues in Rust that need to be resolved before all of Axlib can use the stable Rust toolchain.
-> [This is our tracking issue](https://github.com/paritytech/substrate/issues/1252) if you're curious as to why and how this will be resolved.
+> [This is our tracking issue](https://github.com/paritytech/axlib/issues/1252) if you're curious as to why and how this will be resolved.
 
 #### Latest nightly for Axlib `master`
 

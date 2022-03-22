@@ -136,7 +136,7 @@ where
 mod test {
 	use sp_core::{hash::H256, sr25519, Pair};
 	use sp_runtime::testing::{Digest as DigestTest, Header as HeaderTest};
-	use substrate_test_runtime_client;
+	use axlib_test_runtime_client;
 
 	use super::{check_equivocation, MAX_SLOT_CAPACITY, PRUNING_BOUND};
 
@@ -157,7 +157,7 @@ mod test {
 
 	#[test]
 	fn check_equivocation_works() {
-		let client = substrate_test_runtime_client::new();
+		let client = axlib_test_runtime_client::new();
 		let (pair, _seed) = sr25519::Pair::generate();
 		let public = pair.public();
 

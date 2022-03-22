@@ -146,7 +146,7 @@ mod test {
 	use sp_consensus_babe::{AllowedSlots, BabeGenesisConfiguration};
 	use sp_core::H256;
 	use sp_runtime::traits::NumberFor;
-	use substrate_test_runtime_client;
+	use axlib_test_runtime_client;
 
 	#[test]
 	fn load_decode_from_v0_epoch_changes() {
@@ -157,7 +157,7 @@ mod test {
 			epoch_index: 1,
 			duration: 100,
 		};
-		let client = substrate_test_runtime_client::new();
+		let client = axlib_test_runtime_client::new();
 		let mut v0_tree = ForkTree::<H256, NumberFor<TestBlock>, _>::new();
 		v0_tree
 			.import::<_, ConsensusError>(

@@ -16,7 +16,7 @@ The image can be used by passing the selected binary followed by the appropriate
 
 Your best guess to get started is to pass the `--help flag`. Here are a few examples:
 
-- `docker run --rm -it parity/substrate substrate --version`
-- `docker run --rm -it parity/substrate subkey --help`
-- `docker run --rm -it parity/substrate node-template --version`
-- `docker run --rm -it parity/substrate chain-spec-builder --help`
+- `docker run --rm -it parity/axlib substrate --version`
+- `docker run --rm -it parity/axlib subkey --help`
+- `docker run --rm -it parity/axlib node-template --version`
+- `docker run --rm -it parity/axlib chain-spec-builder --help`

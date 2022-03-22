@@ -55,7 +55,7 @@ impl SubscriptionTaskExecutor {
 impl Spawn for SubscriptionTaskExecutor {
 	fn spawn_obj(&self, future: FutureObj<'static, ()>) -> Result<(), SpawnError> {
 		self.0
-			.spawn("substrate-rpc-subscription", Some("rpc"), future.map(drop).boxed());
+			.spawn("axlib-rpc-subscription", Some("rpc"), future.map(drop).boxed());
 		Ok(())
 	}
 

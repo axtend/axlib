@@ -829,7 +829,7 @@ mod test {
 	use super::*;
 	use sp_runtime::traits::NumberFor;
 	use std::time::{Duration, Instant};
-	use substrate_test_runtime_client::runtime::{Block, Header};
+	use axlib_test_runtime_client::runtime::{Block, Header};
 
 	const SLOT_DURATION: Duration = Duration::from_millis(6000);
 

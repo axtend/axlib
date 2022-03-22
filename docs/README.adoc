@@ -257,8 +257,8 @@ You can use https://github.com/paritytech/scripts/tree/master/dockerfiles/ci-lin
 [source, shell]
 ----
 #run it in the folder with the Axlib source code
-docker run --rm -it -w /shellhere/substrate \
-                    -v $(pwd):/shellhere/substrate \
+docker run --rm -it -w /shellhere/axlib \
+                    -v $(pwd):/shellhere/axlib \
                     paritytech/ci-linux:production <cargo commands>
 ----
 
@@ -270,7 +270,7 @@ Then, grab the Axlib source code:
 
 [source, shell]
 ----
-git clone https://github.com/paritytech/substrate.git
+git clone https://github.com/paritytech/axlib.git
 cd substrate
 ----
 
@@ -333,7 +333,7 @@ Latest known working version: `a2a0eb5398d6223e531455b4c155ef053a4a3a2b`
 
 [source, shell]
 ----
-git clone https://github.com/paritytech/substrate.git
+git clone https://github.com/paritytech/axlib.git
 cd substrate
 git checkout -b flaming-fir a2a0eb5398d6223e531455b4c155ef053a4a3a2b
 ----
@@ -367,7 +367,7 @@ In order to join the Emberic Elm testnet you should build from the `v1.0` branch
 
 [source, shell]
 ----
-git clone https://github.com/paritytech/substrate.git
+git clone https://github.com/paritytech/axlib.git
 cd substrate
 git checkout -b v1.0 origin/v1.0
 ----
@@ -396,7 +396,7 @@ curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"au
 
 If the Session keys need to match a fixed seed, they can be set individually key by key. The RPC call
 expects the key seed and the key type. The key types supported by default in Axlib are listed
-https://github.com/paritytech/substrate/blob/master/core/primitives/src/crypto.rs#L767[here], but the
+https://github.com/paritytech/axlib/blob/master/core/primitives/src/crypto.rs#L767[here], but the
 user can declare any key type.
 
 ```
@@ -425,14 +425,14 @@ Replacing `<spec>` with one of the following (i.e. `cargo doc --package substrat
 substrate
 * Axlib Core
 [source, shell]
-substrate, substrate-cli, substrate-client, substrate-client-db,
-substrate-consensus-common, substrate-consensus-rhd,
-substrate-executor, substrate-finality-grandpa, substrate-keyring, substrate-keystore, substrate-network,
-substrate-network-libp2p, substrate-primitives, substrate-rpc, substrate-rpc-servers,
-substrate-serializer, substrate-service, substrate-service-test, substrate-state-db,
-substrate-state-machine, substrate-telemetry, substrate-test-client,
-substrate-test-runtime, substrate-transaction-graph, sp-transaction-pool,
-substrate-trie
+substrate, axlib-cli, axlib-client, axlib-client-db,
+axlib-consensus-common, axlib-consensus-rhd,
+axlib-executor, axlib-finality-grandpa, axlib-keyring, axlib-keystore, axlib-network,
+axlib-network-libp2p, axlib-primitives, axlib-rpc, axlib-rpc-servers,
+axlib-serializer, axlib-service, axlib-service-test, axlib-state-db,
+axlib-state-machine, axlib-telemetry, axlib-test-client,
+axlib-test-runtime, axlib-transaction-graph, sp-transaction-pool,
+axlib-trie
 * Axlib Runtime
 [source, shell]
 sr-api, sr-io, sr-primitives, sr-sandbox, sr-std, sr-version
@@ -519,4 +519,4 @@ include::CODE_OF_CONDUCT.md[]
 
 == License
 
-https://github.com/paritytech/substrate/blob/master/LICENSE[LICENSE]
+https://github.com/paritytech/axlib/blob/master/LICENSE[LICENSE]

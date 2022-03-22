@@ -28,7 +28,7 @@ Command:
 # Use the `--fast` flag to get the dependencies without needing to install the Axlib and Subkey binary
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 # Install only `subkey`, at a specific version of the subkey crate
-cargo install --force subkey --git https://github.com/paritytech/substrate --version <SET VERSION> --locked
+cargo install --force subkey --git https://github.com/paritytech/axlib --version <SET VERSION> --locked
 ```
 
 ### Run in a container

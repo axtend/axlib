@@ -1134,7 +1134,7 @@ mod tests {
 		traits::{BlakeTwo256, IdentityLookup},
 		BuildStorage, ModuleError,
 	};
-	use substrate_test_utils::assert_eq_uvec;
+	use axlib_test_utils::assert_eq_uvec;
 
 	parameter_types! {
 		pub BlockWeights: frame_system::limits::BlockWeights =

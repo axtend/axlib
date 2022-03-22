@@ -5,8 +5,8 @@ authors = ["Parity Technologies <admin@parity.io>"]
 description = "Transaction storage proof primitives"
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axtend/axlib/"
 readme = "README.md"
 
 [package.metadata.docs.rs]

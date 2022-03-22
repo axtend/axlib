@@ -50,9 +50,9 @@ pub fn expand_outer_config(
 				&field_name,
 			));
 			query_genesis_config_part_macros.push(quote! {
-				#path::__substrate_genesis_config_check::is_genesis_config_defined!(#pallet_name);
+				#path::__axlib_genesis_config_check::is_genesis_config_defined!(#pallet_name);
 				#[cfg(feature = "std")]
-				#path::__substrate_genesis_config_check::is_std_enabled_for_genesis!(#pallet_name, #path_str);
+				#path::__axlib_genesis_config_check::is_std_enabled_for_genesis!(#pallet_name, #path_str);
 			});
 		}
 	}

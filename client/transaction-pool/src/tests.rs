@@ -30,7 +30,7 @@ use sp_runtime::{
 	},
 };
 use std::{collections::HashSet, sync::Arc};
-use substrate_test_runtime::{Block, Extrinsic, Hashing, Transfer, H256};
+use axlib_test_runtime::{Block, Extrinsic, Hashing, Transfer, H256};
 
 pub(crate) const INVALID_NONCE: u64 = 254;
 

@@ -32,7 +32,7 @@ use frame_system::RawOrigin;
 // The exact command of how the estimate generated is printed at the top of the file.
 
 // Details on using the benchmarks macro can be seen at:
-//   https://paritytech.github.io/substrate/master/frame_benchmarking/trait.Benchmarking.html#tymethod.benchmarks
+//   https://paritytech.github.io/axlib/master/frame_benchmarking/trait.Benchmarking.html#tymethod.benchmarks
 benchmarks! {
 	// This will measure the execution time of `set_dummy` for b in [1..1000] range.
 	set_dummy_benchmark {

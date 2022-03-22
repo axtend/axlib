@@ -37,12 +37,12 @@ use sp_runtime::{
 	transaction_validity::{InvalidTransaction, TransactionSource, ValidTransaction},
 };
 use std::{collections::BTreeSet, convert::TryInto, sync::Arc};
-use substrate_test_runtime_client::{
+use axlib_test_runtime_client::{
 	runtime::{Block, Extrinsic, Hash, Header, Index, Transfer},
 	AccountKeyring::*,
 	ClientBlockImportExt,
 };
-use substrate_test_runtime_transaction_pool::{uxt, TestApi};
+use axlib_test_runtime_transaction_pool::{uxt, TestApi};
 
 fn pool() -> Pool<TestApi> {
 	Pool::new(Default::default(), true.into(), TestApi::with_alice_nonce(209).into())
@@ -866,7 +866,7 @@ fn ready_set_should_eventually_resolve_when_block_update_arrives() {
 fn should_not_accept_old_signatures() {
 	use std::convert::TryFrom;
 
-	let client = Arc::new(substrate_test_runtime_client::new());
+	let client = Arc::new(axlib_test_runtime_client::new());
 
 	let pool = Arc::new(
 		BasicPool::new_test(Arc::new(FullChainApi::new(
@@ -907,7 +907,7 @@ fn should_not_accept_old_signatures() {
 
 #[test]
 fn import_notification_to_pool_maintain_works() {
-	let mut client = Arc::new(substrate_test_runtime_client::new());
+	let mut client = Arc::new(axlib_test_runtime_client::new());
 
 	let pool = Arc::new(
 		BasicPool::new_test(Arc::new(FullChainApi::new(

@@ -22,7 +22,7 @@ use tar;
 
 use flate2::{write::GzEncoder, Compression};
 
-const SUBSTRATE_GIT_URL: &str = "https://github.com/paritytech/substrate.git";
+const SUBSTRATE_GIT_URL: &str = "https://github.com/paritytech/axlib.git";
 
 type CargoToml = HashMap<String, toml::Value>;
 
@@ -274,6 +274,6 @@ fn main() {
 		Compression::default(),
 	);
 	let mut tar = tar::Builder::new(output);
-	tar.append_dir_all("substrate-node-template", node_template_path)
-		.expect("Writes substrate-node-template archive");
+	tar.append_dir_all("axlib-node-template", node_template_path)
+		.expect("Writes axlib-node-template archive");
 }

@@ -28,12 +28,12 @@ pub use futures;
 /// # Example
 ///
 /// ```
-/// #[substrate_test_utils::test]
+/// #[axlib_test_utils::test]
 /// async fn basic_test() {
 ///     assert!(true);
 /// }
 /// ```
-pub use substrate_test_utils_derive::test;
+pub use axlib_test_utils_derive::test;
 #[doc(hidden)]
 pub use tokio;
 
@@ -43,7 +43,7 @@ pub use tokio;
 ///
 /// ```rust
 /// #[macro_use]
-/// # use substrate_test_utils::{assert_eq_uvec};
+/// # use axlib_test_utils::{assert_eq_uvec};
 /// # fn main() {
 /// assert_eq_uvec!(vec![1,2], vec![2,1]);
 /// # }
@@ -51,7 +51,7 @@ pub use tokio;
 ///
 /// ```rust,should_panic
 /// #[macro_use]
-/// # use substrate_test_utils::{assert_eq_uvec};
+/// # use axlib_test_utils::{assert_eq_uvec};
 /// # fn main() {
 /// assert_eq_uvec!(vec![1,2,3], vec![2,1]);
 /// # }

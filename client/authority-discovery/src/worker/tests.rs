@@ -36,7 +36,7 @@ use prometheus_endpoint::prometheus::default_registry;
 use sp_api::{ApiRef, ProvideRuntimeApi};
 use sp_keystore::{testing::KeyStore, CryptoStore};
 use sp_runtime::traits::{Block as BlockT, NumberFor, Zero};
-use substrate_test_runtime_client::runtime::Block;
+use axlib_test_runtime_client::runtime::Block;
 
 use super::*;
 
@@ -494,7 +494,7 @@ struct DhtValueFoundTester {
 			TestNetwork,
 			sp_runtime::generic::Block<
 				sp_runtime::generic::Header<u64, sp_runtime::traits::BlakeTwo256>,
-				substrate_test_runtime_client::runtime::Extrinsic,
+				axlib_test_runtime_client::runtime::Extrinsic,
 			>,
 			std::pin::Pin<Box<futures::channel::mpsc::Receiver<sc_network::DhtEvent>>>,
 		>,

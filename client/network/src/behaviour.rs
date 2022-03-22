@@ -63,7 +63,7 @@ pub use crate::request_responses::{
 #[derive(NetworkBehaviour)]
 #[behaviour(out_event = "BehaviourOut<B>", poll_method = "poll", event_process = true)]
 pub struct Behaviour<B: BlockT> {
-	/// All the substrate-specific protocols.
+	/// All the axlib-specific protocols.
 	substrate: Protocol<B>,
 	/// Periodically pings and identifies the nodes we are connected to, and store information in a
 	/// cache.

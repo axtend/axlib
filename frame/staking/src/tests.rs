@@ -38,7 +38,7 @@ use sp_staking::{
 	SessionIndex,
 };
 use sp_std::prelude::*;
-use substrate_test_utils::assert_eq_uvec;
+use axlib_test_utils::assert_eq_uvec;
 
 #[test]
 fn force_unstake_works() {

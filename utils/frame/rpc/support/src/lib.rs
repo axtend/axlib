@@ -35,7 +35,7 @@ use sp_storage::{StorageData, StorageKey};
 /// # use jsonrpc_client_transports::transports::http;
 /// # use codec::Encode;
 /// # use frame_support::{decl_storage, decl_module};
-/// # use substrate_frame_rpc_support::StorageQuery;
+/// # use axlib_frame_rpc_support::StorageQuery;
 /// # use frame_system::Config;
 /// # use sc_rpc_api::state::StateClient;
 /// #

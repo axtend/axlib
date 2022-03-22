@@ -25,12 +25,12 @@
 //! # use sp_consensus::{Environment, Proposer};
 //! # use sp_runtime::generic::BlockId;
 //! # use std::{sync::Arc, time::Duration};
-//! # use substrate_test_runtime_client::{
+//! # use axlib_test_runtime_client::{
 //! #     runtime::{Extrinsic, Transfer}, AccountKeyring,
 //! #     DefaultTestClientBuilderExt, TestClientBuilderExt,
 //! # };
 //! # use sc_transaction_pool::{BasicPool, FullChainApi};
-//! # let client = Arc::new(substrate_test_runtime_client::new());
+//! # let client = Arc::new(axlib_test_runtime_client::new());
 //! # let spawner = sp_core::testing::TaskExecutor::new();
 //! # let txpool = BasicPool::new_full(
 //! #     Default::default(),

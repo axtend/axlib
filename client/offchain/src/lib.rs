@@ -271,7 +271,7 @@ mod tests {
 	use sc_transaction_pool_api::{InPoolTransaction, TransactionPool};
 	use sp_consensus::BlockOrigin;
 	use std::sync::Arc;
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		runtime::Block, ClientBlockImportExt, DefaultTestClientBuilderExt, TestClient,
 		TestClientBuilderExt,
 	};
@@ -317,7 +317,7 @@ mod tests {
 	fn should_call_into_runtime_and_produce_extrinsic() {
 		sp_tracing::try_init_simple();
 
-		let client = Arc::new(substrate_test_runtime_client::new());
+		let client = Arc::new(axlib_test_runtime_client::new());
 		let spawner = sp_core::testing::TaskExecutor::new();
 		let pool = TestPool(BasicPool::new_full(
 			Default::default(),
@@ -344,7 +344,7 @@ mod tests {
 
 		sp_tracing::try_init_simple();
 
-		let (client, backend) = substrate_test_runtime_client::TestClientBuilder::new()
+		let (client, backend) = axlib_test_runtime_client::TestClientBuilder::new()
 			.enable_offchain_indexing_api()
 			.build_with_backend();
 		let mut client = Arc::new(client);
@@ -354,7 +354,7 @@ mod tests {
 		let value = &b"world"[..];
 		let mut block_builder = client.new_block(Default::default()).unwrap();
 		block_builder
-			.push(substrate_test_runtime_client::runtime::Extrinsic::OffchainIndexSet(
+			.push(axlib_test_runtime_client::runtime::Extrinsic::OffchainIndexSet(
 				key.to_vec(),
 				value.to_vec(),
 			))
@@ -367,7 +367,7 @@ mod tests {
 
 		let mut block_builder = client.new_block(Default::default()).unwrap();
 		block_builder
-			.push(substrate_test_runtime_client::runtime::Extrinsic::OffchainIndexClear(
+			.push(axlib_test_runtime_client::runtime::Extrinsic::OffchainIndexClear(
 				key.to_vec(),
 			))
 			.unwrap();

@@ -30,7 +30,7 @@
 //! Some resources about the above:
 //!
 //! 1. <https://docs.substrate.io/v3/tools/try-runtime>
-//! 2. <https://www.crowdcast.io/e/substrate-seminar/41>
+//! 2. <https://www.crowdcast.io/e/axlib-seminar/41>
 //! 3. <https://docs.substrate.io/v3/advanced/executor>
 //!
 //! ---

@@ -45,7 +45,7 @@ pub fn expand_outer_dispatch(
 		variant_patterns.push(quote!(Call::#name(call)));
 		pallet_names.push(name);
 		query_call_part_macros.push(quote! {
-			#path::__substrate_call_check::is_call_part_defined!(#name);
+			#path::__axlib_call_check::is_call_part_defined!(#name);
 		});
 	}
 

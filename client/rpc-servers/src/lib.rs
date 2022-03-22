@@ -90,7 +90,7 @@ impl ServerMetrics {
 				Ok(Self {
 					session_opened: register(
 						Counter::new(
-							"substrate_rpc_sessions_opened",
+							"axlib_rpc_sessions_opened",
 							"Number of persistent RPC sessions opened",
 						)?,
 						r,
@@ -98,7 +98,7 @@ impl ServerMetrics {
 					.into(),
 					session_closed: register(
 						Counter::new(
-							"substrate_rpc_sessions_closed",
+							"axlib_rpc_sessions_closed",
 							"Number of persistent RPC sessions closed",
 						)?,
 						r,

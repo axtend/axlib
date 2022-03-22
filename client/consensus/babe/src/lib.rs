@@ -333,7 +333,7 @@ pub static INTERMEDIATE_KEY: &[u8] = b"babe1";
 /// Create with [`Self::get`].
 // FIXME: Once Rust has higher-kinded types, the duplication between this
 // and `super::babe::Config` can be eliminated.
-// https://github.com/paritytech/substrate/issues/2434
+// https://github.com/paritytech/axlib/issues/2434
 #[derive(Clone)]
 pub struct Config(sc_consensus_slots::SlotDuration<BabeGenesisConfiguration>);
 

@@ -41,33 +41,33 @@ impl Metrics {
 		Ok(Self {
 			beefy_validator_set_id: register(
 				Gauge::new(
-					"substrate_beefy_validator_set_id",
+					"axlib_beefy_validator_set_id",
 					"Current BEEFY active validator set id.",
 				)?,
 				registry,
 			)?,
 			beefy_votes_sent: register(
-				Counter::new("substrate_beefy_votes_sent", "Number of votes sent by this node")?,
+				Counter::new("axlib_beefy_votes_sent", "Number of votes sent by this node")?,
 				registry,
 			)?,
 			beefy_round_concluded: register(
 				Gauge::new(
-					"substrate_beefy_round_concluded",
+					"axlib_beefy_round_concluded",
 					"Voting round, that has been concluded",
 				)?,
 				registry,
 			)?,
 			beefy_best_block: register(
-				Gauge::new("substrate_beefy_best_block", "Best block finalized by BEEFY")?,
+				Gauge::new("axlib_beefy_best_block", "Best block finalized by BEEFY")?,
 				registry,
 			)?,
 			beefy_should_vote_on: register(
-				Gauge::new("substrate_beefy_should_vote_on", "Next block, BEEFY should vote on")?,
+				Gauge::new("axlib_beefy_should_vote_on", "Next block, BEEFY should vote on")?,
 				registry,
 			)?,
 			beefy_skipped_sessions: register(
 				Counter::new(
-					"substrate_beefy_skipped_sessions",
+					"axlib_beefy_skipped_sessions",
 					"Number of sessions without a signed commitment",
 				)?,
 				registry,

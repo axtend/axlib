@@ -63,7 +63,7 @@ pub fn expand_outer_event(
 			));
 			event_conversions.extend(expand_event_conversion(scrate, pallet_decl, &pallet_event));
 			query_event_part_macros.push(quote! {
-				#path::__substrate_event_check::is_event_part_defined!(#pallet_name);
+				#path::__axlib_event_check::is_event_part_defined!(#pallet_name);
 			});
 		}
 	}

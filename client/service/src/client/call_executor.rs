@@ -364,7 +364,7 @@ mod tests {
 		testing::TaskExecutor,
 		traits::{FetchRuntimeCode, WrappedRuntimeCode},
 	};
-	use substrate_test_runtime_client::{runtime, GenesisInit, LocalExecutorDispatch};
+	use axlib_test_runtime_client::{runtime, GenesisInit, LocalExecutorDispatch};
 
 	#[test]
 	fn should_get_override_if_exists() {
@@ -376,7 +376,7 @@ mod tests {
 		);
 
 		let overrides = crate::client::wasm_override::dummy_overrides();
-		let onchain_code = WrappedRuntimeCode(substrate_test_runtime::wasm_binary_unwrap().into());
+		let onchain_code = WrappedRuntimeCode(axlib_test_runtime::wasm_binary_unwrap().into());
 		let onchain_code = RuntimeCode {
 			code_fetcher: &onchain_code,
 			heap_pages: Some(128),
@@ -390,7 +390,7 @@ mod tests {
 		let client_config = ClientConfig::default();
 
 		// client is used for the convenience of creating and inserting the genesis block.
-		let _client = substrate_test_runtime_client::client::new_with_backend::<
+		let _client = axlib_test_runtime_client::client::new_with_backend::<
 			_,
 			_,
 			runtime::Block,
@@ -399,7 +399,7 @@ mod tests {
 		>(
 			backend.clone(),
 			executor.clone(),
-			&substrate_test_runtime_client::GenesisParameters::default().genesis_storage(),
+			&axlib_test_runtime_client::GenesisParameters::default().genesis_storage(),
 			None,
 			Box::new(TaskExecutor::new()),
 			None,

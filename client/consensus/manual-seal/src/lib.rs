@@ -255,10 +255,10 @@ mod tests {
 	use sc_transaction_pool_api::{MaintainedTransactionPool, TransactionPool, TransactionSource};
 	use sp_inherents::InherentData;
 	use sp_runtime::generic::{BlockId, Digest, DigestItem};
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		AccountKeyring::*, DefaultTestClientBuilderExt, TestClientBuilder, TestClientBuilderExt,
 	};
-	use substrate_test_runtime_transaction_pool::{uxt, TestApi};
+	use axlib_test_runtime_transaction_pool::{uxt, TestApi};
 
 	fn api() -> Arc<TestApi> {
 		Arc::new(TestApi::empty())

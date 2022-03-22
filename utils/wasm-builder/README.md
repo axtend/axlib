@@ -13,7 +13,7 @@ A project that should be compiled as a Wasm binary needs to:
 The `build.rs` file needs to contain the following code:
 
 ```rust
-use substrate_wasm_builder::WasmBuilder;
+use axlib_wasm_builder::WasmBuilder;
 
 fn main() {
     WasmBuilder::new()

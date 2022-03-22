@@ -33,7 +33,7 @@ use sp_runtime::{
 		ValidTransaction,
 	},
 };
-use substrate_test_runtime::{AccountId, Block, Extrinsic, Transfer, H256};
+use axlib_test_runtime::{AccountId, Block, Extrinsic, Transfer, H256};
 
 #[derive(Clone, Debug, Default)]
 struct TestApi {

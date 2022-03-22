@@ -23,7 +23,7 @@ use sp_runtime::{
 use sp_state_machine::{
 	create_proof_check_backend, execution_proof_check_on_trie_backend, ExecutionStrategy,
 };
-use substrate_test_runtime_client::{
+use axlib_test_runtime_client::{
 	prelude::*,
 	runtime::{Block, DecodeFails, Header, TestAPI, Transfer},
 	DefaultTestClientBuilderExt, TestClientBuilder,
@@ -244,7 +244,7 @@ fn disable_logging_works() {
 		let mut builder =
 			TestClientBuilder::new().set_execution_strategy(ExecutionStrategy::AlwaysWasm);
 		builder.genesis_init_mut().set_wasm_code(
-			substrate_test_runtime_client::runtime::wasm_binary_logging_disabled_unwrap().to_vec(),
+			axlib_test_runtime_client::runtime::wasm_binary_logging_disabled_unwrap().to_vec(),
 		);
 
 		let client = builder.build();

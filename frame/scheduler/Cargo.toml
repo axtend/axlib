@@ -4,8 +4,8 @@ version = "4.0.0-dev"
 authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://substrate.io"
-repository = "https://github.com/paritytech/substrate/"
+homepage = "https://axlib.io"
+repository = "https://github.com/axtend/axlib/"
 description = "FRAME Scheduler pallet"
 readme = "README.md"
 
@@ -23,7 +23,7 @@ frame-benchmarking = { version = "4.0.0-dev", default-features = false, path = "
 
 [dev-dependencies]
 sp-core = { version = "5.0.0", path = "../../primitives/core", default-features = false }
-substrate-test-utils = { version = "4.0.0-dev", path = "../../test-utils" }
+axlib-test-utils = { version = "4.0.0-dev", path = "../../test-utils" }
 pallet-preimage = { version = "4.0.0-dev", path = "../preimage" }
 
 [features]

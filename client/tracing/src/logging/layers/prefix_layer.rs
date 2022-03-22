@@ -20,7 +20,7 @@ use tracing::{span::Attributes, Id, Subscriber};
 use tracing_subscriber::{layer::Context, registry::LookupSpan, Layer};
 
 /// Span name used for the logging prefix. See macro `sc_tracing::logging::prefix_logs_with!`
-pub const PREFIX_LOG_SPAN: &str = "substrate-log-prefix";
+pub const PREFIX_LOG_SPAN: &str = "axlib-log-prefix";
 
 /// A `Layer` that captures the prefix span ([`PREFIX_LOG_SPAN`]) which is then used by
 /// [`crate::logging::EventFormat`] to prefix the log lines by customizable string.

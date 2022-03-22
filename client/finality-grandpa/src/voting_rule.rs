@@ -337,7 +337,7 @@ mod tests {
 	use sp_consensus::BlockOrigin;
 	use sp_runtime::traits::Header as _;
 
-	use substrate_test_runtime_client::{
+	use axlib_test_runtime_client::{
 		runtime::{Block, Header},
 		Backend, Client, ClientBlockImportExt, DefaultTestClientBuilderExt, TestClientBuilder,
 		TestClientBuilderExt,

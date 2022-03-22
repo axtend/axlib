@@ -500,7 +500,7 @@ mod test {
 	use super::*;
 	use sp_core::{crypto::UncheckedFrom, H256};
 	use sp_finality_grandpa::AuthorityId;
-	use substrate_test_runtime_client;
+	use axlib_test_runtime_client;
 
 	fn dummy_id() -> AuthorityId {
 		AuthorityId::unchecked_from([1; 32])
@@ -508,7 +508,7 @@ mod test {
 
 	#[test]
 	fn load_decode_from_v0_migrates_data_format() {
-		let client = substrate_test_runtime_client::new();
+		let client = axlib_test_runtime_client::new();
 
 		let authorities = vec![(dummy_id(), 100)];
 		let set_id = 3;
@@ -543,7 +543,7 @@ mod test {
 		assert_eq!(load_decode::<_, u32>(&client, VERSION_KEY).unwrap(), None);
 
 		// should perform the migration
-		load_persistent::<substrate_test_runtime_client::runtime::Block, _, _>(
+		load_persistent::<axlib_test_runtime_client::runtime::Block, _, _>(
 			&client,
 			H256::random(),
 			0,
@@ -554,7 +554,7 @@ mod test {
 		assert_eq!(load_decode::<_, u32>(&client, VERSION_KEY).unwrap(), Some(3));
 
 		let PersistentData { authority_set, set_state, .. } =
-			load_persistent::<substrate_test_runtime_client::runtime::Block, _, _>(
+			load_persistent::<axlib_test_runtime_client::runtime::Block, _, _>(
 				&client,
 				H256::random(),
 				0,
@@ -597,7 +597,7 @@ mod test {
 
 	#[test]
 	fn load_decode_from_v1_migrates_data_format() {
-		let client = substrate_test_runtime_client::new();
+		let client = axlib_test_runtime_client::new();
 
 		let authorities = vec![(dummy_id(), 100)];
 		let set_id = 3;
@@ -636,7 +636,7 @@ mod test {
 		assert_eq!(load_decode::<_, u32>(&client, VERSION_KEY).unwrap(), Some(1));
 
 		// should perform the migration
-		load_persistent::<substrate_test_runtime_client::runtime::Block, _, _>(
+		load_persistent::<axlib_test_runtime_client::runtime::Block, _, _>(
 			&client,
 			H256::random(),
 			0,
@@ -647,7 +647,7 @@ mod test {
 		assert_eq!(load_decode::<_, u32>(&client, VERSION_KEY).unwrap(), Some(3));
 
 		let PersistentData { authority_set, set_state, .. } =
-			load_persistent::<substrate_test_runtime_client::runtime::Block, _, _>(
+			load_persistent::<axlib_test_runtime_client::runtime::Block, _, _>(
 				&client,
 				H256::random(),
 				0,
@@ -690,7 +690,7 @@ mod test {
 
 	#[test]
 	fn load_decode_from_v2_migrates_data_format() {
-		let client = substrate_test_runtime_client::new();
+		let client = axlib_test_runtime_client::new();
 
 		let authorities = vec![(dummy_id(), 100)];
 		let set_id = 3;
@@ -704,7 +704,7 @@ mod test {
 			};
 
 			let genesis_state = (H256::random(), 32);
-			let voter_set_state: VoterSetState<substrate_test_runtime_client::runtime::Block> =
+			let voter_set_state: VoterSetState<axlib_test_runtime_client::runtime::Block> =
 				VoterSetState::live(
 					set_id,
 					&authority_set.clone().into(), // Note the conversion!
@@ -726,7 +726,7 @@ mod test {
 		assert_eq!(load_decode::<_, u32>(&client, VERSION_KEY).unwrap(), Some(2));
 
 		// should perform the migration
-		load_persistent::<substrate_test_runtime_client::runtime::Block, _, _>(
+		load_persistent::<axlib_test_runtime_client::runtime::Block, _, _>(
 			&client,
 			H256::random(),
 			0,
@@ -737,7 +737,7 @@ mod test {
 		assert_eq!(load_decode::<_, u32>(&client, VERSION_KEY).unwrap(), Some(3));
 
 		let PersistentData { authority_set, .. } = load_persistent::<
-			substrate_test_runtime_client::runtime::Block,
+			axlib_test_runtime_client::runtime::Block,
 			_,
 			_,
 		>(&client, H256::random(), 0, || unreachable!())
@@ -758,11 +758,11 @@ mod test {
 
 	#[test]
 	fn write_read_concluded_rounds() {
-		let client = substrate_test_runtime_client::new();
+		let client = axlib_test_runtime_client::new();
 		let hash = H256::random();
 		let round_state = RoundState::genesis((hash, 0));
 
-		let completed_round = CompletedRound::<substrate_test_runtime_client::runtime::Block> {
+		let completed_round = CompletedRound::<axlib_test_runtime_client::runtime::Block> {
 			number: 42,
 			state: round_state.clone(),
 			base: round_state.prevote_ghost.unwrap(),
@@ -776,7 +776,7 @@ mod test {
 		round_number.using_encoded(|n| key.extend(n));
 
 		assert_eq!(
-			load_decode::<_, CompletedRound::<substrate_test_runtime_client::runtime::Block>>(
+			load_decode::<_, CompletedRound::<axlib_test_runtime_client::runtime::Block>>(
 				&client, &key
 			)
 			.unwrap(),

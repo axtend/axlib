@@ -203,13 +203,13 @@ pub trait StateApi<Hash> {
 	/// and passing the path of this folder to your chain, e.g.:
 	/// - `./target/release/axia --wasm-runtime-overrides /home/user/my-custom-wasm-runtimes`
 	///
-	/// You can also find some pre-built tracing enabled wasm runtimes in [substrate-archive][2]
+	/// You can also find some pre-built tracing enabled wasm runtimes in [axlib-archive][2]
 	///
 	/// [Source.][3]
 	///
 	/// [1]: https://crates.io/crates/diener
-	/// [2]: https://github.com/paritytech/substrate-archive/tree/master/wasm-tracing
-	/// [3]: https://github.com/paritytech/substrate-archive/wiki
+	/// [2]: https://github.com/paritytech/axlib-archive/tree/master/wasm-tracing
+	/// [3]: https://github.com/paritytech/axlib-archive/wiki
 	///
 	/// ## RPC Usage
 	///
@@ -302,8 +302,8 @@ pub trait StateApi<Hash> {
 	/// [querying substrate storage via rpc][3].
 	///
 	/// [1]: https://docs.substrate.io/v3/advanced/storage#storage-map-keys
-	/// [2]: https://www.shawntabrizi.com/substrate/transparent-keys-in-substrate/
-	/// [3]: https://www.shawntabrizi.com/substrate/querying-substrate-storage-via-rpc/
+	/// [2]: https://www.shawntabrizi.com/axlib/transparent-keys-in-substrate/
+	/// [3]: https://www.shawntabrizi.com/axlib/querying-axlib-storage-via-rpc/
 	///
 	/// ### Maximum payload size
 	///

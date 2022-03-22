@@ -40,8 +40,8 @@ fn parse_knobs(
 		return Err(syn::Error::new_spanned(&sig, "No arguments expected for tests."))
 	}
 
-	let crate_name = match crate_name("substrate-test-utils") {
-		Ok(FoundCrate::Itself) => syn::Ident::new("substrate_test_utils", Span::call_site().into()),
+	let crate_name = match crate_name("axlib-test-utils") {
+		Ok(FoundCrate::Itself) => syn::Ident::new("axlib_test_utils", Span::call_site().into()),
 		Ok(FoundCrate::Name(crate_name)) => syn::Ident::new(&crate_name, Span::call_site().into()),
 		Err(e) => return Err(syn::Error::new_spanned(&sig, e)),
 	};

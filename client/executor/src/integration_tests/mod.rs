@@ -522,7 +522,7 @@ fn returns_mutable_static_bss(wasm_method: WasmExecutionMethod) {
 // If we didn't restore the wasm instance properly, on a trap the stack pointer would not be
 // returned to its initial value and thus the stack space is going to be leaked.
 //
-// See https://github.com/paritytech/substrate/issues/2967 for details
+// See https://github.com/paritytech/axlib/issues/2967 for details
 test_wasm_execution!(restoration_of_globals);
 fn restoration_of_globals(wasm_method: WasmExecutionMethod) {
 	// Allocate 32 pages (of 65536 bytes) which gives the runtime 2048KB of heap to operate on
@@ -694,7 +694,7 @@ fn memory_is_cleared_between_invocations(wasm_method: WasmExecutionMethod) {
 	//        COUNTER += 1;
 	//        COUNTER as u64
 	//     };
-	//     sp_core::to_substrate_wasm_fn_return_value(&output)
+	//     sp_core::to_axlib_wasm_fn_return_value(&output)
 	// }
 	// ```
 	//

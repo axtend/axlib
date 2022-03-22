@@ -86,7 +86,7 @@ impl PeerInfoBehaviour {
 	/// Builds a new `PeerInfoBehaviour`.
 	pub fn new(user_agent: String, local_public_key: PublicKey) -> Self {
 		let identify = {
-			let cfg = IdentifyConfig::new("/substrate/1.0".to_string(), local_public_key)
+			let cfg = IdentifyConfig::new("/axlib/1.0".to_string(), local_public_key)
 				.with_agent_version(user_agent);
 			Identify::new(cfg)
 		};

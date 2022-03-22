@@ -233,7 +233,7 @@ impl<Hash> StorageNotificationsImpl<Hash> {
 		let metrics = prometheus_registry.and_then(|r| {
 			CounterVec::new(
 				Opts::new(
-					"substrate_storage_notification_subscribers",
+					"axlib_storage_notification_subscribers",
 					"Number of subscribers in storage notification sytem",
 				),
 				&["action"], // added | removed

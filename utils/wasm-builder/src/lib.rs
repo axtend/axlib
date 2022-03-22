@@ -30,7 +30,7 @@
 //! The `build.rs` file needs to contain the following code:
 //!
 //! ```no_run
-//! use substrate_wasm_builder::WasmBuilder;
+//! use axlib_wasm_builder::WasmBuilder;
 //!
 //! fn main() {
 //!     WasmBuilder::new()

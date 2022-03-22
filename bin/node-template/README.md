@@ -1,6 +1,6 @@
 # Axlib Node Template
 
-[![Try on playground](https://img.shields.io/badge/Playground-Node_Template-brightgreen?logo=Parity%20Axlib)](https://docs.substrate.io/playground/) [![Matrix](https://img.shields.io/matrix/substrate-technical:matrix.org)](https://matrix.to/#/#substrate-technical:matrix.org)
+[![Try on playground](https://img.shields.io/badge/Playground-Node_Template-brightgreen?logo=Parity%20Axlib)](https://docs.substrate.io/playground/) [![Matrix](https://img.shields.io/matrix/axlib-technical:matrix.org)](https://matrix.to/#/#axlib-technical:matrix.org)
 
 A fresh FRAME-based [Axlib](https://www.substrate.io/) node, ready for hacking :rocket:
 
@@ -75,7 +75,7 @@ RUST_BACKTRACE=1 ./target/release/node-template -ldebug --dev
 
 > Development chain means that the state of our chain will be in a tmp folder while the nodes are
 > running. Also, **alice** account will be authority and sudo account as declared in the
-> [genesis state](https://github.com/substrate-developer-hub/substrate-node-template/blob/main/node/src/chain_spec.rs#L49).
+> [genesis state](https://github.com/axlib-developer-hub/axlib-node-template/blob/main/node/src/chain_spec.rs#L49).
 > At the same time the following accounts will be pre-funded:
 > - Alice
 > - Bob
@@ -174,7 +174,7 @@ blockchain runtime. FRAME allows runtime developers to declare domain-specific l
 called "pallets". At the heart of FRAME is a helpful
 [macro language](https://docs.substrate.io/v3/runtime/macros) that makes it easy to
 create pallets and flexibly compose them to create blockchains that can address
-[a variety of needs](https://www.substrate.io/substrate-users/).
+[a variety of needs](https://www.substrate.io/axlib-users/).
 
 Review the [FRAME runtime implementation](./runtime/src/lib.rs) included in this template and note
 the following:
@@ -190,7 +190,7 @@ the following:
 ### Pallets
 
 The runtime in this project is constructed using many FRAME pallets that ship with the
-[core Axlib repository](https://github.com/paritytech/substrate/tree/master/frame) and a
+[core Axlib repository](https://github.com/paritytech/axlib/tree/master/frame) and a
 template pallet that is [defined in the `pallets`](./pallets/template/src/lib.rs) directory.
 
 A FRAME pallet is compromised of a number of blockchain primitives:

@@ -34,7 +34,7 @@ use sp_runtime::{
 	},
 };
 use std::collections::{BTreeMap, HashMap, HashSet};
-use substrate_test_runtime_client::{
+use axlib_test_runtime_client::{
 	runtime::{AccountId, Block, BlockNumber, Extrinsic, Hash, Header, Index, Transfer},
 	AccountKeyring::{self, *},
 };

@@ -35,7 +35,7 @@ pub fn expand_outer_validate_unsigned(
 
 			pallet_names.push(name);
 			query_validate_unsigned_part_macros.push(quote! {
-				#path::__substrate_validate_unsigned_check::is_validate_unsigned_part_defined!(#name);
+				#path::__axlib_validate_unsigned_check::is_validate_unsigned_part_defined!(#name);
 			});
 		}
 	}

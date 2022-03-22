@@ -25,7 +25,7 @@ use crate::{
 use rand::{self, SeedableRng};
 use sp_arithmetic::{PerU16, Perbill, Percent, Permill};
 use std::convert::TryInto;
-use substrate_test_utils::assert_eq_uvec;
+use axlib_test_utils::assert_eq_uvec;
 
 #[test]
 fn float_phragmen_poc_works() {
