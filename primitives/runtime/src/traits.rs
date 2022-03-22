@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -596,7 +596,7 @@ pub trait IsMember<MemberId> {
 	fn is_member(member_id: &MemberId) -> bool;
 }
 
-/// Something which fulfills the abstract idea of a Substrate header. It has types for a `Number`,
+/// Something which fulfills the abstract idea of a Axlib header. It has types for a `Number`,
 /// a `Hash` and a `Hashing`. It provides access to an `extrinsics_root`, `state_root` and
 /// `parent_hash`, as well as a `digest` and a block `number`.
 ///
@@ -673,7 +673,7 @@ pub trait Header:
 	}
 }
 
-/// Something which fulfills the abstract idea of a Substrate block. It has types for
+/// Something which fulfills the abstract idea of a Axlib block. It has types for
 /// `Extrinsic` pieces of information as well as a `Header`.
 ///
 /// You can get an iterator over each of the `extrinsics` and retrieve the `header`.
@@ -763,7 +763,7 @@ pub type HashFor<B> = <<B as Block>::Header as Header>::Hashing;
 pub type NumberFor<B> = <<B as Block>::Header as Header>::Number;
 /// Extract the digest type for a block.
 
-/// A "checkable" piece of information, used by the standard Substrate Executive in order to
+/// A "checkable" piece of information, used by the standard Axlib Executive in order to
 /// check the validity of a piece of extrinsic information, usually by verifying the signature.
 /// Implement for pieces of information that require some additional context `Context` in order to
 /// be checked.
@@ -775,7 +775,7 @@ pub trait Checkable<Context>: Sized {
 	fn check(self, c: &Context) -> Result<Self::Checked, TransactionValidityError>;
 }
 
-/// A "checkable" piece of information, used by the standard Substrate Executive in order to
+/// A "checkable" piece of information, used by the standard Axlib Executive in order to
 /// check the validity of a piece of extrinsic information, usually by verifying the signature.
 /// Implement for pieces of information that don't require additional context in order to be
 /// checked.
@@ -806,7 +806,7 @@ pub trait Dispatchable {
 	/// ...
 	type Config;
 	/// An opaque set of information attached to the transaction. This could be constructed anywhere
-	/// down the line in a runtime. The current Substrate runtime uses a struct with the same name
+	/// down the line in a runtime. The current Axlib runtime uses a struct with the same name
 	/// to represent the dispatch class and weight.
 	type Info;
 	/// Additional information that is returned by `dispatch`. Can be used to supply the caller
@@ -1080,7 +1080,7 @@ impl SignedExtension for () {
 	}
 }
 
-/// An "executable" piece of information, used by the standard Substrate Executive in order to
+/// An "executable" piece of information, used by the standard Axlib Executive in order to
 /// enact a piece of extrinsic information by marshalling and dispatching to a named function
 /// call.
 ///

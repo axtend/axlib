@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -56,9 +56,9 @@ pub trait WeightInfo {
 	fn close_child_bounty_active() -> Weight;
 }
 
-/// Weights for pallet_child_bounties using the Substrate node and recommended hardware.
-pub struct SubstrateWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
+/// Weights for pallet_child_bounties using the Axlib node and recommended hardware.
+pub struct AxlibWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
 	// Storage: ChildBounties ParentChildBounties (r:1 w:1)
 	// Storage: Bounties Bounties (r:1 w:0)
 	// Storage: System Account (r:2 w:2)

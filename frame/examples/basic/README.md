@@ -116,7 +116,7 @@ Copy and paste this template from frame/examples/basic/src/lib.rs into file
 <!-- Original author of paragraph: ??? -->
 
 // Reference documentation of aspects such as `storageItems` and `dispatchable` functions should only be
-// included in the https://docs.rs Rustdocs for Substrate and not repeated in the README file.
+// included in the https://docs.rs Rustdocs for Axlib and not repeated in the README file.
 
 \### Dispatchable Functions
 
@@ -209,8 +209,8 @@ pub trait Config: <INSERT_CUSTOM_PALLET_NAME>::Config { }
 // Show a usage example in an actual runtime
 
 // See:
-// - Substrate TCR https://github.com/parity-samples/substrate-tcr
-// - Substrate Kitties https://shawntabrizi.github.io/substrate-collectables-workshop/#/
+// - Axlib TCR https://github.com/parity-samples/substrate-tcr
+// - Axlib Kitties https://shawntabrizi.github.io/substrate-collectables-workshop/#/
 
 \## Genesis Config
 

@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -136,7 +136,7 @@ pub trait ProofRecording: Send + Sync + private::Sealed + 'static {
 	const ENABLED: bool;
 	/// Convert the given `storage_proof` into [`Self::Proof`].
 	///
-	/// Internally Substrate uses `Option<StorageProof>` to express the both states of proof
+	/// Internally Axlib uses `Option<StorageProof>` to express the both states of proof
 	/// recording (for now) and as [`Self::Proof`] is some different type, we need to provide a
 	/// function to convert this value.
 	///

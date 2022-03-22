@@ -6,7 +6,7 @@ edition = "2021"
 license = "Apache-2.0"
 homepage = "https://substrate.io"
 repository = "https://github.com/paritytech/substrate/"
-description = "Substrate RPC primitives and utilities."
+description = "Axlib RPC primitives and utilities."
 readme = "README.md"
 
 [package.metadata.docs.rs]

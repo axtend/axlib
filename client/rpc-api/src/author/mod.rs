@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate block-author/full-node API.
+//! Axlib block-author/full-node API.
 
 pub mod error;
 pub mod hash;
@@ -29,7 +29,7 @@ use sp_core::Bytes;
 
 pub use self::gen_client::Client as AuthorClient;
 
-/// Substrate authoring RPC API
+/// Axlib authoring RPC API
 #[rpc]
 pub trait AuthorApi<Hash, BlockHash> {
 	/// RPC metadata

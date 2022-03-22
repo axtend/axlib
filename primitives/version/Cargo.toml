@@ -6,7 +6,7 @@ edition = "2021"
 license = "Apache-2.0"
 homepage = "https://substrate.io"
 repository = "https://github.com/paritytech/substrate/"
-description = "Version module for the Substrate runtime; Provides a function that returns the runtime version."
+description = "Version module for the Axlib runtime; Provides a function that returns the runtime version."
 documentation = "https://docs.rs/sp-version"
 readme = "README.md"
 

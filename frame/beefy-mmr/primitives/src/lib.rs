@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -21,7 +21,7 @@
 //! This crate implements a simple binary Merkle Tree utilities required for inter-op with Ethereum
 //! bridge & Solidity contract.
 //!
-//! The implementation is optimised for usage within Substrate Runtime and supports no-std
+//! The implementation is optimised for usage within Axlib Runtime and supports no-std
 //! compilation targets.
 //!
 //! Merkle Tree is constructed from arbitrary-length leaves, that are initially hashed using the

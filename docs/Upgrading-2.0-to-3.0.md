@@ -1,10 +1,10 @@
-# Upgrading from Substrate 2.0 to 3.0
+# Upgrading from Axlib 2.0 to 3.0
 
 An incomplete guide.
 
 ## Refreshing the node-template
 
-Not much has changed on the top and API level for developing Substrate between 2.0 and 3.0. If you've made only small changes to the node-template, we recommend to do the following - it is easiest and quickest path forward:
+Not much has changed on the top and API level for developing Axlib between 2.0 and 3.0. If you've made only small changes to the node-template, we recommend to do the following - it is easiest and quickest path forward:
 1. take a diff between 2.0 and your changes
 2. store that diff
 3. remove everything, copy over the 3.0 node-template
@@ -14,7 +14,7 @@ Not much has changed on the top and API level for developing Substrate between 2
 
 If you've made significant changes or diverted from the node-template a lot, starting out with that is probably not helping. For that case, we'll take a look at all changes between 2.0 and 3.0 to the fully-implemented node and explain them one by one, so you can follow up, what needs to be changing for your node.
 
-_Note_: Of course, step 1 is to upgrade your `Cargo.toml`'s to use the latest version of Substrate and all dependencies.
+_Note_: Of course, step 1 is to upgrade your `Cargo.toml`'s to use the latest version of Axlib and all dependencies.
 
 We'll be taking the diff from 2.0.1 to 3.0.0 on `bin/node` as the baseline of what has changed between these two versions in terms of adapting ones code base. We will not be covering the changes made on the tests and bench-marking as they are mostly reactions to the other changes.
 
@@ -69,23 +69,23 @@ Since [#7810](https://github.com/paritytech/substrate/pull/7810) we don't define
 
 #### Weight Definition
 
-`type WeightInfo` has changed and instead on `weights::pallet_$name::WeightInfo` is now bound to the Runtime as `pallet_$name::weights::SubstrateWeight<Runtime>`. As a result we have to the change the type definitions everywhere in our Runtime accordingly:
+`type WeightInfo` has changed and instead on `weights::pallet_$name::WeightInfo` is now bound to the Runtime as `pallet_$name::weights::AxlibWeight<Runtime>`. As a result we have to the change the type definitions everywhere in our Runtime accordingly:
 
 ```diff
 -	type WeightInfo = weights::pallet_$name::WeightInfo;
-+	type WeightInfo = pallet_$name::weights::SubstrateWeight<Runtime>;
++	type WeightInfo = pallet_$name::weights::AxlibWeight<Runtime>;
 ```
 
 e.g.
 ```diff
 -	type WeightInfo = weights::pallet_collective::WeightInfo;
-+	type WeightInfo = pallet_collective::weights::SubstrateWeight<Runtime>;
++	type WeightInfo = pallet_collective::weights::AxlibWeight<Runtime>;
 ```
 and
 
 ```diff
 -	type WeightInfo = weights::pallet_proxy::WeightInfo;
-+	type WeightInfo = pallet_proxy::weights::SubstrateWeight<Runtime>;
++	type WeightInfo = pallet_proxy::weights::AxlibWeight<Runtime>;
 ```
 
 And update the overall definition for weights on frame and a few related types and runtime parameters:
@@ -167,7 +167,7 @@ And update the overall definition for weights on frame and a few related types a
  	type OnNewAccount = ();
  	type OnKilledAccount = ();
 -	type SystemWeightInfo = weights::frame_system::WeightInfo;
-+	type SystemWeightInfo = frame_system::weights::SubstrateWeight<Runtime>;
++	type SystemWeightInfo = frame_system::weights::AxlibWeight<Runtime>;
 ```
 
 #### Pallets:
@@ -220,7 +220,7 @@ impl pallet_bounties::Config for Runtime {
  	type BountyValueMinimum = BountyValueMinimum;
 	type DataDepositPerByte = DataDepositPerByte;
  	type MaximumReasonLength = MaximumReasonLength;
-	type WeightInfo = pallet_bounties::weights::SubstrateWeight<Runtime>;
+	type WeightInfo = pallet_bounties::weights::AxlibWeight<Runtime>;
  }
 ```
 
@@ -235,7 +235,7 @@ impl pallet_tips::Config for Runtime {
 	type TipCountdown = TipCountdown;
 	type TipFindersFee = TipFindersFee;
 	type TipReportDepositBase = TipReportDepositBase;
-	type WeightInfo = pallet_tips::weights::SubstrateWeight<Runtime>;
+	type WeightInfo = pallet_tips::weights::AxlibWeight<Runtime>;
  }
 ```
 

@@ -7,7 +7,7 @@ ARG BUILD_DATE
 LABEL io.parity.image.authors="devops-team@parity.io" \
 	io.parity.image.vendor="Parity Technologies" \
 	io.parity.image.title="parity/subkey" \
-	io.parity.image.description="Subkey: key generating utility for Substrate." \
+	io.parity.image.description="Subkey: key generating utility for Axlib." \
 	io.parity.image.source="https://github.com/paritytech/substrate/blob/${VCS_REF}/.maintain/docker/subkey.Dockerfile" \
 	io.parity.image.revision="${VCS_REF}" \
 	io.parity.image.created="${BUILD_DATE}" \

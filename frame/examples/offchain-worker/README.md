@@ -11,7 +11,7 @@ documentation.
 - [`Call`](./enum.Call.html)
 - [`Module`](./struct.Module.html)
 
-**This pallet serves as an example showcasing Substrate off-chain worker and is not meant to be
+**This pallet serves as an example showcasing Axlib off-chain worker and is not meant to be
 used in production.**
 
 ## Overview

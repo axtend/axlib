@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -15,9 +15,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Substrate runtime version
+//! Axlib runtime version
 //!
-//! Each runtime that should be executed by a Substrate based node needs to have a runtime version.
+//! Each runtime that should be executed by a Axlib based node needs to have a runtime version.
 //! The runtime version is defined by [`RuntimeVersion`]. The runtime version is used to
 //! distinguish different runtimes. The most important field is the
 //! [`spec_version`](RuntimeVersion::spec_version). The `spec_version` should be increased in a
@@ -26,7 +26,7 @@
 //! blocks built by the old runtime. The runtime version also carries other version information
 //! about the runtime, see [`RuntimeVersion`] for more information on this.
 //!
-//! Substrate will fetch the runtime version from a `wasm` blob by first checking the
+//! Axlib will fetch the runtime version from a `wasm` blob by first checking the
 //! `runtime_version` link section or calling the `Core::version` runtime api. The link section can
 //! be generated in the runtime using the [`runtime_version`] attribute. The `Core` runtime api also
 //! needs to be implemented for the runtime using `impl_runtime_apis!`.
@@ -159,7 +159,7 @@ macro_rules! create_apis_vec {
 #[cfg_attr(feature = "std", derive(Serialize, Deserialize))]
 #[cfg_attr(feature = "std", serde(rename_all = "camelCase"))]
 pub struct RuntimeVersion {
-	/// Identifies the different Substrate runtimes. There'll be at least axia and node.
+	/// Identifies the different Axlib runtimes. There'll be at least axia and node.
 	/// A different on-chain spec_name to that of the native runtime would normally result
 	/// in node not attempting to sync or author blocks.
 	pub spec_name: RuntimeString,

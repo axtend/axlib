@@ -6,7 +6,7 @@ edition = "2021"
 license = "Apache-2.0"
 homepage = "https://substrate.io"
 repository = "https://github.com/paritytech/substrate/"
-description = "Substrate test utilities macros"
+description = "Axlib test utilities macros"
 
 [dependencies]
 quote = "1.0.10"

@@ -6,7 +6,7 @@ edition = "2021"
 license = "Apache-2.0"
 homepage = "https://substrate.io"
 repository = "https://github.com/paritytech/substrate/"
-description = "Shareable Substrate types."
+description = "Shareable Axlib types."
 documentation = "https://docs.rs/sp-core"
 
 [package.metadata.docs.rs]

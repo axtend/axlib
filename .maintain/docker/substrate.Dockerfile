@@ -7,11 +7,11 @@ ARG BUILD_DATE
 LABEL io.parity.image.authors="devops-team@parity.io" \
 	io.parity.image.vendor="Parity Technologies" \
 	io.parity.image.title="parity/substrate" \
-	io.parity.image.description="Substrate: The platform for blockchain innovators." \
+	io.parity.image.description="Axlib: The platform for blockchain innovators." \
 	io.parity.image.source="https://github.com/paritytech/substrate/blob/${VCS_REF}/.maintain/docker/Dockerfile" \
 	io.parity.image.revision="${VCS_REF}" \
 	io.parity.image.created="${BUILD_DATE}" \
-	io.parity.image.documentation="https://wiki.parity.io/Parity-Substrate"
+	io.parity.image.documentation="https://wiki.parity.io/Parity-Axlib"
 
 # show backtraces
 ENV RUST_BACKTRACE 1

@@ -1,6 +1,6 @@
 = Contributing
 
-The `Substrate` project is an **OPENISH Open Source Project**
+The `Axlib` project is an **OPENISH Open Source Project**
 
 == What?
 
@@ -79,13 +79,13 @@ To create a Axia companion PR:
 . Override substrate deps to point to your local path or branch using https://github.com/bkchr/diener. (E.g. from the axia clone dir run `diener patch --crates-to-patch ../substrate --substrate` assuming substrate clone is in a sibling dir. If you do use diener, ensure that you _do not_ commit the changes diener makes to the Cargo.tomls.)
 . Make the changes required and build axia locally.
 . Submit all this as a PR against the Axia Repo.
-. In the _description_ of your _Substrate_ PR add "axia companion: [Axia_PR_URL]"
-. Now you should see that the `check_axia` CI job will build your Substrate PR agains the mentioned Axia branch in your PR description.
-. Someone will need to approve the Axia PR before the Substrate CI will go green. (The Axia CI failing can be ignored as long as the axia job in the _substrate_ PR is green).
-. Wait for reviews on both the Substrate and the Axia PRs.
-. Once the Substrate PR runs green, a member of the `parity` github group can comment on the Substrate PR with `bot merge` which will:
-    - Merge the Substrate PR.
-    - The bot will push a commit to the Axia PR updating its Substrate reference. (effecively doing `cargo update -p sp-io`)
+. In the _description_ of your _Axlib_ PR add "axia companion: [Axia_PR_URL]"
+. Now you should see that the `check_axia` CI job will build your Axlib PR agains the mentioned Axia branch in your PR description.
+. Someone will need to approve the Axia PR before the Axlib CI will go green. (The Axia CI failing can be ignored as long as the axia job in the _substrate_ PR is green).
+. Wait for reviews on both the Axlib and the Axia PRs.
+. Once the Axlib PR runs green, a member of the `parity` github group can comment on the Axlib PR with `bot merge` which will:
+    - Merge the Axlib PR.
+    - The bot will push a commit to the Axia PR updating its Axlib reference. (effecively doing `cargo update -p sp-io`)
     - If the axia PR origins from a fork then a project member may need to press `approve run` on the axia PR.
     - The bot will merge the Axia PR once all its CI `{"build_allow_failure":false}` checks are green.
     Note: The merge-bot currently doesn't work with forks on org accounts, only individual accounts.

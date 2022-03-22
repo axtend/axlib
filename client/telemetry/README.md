@@ -1,6 +1,6 @@
 # sc-telemetry
 
-Substrate's client telemetry is a part of substrate that allows ingesting telemetry data
+Axlib's client telemetry is a part of substrate that allows ingesting telemetry data
 with for example [Axia telemetry](https://github.com/paritytech/substrate-telemetry).
 
 It works using Tokio's [tracing](https://github.com/tokio-rs/tracing/) library. The telemetry
@@ -13,7 +13,7 @@ If multiple substrate nodes are running in the same process, it uses a `tracing:
 identify which substrate node is reporting the telemetry. Every task spawned using sc-service's
 `TaskManager` automatically inherit this span.
 
-Substrate's nodes initialize/register with the [`TelemetryWorker`] using a [`TelemetryHandle`].
+Axlib's nodes initialize/register with the [`TelemetryWorker`] using a [`TelemetryHandle`].
 This handle can be cloned and passed around. It uses an asynchronous channel to communicate with
 the running [`TelemetryWorker`] dedicated to registration. Registering can happen at any point
 in time during the process execution.

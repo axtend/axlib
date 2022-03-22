@@ -1,5 +1,5 @@
 [package]
-description = "Substrate offchain workers"
+description = "Axlib offchain workers"
 name = "sc-offchain"
 version = "4.0.0-dev"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"

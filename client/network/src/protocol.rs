@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -228,7 +228,7 @@ pub struct PeerInfo<B: BlockT> {
 	pub best_number: <B::Header as HeaderT>::Number,
 }
 
-/// Configuration for the Substrate-specific part of the networking layer.
+/// Configuration for the Axlib-specific part of the networking layer.
 #[derive(Clone)]
 pub struct ProtocolConfig {
 	/// Assigned roles.

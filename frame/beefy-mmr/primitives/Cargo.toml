@@ -5,7 +5,7 @@ authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/paritytech/substrate"
-description = "A no-std/Substrate compatible library to construct binary merkle tree."
+description = "A no-std/Axlib compatible library to construct binary merkle tree."
 
 [dependencies]
 hex = { version = "0.4", optional = true, default-features = false }

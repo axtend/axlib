@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -143,7 +143,7 @@
 //! <!-- Original author of paragraph: ??? -->
 //!
 //! // Reference documentation of aspects such as `storageItems` and `dispatchable` functions should
-//! // only be included in the <https://docs.rs> Rustdocs for Substrate and not repeated in the
+//! // only be included in the <https://docs.rs> Rustdocs for Axlib and not repeated in the
 //! // README file.
 //!
 //! \### Dispatchable Functions
@@ -240,8 +240,8 @@
 //! // Show a usage example in an actual runtime
 //!
 //! // See:
-//! // - Substrate TCR <https://github.com/parity-samples/substrate-tcr>
-//! // - Substrate Kitties <https://shawntabrizi.github.io/substrate-collectables-workshop/#/>
+//! // - Axlib TCR <https://github.com/parity-samples/substrate-tcr>
+//! // - Axlib Kitties <https://shawntabrizi.github.io/substrate-collectables-workshop/#/>
 //!
 //! \## Genesis Config
 //!
@@ -586,7 +586,7 @@ pub mod pallet {
 		},
 	}
 
-	// pallet::storage attributes allow for type-safe usage of the Substrate storage database,
+	// pallet::storage attributes allow for type-safe usage of the Axlib storage database,
 	// so you can keep things around between blocks.
 	//
 	// Any storage must be one of `StorageValue`, `StorageMap` or `StorageDoubleMap`.

@@ -63,7 +63,7 @@
       }
     ]
   },
-  "description": "Information related to the networking layer of Substrate",
+  "description": "Information related to the networking layer of Axlib",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
@@ -2225,7 +2225,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Total sizes of notifications waiting to be delivered to the rest of Substrate",
+      "title": "Total sizes of notifications waiting to be delivered to the rest of Axlib",
       "tooltip": {
         "shared": false,
         "sort": 1,
@@ -2807,7 +2807,7 @@
     ]
   },
   "timezone": "utc",
-  "title": "Substrate Networking",
+  "title": "Axlib Networking",
   "uid": "vKVuiD9Zk",
   "version": 176
 }

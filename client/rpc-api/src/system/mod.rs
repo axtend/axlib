@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate system API.
+//! Axlib system API.
 
 pub mod error;
 pub mod helpers;
@@ -32,7 +32,7 @@ pub use self::{
 	helpers::{Health, NodeRole, PeerInfo, SyncState, SystemInfo},
 };
 
-/// Substrate system RPC API
+/// Axlib system RPC API
 #[rpc]
 pub trait SystemApi<Hash, Number> {
 	/// Get the node's implementation name. Plain old string.
@@ -124,7 +124,7 @@ pub trait SystemApi<Hash, Number> {
 	#[rpc(name = "system_addLogFilter", returns = "()")]
 	fn system_add_log_filter(&self, directives: String) -> Result<(), jsonrpc_core::Error>;
 
-	/// Resets the log filter to Substrate defaults
+	/// Resets the log filter to Axlib defaults
 	#[rpc(name = "system_resetLogFilter", returns = "()")]
 	fn system_reset_log_filter(&self) -> Result<(), jsonrpc_core::Error>;
 }

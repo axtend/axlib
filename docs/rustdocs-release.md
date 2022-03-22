@@ -1,6 +1,6 @@
 # Rustdocs Release Process
 
-There is [a script in place](../.maintain/rustdocs-release.sh) to manage the deployment of Substrate rustdocs at
+There is [a script in place](../.maintain/rustdocs-release.sh) to manage the deployment of Axlib rustdocs at
 https://paritytech.github.io/substrate, which is pushing the rustdocs file in `gh-pages` branch of
 https://github.com/paritytech/substrate.
 

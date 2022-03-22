@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate offchain workers.
+//! Axlib offchain workers.
 //!
 //! The offchain workers is a special function of the runtime that
 //! gets executed after block is imported. During execution
@@ -59,7 +59,7 @@ pub use sp_offchain::{OffchainWorkerApi, STORAGE_PREFIX};
 const LOG_TARGET: &str = "offchain-worker";
 
 /// NetworkProvider provides [`OffchainWorkers`] with all necessary hooks into the
-/// underlying Substrate networking.
+/// underlying Axlib networking.
 pub trait NetworkProvider: NetworkStateInfo {
 	/// Set the authorized peers.
 	fn set_authorized_peers(&self, peers: HashSet<PeerId>);

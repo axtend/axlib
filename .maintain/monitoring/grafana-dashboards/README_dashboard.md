@@ -1,4 +1,4 @@
-## Substrate Dashboard
+## Axlib Dashboard
 
 Shared templated Grafana dashboards.
 

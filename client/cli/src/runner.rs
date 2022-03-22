@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-use crate::{error::Error as CliError, Result, SubstrateCli};
+use crate::{error::Error as CliError, Result, AxlibCli};
 use chrono::prelude::*;
 use futures::{future, future::FutureExt, pin_mut, select, Future};
 use log::info;
@@ -103,14 +103,14 @@ where
 	Ok(())
 }
 
-/// A Substrate CLI runtime that can be used to run a node or a command
-pub struct Runner<C: SubstrateCli> {
+/// A Axlib CLI runtime that can be used to run a node or a command
+pub struct Runner<C: AxlibCli> {
 	config: Configuration,
 	tokio_runtime: tokio::runtime::Runtime,
 	phantom: PhantomData<C>,
 }
 
-impl<C: SubstrateCli> Runner<C> {
+impl<C: AxlibCli> Runner<C> {
 	/// Create a new runtime with the command provided in argument
 	pub fn new(config: Configuration, tokio_runtime: tokio::runtime::Runtime) -> Result<Runner<C>> {
 		Ok(Runner { config, tokio_runtime, phantom: PhantomData })
@@ -121,7 +121,7 @@ impl<C: SubstrateCli> Runner<C> {
 	/// # Example:
 	///
 	/// ```text
-	/// 2020-06-03 16:14:21 Substrate Node
+	/// 2020-06-03 16:14:21 Axlib Node
 	/// 2020-06-03 16:14:21 ✌️  version 2.0.0-rc3-f4940588c-x86_64-linux-gnu
 	/// 2020-06-03 16:14:21 ❤️  by Parity Technologies <admin@parity.io>, 2017-2020
 	/// 2020-06-03 16:14:21 📋 Chain specification: Flaming Fir
@@ -187,7 +187,7 @@ impl<C: SubstrateCli> Runner<C> {
 }
 
 /// Log information about the node itself.
-pub fn print_node_infos<C: SubstrateCli>(config: &Configuration) {
+pub fn print_node_infos<C: AxlibCli>(config: &Configuration) {
 	info!("{}", C::impl_name());
 	info!("✌️  version {}", C::impl_version());
 	info!("❤️  by {}, {}-{}", C::author(), C::copyright_start_year(), Local::today().year());

@@ -1,14 +1,14 @@
-# Substrate Node Template
+# Axlib Node Template
 
-[![Try on playground](https://img.shields.io/badge/Playground-Node_Template-brightgreen?logo=Parity%20Substrate)](https://docs.substrate.io/playground/) [![Matrix](https://img.shields.io/matrix/substrate-technical:matrix.org)](https://matrix.to/#/#substrate-technical:matrix.org)
+[![Try on playground](https://img.shields.io/badge/Playground-Node_Template-brightgreen?logo=Parity%20Axlib)](https://docs.substrate.io/playground/) [![Matrix](https://img.shields.io/matrix/substrate-technical:matrix.org)](https://matrix.to/#/#substrate-technical:matrix.org)
 
-A fresh FRAME-based [Substrate](https://www.substrate.io/) node, ready for hacking :rocket:
+A fresh FRAME-based [Axlib](https://www.substrate.io/) node, ready for hacking :rocket:
 
 ## Getting Started
 
 Follow the steps below to get started with the Node Template, or get it up and running right from
 your browser in just a few clicks using
-the [Substrate Playground](https://docs.substrate.io/playground/) :hammer_and_wrench:
+the [Axlib Playground](https://docs.substrate.io/playground/) :hammer_and_wrench:
 
 ### Using Nix
 
@@ -118,28 +118,28 @@ If you want to see the multi-node consensus algorithm in action, refer to our
 
 ## Template Structure
 
-A Substrate project such as this consists of a number of components that are spread across a few
+A Axlib project such as this consists of a number of components that are spread across a few
 directories.
 
 ### Node
 
 A blockchain node is an application that allows users to participate in a blockchain network.
-Substrate-based blockchain nodes expose a number of capabilities:
+Axlib-based blockchain nodes expose a number of capabilities:
 
-- Networking: Substrate nodes use the [`libp2p`](https://libp2p.io/) networking stack to allow the
+- Networking: Axlib nodes use the [`libp2p`](https://libp2p.io/) networking stack to allow the
   nodes in the network to communicate with one another.
 - Consensus: Blockchains must have a way to come to
   [consensus](https://docs.substrate.io/v3/advanced/consensus) on the state of the
-  network. Substrate makes it possible to supply custom consensus engines and also ships with
+  network. Axlib makes it possible to supply custom consensus engines and also ships with
   several consensus mechanisms that have been built on top of
   [Web3 Foundation research](https://research.web3.foundation/en/latest/axia/NPoS/index.html).
-- RPC Server: A remote procedure call (RPC) server is used to interact with Substrate nodes.
+- RPC Server: A remote procedure call (RPC) server is used to interact with Axlib nodes.
 
 There are several files in the `node` directory - take special note of the following:
 
 - [`chain_spec.rs`](./node/src/chain_spec.rs): A
   [chain specification](https://docs.substrate.io/v3/runtime/chain-specs) is a
-  source code file that defines a Substrate chain's initial (genesis) state. Chain specifications
+  source code file that defines a Axlib chain's initial (genesis) state. Chain specifications
   are useful for development and testing, and critical when architecting the launch of a
   production chain. Take note of the `development_config` and `testnet_genesis` functions, which
   are used to define the genesis state for the local development chain configuration. These
@@ -164,11 +164,11 @@ capabilities and configuration parameters that it exposes:
 
 ### Runtime
 
-In Substrate, the terms
+In Axlib, the terms
 "[runtime](https://docs.substrate.io/v3/getting-started/glossary#runtime)" and
 "[state transition function](https://docs.substrate.io/v3/getting-started/glossary#state-transition-function-stf)"
 are analogous - they refer to the core logic of the blockchain that is responsible for validating
-blocks and executing the state changes they define. The Substrate project in this repository uses
+blocks and executing the state changes they define. The Axlib project in this repository uses
 the [FRAME](https://docs.substrate.io/v3/runtime/frame) framework to construct a
 blockchain runtime. FRAME allows runtime developers to declare domain-specific logic in modules
 called "pallets". At the heart of FRAME is a helpful
@@ -190,18 +190,18 @@ the following:
 ### Pallets
 
 The runtime in this project is constructed using many FRAME pallets that ship with the
-[core Substrate repository](https://github.com/paritytech/substrate/tree/master/frame) and a
+[core Axlib repository](https://github.com/paritytech/substrate/tree/master/frame) and a
 template pallet that is [defined in the `pallets`](./pallets/template/src/lib.rs) directory.
 
 A FRAME pallet is compromised of a number of blockchain primitives:
 
 - Storage: FRAME defines a rich set of powerful
   [storage abstractions](https://docs.substrate.io/v3/runtime/storage) that makes
-  it easy to use Substrate's efficient key-value database to manage the evolving state of a
+  it easy to use Axlib's efficient key-value database to manage the evolving state of a
   blockchain.
 - Dispatchables: FRAME pallets define special types of functions that can be invoked (dispatched)
   from outside of the runtime in order to update its state.
-- Events: Substrate uses [events and errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+- Events: Axlib uses [events and errors](https://docs.substrate.io/v3/runtime/events-and-errors)
   to notify users of important changes in the runtime.
 - Errors: When a dispatchable fails, it returns an error.
 - Config: The `Config` configuration interface is used to define the types and parameters upon
@@ -224,7 +224,7 @@ also replace the default command
 by appending your own. A few useful ones are as follow.
 
 ```bash
-# Run Substrate node without re-compiling
+# Run Axlib node without re-compiling
 ./scripts/docker_run.sh ./target/release/node-template --dev --ws-external
 
 # Purge the local dev chain

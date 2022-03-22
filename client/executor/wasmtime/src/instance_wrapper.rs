@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -124,7 +124,7 @@ impl EntryPoint {
 	}
 }
 
-/// Wrap the given WebAssembly Instance of a wasm module with Substrate-runtime.
+/// Wrap the given WebAssembly Instance of a wasm module with Axlib-runtime.
 ///
 /// This struct is a handy wrapper around a wasmtime `Instance` that provides substrate specific
 /// routines.

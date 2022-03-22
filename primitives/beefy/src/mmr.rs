@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -29,7 +29,7 @@
 use codec::{Decode, Encode, MaxEncodedLen};
 use scale_info::TypeInfo;
 
-/// A standard leaf that gets added every block to the MMR constructed by Substrate's `pallet_mmr`.
+/// A standard leaf that gets added every block to the MMR constructed by Axlib's `pallet_mmr`.
 #[derive(Debug, PartialEq, Eq, Clone, Encode, Decode)]
 pub struct MmrLeaf<BlockNumber, Hash, MerkleRoot> {
 	/// Version of the leaf format.

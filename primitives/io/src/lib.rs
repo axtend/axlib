@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -22,11 +22,11 @@
 #![cfg_attr(not(feature = "std"), feature(alloc_error_handler))]
 #![cfg_attr(
 	feature = "std",
-	doc = "Substrate runtime standard library as compiled when linked with Rust's standard library."
+	doc = "Axlib runtime standard library as compiled when linked with Rust's standard library."
 )]
 #![cfg_attr(
 	not(feature = "std"),
-	doc = "Substrate's runtime standard library as compiled without Rust's standard library."
+	doc = "Axlib's runtime standard library as compiled without Rust's standard library."
 )]
 
 use sp_std::vec::Vec;
@@ -1598,7 +1598,7 @@ pub trait RuntimeTasks {
 	}
 }
 
-/// Allocator used by Substrate when executing the Wasm runtime.
+/// Allocator used by Axlib when executing the Wasm runtime.
 #[cfg(all(target_arch = "wasm32", not(feature = "std")))]
 struct WasmAllocator;
 
@@ -1658,11 +1658,11 @@ pub fn oom(_: core::alloc::Layout) -> ! {
 #[cfg(feature = "std")]
 pub type TestExternalities = sp_state_machine::TestExternalities<sp_core::Blake2Hasher>;
 
-/// The host functions Substrate provides for the Wasm runtime environment.
+/// The host functions Axlib provides for the Wasm runtime environment.
 ///
 /// All these host functions will be callable from inside the Wasm environment.
 #[cfg(feature = "std")]
-pub type SubstrateHostFunctions = (
+pub type AxlibHostFunctions = (
 	storage::HostFunctions,
 	default_child_storage::HostFunctions,
 	misc::HostFunctions,

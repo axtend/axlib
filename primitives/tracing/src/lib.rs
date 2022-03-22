@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -15,9 +15,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Substrate tracing primitives and macros.
+//! Axlib tracing primitives and macros.
 //!
-//! To trace functions or invidual code in Substrate, this crate provides [`within_span`]
+//! To trace functions or invidual code in Axlib, this crate provides [`within_span`]
 //! and [`enter_span`]. See the individual docs for how to use these macros.
 //!
 //! Note that to allow traces from wasm execution environment there are

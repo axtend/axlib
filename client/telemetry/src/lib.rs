@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate's client telemetry is a part of substrate that allows ingesting telemetry data
+//! Axlib's client telemetry is a part of substrate that allows ingesting telemetry data
 //! with for example [Axia telemetry](https://github.com/paritytech/substrate-telemetry).
 //!
 //! It works using Tokio's [tracing](https://github.com/tokio-rs/tracing/) library. The telemetry
@@ -29,7 +29,7 @@
 //! identify which substrate node is reporting the telemetry. Every task spawned using sc-service's
 //! `TaskManager` automatically inherit this span.
 //!
-//! Substrate's nodes initialize/register with the [`TelemetryWorker`] using a
+//! Axlib's nodes initialize/register with the [`TelemetryWorker`] using a
 //! [`TelemetryWorkerHandle`]. This handle can be cloned and passed around. It uses an asynchronous
 //! channel to communicate with the running [`TelemetryWorker`] dedicated to registration.
 //! Registering can happen at any point in time during the process execution.
@@ -59,9 +59,9 @@ pub use error::*;
 use node::*;
 use transport::*;
 
-/// Substrate DEBUG log level.
+/// Axlib DEBUG log level.
 pub const SUBSTRATE_DEBUG: VerbosityLevel = 9;
-/// Substrate INFO log level.
+/// Axlib INFO log level.
 pub const SUBSTRATE_INFO: VerbosityLevel = 0;
 
 /// Consensus TRACE log level.
@@ -306,7 +306,7 @@ impl TelemetryWorker {
 	}
 }
 
-/// Handle to the [`TelemetryWorker`] thats allows initializing the telemetry for a Substrate node.
+/// Handle to the [`TelemetryWorker`] thats allows initializing the telemetry for a Axlib node.
 #[derive(Debug, Clone)]
 pub struct TelemetryWorkerHandle {
 	message_sender: mpsc::Sender<TelemetryMessage>,

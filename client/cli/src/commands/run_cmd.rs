@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -156,7 +156,7 @@ pub struct RunCmd {
 	#[clap(long, value_name = "NAME")]
 	pub name: Option<String>,
 
-	/// Disable connecting to the Substrate telemetry server.
+	/// Disable connecting to the Axlib telemetry server.
 	///
 	/// Telemetry is on by default on global chains.
 	#[clap(long)]

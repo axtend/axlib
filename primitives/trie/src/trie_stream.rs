@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2015-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! `TrieStream` implementation for Substrate's trie format.
+//! `TrieStream` implementation for Axlib's trie format.
 
 use crate::{
 	node_header::{size_and_prefix_iterator, NodeKind},

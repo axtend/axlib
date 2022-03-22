@@ -1,4 +1,4 @@
-Proof of work consensus for Substrate.
+Proof of work consensus for Axlib.
 
 To use this engine, you can need to have a struct that implements
 `PowAlgorithm`. After that, pass an instance of the struct, along

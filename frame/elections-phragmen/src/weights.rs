@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -61,9 +61,9 @@ pub trait WeightInfo {
 	fn election_phragmen(c: u32, v: u32, e: u32, ) -> Weight;
 }
 
-/// Weights for pallet_elections_phragmen using the Substrate node and recommended hardware.
-pub struct SubstrateWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
+/// Weights for pallet_elections_phragmen using the Axlib node and recommended hardware.
+pub struct AxlibWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
 	// Storage: Elections Candidates (r:1 w:0)
 	// Storage: Elections Members (r:1 w:0)
 	// Storage: Elections RunnersUp (r:1 w:0)

@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Shareable Substrate types.
+//! Shareable Axlib types.
 
 #![warn(missing_docs)]
 #![cfg_attr(not(feature = "std"), no_std)]
@@ -399,7 +399,7 @@ impl From<log::LevelFilter> for LogLevelFilter {
 
 /// Encodes the given value into a buffer and returns the pointer and the length as a single `u64`.
 ///
-/// When Substrate calls into Wasm it expects a fixed signature for functions exported
+/// When Axlib calls into Wasm it expects a fixed signature for functions exported
 /// from the Wasm blob. The return value of this signature is always a `u64`.
 /// This `u64` stores the pointer to the encoded return value and the length of this encoded value.
 /// The low `32bits` are reserved for the pointer, followed by `32bit` for the length.

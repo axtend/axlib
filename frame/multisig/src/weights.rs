@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -58,9 +58,9 @@ pub trait WeightInfo {
 	fn cancel_as_multi(s: u32, ) -> Weight;
 }
 
-/// Weights for pallet_multisig using the Substrate node and recommended hardware.
-pub struct SubstrateWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
+/// Weights for pallet_multisig using the Axlib node and recommended hardware.
+pub struct AxlibWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
 	fn as_multi_threshold_1(z: u32, ) -> Weight {
 		(16_534_000 as Weight)
 			// Standard Error: 0

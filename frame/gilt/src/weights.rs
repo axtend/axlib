@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -56,9 +56,9 @@ pub trait WeightInfo {
 	fn pursue_target_per_queue(q: u32, ) -> Weight;
 }
 
-/// Weights for pallet_gilt using the Substrate node and recommended hardware.
-pub struct SubstrateWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
+/// Weights for pallet_gilt using the Axlib node and recommended hardware.
+pub struct AxlibWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
 	// Storage: Gilt Queues (r:1 w:1)
 	// Storage: Gilt QueueTotals (r:1 w:1)
 	fn place_bid(l: u32, ) -> Weight {

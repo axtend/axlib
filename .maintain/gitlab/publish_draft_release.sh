@@ -12,7 +12,7 @@ release_text="$(./generate_release_text.sh "$last_version" "$version")"
 
 echo "[+] Pushing release to github"
 # Create release on github
-release_name="Substrate $version"
+release_name="Axlib $version"
 data=$(jq -Rs --arg version "$version" \
   --arg release_name "$release_name" \
   --arg release_text "$release_text" \
@@ -40,12 +40,12 @@ fi
 echo '[+] Sending draft release URL to Matrix'
 
 msg_body=$(cat <<EOF
-**Release pipeline for Substrate $version complete.**
+**Release pipeline for Axlib $version complete.**
 Draft release created: $html_url
 EOF
 )
 formatted_msg_body=$(cat <<EOF
-<strong>Release pipeline for Substrate $version complete.</strong><br />
+<strong>Release pipeline for Axlib $version complete.</strong><br />
 Draft release created: $html_url
 EOF
 )

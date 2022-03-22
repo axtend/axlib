@@ -44,7 +44,7 @@ if [ -n "$runtime_changes" ] ||
    [ -n "$client_changes" ] ||
    [ -n "$migrations" ]; then
   changes=$(cat << EOF
-Substrate changes
+Axlib changes
 -----------------
 
 EOF

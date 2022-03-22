@@ -6,7 +6,7 @@ edition = "2021"
 license = "Apache-2.0"
 homepage = "https://substrate.io"
 repository = "https://github.com/paritytech/substrate/"
-description = "Substrate blockchain traits and primitives."
+description = "Axlib blockchain traits and primitives."
 documentation = "https://docs.rs/sp-blockchain"
 readme = "README.md"
 

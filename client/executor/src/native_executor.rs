@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -60,7 +60,7 @@ where
 	F: UnwindSafe + FnOnce() -> U,
 {
 	sp_externalities::set_and_run_with_externalities(ext, move || {
-		// Substrate uses custom panic hook that terminates process on panic. Disable
+		// Axlib uses custom panic hook that terminates process on panic. Disable
 		// termination for the native call.
 		let _guard = sp_panic_handler::AbortGuard::force_unwind();
 		std::panic::catch_unwind(f).map_err(|e| {
@@ -80,7 +80,7 @@ where
 /// By dispatching we mean that we execute a runtime function specified by it's name.
 pub trait NativeExecutionDispatch: Send + Sync {
 	/// Host functions for custom runtime interfaces that should be callable from within the runtime
-	/// besides the default Substrate runtime interfaces.
+	/// besides the default Axlib runtime interfaces.
 	type ExtendHostFunctions: HostFunctions;
 
 	/// Dispatch a method in the runtime.
@@ -343,7 +343,7 @@ where
 	native_version: NativeVersion,
 	/// Fallback wasm executor.
 	wasm:
-		WasmExecutor<ExtendedHostFunctions<sp_io::SubstrateHostFunctions, D::ExtendHostFunctions>>,
+		WasmExecutor<ExtendedHostFunctions<sp_io::AxlibHostFunctions, D::ExtendHostFunctions>>,
 }
 
 impl<D: NativeExecutionDispatch> NativeElseWasmExecutor<D> {

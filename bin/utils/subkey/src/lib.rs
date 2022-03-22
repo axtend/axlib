@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -26,7 +26,7 @@ use sc_cli::{
 #[clap(
 	name = "subkey",
 	author = "Parity Team <admin@parity.io>",
-	about = "Utility for generating and restoring with Substrate keys"
+	about = "Utility for generating and restoring with Axlib keys"
 )]
 pub enum Subkey {
 	/// Generate a random node libp2p key, save it to file or print it to stdout

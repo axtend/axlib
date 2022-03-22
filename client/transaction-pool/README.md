@@ -1,4 +1,4 @@
-Substrate transaction pool implementation.
+Axlib transaction pool implementation.
 
 License: GPL-3.0-or-later WITH Classpath-exception-2.0
 
@@ -284,7 +284,7 @@ shortcuts.
 1. Consider leveraging finality. Maybe we could verify against latest finalised
    block instead. With this the pool in different nodes can be more similar
    which might help with gossiping (see set reconciliation). Note that finality
-   is not a strict requirement for a Substrate chain to have though.
+   is not a strict requirement for a Axlib chain to have though.
 
 1. Perhaps we could avoid maintaining ready/future queues as currently, but
    rather if a transaction doesn't have all requirements satisfied by existing
@@ -311,7 +311,7 @@ might be a good first approach to reduce transaction gossip.
 
 Current implementation of the pool is a result of experiences from Ethereum's
 pool implementation, but also has some warts coming from the learning process of
-Substrate's generic nature and light client support.
+Axlib's generic nature and light client support.
 
 The pool consists of basically two independent parts:
 

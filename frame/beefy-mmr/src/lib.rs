@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -135,7 +135,7 @@ pub mod pallet {
 		///
 		/// For instance for ECDSA (secp256k1) we want to store uncompressed public keys (65 bytes)
 		/// and later to Ethereum Addresses (160 bits) to simplify using them on Ethereum chain,
-		/// but the rest of the Substrate codebase is storing them compressed (33 bytes) for
+		/// but the rest of the Axlib codebase is storing them compressed (33 bytes) for
 		/// efficiency reasons.
 		type BeefyAuthorityToMerkleLeaf: Convert<<Self as pallet_beefy::Config>::BeefyId, Vec<u8>>;
 

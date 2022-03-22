@@ -1,36 +1,36 @@
-= Substrate
-:Author: Substrate developers
+= Axlib
+:Author: Axlib developers
 :Revision: 0.2.0
 :toc:
 :sectnums:
 
 == Intro in one sentence
 
-Substrate is a next-generation framework for blockchain innovation.
+Axlib is a next-generation framework for blockchain innovation.
 
 == Description
 
-At its heart, Substrate is a combination of three technologies: https://webassembly.org/[WebAssembly], https://libp2p.io/[Libp2p] and GRANDPA Consensus. About GRANDPA, see this https://hackmd.io/Jd0byWX0RiqFiXUVC78Bdw?view#GRANDPA[definition], https://medium.com/axia-network/grandpa-block-finality-in-axia-an-introduction-part-1-d08a24a021b5[introduction] and https://github.com/w3f/consensus/blob/master/pdf/grandpa.pdf[formal specification]. It is both a library for building new blockchains and a "skeleton key" of a blockchain client, able to synchronize to any Substrate-based chain.
+At its heart, Axlib is a combination of three technologies: https://webassembly.org/[WebAssembly], https://libp2p.io/[Libp2p] and GRANDPA Consensus. About GRANDPA, see this https://hackmd.io/Jd0byWX0RiqFiXUVC78Bdw?view#GRANDPA[definition], https://medium.com/axia-network/grandpa-block-finality-in-axia-an-introduction-part-1-d08a24a021b5[introduction] and https://github.com/w3f/consensus/blob/master/pdf/grandpa.pdf[formal specification]. It is both a library for building new blockchains and a "skeleton key" of a blockchain client, able to synchronize to any Axlib-based chain.
 
-Substrate chains have three distinct features that make them "next-generation": a dynamic, self-defining state-transition function; light-client functionality from day one; and a progressive consensus algorithm with fast block production and adaptive, definite finality. The STF, encoded in WebAssembly, is known as the "runtime". This defines the `execute_block` function, and can specify everything from the staking algorithm, transaction semantics, logging mechanisms and procedures for replacing any aspect of itself or of the blockchain's state ("governance"). Because the runtime is entirely dynamic all of these can be switched out or upgraded at any time. A Substrate chain is very much a "living organism".
+Axlib chains have three distinct features that make them "next-generation": a dynamic, self-defining state-transition function; light-client functionality from day one; and a progressive consensus algorithm with fast block production and adaptive, definite finality. The STF, encoded in WebAssembly, is known as the "runtime". This defines the `execute_block` function, and can specify everything from the staking algorithm, transaction semantics, logging mechanisms and procedures for replacing any aspect of itself or of the blockchain's state ("governance"). Because the runtime is entirely dynamic all of these can be switched out or upgraded at any time. A Axlib chain is very much a "living organism".
 
 See also https://www.parity.io/what-is-substrate/.
 
 == Usage
 
-Substrate is still an early stage project, and while it has already been used as the basis of major projects like Axia, using it is still a significant undertaking. In particular, you should have a good knowledge of blockchain concepts and basic cryptography. Terminology like header, block, client, hash, transaction and signature should be familiar. At present you will need a working knowledge of Rust to be able to do anything interesting (though eventually, we aim for this not to be the case).
+Axlib is still an early stage project, and while it has already been used as the basis of major projects like Axia, using it is still a significant undertaking. In particular, you should have a good knowledge of blockchain concepts and basic cryptography. Terminology like header, block, client, hash, transaction and signature should be familiar. At present you will need a working knowledge of Rust to be able to do anything interesting (though eventually, we aim for this not to be the case).
 
-Substrate is designed for use in one of three ways:
+Axlib is designed for use in one of three ways:
 
-**1. Trivial**: By running the Substrate binary `substrate` and configuring it with a genesis block that includes the current demonstration runtime. In this case, you just build Substrate, configure a JSON file, and launch your own blockchain. This affords you the least amount of customizability, primarily allowing you to change the genesis parameters of the various included runtime modules such as balances, staking, block-period, fees, and governance.
+**1. Trivial**: By running the Axlib binary `substrate` and configuring it with a genesis block that includes the current demonstration runtime. In this case, you just build Axlib, configure a JSON file, and launch your own blockchain. This affords you the least amount of customizability, primarily allowing you to change the genesis parameters of the various included runtime modules such as balances, staking, block-period, fees, and governance.
 
-**2. Modular**: By hacking together pallets built with Substrate FRAME into a new runtime and possibly altering or reconfiguring the Substrate client's block authoring logic. This affords you a very large amount of freedom over your blockchain's logic, letting you change data types, add or remove modules, and crucially, add your own modules. Much can be changed without touching the block authoring logic (since it is generic). If this is the case, then the existing Substrate binary can be used for block authoring and syncing. If the block authoring logic needs to be tweaked, then a new, altered block authoring binary must be built as a separate project and used by validators. This is how the Axia relay chain is built and should suffice for almost all circumstances in the near to mid-term.
+**2. Modular**: By hacking together pallets built with Axlib FRAME into a new runtime and possibly altering or reconfiguring the Axlib client's block authoring logic. This affords you a very large amount of freedom over your blockchain's logic, letting you change data types, add or remove modules, and crucially, add your own modules. Much can be changed without touching the block authoring logic (since it is generic). If this is the case, then the existing Axlib binary can be used for block authoring and syncing. If the block authoring logic needs to be tweaked, then a new, altered block authoring binary must be built as a separate project and used by validators. This is how the Axia relay chain is built and should suffice for almost all circumstances in the near to mid-term.
 
-**3. Generic**: The entire FRAME can be ignored and the entire runtime designed and implemented from scratch. If desired, this can be done in a language other than Rust, provided it can target WebAssembly. If the runtime can be made compatible with the existing client's block authoring logic, then you can simply construct a new genesis block from your Wasm blob and launch your chain with the existing Rust-based Substrate client. If not, then you'll need to alter the client's block authoring logic accordingly. This is probably a useless option for most projects right now, but provides complete flexibility allowing for a long-term, far-reaching upgrade path for the Substrate paradigm.
+**3. Generic**: The entire FRAME can be ignored and the entire runtime designed and implemented from scratch. If desired, this can be done in a language other than Rust, provided it can target WebAssembly. If the runtime can be made compatible with the existing client's block authoring logic, then you can simply construct a new genesis block from your Wasm blob and launch your chain with the existing Rust-based Axlib client. If not, then you'll need to alter the client's block authoring logic accordingly. This is probably a useless option for most projects right now, but provides complete flexibility allowing for a long-term, far-reaching upgrade path for the Axlib paradigm.
 
-=== The Basics of Substrate
+=== The Basics of Axlib
 
-Substrate is a blockchain platform with a completely generic state transition function. That said, it does come with both standards and conventions (particularly regarding the Runtime Module Library) regarding underlying data structures. Roughly speaking, these core data types correspond to +trait+s in terms of the actual non-negotiable standard and generic +struct+s in terms of the convention.
+Axlib is a blockchain platform with a completely generic state transition function. That said, it does come with both standards and conventions (particularly regarding the Runtime Module Library) regarding underlying data structures. Roughly speaking, these core data types correspond to +trait+s in terms of the actual non-negotiable standard and generic +struct+s in terms of the convention.
 
 ```
 Header := Parent + ExtrinsicsRoot + StorageRoot + Digest
@@ -39,20 +39,20 @@ Block := Header + Extrinsics + Justifications
 
 === Extrinsics
 
-Extrinsics in Substrate are pieces of information from "the outside world" that are contained in the blocks of the chain. You might think "ahh, that means *transactions*": in fact, no. Extrinsics fall into two broad categories of which only one is *transactions*. The other is known as *inherents*. The difference between these two is that transactions are signed and gossiped on the network and can be deemed useful *per se*. This fits the mold of what you would call transactions in Bitcoin or Ethereum.
+Extrinsics in Axlib are pieces of information from "the outside world" that are contained in the blocks of the chain. You might think "ahh, that means *transactions*": in fact, no. Extrinsics fall into two broad categories of which only one is *transactions*. The other is known as *inherents*. The difference between these two is that transactions are signed and gossiped on the network and can be deemed useful *per se*. This fits the mold of what you would call transactions in Bitcoin or Ethereum.
 
 Inherents, meanwhile, are not passed on the network and are not signed. They represent data which describes the environment but which cannot call upon anything to prove it such as a signature. Rather they are assumed to be "true" simply because a sufficiently large number of validators have agreed on them being reasonable.
 
-To give an example, there is the timestamp inherent, which sets the current timestamp of the block. This is not a fixed part of Substrate, but does come as part of FRAME to be used as desired. No signature could fundamentally prove that a block were authored at a given time in quite the same way that a signature can "prove" the desire to spend some particular funds. Rather, it is the business of each validator to ensure that they believe the timestamp is set to something reasonable before they agree that the block candidate is valid.
+To give an example, there is the timestamp inherent, which sets the current timestamp of the block. This is not a fixed part of Axlib, but does come as part of FRAME to be used as desired. No signature could fundamentally prove that a block were authored at a given time in quite the same way that a signature can "prove" the desire to spend some particular funds. Rather, it is the business of each validator to ensure that they believe the timestamp is set to something reasonable before they agree that the block candidate is valid.
 
 Other examples include the allychain-heads extrinsic in Axia and the "note-missed-proposal" extrinsic used in FRAME to determine and punish or deactivate offline validators.
 
 
 === Runtime and API
 
-Substrate chains all have a runtime. The runtime is a WebAssembly "blob" that includes a number of entry-points. Some entry-points are required as part of the underlying Substrate specification. Others are merely convention and required for the default implementation of the Substrate client to be able to author blocks.
+Axlib chains all have a runtime. The runtime is a WebAssembly "blob" that includes a number of entry-points. Some entry-points are required as part of the underlying Axlib specification. Others are merely convention and required for the default implementation of the Axlib client to be able to author blocks.
 
-If you want to develop a chain with Substrate, you will need to implement the `Core` trait. This `Core` trait generates an API with the minimum necessary functionality to interact with your runtime. A special macro is provided called `impl_runtime_apis!` that help you implement runtime API traits. All runtime API trait implementations need to be done in one call of the `impl_runtime_apis!` macro. All parameters and return values need to implement https://crates.io/crates/parity-codec[`parity-codec`] to be encodable and decodable.
+If you want to develop a chain with Axlib, you will need to implement the `Core` trait. This `Core` trait generates an API with the minimum necessary functionality to interact with your runtime. A special macro is provided called `impl_runtime_apis!` that help you implement runtime API traits. All runtime API trait implementations need to be done in one call of the `impl_runtime_apis!` macro. All parameters and return values need to implement https://crates.io/crates/parity-codec[`parity-codec`] to be encodable and decodable.
 
 Here's a snippet of the Axia API implementation as of PoC-3:
 
@@ -78,13 +78,13 @@ impl_runtime_apis! {
 
 === Inherent Extrinsics
 
-Substrate FRAME includes functionality for timestamps and slashing. If used, these rely on "trusted" external information being passed in via inherent extrinsics. The Substrate reference block authoring client software will expect to be able to call into the runtime API with collated data (in the case of the reference Substrate authoring client, this is merely the current timestamp and which nodes were offline) in order to return the appropriate extrinsics ready for inclusion. If new inherent extrinsic types and data are to be used in a modified runtime, then it is this function (and its argument type) that would change.
+Axlib FRAME includes functionality for timestamps and slashing. If used, these rely on "trusted" external information being passed in via inherent extrinsics. The Axlib reference block authoring client software will expect to be able to call into the runtime API with collated data (in the case of the reference Axlib authoring client, this is merely the current timestamp and which nodes were offline) in order to return the appropriate extrinsics ready for inclusion. If new inherent extrinsic types and data are to be used in a modified runtime, then it is this function (and its argument type) that would change.
 
 === Block-authoring Logic
 
-In Substrate, there is a major distinction between blockchain *syncing* and block *authoring* ("authoring" is a more general term for what is called "mining" in Bitcoin). The first case might be referred to as a "full node" (or "light node" - Substrate supports both): authoring necessarily requires a synced node and, therefore, all authoring clients must necessarily be able to synchronize. However, the reverse is not true. The primary functionality that authoring nodes have which is not in "sync nodes" is threefold: transaction queue logic, inherent transaction knowledge and BFT consensus logic. BFT consensus logic is provided as a core element of Substrate and can be ignored since it is only exposed in the SDK under the `authorities()` API entry.
+In Axlib, there is a major distinction between blockchain *syncing* and block *authoring* ("authoring" is a more general term for what is called "mining" in Bitcoin). The first case might be referred to as a "full node" (or "light node" - Axlib supports both): authoring necessarily requires a synced node and, therefore, all authoring clients must necessarily be able to synchronize. However, the reverse is not true. The primary functionality that authoring nodes have which is not in "sync nodes" is threefold: transaction queue logic, inherent transaction knowledge and BFT consensus logic. BFT consensus logic is provided as a core element of Axlib and can be ignored since it is only exposed in the SDK under the `authorities()` API entry.
 
-Transaction queue logic in Substrate is designed to be as generic as possible, allowing a runtime to express which transactions are fit for inclusion in a block through the `initialize_block` and `apply_extrinsic` calls. However, more subtle aspects like prioritization and replacement policy must currently be expressed "hard coded" as part of the blockchain's authoring code. That said, Substrate's reference implementation for a transaction queue should be sufficient for an initial chain implementation.
+Transaction queue logic in Axlib is designed to be as generic as possible, allowing a runtime to express which transactions are fit for inclusion in a block through the `initialize_block` and `apply_extrinsic` calls. However, more subtle aspects like prioritization and replacement policy must currently be expressed "hard coded" as part of the blockchain's authoring code. That said, Axlib's reference implementation for a transaction queue should be sufficient for an initial chain implementation.
 
 Inherent extrinsic knowledge is again somewhat generic, and the actual construction of the extrinsics is, by convention, delegated to the "soft code" in the runtime. If ever there needs to be additional extrinsic information in the chain, then both the block authoring logic will need to be altered to provide it into the runtime and the runtime's `inherent_extrinsics` call will need to use this extra information in order to construct any additional extrinsic transactions for inclusion in the block.
 
@@ -109,22 +109,22 @@ Inherent extrinsic knowledge is again somewhat generic, and the actual construct
 - DAO runtime module
 - Audit
 
-== Trying out Substrate Node
+== Trying out Axlib Node
 
-Substrate Node is Substrate's pre-baked blockchain client. You can run a development node locally or configure a new chain and launch your own global testnet.
+Axlib Node is Axlib's pre-baked blockchain client. You can run a development node locally or configure a new chain and launch your own global testnet.
 
 === On Mac and Ubuntu
 
-To get going as fast as possible, there is a simple script that installs all required dependencies and installs Substrate into your path. Just open a terminal and run:
+To get going as fast as possible, there is a simple script that installs all required dependencies and installs Axlib into your path. Just open a terminal and run:
 
 [source, shell]
 ----
 curl https://getsubstrate.io -sSf | bash
 ----
 
-You can start a local Substrate development chain with running `substrate --dev`.
+You can start a local Axlib development chain with running `substrate --dev`.
 
-To create your own global network/cryptocurrency, you'll need to make a new Substrate Node chain specification file ("chainspec").
+To create your own global network/cryptocurrency, you'll need to make a new Axlib Node chain specification file ("chainspec").
 
 First let's get a template chainspec that you can edit. We'll use the "staging" chain, a sort of default chain that the node comes pre-configured with:
 
@@ -149,7 +149,7 @@ Now with this new chainspec file, you can build a "raw" chain definition for you
 substrate build-spec --chain ~/chainspec.json --raw > ~/mychain.json
 ----
 
-This can be fed into Substrate:
+This can be fed into Axlib:
 
 [source, shell]
 ----
@@ -168,9 +168,9 @@ You can distribute `mychain.json` so that everyone can synchronize and (dependin
 
 == Building
 
-=== Hacking on Substrate
+=== Hacking on Axlib
 
-If you'd actually like to hack on Substrate, you can just grab the source code and
+If you'd actually like to hack on Axlib, you can just grab the source code and
 build it. Ensure you have Rust and the support software installed:
 
 ==== Linux and Mac
@@ -201,11 +201,11 @@ to build `lld` and create the symlink `/usr/bin/rust-lld` to the build binary.
 [source, shell]
 brew install cmake pkg-config openssl git llvm
 
-To finish installation of Substrate, jump down to <<shared-steps,shared steps>>.
+To finish installation of Axlib, jump down to <<shared-steps,shared steps>>.
 
 ==== Windows
 
-If you are trying to set up Substrate on Windows, you should do the following:
+If you are trying to set up Axlib on Windows, you should do the following:
 
 1. First, you will need to download and install "Build Tools for Visual Studio:"
 
@@ -252,11 +252,11 @@ If you are trying to set up Substrate on Windows, you should do the following:
 
 ==== Docker
 
-You can use https://github.com/paritytech/scripts/tree/master/dockerfiles/ci-linux[Parity CI docker image] with all necessary dependencies to build Substrate:
+You can use https://github.com/paritytech/scripts/tree/master/dockerfiles/ci-linux[Parity CI docker image] with all necessary dependencies to build Axlib:
 
 [source, shell]
 ----
-#run it in the folder with the Substrate source code
+#run it in the folder with the Axlib source code
 docker run --rm -it -w /shellhere/substrate \
                     -v $(pwd):/shellhere/substrate \
                     paritytech/ci-linux:production <cargo commands>
@@ -266,7 +266,7 @@ You can find necessary cargo commands in <<shared-steps,shared steps>>
 
 ==== Shared Steps
 
-Then, grab the Substrate source code:
+Then, grab the Axlib source code:
 
 [source, shell]
 ----
@@ -297,7 +297,7 @@ Detailed logs may be shown by running the node with the following environment va
 
 If you want to see the multi-node consensus algorithm in action locally, then you can create a local testnet with two validator nodes for Alice and Bob, who are the initial authorities of the genesis chain specification that have been endowed with a testnet AXCs. We'll give each node a name and expose them so they are listed on link:https://telemetry.axia.io/#/Local%20Testnet[Telemetry]. You'll need two terminal windows open.
 
-We'll start Alice's Substrate node first on default TCP port 30333 with her chain database stored locally at `/tmp/alice`. The Bootnode ID of her node is `QmRpheLN4JWdAnY7HGJfWFNbfkQCb6tFf4vvA6hgjMZKrR`, which is generated from the `--node-key` value that we specify below:
+We'll start Alice's Axlib node first on default TCP port 30333 with her chain database stored locally at `/tmp/alice`. The Bootnode ID of her node is `QmRpheLN4JWdAnY7HGJfWFNbfkQCb6tFf4vvA6hgjMZKrR`, which is generated from the `--node-key` value that we specify below:
 
 [source, shell]
 cargo run --release \-- \
@@ -308,7 +308,7 @@ cargo run --release \-- \
   --telemetry-url 'ws://telemetry.axia.io:1024 0' \
   --validator
 
-In the second terminal, we'll run the following to start Bob's Substrate node on a different TCP port of 30334, and with his chain database stored locally at `/tmp/bob`. We'll specify a value for the `--bootnodes` option that will connect his node to Alice's Bootnode ID on TCP port 30333:
+In the second terminal, we'll run the following to start Bob's Axlib node on a different TCP port of 30334, and with his chain database stored locally at `/tmp/bob`. We'll specify a value for the `--bootnodes` option that will connect his node to Alice's Bootnode ID on TCP port 30333:
 
 [source, shell]
 cargo run --release \-- \
@@ -320,12 +320,12 @@ cargo run --release \-- \
   --telemetry-url 'ws://telemetry.axia.io:1024 0' \
   --validator
 
-Additional Substrate CLI usage options are available and may be shown by running `cargo run \-- --help`.
+Additional Axlib CLI usage options are available and may be shown by running `cargo run \-- --help`.
 
 [[flaming-fir]]
 === Joining the Flaming Fir Testnet
 
-Flaming Fir is the new testnet for Substrate master (2.0) to test the latest development features. Please note that master is not compatible with the BBQ Birch, Charred Cherry, Dried Danta or Emberic Elm testnets. Ensure you have the dependencies listed above before compiling.
+Flaming Fir is the new testnet for Axlib master (2.0) to test the latest development features. Please note that master is not compatible with the BBQ Birch, Charred Cherry, Dried Danta or Emberic Elm testnets. Ensure you have the dependencies listed above before compiling.
 
 Since Flaming Fir is targeting the master branch we make absolutely no guarantees of stability and/or persistence of the network. We might reset the chain at any time if it is necessary to deploy new changes. Currently, the validators are running with a client built from `d013bd900`, if you build from this commit you should be able to successfully sync, later commits may not work as new breaking changes may be introduced in master.
 
@@ -362,7 +362,7 @@ If you are successful, you will see your node syncing at https://telemetry.axia.
 
 === Joining the Emberic Elm Testnet
 
-Emberic Elm is the testnet for Substrate 1.0. Please note that 1.0 is not compatible with the BBQ Birch, Charred Cherry, Dried Danta or Flaming Fir testnets.
+Emberic Elm is the testnet for Axlib 1.0. Please note that 1.0 is not compatible with the BBQ Birch, Charred Cherry, Dried Danta or Flaming Fir testnets.
 In order to join the Emberic Elm testnet you should build from the `v1.0` branch. Ensure you have the dependencies listed above before compiling.
 
 [source, shell]
@@ -376,7 +376,7 @@ You can then follow the same steps for building and running as described above i
 
 == Key management
 
-Keys in Substrate are stored in the keystore in the file system. To store keys into this keystore,
+Keys in Axlib are stored in the keystore in the file system. To store keys into this keystore,
 you need to use one of the two provided RPC calls. If your keys are encrypted or should be encrypted
 by the keystore, you need to provide the key using one of the cli arguments `--password`,
 `--password-interactive` or `--password-filename`.
@@ -395,7 +395,7 @@ curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"au
 === Advanced RPC call
 
 If the Session keys need to match a fixed seed, they can be set individually key by key. The RPC call
-expects the key seed and the key type. The key types supported by default in Substrate are listed
+expects the key seed and the key type. The key types supported by default in Axlib are listed
 https://github.com/paritytech/substrate/blob/master/core/primitives/src/crypto.rs#L767[here], but the
 user can declare any key type.
 
@@ -409,9 +409,9 @@ curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"au
 
 == Documentation
 
-=== Viewing documentation for Substrate packages
+=== Viewing documentation for Axlib packages
 
-You can generate documentation for a Substrate Rust package and have it automatically open in your web browser using https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html#using-rustdoc-with-cargo[rustdoc with Cargo],
+You can generate documentation for a Axlib Rust package and have it automatically open in your web browser using https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html#using-rustdoc-with-cargo[rustdoc with Cargo],
 (of the The Rustdoc Book), by running the following command:
 
 ```
@@ -420,10 +420,10 @@ cargo doc --package <spec> --open
 
 Replacing `<spec>` with one of the following (i.e. `cargo doc --package substrate --open`):
 
-* All Substrate Packages
+* All Axlib Packages
 [source, shell]
 substrate
-* Substrate Core
+* Axlib Core
 [source, shell]
 substrate, substrate-cli, substrate-client, substrate-client-db,
 substrate-consensus-common, substrate-consensus-rhd,
@@ -433,7 +433,7 @@ substrate-serializer, substrate-service, substrate-service-test, substrate-state
 substrate-state-machine, substrate-telemetry, substrate-test-client,
 substrate-test-runtime, substrate-transaction-graph, sp-transaction-pool,
 substrate-trie
-* Substrate Runtime
+* Axlib Runtime
 [source, shell]
 sr-api, sr-io, sr-primitives, sr-sandbox, sr-std, sr-version
 * FRAME Core
@@ -450,9 +450,9 @@ node-cli, node-consensus, node-executor, node-network, node-primitives, node-run
 [source, shell]
 subkey
 
-=== Contributing to documentation for Substrate packages
+=== Contributing to documentation for Axlib packages
 
-https://doc.rust-lang.org/1.9.0/book/documentation.html[Document source code] for Substrate packages by annotating the source code with documentation comments.
+https://doc.rust-lang.org/1.9.0/book/documentation.html[Document source code] for Axlib packages by annotating the source code with documentation comments.
 
 Example (generic):
 ```markdown
@@ -498,7 +498,7 @@ after the triple graves, alternative annotations include the `ignore`, `text`, `
 or errors `#![deny(missing_docs)]`
 * Hide documentation for items with `#[doc(hidden)]`
 
-=== Contributing to documentation (tests, extended examples, macros) for Substrate packages
+=== Contributing to documentation (tests, extended examples, macros) for Axlib packages
 
 The code block annotations in the `# Example` section may be used as https://doc.rust-lang.org/1.9.0/book/documentation.html#documentation-as-tests[documentation as tests and for extended examples].
 

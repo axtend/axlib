@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -36,7 +36,7 @@
 //!     WasmBuilder::new()
 //!         // Tell the builder to build the project (crate) this `build.rs` is part of.
 //!         .with_current_project()
-//!         // Make sure to export the `heap_base` global, this is required by Substrate
+//!         // Make sure to export the `heap_base` global, this is required by Axlib
 //!         .export_heap_base()
 //!         // Build the Wasm file so that it imports the memory (need to be provided by at instantiation)
 //!         .import_memory()

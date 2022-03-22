@@ -23,7 +23,7 @@
 /.github/ @paritytech/ci
 /.gitlab-ci.yml @paritytech/ci
 
-# Sandboxing capability of Substrate Runtime
+# Sandboxing capability of Axlib Runtime
 /primitives/sr-sandbox/ @pepyakin
 /primitives/core/src/sandbox.rs @pepyakin
 

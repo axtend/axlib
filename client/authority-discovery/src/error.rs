@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -38,7 +38,7 @@ pub enum Error {
 	#[error("Failed to hash the authority id to be used as a dht key.")]
 	HashingAuthorityId(#[from] libp2p::core::multiaddr::multihash::Error),
 
-	#[error("Failed calling into the Substrate runtime: {0}")]
+	#[error("Failed calling into the Axlib runtime: {0}")]
 	CallingRuntime(#[from] sp_blockchain::Error),
 
 	#[error("Received a dht record with a key that does not match any in-flight awaited keys.")]

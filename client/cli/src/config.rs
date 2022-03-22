@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -20,7 +20,7 @@
 
 use crate::{
 	arg_enums::Database, error::Result, DatabaseParams, ImportParams, KeystoreParams,
-	NetworkParams, NodeKeyParams, OffchainWorkerParams, PruningParams, SharedParams, SubstrateCli,
+	NetworkParams, NodeKeyParams, OffchainWorkerParams, PruningParams, SharedParams, AxlibCli,
 };
 use log::warn;
 use names::{Generator, Name};
@@ -45,33 +45,33 @@ pub(crate) const DEFAULT_NETWORK_CONFIG_PATH: &'static str = "network";
 /// The recommended open file descriptor limit to be configured for the process.
 const RECOMMENDED_OPEN_FILE_DESCRIPTOR_LIMIT: u64 = 10_000;
 
-/// Default configuration values used by Substrate
+/// Default configuration values used by Axlib
 ///
 /// These values will be used by [`CliConfiguration`] to set
 /// default values for e.g. the listen port or the RPC port.
 pub trait DefaultConfigurationValues {
-	/// The port Substrate should listen on for p2p connections.
+	/// The port Axlib should listen on for p2p connections.
 	///
 	/// By default this is `30333`.
 	fn p2p_listen_port() -> u16 {
 		30333
 	}
 
-	/// The port Substrate should listen on for websocket connections.
+	/// The port Axlib should listen on for websocket connections.
 	///
 	/// By default this is `9944`.
 	fn rpc_ws_listen_port() -> u16 {
 		9944
 	}
 
-	/// The port Substrate should listen on for http connections.
+	/// The port Axlib should listen on for http connections.
 	///
 	/// By default this is `9933`.
 	fn rpc_http_listen_port() -> u16 {
 		9933
 	}
 
-	/// The port Substrate should listen on for prometheus connections.
+	/// The port Axlib should listen on for prometheus connections.
 	///
 	/// By default this is `9615`.
 	fn prometheus_listen_port() -> u16 {
@@ -471,7 +471,7 @@ pub trait CliConfiguration<DCV: DefaultConfigurationValues = ()>: Sized {
 	}
 
 	/// Create a Configuration object from the current object
-	fn create_configuration<C: SubstrateCli>(
+	fn create_configuration<C: AxlibCli>(
 		&self,
 		cli: &C,
 		tokio_handle: tokio::runtime::Handle,

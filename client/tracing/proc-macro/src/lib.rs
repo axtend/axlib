@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -52,7 +52,7 @@ use syn::{Error, Expr, Ident, ItemFn};
 /// Will produce logs that look like this:
 ///
 /// ```text
-/// 2020-10-16 08:03:14  Substrate Node
+/// 2020-10-16 08:03:14  Axlib Node
 /// 2020-10-16 08:03:14  ✌️  version 2.0.0-47f7d3f2e-x86_64-linux-gnu
 /// 2020-10-16 08:03:14  ❤️  by Anonymous, 2017-2020
 /// 2020-10-16 08:03:14  📋 Chain specification: Local Testnet
@@ -86,7 +86,7 @@ use syn::{Error, Expr, Ident, ItemFn};
 /// Will produce logs that look like this:
 ///
 /// ```text
-/// 2020-10-16 08:12:57  Substrate Node
+/// 2020-10-16 08:12:57  Axlib Node
 /// 2020-10-16 08:12:57  ✌️  version 2.0.0-efb9b822a-x86_64-linux-gnu
 /// 2020-10-16 08:12:57  ❤️  by Anonymous, 2017-2020
 /// 2020-10-16 08:12:57  📋 Chain specification: Local Testnet

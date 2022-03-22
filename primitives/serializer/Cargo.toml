@@ -6,7 +6,7 @@ edition = "2021"
 license = "Apache-2.0"
 homepage = "https://substrate.io"
 repository = "https://github.com/paritytech/substrate/"
-description = "Substrate customizable serde serializer."
+description = "Axlib customizable serde serializer."
 documentation = "https://docs.rs/sp-serializer"
 readme = "README.md"
 

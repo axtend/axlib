@@ -15,7 +15,7 @@ On the client side, the most notable changes are around the keystore, making it 
 _Contracts_: Please note that the contracts pallet _is not part_ of this release. The pallet is not yet ready and will be released separately in the coming weeks. The currently released contracts pallet _is not compatible_ with the new FRAME, thus if you need the contracts pallet, we recommend you wait with the upgrade until it has been released, too.
 ### Upgrade instructions
 
-Not too much has changed on the top and API level for developing Substrate between 2.0 and 3.0. The easiest and quickest path for upgrading is just to take the latest node-template and try applying your changes to it:
+Not too much has changed on the top and API level for developing Axlib between 2.0 and 3.0. The easiest and quickest path for upgrading is just to take the latest node-template and try applying your changes to it:
 1. take a diff between 2.0 and your changes
 2. store that diff
 3. remove everything, copy over the 3.0 node-template
@@ -152,7 +152,7 @@ Runtime Migrations
 Patch release with backports to fix broken nightly builds.
 Namely contains backports of
 
-* [#7381: Make Substrate compile with latest nightly](https://github.com/paritytech/substrate/pull/7381)
+* [#7381: Make Axlib compile with latest nightly](https://github.com/paritytech/substrate/pull/7381)
 * [#7238: Fix compilation with environmental on latest nightly](https://github.com/paritytech/substrate/pull/7238)
 * [#7395: Make benchmarks compile with latest nightly](https://github.com/paritytech/substrate/pull/7395)
 * [#7838: Fix incorrect use of syn::exports](https://github.com/paritytech/substrate/pull/7838) (partially)
@@ -372,7 +372,7 @@ Client
 * Sentry nodes and validator nodes also imply reserved (#6251)
 * Fix peerset not filtering incoming connections in reserved-only (#6249)
 * Use Subscription Manager from `jsonrpc-pubsub` (#6208)
-* Add a Substrate networking Grafana dashboard template (#6171)
+* Add a Axlib networking Grafana dashboard template (#6171)
 * Add subkey inspect-node-key (#6153)
 
 ## 2.0.0-rc1 -> 2.0.0-rc2

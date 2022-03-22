@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -738,7 +738,7 @@ mod dummy {
 ///   - the phrase may be followed by one or more items delimited by `/` characters.
 ///   - the path may be followed by `///`, in which case everything after the `///` is treated
 /// as a password.
-/// - If `string` begins with a `/` character it is prefixed with the Substrate public `DEV_PHRASE`
+/// - If `string` begins with a `/` character it is prefixed with the Axlib public `DEV_PHRASE`
 ///   and interpreted as above.
 ///
 /// In this case they are interpreted as HDKD junctions; purely numeric items are interpreted as
@@ -917,7 +917,7 @@ pub trait Pair: CryptoType + Sized + Clone + Send + Sync + 'static {
 	///   - the phrase may be followed by one or more items delimited by `/` characters.
 	///   - the path may be followed by `///`, in which case everything after the `///` is treated
 	/// as a password.
-	/// - If `s` begins with a `/` character it is prefixed with the Substrate public `DEV_PHRASE`
+	/// - If `s` begins with a `/` character it is prefixed with the Axlib public `DEV_PHRASE`
 	///   and
 	/// interpreted as above.
 	///
@@ -1109,7 +1109,7 @@ pub mod key_types {
 	pub const BABE: KeyTypeId = KeyTypeId(*b"babe");
 	/// Key type for Grandpa module, built-in. Identified as `gran`.
 	pub const GRANDPA: KeyTypeId = KeyTypeId(*b"gran");
-	/// Key type for controlling an account in a Substrate runtime, built-in. Identified as `acco`.
+	/// Key type for controlling an account in a Axlib runtime, built-in. Identified as `acco`.
 	pub const ACCOUNT: KeyTypeId = KeyTypeId(*b"acco");
 	/// Key type for Aura module, built-in. Identified as `aura`.
 	pub const AURA: KeyTypeId = KeyTypeId(*b"aura");

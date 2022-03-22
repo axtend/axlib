@@ -1,13 +1,13 @@
 # System Module
 
 The System module provides low-level access to core types and cross-cutting utilities.
-It acts as the base layer for other pallets to interact with the Substrate framework components.
+It acts as the base layer for other pallets to interact with the Axlib framework components.
 
 - [`system::Config`](https://docs.rs/frame-system/latest/frame_system/pallet/trait.Config.html)
 
 ## Overview
 
-The System module defines the core data types used in a Substrate runtime.
+The System module defines the core data types used in a Axlib runtime.
 It also provides several utility functions (see [`Pallet`](https://docs.rs/frame-system/latest/frame_system/pallet/struct.Pallet.html)) for other FRAME pallets.
 
 In addition, it manages the storage items for extrinsics data, indexes, event records, and digest items,

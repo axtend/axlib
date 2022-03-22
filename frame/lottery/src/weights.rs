@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
@@ -54,9 +54,9 @@ pub trait WeightInfo {
 	fn on_initialize_repeat() -> Weight;
 }
 
-/// Weights for pallet_lottery using the Substrate node and recommended hardware.
-pub struct SubstrateWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
+/// Weights for pallet_lottery using the Axlib node and recommended hardware.
+pub struct AxlibWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
 	// Storage: Lottery Lottery (r:1 w:0)
 	// Storage: Lottery CallIndices (r:1 w:0)
 	// Storage: Lottery TicketsCount (r:1 w:1)

@@ -1,4 +1,4 @@
-// This file is part of Substrate.
+// This file is part of Axlib.
 
 // Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Substrate state API.
+//! Axlib state API.
 
 pub mod error;
 pub mod helpers;
@@ -33,7 +33,7 @@ use sp_version::RuntimeVersion;
 
 pub use self::{gen_client::Client as StateClient, helpers::ReadProof};
 
-/// Substrate state API
+/// Axlib state API
 #[rpc]
 pub trait StateApi<Hash> {
 	/// RPC Metadata
@@ -166,7 +166,7 @@ pub trait StateApi<Hash> {
 	/// The Spans and Events are conceptually equivalent to those from the [Tracing][1] crate.
 	///
 	/// The structure of the traces follows that of the block execution pipeline, so meaningful
-	/// interpretation of the traces requires an understanding of the Substrate chain's block
+	/// interpretation of the traces requires an understanding of the Axlib chain's block
 	/// execution.
 	///
 	/// [Link to conceptual map of trace structure for Axia and AxiaTest block execution.][2]
@@ -276,7 +276,7 @@ pub trait StateApi<Hash> {
 	/// of a trace target it is considered a match). If an empty string is specified no
 	/// targets will be filtered out. The majority of targets correspond to Rust module names,
 	/// and the ones that do not are typically "hardcoded" into span or event location
-	/// somewhere in the Substrate source code. ("Non-hardcoded" targets typically come from frame
+	/// somewhere in the Axlib source code. ("Non-hardcoded" targets typically come from frame
 	/// support macros.)
 	/// - `storage_keys` (param index 2): String of comma separated (no spaces) hex encoded
 	/// (no `0x` prefix) storage keys. If an empty string is specified no events will

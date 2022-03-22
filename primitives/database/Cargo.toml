@@ -6,7 +6,7 @@ edition = "2021"
 license = "Apache-2.0"
 homepage = "https://substrate.io"
 repository = "https://github.com/paritytech/substrate/"
-description = "Substrate database trait."
+description = "Axlib database trait."
 documentation = "https://docs.rs/sp-database"
 readme = "README.md"
 

@@ -1,5 +1,5 @@
 [package]
-description = "Substrate offchain workers primitives"
+description = "Axlib offchain workers primitives"
 name = "sp-offchain"
 version = "4.0.0-dev"
 license = "Apache-2.0"

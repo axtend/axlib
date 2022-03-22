@@ -1,4 +1,4 @@
-Substrate RPC interfaces.
+Axlib RPC interfaces.
 
 A collection of RPC methods and subscriptions supported by all substrate clients.
 
