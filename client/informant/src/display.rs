@@ -130,7 +130,7 @@ impl<B: BlockT> InformantDisplay<B> {
 
 		if self.format.enable_color {
 			info!(
-				target: "substrate",
+				target: "axlib",
 				"{} {}{} ({} peers), best: #{} ({}), finalized #{} ({}), {} {}",
 				level,
 				Colour::White.bold().paint(&status),
@@ -145,7 +145,7 @@ impl<B: BlockT> InformantDisplay<B> {
 			)
 		} else {
 			info!(
-				target: "substrate",
+				target: "axlib",
 				"{} {}{} ({} peers), best: #{} ({}), finalized #{} ({}), ⬇ {} ⬆ {}",
 				level,
 				status,

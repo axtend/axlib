@@ -148,7 +148,7 @@ where
 			}
 
 			info!(
-				target: "substrate",
+				target: "axlib",
 				"✨ Imported #{} ({})",
 				Colour::White.bold().paint(format!("{}", n.header.number())),
 				n.hash,

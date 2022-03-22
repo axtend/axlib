@@ -937,7 +937,7 @@ impl<'ast> Visit<'ast> for CheckTraitDecl {
 					input.span(),
 					"`Block: BlockT` generic parameter will be added automatically by the \
 						`decl_runtime_apis!` macro! If you try to use a different trait than the \
-						substrate `Block` trait, please rename it locally.",
+						axlib `Block` trait, please rename it locally.",
 				))
 			}
 		}

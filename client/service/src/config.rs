@@ -260,7 +260,7 @@ impl BasePath {
 	/// Note: the temporary directory will be created automatically and deleted when the `BasePath`
 	/// instance is dropped.
 	pub fn new_temp_dir() -> io::Result<BasePath> {
-		Ok(BasePath::Temporary(tempfile::Builder::new().prefix("substrate").tempdir()?))
+		Ok(BasePath::Temporary(tempfile::Builder::new().prefix("axlib").tempdir()?))
 	}
 
 	/// Create a `BasePath` instance based on an existing path on disk.

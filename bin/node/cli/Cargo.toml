@@ -6,7 +6,7 @@ description = "Generic Axlib node implementation in Rust."
 build = "build.rs"
 edition = "2021"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
-default-run = "substrate"
+default-run = "axlib"
 homepage = "https://axlib.io"
 repository = "https://github.com/axtend/axlib/"
 
@@ -25,7 +25,7 @@ is-it-maintained-issue-resolution = { repository = "paritytech/axlib" }
 is-it-maintained-open-issues = { repository = "paritytech/axlib" }
 
 [[bin]]
-name = "substrate"
+name = "axlib"
 path = "bin/main.rs"
 required-features = ["cli"]
 
