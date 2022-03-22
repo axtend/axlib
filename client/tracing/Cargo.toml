@@ -6,7 +6,7 @@ authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
 homepage = "https://axlib.io"
 repository = "https://github.com/axtend/axlib/"
-description = "Instrumentation implementation for substrate."
+description = "Instrumentation implementation for axlib."
 readme = "README.md"
 
 [package.metadata.docs.rs]

@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Integration of the GRANDPA finality gadget into substrate.
+//! Integration of the GRANDPA finality gadget into axlib.
 //!
 //! This crate is unstable and the API and usage may change.
 //!
@@ -148,7 +148,7 @@ use std::marker::PhantomData;
 #[cfg(test)]
 mod tests;
 
-/// A GRANDPA message for a substrate chain.
+/// A GRANDPA message for a axlib chain.
 pub type Message<Block> = finality_grandpa::Message<<Block as BlockT>::Hash, NumberFor<Block>>;
 
 /// A signed message.

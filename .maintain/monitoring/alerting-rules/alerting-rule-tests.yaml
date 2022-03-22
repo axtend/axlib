@@ -7,28 +7,28 @@ tests:
     - interval: 1m
       input_series:
           - series: 'axlib_sub_libp2p_peers_count{
-              job="substrate",
+              job="axlib",
               pod="axlib-abcdef01234-abcdef",
               instance="axlib-abcdef01234-abcdef",
             }'
             values: '3 2+0x4 1+0x9' # 3 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1
 
           - series: 'axlib_sub_txpool_validations_scheduled{
-              job="substrate",
+              job="axlib",
               pod="axlib-abcdef01234-abcdef",
               instance="axlib-abcdef01234-abcdef",
             }'
             values: '11+1x10 22+2x30 10043x5'
 
           - series: 'axlib_sub_txpool_validations_finished{
-              job="substrate",
+              job="axlib",
               pod="axlib-abcdef01234-abcdef",
               instance="axlib-abcdef01234-abcdef",
             }'
             values: '0+1x42 42x5'
 
           - series: 'axlib_block_height{
-              status="best", job="substrate",
+              status="best", job="axlib",
               pod="axlib-abcdef01234-abcdef",
               instance="axlib-abcdef01234-abcdef",
             }'
@@ -36,7 +36,7 @@ tests:
 
           - series: 'axlib_block_height{
               status="finalized",
-              job="substrate",
+              job="axlib",
               pod="axlib-abcdef01234-abcdef",
               instance="axlib-abcdef01234-abcdef",
             }'
@@ -58,7 +58,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                       status: best
                   exp_annotations:
                       message: "Best block on instance
@@ -72,7 +72,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                       status: best
                   exp_annotations:
                       message: "Best block on instance
@@ -82,7 +82,7 @@ tests:
                       severity: critical
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                       status: best
                   exp_annotations:
                       message: "Best block on instance
@@ -103,7 +103,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                       status: finalized
                   exp_annotations:
                       message: "Finalized block on instance
@@ -117,7 +117,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                       status: finalized
                   exp_annotations:
                       message: "Finalized block on instance
@@ -127,7 +127,7 @@ tests:
                       severity: critical
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                       status: finalized
                   exp_annotations:
                       message: "Finalized block on instance
@@ -154,7 +154,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                   exp_annotations:
                       message: "The transaction pool size on node
                       axlib-abcdef01234-abcdef has been monotonically
@@ -169,7 +169,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                   exp_annotations:
                       message: "The transaction pool size on node
                       axlib-abcdef01234-abcdef has been monotonically
@@ -178,7 +178,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                   exp_annotations:
                       message: "The transaction pool size on node
                       axlib-abcdef01234-abcdef has been monotonically
@@ -193,7 +193,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                   exp_annotations:
                       message: "The transaction pool size on node
                       axlib-abcdef01234-abcdef has been above 10_000 for more
@@ -213,7 +213,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                   exp_annotations:
                       message: "The node axlib-abcdef01234-abcdef has less
                       than 3 peers for more than 3 minutes"
@@ -225,7 +225,7 @@ tests:
                       severity: warning
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                   exp_annotations:
                       message: "The node axlib-abcdef01234-abcdef has less
                       than 3 peers for more than 3 minutes"
@@ -233,7 +233,7 @@ tests:
                       severity: critical
                       pod: axlib-abcdef01234-abcdef
                       instance: axlib-abcdef01234-abcdef
-                      job: substrate
+                      job: axlib
                   exp_annotations:
                       message: "The node axlib-abcdef01234-abcdef has less
                       than 3 peers for more than 15 minutes"

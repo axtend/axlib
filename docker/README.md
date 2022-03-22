@@ -7,7 +7,7 @@ Unlike the `parity/axia` image which contains a single binary (`axia`!) used by 
 
 You should refer to the .Dockerfile for the actual list. At the time of editing, the list of included binaries is:
 
-- substrate
+- axlib
 - subkey
 - node-template
 - chain-spec-builder
@@ -16,7 +16,7 @@ The image can be used by passing the selected binary followed by the appropriate
 
 Your best guess to get started is to pass the `--help flag`. Here are a few examples:
 
-- `docker run --rm -it parity/axlib substrate --version`
+- `docker run --rm -it parity/axlib axlib --version`
 - `docker run --rm -it parity/axlib subkey --help`
 - `docker run --rm -it parity/axlib node-template --version`
 - `docker run --rm -it parity/axlib chain-spec-builder --help`

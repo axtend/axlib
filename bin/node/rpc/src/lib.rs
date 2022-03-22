@@ -17,7 +17,7 @@
 
 //! A collection of node-specific RPC methods.
 //!
-//! Since `substrate` core functionality makes no assumptions
+//! Since `axlib` core functionality makes no assumptions
 //! about the modules used inside the runtime, so do
 //! RPC methods defined in `sc-rpc` crate.
 //! It means that `client/rpc` can't have any methods that

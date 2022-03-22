@@ -18,7 +18,7 @@
 
 #![warn(unused_extern_crates)]
 
-//! Service implementation. Specialized wrapper over substrate service.
+//! Service implementation. Specialized wrapper over axlib service.
 
 use codec::Encode;
 use frame_system_rpc_runtime_api::AccountNonceApi;

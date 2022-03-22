@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Instrumentation implementation for substrate.
+//! Instrumentation implementation for axlib.
 //!
 //! This crate is unstable and the API and usage may change.
 //!

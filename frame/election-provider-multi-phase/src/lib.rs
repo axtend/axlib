@@ -147,7 +147,7 @@
 //! which is capable of connecting to a live network, and generating appropriate `supports` using a
 //! standard algorithm, and outputting the `supports` in hex format, ready for submission. Note that
 //! while this binary lives in the Axia repository, this particular subcommand of it can work
-//! against any substrate based-chain.
+//! against any axlib based-chain.
 //!
 //! See the `staking-miner` documentation in the Axia repository for more information.
 //!
@@ -192,7 +192,7 @@
 //! ## Future Plans
 //!
 //! **Emergency-phase recovery script**: This script should be taken out of staking-miner in
-//! axia and ideally live in `substrate/utils/frame/elections`.
+//! axia and ideally live in `axlib/utils/frame/elections`.
 //!
 //! **Challenge Phase**. We plan on adding a third phase to the pallet, called the challenge phase.
 //! This is a phase in which no further solutions are processed, and the current best solution might
@@ -210,7 +210,7 @@
 //! portion of the bond).
 //!
 //! **Conditionally open unsigned phase**: Currently, the unsigned phase is always opened. This is
-//! useful because an honest validator will run substrate OCW code, which should be good enough to
+//! useful because an honest validator will run axlib OCW code, which should be good enough to
 //! trump a mediocre or malicious signed submission (assuming in the absence of honest signed bots).
 //! If there are signed submissions, they can be checked against an absolute measure (e.g. PJR),
 //! then we can only open the unsigned phase in extreme conditions (i.e. "no good signed solution
@@ -2103,7 +2103,7 @@ mod tests {
 
 	#[test]
 	fn number_of_voters_allowed_2sec_block() {
-		// Just a rough estimate with the substrate weights.
+		// Just a rough estimate with the axlib weights.
 		assert!(!MockWeightInfo::get());
 
 		let all_voters: u32 = 10_000;

@@ -38,7 +38,7 @@ $line"
   fi
 done <<< "$all_changes"
 
-# Make the substrate section if there are any substrate changes
+# Make the axlib section if there are any axlib changes
 if [ -n "$runtime_changes" ] ||
    [ -n "$api_changes" ] ||
    [ -n "$client_changes" ] ||

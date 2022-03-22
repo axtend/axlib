@@ -92,7 +92,7 @@ We also provide a template to get you started building your own node.
 * _found in_: `/bin/utils`
 
 - **subkey**
-  Subkey is a client library to generate keys and sign transactions to send to a substrate node.
+  Subkey is a client library to generate keys and sign transactions to send to a axlib node.
 - **chain-spec-builder**
   The chain spec builder builds a chain specification that includes a Axlib runtime compiled as WASM. To ensure proper functioning of the included runtime compile (or run) the chain spec builder binary in `--release` mode.
 

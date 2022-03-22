@@ -270,7 +270,7 @@ impl<T> super::SandboxInstance<T> for Instance<T> {
 	}
 }
 
-/// Convert the substrate value type to the wasmi value type.
+/// Convert the axlib value type to the wasmi value type.
 fn to_wasmi(value: Value) -> RuntimeValue {
 	match value {
 		Value::I32(val) => RuntimeValue::I32(val),
@@ -280,7 +280,7 @@ fn to_wasmi(value: Value) -> RuntimeValue {
 	}
 }
 
-/// Convert the wasmi value type to the substrate value type.
+/// Convert the wasmi value type to the axlib value type.
 fn to_interface(value: RuntimeValue) -> Value {
 	match value {
 		RuntimeValue::I32(val) => Value::I32(val),

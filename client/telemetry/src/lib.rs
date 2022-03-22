@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Axlib's client telemetry is a part of substrate that allows ingesting telemetry data
+//! Axlib's client telemetry is a part of axlib that allows ingesting telemetry data
 //! with for example [Axia telemetry](https://github.com/paritytech/axlib-telemetry).
 //!
 //! It works using Tokio's [tracing](https://github.com/tokio-rs/tracing/) library. The telemetry
@@ -25,8 +25,8 @@
 //! background task called [`TelemetryWorker`] which will send the information to the configured
 //! remote telemetry servers.
 //!
-//! If multiple substrate nodes are running in the same process, it uses a `tracing::Span` to
-//! identify which substrate node is reporting the telemetry. Every task spawned using sc-service's
+//! If multiple axlib nodes are running in the same process, it uses a `tracing::Span` to
+//! identify which axlib node is reporting the telemetry. Every task spawned using sc-service's
 //! `TaskManager` automatically inherit this span.
 //!
 //! Axlib's nodes initialize/register with the [`TelemetryWorker`] using a
@@ -60,9 +60,9 @@ use node::*;
 use transport::*;
 
 /// Axlib DEBUG log level.
-pub const SUBSTRATE_DEBUG: VerbosityLevel = 9;
+pub const AXLIB_DEBUG: VerbosityLevel = 9;
 /// Axlib INFO log level.
-pub const SUBSTRATE_INFO: VerbosityLevel = 0;
+pub const AXLIB_INFO: VerbosityLevel = 0;
 
 /// Consensus TRACE log level.
 pub const CONSENSUS_TRACE: VerbosityLevel = 9;
@@ -343,10 +343,10 @@ pub struct Telemetry {
 }
 
 impl Telemetry {
-	/// Initialize the telemetry with the endpoints provided in argument for the current substrate
+	/// Initialize the telemetry with the endpoints provided in argument for the current axlib
 	/// node.
 	///
-	/// This method must be called during the substrate node initialization.
+	/// This method must be called during the axlib node initialization.
 	///
 	/// The `endpoints` argument is a collection of telemetry WebSocket servers with a corresponding
 	/// verbosity level.

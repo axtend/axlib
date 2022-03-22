@@ -28,12 +28,12 @@ RUN apt-get update && \
 	apt-get clean && \
 	find /var/lib/apt/lists/ -type f -not -name lock -delete; \
 # add user
-	useradd -m -u 1000 -U -s /bin/sh -d /axlib substrate
+	useradd -m -u 1000 -U -s /bin/sh -d /axlib axlib
 
-# add substrate binary to docker image
+# add axlib binary to docker image
 COPY ./axlib /usr/local/bin
 
-USER substrate
+USER axlib
 
 # check if executable works in this container
 RUN /usr/local/bin/axlib --version

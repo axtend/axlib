@@ -286,7 +286,7 @@ mod execution {
 		ExecutionManager::AlwaysWasm(BackendTrustLevel::Untrusted)
 	}
 
-	/// The substrate state machine.
+	/// The axlib state machine.
 	pub struct StateMachine<'a, B, H, Exec>
 	where
 		H: Hasher,
@@ -324,7 +324,7 @@ mod execution {
 		Exec: CodeExecutor + Clone + 'static,
 		B: Backend<H>,
 	{
-		/// Creates new substrate state machine.
+		/// Creates new axlib state machine.
 		pub fn new(
 			backend: &'a B,
 			overlay: &'a mut OverlayedChanges,

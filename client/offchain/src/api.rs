@@ -145,7 +145,7 @@ impl<Storage: OffchainStorage> offchain::DbExternalities for Db<Storage> {
 /// NOTE this is done to prevent recursive calls into the runtime
 /// (which are not supported currently).
 pub(crate) struct Api {
-	/// A provider for substrate networking.
+	/// A provider for axlib networking.
 	network_provider: Arc<dyn NetworkProvider + Send + Sync>,
 	/// Is this node a potential validator?
 	is_validator: bool,

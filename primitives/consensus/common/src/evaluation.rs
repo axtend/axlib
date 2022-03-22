@@ -41,7 +41,7 @@ pub enum Error {
 	WrongNumber { expected: BlockNumber, got: BlockNumber },
 }
 
-/// Attempt to evaluate a substrate block as a node block, returning error
+/// Attempt to evaluate a axlib block as a node block, returning error
 /// upon any initial validity checks failing.
 pub fn evaluate_initial<Block: BlockT>(
 	proposal: &Block,

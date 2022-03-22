@@ -1,6 +1,6 @@
 # sc-telemetry
 
-Axlib's client telemetry is a part of substrate that allows ingesting telemetry data
+Axlib's client telemetry is a part of axlib that allows ingesting telemetry data
 with for example [Axia telemetry](https://github.com/paritytech/axlib-telemetry).
 
 It works using Tokio's [tracing](https://github.com/tokio-rs/tracing/) library. The telemetry
@@ -9,8 +9,8 @@ tracing `Layer`. This layer will then send the data through an asynchronous chan
 background task called [`TelemetryWorker`] which will send the information to the configured
 remote telemetry servers.
 
-If multiple substrate nodes are running in the same process, it uses a `tracing::Span` to
-identify which substrate node is reporting the telemetry. Every task spawned using sc-service's
+If multiple axlib nodes are running in the same process, it uses a `tracing::Span` to
+identify which axlib node is reporting the telemetry. Every task spawned using sc-service's
 `TaskManager` automatically inherit this span.
 
 Axlib's nodes initialize/register with the [`TelemetryWorker`] using a [`TelemetryHandle`].

@@ -307,7 +307,7 @@ where
 	fn max_encoded_len() -> usize {
 		// WeakBoundedVec<T, S> encodes like Vec<T> which encodes like [T], which is a compact u32
 		// plus each item in the slice:
-		// https://docs.substrate.io/v3/advanced/scale-codec
+		// https://docs.axlib.io/v3/advanced/scale-codec
 		codec::Compact(S::get())
 			.encoded_size()
 			.saturating_add(Self::bound().saturating_mul(T::max_encoded_len()))

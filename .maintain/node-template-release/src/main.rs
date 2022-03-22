@@ -22,7 +22,7 @@ use tar;
 
 use flate2::{write::GzEncoder, Compression};
 
-const SUBSTRATE_GIT_URL: &str = "https://github.com/paritytech/axlib.git";
+const AXLIB_GIT_URL: &str = "https://github.com/paritytech/axlib.git";
 
 type CargoToml = HashMap<String, toml::Value>;
 
@@ -86,7 +86,7 @@ fn parse_cargo_toml(file: &Path) -> CargoToml {
 	toml::from_str(&content).expect("Cargo.toml is a valid toml file")
 }
 
-/// Replaces all substrate path dependencies with a git dependency.
+/// Replaces all axlib path dependencies with a git dependency.
 fn replace_path_dependencies_with_git(
 	cargo_toml_path: &Path,
 	commit_id: &str,
@@ -121,7 +121,7 @@ fn replace_path_dependencies_with_git(
 			.map(|(k, mut v)| {
 				// remove `path` and add `git` and `rev`
 				v.remove("path");
-				v.insert("git".into(), SUBSTRATE_GIT_URL.into());
+				v.insert("git".into(), AXLIB_GIT_URL.into());
 				v.insert("rev".into(), commit_id.into());
 
 				(k.clone(), v.into())

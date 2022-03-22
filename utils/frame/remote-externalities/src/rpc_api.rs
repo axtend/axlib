@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! WS RPC API for one off RPC calls to a substrate node.
+//! WS RPC API for one off RPC calls to a axlib node.
 // TODO: Consolidate one off RPC calls https://github.com/paritytech/axlib/issues/8988
 
 use jsonrpsee::{

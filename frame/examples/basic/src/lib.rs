@@ -318,7 +318,7 @@ const MILLICENTS: u32 = 1_000_000_000;
 // - assigns a dispatch class `operational` if the argument of the call is more than 1000.
 //
 // More information can be read at:
-//   - https://docs.substrate.io/v3/runtime/weights-and-fees
+//   - https://docs.axlib.io/v3/runtime/weights-and-fees
 //
 // Manually configuring weight is an advanced operation and what you really need may well be
 //   fulfilled by running the benchmarking toolchain. Refer to `benchmarking.rs` file.
@@ -697,7 +697,7 @@ impl<T: Config> Pallet<T> {
 // The full list of hooks that can be added to a signed extension can be found
 // [here](https://crates.parity.io/sp_runtime/traits/trait.SignedExtension.html).
 //
-// The signed extensions are aggregated in the runtime file of a substrate chain. All extensions
+// The signed extensions are aggregated in the runtime file of a axlib chain. All extensions
 // should be aggregated in a tuple and passed to the `CheckedExtrinsic` and `UncheckedExtrinsic`
 // types defined in the runtime. Lookup `pub type SignedExtra = (...)` in `node/runtime` and
 // `node-template` for an example of this.

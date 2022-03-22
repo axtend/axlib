@@ -3,7 +3,7 @@ title: Installation
 ---
 
 This guide is for reference only, please check the latest information on getting starting with Axlib 
-[here](https://docs.substrate.io/v3/getting-started/installation/).
+[here](https://docs.axlib.io/v3/getting-started/installation/).
 
 This page will guide you through the **2 steps** needed to prepare a computer for **Axlib** development.
 Since Axlib is built with [the Rust programming language](https://www.rust-lang.org/), the first
@@ -15,7 +15,7 @@ Unix-based operating systems.
 ## Build dependencies
 
 Axlib development is easiest on Unix-based operating systems like macOS or Linux. The examples
-in the [Axlib Docs](https://docs.substrate.io) use Unix-style terminals to demonstrate how to
+in the [Axlib Docs](https://docs.axlib.io) use Unix-style terminals to demonstrate how to
 interact with Axlib from the command line.
 
 ### Ubuntu/Debian
@@ -77,7 +77,7 @@ brew install openssl
 recommend to use [Windows Subsystem Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 (WSL) and follow the instructions for [Ubuntu/Debian](#ubuntudebian).
 Please refer to the separate
-[guide for native Windows development](https://docs.substrate.io/v3/getting-started/windows-users/).
+[guide for native Windows development](https://docs.axlib.io/v3/getting-started/windows-users/).
 
 ## Rust developer environment
 
@@ -103,7 +103,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 ## Test your set-up
 
 Now the best way to ensure that you have successfully prepared a computer for Axlib
-development is to follow the steps in [our first Axlib tutorial](https://docs.substrate.io/tutorials/v3/create-your-first-axlib-chain/).
+development is to follow the steps in [our first Axlib tutorial](https://docs.axlib.io/tutorials/v3/create-your-first-axlib-chain/).
 
 ## Troubleshooting Axlib builds
 

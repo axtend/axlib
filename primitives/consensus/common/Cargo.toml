@@ -6,7 +6,7 @@ edition = "2021"
 license = "Apache-2.0"
 homepage = "https://axlib.io"
 repository = "https://github.com/axtend/axlib/"
-description = "Common utilities for building and using consensus engines in substrate."
+description = "Common utilities for building and using consensus engines in axlib."
 documentation = "https://docs.rs/sp-consensus/"
 readme = "README.md"
 

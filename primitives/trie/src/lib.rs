@@ -53,10 +53,10 @@ pub use trie_db::{
 /// The Axlib format implementation of `TrieStream`.
 pub use trie_stream::TrieStream;
 
-/// substrate trie layout
+/// axlib trie layout
 pub struct LayoutV0<H>(sp_std::marker::PhantomData<H>);
 
-/// substrate trie layout, with external value nodes.
+/// axlib trie layout, with external value nodes.
 pub struct LayoutV1<H>(sp_std::marker::PhantomData<H>);
 
 impl<H> TrieLayout for LayoutV0<H>

@@ -170,7 +170,7 @@ where
 	///
 	/// # Note
 	///
-	/// Weight is synonymous with gas in substrate.
+	/// Weight is synonymous with gas in axlib.
 	pub fn charge_weight(&mut self, amount: Weight) -> Result<ChargedAmount> {
 		self.inner.runtime.charge_gas(RuntimeCosts::ChainExtension(amount))
 	}

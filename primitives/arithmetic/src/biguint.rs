@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Infinite precision unsigned integer for substrate runtime.
+//! Infinite precision unsigned integer for axlib runtime.
 
 use codec::{Decode, Encode};
 use num_traits::{One, Zero};

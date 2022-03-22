@@ -32,16 +32,16 @@ async fn basic_test_with_args() {
 	assert!(true);
 }
 
-// NOTE: enable this test only after setting SUBSTRATE_TEST_TIMEOUT to a smaller value
+// NOTE: enable this test only after setting AXLIB_TEST_TIMEOUT to a smaller value
 //
-// SUBSTRATE_TEST_TIMEOUT=1 cargo test -- --ignored timeout
+// AXLIB_TEST_TIMEOUT=1 cargo test -- --ignored timeout
 #[axlib_test_utils::test]
 #[should_panic(expected = "test took too long")]
 #[ignore]
 async fn timeout() {
 	tokio::time::sleep(std::time::Duration::from_secs(
-		std::env::var("SUBSTRATE_TEST_TIMEOUT")
-			.expect("env var SUBSTRATE_TEST_TIMEOUT has been provided by the user")
+		std::env::var("AXLIB_TEST_TIMEOUT")
+			.expect("env var AXLIB_TEST_TIMEOUT has been provided by the user")
 			.parse::<u64>()
 			.unwrap() + 1,
 	))

@@ -239,7 +239,7 @@ impl sp_std::fmt::Debug for PublicError {
 
 /// Key that can be encoded to/from SS58.
 ///
-/// See <https://docs.substrate.io/v3/advanced/ss58/>
+/// See <https://docs.axlib.io/v3/advanced/ss58/>
 /// for information on the codec.
 #[cfg(feature = "full_crypto")]
 pub trait Ss58Codec: Sized + AsMut<[u8]> + AsRef<[u8]> + ByteArray {

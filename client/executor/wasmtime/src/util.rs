@@ -24,7 +24,7 @@ use sc_executor_common::{
 use sp_wasm_interface::{Pointer, Value};
 use wasmtime::{AsContext, AsContextMut};
 
-/// Converts a [`wasmtime::Val`] into a substrate runtime interface [`Value`].
+/// Converts a [`wasmtime::Val`] into a axlib runtime interface [`Value`].
 ///
 /// Panics if the given value doesn't have a corresponding variant in `Value`.
 pub fn from_wasmtime_val(val: wasmtime::Val) -> Value {

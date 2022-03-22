@@ -20,9 +20,9 @@ COPY --from=builder /axlib/target/release/subkey /usr/local/bin
 COPY --from=builder /axlib/target/release/node-template /usr/local/bin
 COPY --from=builder /axlib/target/release/chain-spec-builder /usr/local/bin
 
-RUN useradd -m -u 1000 -U -s /bin/sh -d /axlib substrate && \
+RUN useradd -m -u 1000 -U -s /bin/sh -d /axlib axlib && \
 	mkdir -p /data /axlib/.local/share/axlib && \
-	chown -R substrate:substrate /data && \
+	chown -R axlib:axlib /data && \
 	ln -s /data /axlib/.local/share/axlib && \
 # unclutter and minimize the attack surface
 	rm -rf /usr/bin /usr/sbin && \
@@ -30,6 +30,6 @@ RUN useradd -m -u 1000 -U -s /bin/sh -d /axlib substrate && \
 	ldd /usr/local/bin/axlib && \
 	/usr/local/bin/axlib --version
 
-USER substrate
+USER axlib
 EXPOSE 30333 9933 9944 9615
 VOLUME ["/data"]

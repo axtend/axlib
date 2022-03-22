@@ -48,7 +48,7 @@ pub mod defensive_prelude {
 ///    in production as well. Note that the log message, as of now, are not super expressive. Your
 ///    best shot of fully diagnosing the error would be to infer the block number of which the log
 ///    message was emitted, then re-execute that block using `check-block` or `try-runtime`
-///    subcommands in substrate client.
+///    subcommands in axlib client.
 pub trait Defensive<T> {
 	/// Exactly the same as `unwrap_or`, but it does the defensive warnings explained in the trait
 	/// docs.
@@ -834,7 +834,7 @@ impl<T: MaxEncodedLen> MaxEncodedLen for WrapperOpaque<T> {
 	fn max_encoded_len() -> usize {
 		let t_max_len = T::max_encoded_len();
 
-		// See scale encoding https://docs.substrate.io/v3/advanced/scale-codec
+		// See scale encoding https://docs.axlib.io/v3/advanced/scale-codec
 		if t_max_len < 64 {
 			t_max_len + 1
 		} else if t_max_len < 2usize.pow(14) {

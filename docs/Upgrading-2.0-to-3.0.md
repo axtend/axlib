@@ -65,7 +65,7 @@ The same goes for all `<Self as frame_system::Trait>` and alike, which simply be
 #### SS58 Prefix is now a runtime param
 
 
-Since [#7810](https://github.com/paritytech/axlib/pull/7810) we don't define the ss58 prefix in the chainspec anymore but moved it into the runtime. Namely, `frame_system` now needs a new `SS58Prefix`, which in substrate node we have defined for ourselves as: `pub const SS58Prefix: u8 = 42;`. Use your own chain-specific value there.
+Since [#7810](https://github.com/paritytech/axlib/pull/7810) we don't define the ss58 prefix in the chainspec anymore but moved it into the runtime. Namely, `frame_system` now needs a new `SS58Prefix`, which in axlib node we have defined for ourselves as: `pub const SS58Prefix: u8 = 42;`. Use your own chain-specific value there.
 
 #### Weight Definition
 

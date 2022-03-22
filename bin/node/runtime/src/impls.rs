@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Some configurable implementations as associated type for the substrate runtime.
+//! Some configurable implementations as associated type for the axlib runtime.
 
 use crate::{AccountId, Assets, Authorship, Balances, NegativeImbalance, Runtime};
 use frame_support::traits::{
@@ -216,7 +216,7 @@ mod multiplier_tests {
 		// almost full. The entire quota of normal transactions is taken.
 		let block_weight = BlockWeights::get().get(DispatchClass::Normal).max_total.unwrap() - 100;
 
-		// Default substrate weight.
+		// Default axlib weight.
 		let tx_weight = frame_support::weights::constants::ExtrinsicBaseWeight::get();
 
 		run_with_system_weight(block_weight, || {

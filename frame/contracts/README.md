@@ -34,7 +34,7 @@ reverted at the current call's contract level. For example, if contract A calls 
 then all of B's calls are reverted. Assuming correct error handling by contract A, A's other calls and state
 changes still persist.
 
-One gas is equivalent to one [weight](https://docs.substrate.io/v3/runtime/weights-and-fees)
+One gas is equivalent to one [weight](https://docs.axlib.io/v3/runtime/weights-and-fees)
 which is defined as one picosecond of execution time on the runtime's reference machine.
 
 ### Notable Scenarios
@@ -98,7 +98,7 @@ This buffer is also printed as a debug message. In order to see these messages o
 console the log level for the `runtime::contracts` target needs to be raised to at least
 the `debug` level. However, those messages are easy to overlook because of the noise generated
 by block production. A good starting point for observing them on the console is using this
-command line in the root directory of the substrate repository:
+command line in the root directory of the axlib repository:
 
 ```bash
 cargo run --release -- --dev -lerror,runtime::contracts=debug
@@ -123,8 +123,8 @@ live runtime should never be compiled with this feature: In addition to be subje
 change or removal those interfaces do not have proper weights associated with them and
 are therefore considered unsafe.
 
-The substrate runtime exposes this feature as `contracts-unstable-interface`. Example
-commandline for running the substrate node with unstable contracts interfaces:
+The axlib runtime exposes this feature as `contracts-unstable-interface`. Example
+commandline for running the axlib node with unstable contracts interfaces:
 
 ```bash
 cargo run --release --features contracts-unstable-interface -- --dev

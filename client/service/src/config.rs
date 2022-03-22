@@ -254,7 +254,7 @@ pub enum BasePath {
 }
 
 impl BasePath {
-	/// Create a `BasePath` instance using a temporary directory prefixed with "substrate" and use
+	/// Create a `BasePath` instance using a temporary directory prefixed with "axlib" and use
 	/// it as base path.
 	///
 	/// Note: the temporary directory will be created automatically and deleted when the `BasePath`

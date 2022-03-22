@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Configuration trait for a CLI based on substrate
+//! Configuration trait for a CLI based on axlib
 
 use crate::{
 	arg_enums::Database, error::Result, DatabaseParams, ImportParams, KeystoreParams,
@@ -576,7 +576,7 @@ pub trait CliConfiguration<DCV: DefaultConfigurationValues = ()>: Sized {
 		Ok(self.shared_params().disable_log_color())
 	}
 
-	/// Initialize substrate. This must be done only once per process.
+	/// Initialize axlib. This must be done only once per process.
 	///
 	/// This method:
 	///

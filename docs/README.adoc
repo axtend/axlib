@@ -14,7 +14,7 @@ At its heart, Axlib is a combination of three technologies: https://webassembly.
 
 Axlib chains have three distinct features that make them "next-generation": a dynamic, self-defining state-transition function; light-client functionality from day one; and a progressive consensus algorithm with fast block production and adaptive, definite finality. The STF, encoded in WebAssembly, is known as the "runtime". This defines the `execute_block` function, and can specify everything from the staking algorithm, transaction semantics, logging mechanisms and procedures for replacing any aspect of itself or of the blockchain's state ("governance"). Because the runtime is entirely dynamic all of these can be switched out or upgraded at any time. A Axlib chain is very much a "living organism".
 
-See also https://www.parity.io/what-is-substrate/.
+See also https://www.parity.io/what-is-axlib/.
 
 == Usage
 
@@ -22,7 +22,7 @@ Axlib is still an early stage project, and while it has already been used as the
 
 Axlib is designed for use in one of three ways:
 
-**1. Trivial**: By running the Axlib binary `substrate` and configuring it with a genesis block that includes the current demonstration runtime. In this case, you just build Axlib, configure a JSON file, and launch your own blockchain. This affords you the least amount of customizability, primarily allowing you to change the genesis parameters of the various included runtime modules such as balances, staking, block-period, fees, and governance.
+**1. Trivial**: By running the Axlib binary `axlib` and configuring it with a genesis block that includes the current demonstration runtime. In this case, you just build Axlib, configure a JSON file, and launch your own blockchain. This affords you the least amount of customizability, primarily allowing you to change the genesis parameters of the various included runtime modules such as balances, staking, block-period, fees, and governance.
 
 **2. Modular**: By hacking together pallets built with Axlib FRAME into a new runtime and possibly altering or reconfiguring the Axlib client's block authoring logic. This affords you a very large amount of freedom over your blockchain's logic, letting you change data types, add or remove modules, and crucially, add your own modules. Much can be changed without touching the block authoring logic (since it is generic). If this is the case, then the existing Axlib binary can be used for block authoring and syncing. If the block authoring logic needs to be tweaked, then a new, altered block authoring binary must be built as a separate project and used by validators. This is how the Axia relay chain is built and should suffice for almost all circumstances in the near to mid-term.
 
@@ -104,7 +104,7 @@ Inherent extrinsic knowledge is again somewhat generic, and the actual construct
 === The future
 
 - Splitting out runtime modules into separate repo
-- Introduce substrate executable (the skeleton-key runtime)
+- Introduce axlib executable (the skeleton-key runtime)
 - Introduce basic but extensible transaction queue and block-builder and place them in the executable.
 - DAO runtime module
 - Audit
@@ -119,10 +119,10 @@ To get going as fast as possible, there is a simple script that installs all req
 
 [source, shell]
 ----
-curl https://getsubstrate.io -sSf | bash
+curl https://getaxlib.io -sSf | bash
 ----
 
-You can start a local Axlib development chain with running `substrate --dev`.
+You can start a local Axlib development chain with running `axlib --dev`.
 
 To create your own global network/cryptocurrency, you'll need to make a new Axlib Node chain specification file ("chainspec").
 
@@ -130,7 +130,7 @@ First let's get a template chainspec that you can edit. We'll use the "staging" 
 
 [source, shell]
 ----
-substrate build-spec --chain=staging > ~/chainspec.json
+axlib build-spec --chain=staging > ~/chainspec.json
 ----
 
 Now, edit `~/chainspec.json` in your editor. There are a lot of individual fields for each module, and one very large one which contains the WebAssembly code blob for this chain. The easiest field to edit is the block `period`. Change it to 10 (seconds):
@@ -146,21 +146,21 @@ Now with this new chainspec file, you can build a "raw" chain definition for you
 
 [source, shell]
 ----
-substrate build-spec --chain ~/chainspec.json --raw > ~/mychain.json
+axlib build-spec --chain ~/chainspec.json --raw > ~/mychain.json
 ----
 
 This can be fed into Axlib:
 
 [source, shell]
 ----
-substrate --chain ~/mychain.json
+axlib --chain ~/mychain.json
 ----
 
 It won't do much until you start producing blocks though, so to do that you'll need to use the `--validator` option together with passing the seed for the account(s) that is configured to be the initial authorities:
 
 [source, shell]
 ----
-substrate --chain ~/mychain.json --validator
+axlib --chain ~/mychain.json --validator
 ----
 
 You can distribute `mychain.json` so that everyone can synchronize and (depending on your authorities list) validate on your chain.
@@ -271,7 +271,7 @@ Then, grab the Axlib source code:
 [source, shell]
 ----
 git clone https://github.com/paritytech/axlib.git
-cd substrate
+cd axlib
 ----
 
 Then build the code:
@@ -334,7 +334,7 @@ Latest known working version: `a2a0eb5398d6223e531455b4c155ef053a4a3a2b`
 [source, shell]
 ----
 git clone https://github.com/paritytech/axlib.git
-cd substrate
+cd axlib
 git checkout -b flaming-fir a2a0eb5398d6223e531455b4c155ef053a4a3a2b
 ----
 
@@ -368,7 +368,7 @@ In order to join the Emberic Elm testnet you should build from the `v1.0` branch
 [source, shell]
 ----
 git clone https://github.com/paritytech/axlib.git
-cd substrate
+cd axlib
 git checkout -b v1.0 origin/v1.0
 ----
 
@@ -418,14 +418,14 @@ You can generate documentation for a Axlib Rust package and have it automaticall
 cargo doc --package <spec> --open
 ```
 
-Replacing `<spec>` with one of the following (i.e. `cargo doc --package substrate --open`):
+Replacing `<spec>` with one of the following (i.e. `cargo doc --package axlib --open`):
 
 * All Axlib Packages
 [source, shell]
-substrate
+axlib
 * Axlib Core
 [source, shell]
-substrate, axlib-cli, axlib-client, axlib-client-db,
+axlib, axlib-cli, axlib-client, axlib-client-db,
 axlib-consensus-common, axlib-consensus-rhd,
 axlib-executor, axlib-finality-grandpa, axlib-keyring, axlib-keystore, axlib-network,
 axlib-network-libp2p, axlib-primitives, axlib-rpc, axlib-rpc-servers,

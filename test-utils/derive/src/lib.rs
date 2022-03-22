@@ -58,7 +58,7 @@ fn parse_knobs(
 		#vis #sig {
 			if #crate_name::tokio::time::timeout(
 				std::time::Duration::from_secs(
-					std::env::var("SUBSTRATE_TEST_TIMEOUT")
+					std::env::var("AXLIB_TEST_TIMEOUT")
 						.ok()
 						.and_then(|x| x.parse().ok())
 						.unwrap_or(600)),

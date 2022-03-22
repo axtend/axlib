@@ -46,7 +46,7 @@ use sc_consensus::{
 	BlockCheckParams, BlockImportParams, ForkChoiceStrategy, ImportResult, StateAction,
 };
 use sc_executor::{RuntimeVersion, RuntimeVersionOf};
-use sc_telemetry::{telemetry, TelemetryHandle, SUBSTRATE_INFO};
+use sc_telemetry::{telemetry, TelemetryHandle, AXLIB_INFO};
 use sp_api::{
 	ApiExt, ApiRef, CallApiAt, CallApiAtParams, ConstructRuntimeApi, Core as CoreApi,
 	ProvideRuntimeApi,
@@ -484,7 +484,7 @@ where
 				if origin != BlockOrigin::NetworkInitialSync || rand::thread_rng().gen_bool(0.1) {
 					telemetry!(
 						self.telemetry;
-						SUBSTRATE_INFO;
+						AXLIB_INFO;
 						"block.import";
 						"height" => height,
 						"best" => ?hash,
@@ -918,7 +918,7 @@ where
 
 		telemetry!(
 			self.telemetry;
-			SUBSTRATE_INFO;
+			AXLIB_INFO;
 			"notify.finalized";
 			"height" => format!("{}", header.number()),
 			"best" => ?last,

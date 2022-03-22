@@ -8,9 +8,9 @@ Axlib is a next-generation framework for blockchain innovation 🚀.
 
 ## Trying it out
 
-Simply go to [docs.substrate.io](https://docs.substrate.io) and follow the
-[installation](https://docs.substrate.io/v3/getting-started/overview) instructions. You can
-also try out one of the [tutorials](https://docs.substrate.io/tutorials/).
+Simply go to [docs.axlib.io](https://docs.axlib.io) and follow the
+[installation](https://docs.axlib.io/v3/getting-started/overview) instructions. You can
+also try out one of the [tutorials](https://docs.axlib.io/tutorials/).
 
 ## Contributions & Code of Conduct
 

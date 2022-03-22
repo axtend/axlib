@@ -76,7 +76,7 @@ When reviewing a pull request, the end-goal is to suggest useful changes to the 
 To create a Axia companion PR:
 
 . Pull latest Axia master (or clone it, if you haven't yet).
-. Override substrate deps to point to your local path or branch using https://github.com/bkchr/diener. (E.g. from the axia clone dir run `diener patch --crates-to-patch ../axlib --substrate` assuming substrate clone is in a sibling dir. If you do use diener, ensure that you _do not_ commit the changes diener makes to the Cargo.tomls.)
+. Override axlib deps to point to your local path or branch using https://github.com/bkchr/diener. (E.g. from the axia clone dir run `diener patch --crates-to-patch ../axlib --axlib` assuming axlib clone is in a sibling dir. If you do use diener, ensure that you _do not_ commit the changes diener makes to the Cargo.tomls.)
 . Make the changes required and build axia locally.
 . Submit all this as a PR against the Axia Repo.
 . In the _description_ of your _Axlib_ PR add "axia companion: [Axia_PR_URL]"
@@ -89,11 +89,11 @@ To create a Axia companion PR:
     - If the axia PR origins from a fork then a project member may need to press `approve run` on the axia PR.
     - The bot will merge the Axia PR once all its CI `{"build_allow_failure":false}` checks are green.
     Note: The merge-bot currently doesn't work with forks on org accounts, only individual accounts.
-	(Hint: it's recommended to use `bot merge` to merge all substrate PRs, not just ones with a axia companion.)
+	(Hint: it's recommended to use `bot merge` to merge all axlib PRs, not just ones with a axia companion.)
 
 If your PR is reviewed well, but a Axia PR is missing, signal it with https://github.com/paritytech/axlib/labels/A7-needsaxiapr[`A7-needsaxiapr`] to prevent it from getting automatically merged.
 
-As there might be multiple pending PRs that might conflict with one another, a) you should not merge the substrate PR until the Axia PR has also been reviewed and b) both should be merged pretty quickly after another to not block others.
+As there might be multiple pending PRs that might conflict with one another, a) you should not merge the axlib PR until the Axia PR has also been reviewed and b) both should be merged pretty quickly after another to not block others.
 
 == Helping out
 

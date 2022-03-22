@@ -474,7 +474,7 @@ enum CodeSupplyMode<'a> {
 		// Rationale to take the `RuntimeBlob` here is so that the client will be able to reuse
 		// the blob e.g. if they did a prevalidation. If they didn't they can pass a `RuntimeBlob`
 		// instance and it will be used anyway in most cases, because we are going to do at least
-		// some instrumentations for both anticipated paths: substrate execution and PVF execution.
+		// some instrumentations for both anticipated paths: axlib execution and PVF execution.
 		//
 		// Should there raise a need in performing no instrumentation and the client doesn't need
 		// to do any checks, then we can provide a `Cow` like semantics here: if we need the blob

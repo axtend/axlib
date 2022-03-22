@@ -80,7 +80,7 @@ impl<Block: BlockT> fmt::Display for BlockId<Block> {
 	}
 }
 
-/// Abstraction over a substrate block.
+/// Abstraction over a axlib block.
 #[derive(PartialEq, Eq, Clone, Encode, Decode, RuntimeDebug)]
 #[cfg_attr(feature = "std", derive(Serialize, Deserialize, parity_util_mem::MallocSizeOf))]
 #[cfg_attr(feature = "std", serde(rename_all = "camelCase"))]
@@ -118,7 +118,7 @@ where
 	}
 }
 
-/// Abstraction over a substrate block and justification.
+/// Abstraction over a axlib block and justification.
 #[derive(PartialEq, Eq, Clone, Encode, Decode, RuntimeDebug)]
 #[cfg_attr(feature = "std", derive(Serialize, Deserialize))]
 #[cfg_attr(feature = "std", serde(rename_all = "camelCase"))]

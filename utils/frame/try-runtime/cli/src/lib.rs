@@ -21,17 +21,17 @@
 //!
 //! > As the name suggests, `try-runtime` is a detailed testing framework that gives you a lot of
 //! control over what is being executed in which environment. It is recommended that user's first
-//! familiarize themselves with substrate in depth, particularly the execution model. It is critical
+//! familiarize themselves with axlib in depth, particularly the execution model. It is critical
 //! to deeply understand how the wasm/native interactions, and the runtime apis work in the
-//! substrate runtime, before commencing to working with `try-runtime`.
+//! axlib runtime, before commencing to working with `try-runtime`.
 //!
 //! #### Resources
 //!
 //! Some resources about the above:
 //!
-//! 1. <https://docs.substrate.io/v3/tools/try-runtime>
+//! 1. <https://docs.axlib.io/v3/tools/try-runtime>
 //! 2. <https://www.crowdcast.io/e/axlib-seminar/41>
-//! 3. <https://docs.substrate.io/v3/advanced/executor>
+//! 3. <https://docs.axlib.io/v3/advanced/executor>
 //!
 //! ---
 //!
@@ -46,14 +46,14 @@
 //! 1. **State** is the key-value pairs of data that comprise the canonical information that any
 //!    blockchain is keeping. A state can be full (all key-value pairs), or be partial (only pairs
 //!    related to some pallets). Moreover, some keys are special and are not related to specific
-//!    pallets, known as [`well_known_keys`] in substrate. The most important of these is the
+//!    pallets, known as [`well_known_keys`] in axlib. The most important of these is the
 //!    `:CODE:` key, which contains the code used for execution, when wasm execution is chosen.
 //!
 //! 2. *A runtime-api* call is a call into a function defined in the runtime, *on top of a given
 //!    state*. Each subcommand of `try-runtime` utilizes a specific *runtime-api*.
 //!
 //! 3. Finally, the **runtime** is the actual code that is used to execute the aforementioned
-//!    runtime-api. All substrate based chains always have two runtimes: native and wasm. The
+//!    runtime-api. All axlib based chains always have two runtimes: native and wasm. The
 //!    decision of which one is chosen is non-trivial. First, let's look at the options:
 //!
 //!     1. Native: this means that the runtime that is **in your codebase**, aka whatever you see in
@@ -175,7 +175,7 @@
 //!     # note that we don't pass any --at, nothing means latest block.
 //! ```
 //!
-//! Same as previous one, but let's say we want to run this command from the substrate repo, where
+//! Same as previous one, but let's say we want to run this command from the axlib repo, where
 //! we don't have a matching spec name/version.
 //!
 //! ```sh
@@ -379,7 +379,7 @@ pub enum Command {
 /// Shared parameters of the `try-runtime` commands
 #[derive(Debug, Clone, clap::Parser)]
 pub struct SharedParams {
-	/// Shared parameters of substrate cli.
+	/// Shared parameters of axlib cli.
 	#[allow(missing_docs)]
 	#[clap(flatten)]
 	pub shared_params: sc_cli::SharedParams,

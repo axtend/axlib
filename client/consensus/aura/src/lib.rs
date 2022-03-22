@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Aura (Authority-round) consensus in substrate.
+//! Aura (Authority-round) consensus in axlib.
 //!
 //! Aura works by having a list of authorities A who are expected to roughly
 //! agree on the current time. Time is divided up into discrete slots of t

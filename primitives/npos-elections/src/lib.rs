@@ -12,7 +12,7 @@
 // or implied. See the License for the specific language governing permissions and limitations under
 // the License.
 
-//! A set of election algorithms to be used with a substrate runtime, typically within the staking
+//! A set of election algorithms to be used with a axlib runtime, typically within the staking
 //! sub-system. Notable implementation include:
 //!
 //! - [`seq_phragmen`]: Implements the Phragmén Sequential Method. An un-ranked, relatively fast

@@ -189,7 +189,7 @@ pub trait StateApi<Hash> {
 	/// ## Creating tracing enabled WASM runtimes
 	///
 	/// - Checkout commit of chain version to compile with WASM traces
-	/// - [diener][1] can help to peg commit of substrate to what the chain expects.
+	/// - [diener][1] can help to peg commit of axlib to what the chain expects.
 	/// - Navigate to the `runtime` folder/package of the chain
 	/// - Add feature `with-tracing = ["frame-executive/with-tracing", "sp-io/with-tracing"]`
 	/// under `[features]` to the `runtime` packages' `Cargo.toml`.
@@ -297,12 +297,12 @@ pub trait StateApi<Hash> {
 	/// Additionally you would want to track the extrinsic index, which is under the
 	/// `:extrinsic_index` key. The key for this would be the aforementioned string as bytes
 	/// in hex: `3a65787472696e7369635f696e646578`.
-	/// The following are some resources to learn more about storage keys in substrate:
-	/// [substrate storage][1], [transparent keys in substrate][2],
-	/// [querying substrate storage via rpc][3].
+	/// The following are some resources to learn more about storage keys in axlib:
+	/// [axlib storage][1], [transparent keys in axlib][2],
+	/// [querying axlib storage via rpc][3].
 	///
-	/// [1]: https://docs.substrate.io/v3/advanced/storage#storage-map-keys
-	/// [2]: https://www.shawntabrizi.com/axlib/transparent-keys-in-substrate/
+	/// [1]: https://docs.axlib.io/v3/advanced/storage#storage-map-keys
+	/// [2]: https://www.shawntabrizi.com/axlib/transparent-keys-in-axlib/
 	/// [3]: https://www.shawntabrizi.com/axlib/querying-axlib-storage-via-rpc/
 	///
 	/// ### Maximum payload size

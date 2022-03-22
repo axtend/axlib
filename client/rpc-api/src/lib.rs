@@ -18,7 +18,7 @@
 
 //! Axlib RPC interfaces.
 //!
-//! A collection of RPC methods and subscriptions supported by all substrate clients.
+//! A collection of RPC methods and subscriptions supported by all axlib clients.
 
 #![warn(missing_docs)]
 

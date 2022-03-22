@@ -122,7 +122,7 @@ pub fn with_transaction<R>(f: impl FnOnce() -> TransactionOutcome<R>) -> R {
 	}
 }
 
-/// A trait for working with macro-generated storage values under the substrate storage API.
+/// A trait for working with macro-generated storage values under the axlib storage API.
 ///
 /// Details on implementation can be found at [`generator::StorageValue`].
 pub trait StorageValue<T: FullCodec> {

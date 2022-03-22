@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! I/O host interface for substrate runtime.
+//! I/O host interface for axlib runtime.
 
 #![warn(missing_docs)]
 #![cfg_attr(not(feature = "std"), no_std)]

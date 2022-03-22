@@ -6,7 +6,7 @@ edition = "2021"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
 homepage = "https://axlib.io"
 repository = "https://github.com/axtend/axlib/"
-description = "Integration of the GRANDPA finality gadget into substrate."
+description = "Integration of the GRANDPA finality gadget into axlib."
 documentation = "https://docs.rs/sc-finality-grandpa"
 readme = "README.md"
 

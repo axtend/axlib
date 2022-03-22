@@ -35,7 +35,7 @@ use sp_std::{
 };
 
 /// an aggregator trait for a generic type of a voter/target identifier. This usually maps to
-/// substrate's account id.
+/// axlib's account id.
 pub trait IdentifierT: Clone + Eq + Ord + Debug + codec::Codec {}
 impl<T: Clone + Eq + Ord + Debug + codec::Codec> IdentifierT for T {}
 
