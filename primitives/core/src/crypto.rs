@@ -376,7 +376,7 @@ fn ss58hash(data: &[u8]) -> blake2_rfc::blake2b::Blake2bResult {
 /// Default prefix number
 #[cfg(feature = "std")]
 static DEFAULT_VERSION: core::sync::atomic::AtomicU16 = std::sync::atomic::AtomicU16::new(
-	from_known_address_format(Ss58AddressFormatRegistry::SubstrateAccount),
+	from_known_address_format(Ss58AddressFormatRegistry::AxlibAccount),
 );
 
 /// Returns default SS58 format used by the current active process.

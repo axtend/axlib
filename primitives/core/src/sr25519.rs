@@ -58,7 +58,7 @@ use sp_runtime_interface::pass_by::PassByInner;
 
 // signing context
 #[cfg(feature = "full_crypto")]
-const SIGNING_CTX: &[u8] = b"substrate";
+const SIGNING_CTX: &[u8] = b"axlib";
 
 /// An identifier used to match public keys against sr25519 keys
 pub const CRYPTO_ID: CryptoTypeId = CryptoTypeId(*b"sr25");
