@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -73,7 +73,7 @@ mod tests {
 		let mut ext = TestExternalities::default();
 		let mut ext = ext.ext();
 
-		let executor = WasmExecutor::<sp_io::AxlibHostFunctions>::new(
+		let executor = WasmExecutor::<sp_io::SubstrateHostFunctions>::new(
 			WasmExecutionMethod::Interpreted,
 			Some(8),
 			8,

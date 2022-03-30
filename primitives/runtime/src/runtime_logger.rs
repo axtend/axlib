@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -67,7 +67,7 @@ impl log::Log for RuntimeLogger {
 mod tests {
 	use sp_api::{BlockId, ProvideRuntimeApi};
 	use std::{env, str::FromStr};
-	use axlib_test_runtime_client::{
+	use substrate_test_runtime_client::{
 		runtime::TestAPI, DefaultTestClientBuilderExt, ExecutionStrategy, TestClientBuilder,
 		TestClientBuilderExt,
 	};

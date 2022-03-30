@@ -1,12 +1,12 @@
 [package]
 name = "sc-block-builder"
 version = "0.10.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
-homepage = "https://axlib.io"
-repository = "https://github.com/axtend/axlib/"
-description = "Axlib block builder"
+homepage = "https://substrate.io"
+repository = "https://github.com/axtend/substrate/"
+description = "Substrate block builder"
 readme = "README.md"
 
 [package.metadata.docs.rs]
@@ -27,4 +27,4 @@ codec = { package = "parity-scale-codec", version = "2.0.0", features = [
 ] }
 
 [dev-dependencies]
-axlib-test-runtime-client = { path = "../../test-utils/runtime/client" }
+substrate-test-runtime-client = { path = "../../test-utils/runtime/client" }

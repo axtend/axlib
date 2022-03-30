@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -371,7 +371,7 @@ pub mod pallet {
 	}
 
 	// TODO: Refactor public proposal queue into its own pallet.
-	// https://github.com/paritytech/axlib/issues/5322
+	// https://github.com/axiatech/substrate/issues/5322
 	/// The number of (public) proposals that have been made so far.
 	#[pallet::storage]
 	#[pallet::getter(fn public_prop_count)]
@@ -394,7 +394,7 @@ pub mod pallet {
 	/// Map of hashes to the proposal preimage, along with who registered it and their deposit.
 	/// The block number is the block at which it was deposited.
 	// TODO: Refactor Preimages into its own pallet.
-	// https://github.com/paritytech/axlib/issues/5322
+	// https://github.com/axiatech/substrate/issues/5322
 	#[pallet::storage]
 	pub type Preimages<T: Config> = StorageMap<
 		_,
@@ -442,7 +442,7 @@ pub mod pallet {
 	/// True if the last referendum tabled was submitted externally. False if it was a public
 	/// proposal.
 	// TODO: There should be any number of tabling origins, not just public and "external"
-	// (council). https://github.com/paritytech/axlib/issues/5322
+	// (council). https://github.com/axiatech/substrate/issues/5322
 	#[pallet::storage]
 	pub type LastTabledWasExternal<T> = StorageValue<_, bool, ValueQuery>;
 

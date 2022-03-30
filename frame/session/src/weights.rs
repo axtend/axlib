@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@
 //! EXECUTION: Some(Wasm), WASM-EXECUTION: Compiled, CHAIN: Some("dev"), DB CACHE: 1024
 
 // Executed Command:
-// ./target/production/axlib
+// ./target/production/substrate
 // benchmark
 // --chain=dev
 // --steps=50
@@ -50,9 +50,9 @@ pub trait WeightInfo {
 	fn purge_keys() -> Weight;
 }
 
-/// Weights for pallet_session using the Axlib node and recommended hardware.
-pub struct AxlibWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
+/// Weights for pallet_session using the Substrate node and recommended hardware.
+pub struct SubstrateWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
 	// Storage: Staking Ledger (r:1 w:0)
 	// Storage: Session NextKeys (r:1 w:1)
 	// Storage: Session KeyOwner (r:4 w:4)

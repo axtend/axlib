@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -193,7 +193,7 @@ pub struct StorageChangeSet<Hash> {
 pub mod well_known_keys {
 	/// Wasm code of the runtime.
 	///
-	/// Stored as a raw byte vector. Required by axlib.
+	/// Stored as a raw byte vector. Required by substrate.
 	pub const CODE: &'static [u8] = b":code";
 
 	/// Number of wasm linear memory pages required for execution of the runtime.

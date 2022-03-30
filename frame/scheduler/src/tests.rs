@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,7 @@ use frame_support::{
 	Hashable,
 };
 use sp_runtime::traits::Hash;
-use axlib_test_utils::assert_eq_uvec;
+use substrate_test_utils::assert_eq_uvec;
 
 #[test]
 fn basic_scheduling_works() {

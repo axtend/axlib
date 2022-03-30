@@ -1,13 +1,13 @@
 [package]
-description = "Integration tests for Axlib network protocol"
+description = "Integration tests for Substrate network protocol"
 name = "sc-network-test"
 version = "0.8.0"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 publish = false
-homepage = "https://axlib.io"
-repository = "https://github.com/axtend/axlib/"
+homepage = "https://substrate.io"
+repository = "https://github.com/axtend/substrate/"
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
@@ -29,8 +29,8 @@ sp-runtime = { version = "5.0.0", path = "../../../primitives/runtime" }
 sp-core = { version = "5.0.0", path = "../../../primitives/core" }
 sc-block-builder = { version = "0.10.0-dev", path = "../../block-builder" }
 sp-consensus-babe = { version = "0.10.0-dev", path = "../../../primitives/consensus/babe" }
-axlib-test-runtime-client = { version = "2.0.0", path = "../../../test-utils/runtime/client" }
-axlib-test-runtime = { version = "2.0.0", path = "../../../test-utils/runtime" }
+substrate-test-runtime-client = { version = "2.0.0", path = "../../../test-utils/runtime/client" }
+substrate-test-runtime = { version = "2.0.0", path = "../../../test-utils/runtime" }
 sp-tracing = { version = "4.0.0", path = "../../../primitives/tracing" }
 sc-service = { version = "0.10.0-dev", default-features = false, features = ["test-helpers"],  path = "../../service" }
 async-trait = "0.1.50"

@@ -6,7 +6,7 @@ source "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/../com
 version="$CI_COMMIT_TAG"
 
 echo '[+] Checking tag has been signed'
-check_tag "paritytech/axlib" "$version"
+check_tag "axiatech/substrate" "$version"
 case $? in
   0) echo '[+] Tag found and has been signed'; exit 0
     ;;

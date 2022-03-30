@@ -1,13 +1,13 @@
 [package]
 name = "node-template"
 version = "4.0.0-dev"
-description = "A fresh FRAME-based Axlib node, ready for hacking."
-authors = ["Axlib DevHub <https://github.com/axlib-developer-hub>"]
-homepage = "https://axlib.io/"
+description = "A fresh FRAME-based Substrate node, ready for hacking."
+authors = ["Substrate DevHub <https://github.com/substrate-developer-hub>"]
+homepage = "https://substrate.io/"
 edition = "2021"
 license = "Unlicense"
 publish = false
-repository = "https://github.com/axlib-developer-hub/axlib-node-template/"
+repository = "https://github.com/substrate-developer-hub/substrate-node-template/"
 build = "build.rs"
 
 [package.metadata.docs.rs]
@@ -45,7 +45,7 @@ sc-rpc-api = { version = "0.10.0-dev", path = "../../../client/rpc-api" }
 sp-blockchain = { version = "4.0.0-dev", path = "../../../primitives/blockchain" }
 sp-block-builder = { version = "4.0.0-dev", path = "../../../primitives/block-builder" }
 sc-basic-authorship = { version = "0.10.0-dev", path = "../../../client/basic-authorship" }
-axlib-frame-rpc-system = { version = "4.0.0-dev", path = "../../../utils/frame/rpc/system" }
+substrate-frame-rpc-system = { version = "4.0.0-dev", path = "../../../utils/frame/rpc/system" }
 pallet-transaction-payment-rpc = { version = "4.0.0-dev", path = "../../../frame/transaction-payment/rpc/" }
 
 # These dependencies are used for runtime benchmarking
@@ -56,7 +56,7 @@ frame-benchmarking-cli = { version = "4.0.0-dev", path = "../../../utils/frame/b
 node-template-runtime = { version = "4.0.0-dev", path = "../runtime" }
 
 [build-dependencies]
-axlib-build-script-utils = { version = "3.0.0", path = "../../../utils/build-script-utils" }
+substrate-build-script-utils = { version = "3.0.0", path = "../../../utils/build-script-utils" }
 
 [features]
 default = []

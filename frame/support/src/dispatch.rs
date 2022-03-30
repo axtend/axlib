@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -250,7 +250,7 @@ impl<T> Parameter for T where T: Codec + EncodeLike + Clone + Eq + fmt::Debug + 
 ///
 /// ## Multiple Module Instances Example
 ///
-/// A Axlib module can be built such that multiple instances of the same module can be used
+/// A Substrate module can be built such that multiple instances of the same module can be used
 /// within a single runtime. For example, the [Balances module](../pallet_balances/index.html) can
 /// be added multiple times to your runtime in order to support multiple, independent currencies for
 /// your blockchain. Here is an example of how you would declare such a module using the
@@ -303,7 +303,7 @@ impl<T> Parameter for T where T: Codec + EncodeLike + Clone + Eq + fmt::Debug + 
 ///
 /// The following are reserved function signatures:
 ///
-/// * `deposit_event`: Helper function for depositing an [event](https://docs.axlib.io/v3/runtime/events-and-errors).
+/// * `deposit_event`: Helper function for depositing an [event](https://docs.substrate.io/v3/runtime/events-and-errors).
 /// The default behavior is to call `deposit_event` from the [System
 /// module](../frame_system/index.html). However, you can write your own implementation for events
 /// in your runtime. To use the default behavior, add `fn deposit_event() = default;` to your

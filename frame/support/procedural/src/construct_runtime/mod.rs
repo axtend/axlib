@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -357,7 +357,7 @@ fn decl_all_pallets<'a>(
 			`AllPalletsWithSystemReversed`, `AllPalletsWithoutSystemReversed`. \
 			Note that the type `frame_executive::Executive` expects one of `AllPalletsWithSystem` \
 			, `AllPalletsWithSystemReversed`, `AllPalletsReversedWithSystemFirst`. More details in \
-			https://github.com/paritytech/axlib/pull/10043")]
+			https://github.com/axiatech/substrate/pull/10043")]
 		pub type AllPallets = AllPalletsWithSystem;
 
 		/// All pallets included in the runtime as a nested tuple of types.

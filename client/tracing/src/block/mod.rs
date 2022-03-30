@@ -1,18 +1,18 @@
-// Copyright 2021 Parity Technologies (UK) Ltd.
-// This file is part of Axlib.
+// Copyright 2021 Axia Technologies (UK) Ltd.
+// This file is part of Substrate.
 
-// Axlib is free software: you can redistribute it and/or modify
+// Substrate is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 
-// Axlib is distributed in the hope that it will be useful,
+// Substrate is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with Axlib.  If not, see <http://www.gnu.org/licenses/>.
+// along with Substrate.  If not, see <http://www.gnu.org/licenses/>.
 
 //! Utilities for tracing block execution
 
@@ -322,8 +322,8 @@ fn event_values_filter(event: &TraceEvent, filter_kind: &str, values: &str) -> b
 /// Filter out spans that do not match our targets and if the span is from WASM update its `name`
 /// and `target` fields to the WASM values for those fields.
 // The `tracing` crate requires trace metadata to be static. This does not work for wasm code in
-// axlib, as it is regularly updated with new code from on-chain events. The workaround for this
-// is for axlib's WASM tracing wrappers to put the `name` and `target` data in the `values` map
+// substrate, as it is regularly updated with new code from on-chain events. The workaround for this
+// is for substrate's WASM tracing wrappers to put the `name` and `target` data in the `values` map
 // (normally they would be in the static metadata assembled at compile time). Here, if a special
 // WASM `name` or `target` key is found in the `values` we remove it and put the key value pair in
 // the span's metadata, making it consistent with spans that come from native code.

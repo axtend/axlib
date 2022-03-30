@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ use std::{
 	time::Instant,
 };
 
-// FIXME: Add additional spam/DoS attack protection: https://github.com/paritytech/axlib/issues/1115
+// FIXME: Add additional spam/DoS attack protection: https://github.com/axiatech/substrate/issues/1115
 // NOTE: The current value is adjusted based on largest production network deployment (AxiaTest) and
 // the current main gossip user (GRANDPA). Currently there are ~800 validators on AxiaTest, as such,
 // each GRANDPA round should generate ~1600 messages, and we currently keep track of the last 2
@@ -508,14 +508,14 @@ impl Metrics {
 		Ok(Self {
 			registered_messages: register(
 				Counter::new(
-					"axlib_network_gossip_registered_messages_total",
+					"substrate_network_gossip_registered_messages_total",
 					"Number of registered messages by the gossip service.",
 				)?,
 				registry,
 			)?,
 			expired_messages: register(
 				Counter::new(
-					"axlib_network_gossip_expired_messages_total",
+					"substrate_network_gossip_expired_messages_total",
 					"Number of expired messages by the gossip service.",
 				)?,
 				registry,

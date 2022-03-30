@@ -1,11 +1,11 @@
 [package]
 name = "pallet-session"
 version = "4.0.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://axlib.io"
-repository = "https://github.com/axtend/axlib/"
+homepage = "https://substrate.io"
+repository = "https://github.com/axtend/substrate/"
 description = "FRAME sessions pallet"
 readme = "README.md"
 

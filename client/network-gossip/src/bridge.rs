@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -306,7 +306,7 @@ mod tests {
 		convert::TryInto,
 		sync::{Arc, Mutex},
 	};
-	use axlib_test_runtime_client::runtime::Block;
+	use substrate_test_runtime_client::runtime::Block;
 
 	#[derive(Clone, Default)]
 	struct TestNetwork {
@@ -360,7 +360,7 @@ mod tests {
 	/// Regression test for the case where the `GossipEngine.network_event_stream` closes. One
 	/// should not ignore a `Poll::Ready(None)` as `poll_next_unpin` will panic on subsequent calls.
 	///
-	/// See https://github.com/paritytech/axlib/issues/5000 for details.
+	/// See https://github.com/axiatech/substrate/issues/5000 for details.
 	#[test]
 	fn returns_when_network_event_stream_closes() {
 		let network = TestNetwork::default();

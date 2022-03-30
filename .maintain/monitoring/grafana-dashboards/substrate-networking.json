@@ -4,7 +4,7 @@
       "name": "VAR_METRIC_NAMESPACE",
       "type": "constant",
       "label": "Prefix of the metrics",
-      "value": "axlib",
+      "value": "substrate",
       "description": ""
     }
   ],
@@ -63,7 +63,7 @@
       }
     ]
   },
-  "description": "Information related to the networking layer of Axlib",
+  "description": "Information related to the networking layer of Substrate",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
@@ -2225,7 +2225,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Total sizes of notifications waiting to be delivered to the rest of Axlib",
+      "title": "Total sizes of notifications waiting to be delivered to the rest of Substrate",
       "tooltip": {
         "shared": false,
         "sort": 1,
@@ -2725,8 +2725,8 @@
       {
         "current": {
           "selected": false,
-          "text": "prometheus.parity-mgmt",
-          "value": "prometheus.parity-mgmt"
+          "text": "prometheus.axia-mgmt",
+          "value": "prometheus.axia-mgmt"
         },
         "error": null,
         "hide": 0,
@@ -2807,7 +2807,7 @@
     ]
   },
   "timezone": "utc",
-  "title": "Axlib Networking",
+  "title": "Substrate Networking",
   "uid": "vKVuiD9Zk",
   "version": 176
 }

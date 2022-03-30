@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +24,7 @@ use sp_arithmetic::traits::{CheckedAdd, CheckedMul, CheckedSub, Saturating};
 use sp_runtime::{traits::Block as BlockT, DispatchError};
 use sp_std::{cmp::Ordering, prelude::*};
 
-const DEFENSIVE_OP_PUBLIC_ERROR: &'static str = "a defensive failure has been triggered; please report the block number at https://github.com/paritytech/axlib/issues";
+const DEFENSIVE_OP_PUBLIC_ERROR: &'static str = "a defensive failure has been triggered; please report the block number at https://github.com/axiatech/substrate/issues";
 const DEFENSIVE_OP_INTERNAL_ERROR: &'static str = "Defensive failure has been triggered!";
 
 /// Prelude module for all defensive traits to be imported at once.
@@ -48,7 +48,7 @@ pub mod defensive_prelude {
 ///    in production as well. Note that the log message, as of now, are not super expressive. Your
 ///    best shot of fully diagnosing the error would be to infer the block number of which the log
 ///    message was emitted, then re-execute that block using `check-block` or `try-runtime`
-///    subcommands in axlib client.
+///    subcommands in substrate client.
 pub trait Defensive<T> {
 	/// Exactly the same as `unwrap_or`, but it does the defensive warnings explained in the trait
 	/// docs.
@@ -834,7 +834,7 @@ impl<T: MaxEncodedLen> MaxEncodedLen for WrapperOpaque<T> {
 	fn max_encoded_len() -> usize {
 		let t_max_len = T::max_encoded_len();
 
-		// See scale encoding https://docs.axlib.io/v3/advanced/scale-codec
+		// See scale encoding https://docs.substrate.io/v3/advanced/scale-codec
 		if t_max_len < 64 {
 			t_max_len + 1
 		} else if t_max_len < 2usize.pow(14) {

@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -321,10 +321,10 @@ pub enum TransactionStorageMode {
 #[derive(Debug, Clone)]
 pub enum DatabaseSource {
 	/// Check given path, and see if there is an existing database there. If it's either `RocksDb`
-	/// or `ParityDb`, use it. If there is none, create a new instance of `ParityDb`.
+	/// or `AxiaDb`, use it. If there is none, create a new instance of `AxiaDb`.
 	Auto {
-		/// Path to the paritydb database.
-		paritydb_path: PathBuf,
+		/// Path to the axiadb database.
+		axiadb_path: PathBuf,
 		/// Path to the rocksdb database.
 		rocksdb_path: PathBuf,
 		/// Cache size in MiB. Used only by `RocksDb` variant of `DatabaseSource`.
@@ -338,8 +338,8 @@ pub enum DatabaseSource {
 		cache_size: usize,
 	},
 
-	/// Load a ParityDb database from a given path.
-	ParityDb {
+	/// Load a AxiaDb database from a given path.
+	AxiaDb {
 		/// Path to the database.
 		path: PathBuf,
 	},
@@ -352,12 +352,12 @@ impl DatabaseSource {
 	/// Return path for databases that are stored on disk.
 	pub fn path(&self) -> Option<&Path> {
 		match self {
-			// as per https://github.com/paritytech/axlib/pull/9500#discussion_r684312550
+			// as per https://github.com/axiatech/substrate/pull/9500#discussion_r684312550
 			//
-			// IIUC this is needed for axia to create its own dbs, so until it can use parity db
+			// IIUC this is needed for axia to create its own dbs, so until it can use axia db
 			// I would think rocksdb, but later parity-db.
-			DatabaseSource::Auto { paritydb_path, .. } => Some(&paritydb_path),
-			DatabaseSource::RocksDb { path, .. } | DatabaseSource::ParityDb { path } => Some(&path),
+			DatabaseSource::Auto { axiadb_path, .. } => Some(&axiadb_path),
+			DatabaseSource::RocksDb { path, .. } | DatabaseSource::AxiaDb { path } => Some(&path),
 			DatabaseSource::Custom(..) => None,
 		}
 	}
@@ -365,12 +365,12 @@ impl DatabaseSource {
 	/// Set path for databases that are stored on disk.
 	pub fn set_path(&mut self, p: &Path) -> bool {
 		match self {
-			DatabaseSource::Auto { ref mut paritydb_path, .. } => {
-				*paritydb_path = p.into();
+			DatabaseSource::Auto { ref mut axiadb_path, .. } => {
+				*axiadb_path = p.into();
 				true
 			},
 			DatabaseSource::RocksDb { ref mut path, .. } |
-			DatabaseSource::ParityDb { ref mut path } => {
+			DatabaseSource::AxiaDb { ref mut path } => {
 				*path = p.into();
 				true
 			},
@@ -384,7 +384,7 @@ impl std::fmt::Display for DatabaseSource {
 		let name = match self {
 			DatabaseSource::Auto { .. } => "Auto",
 			DatabaseSource::RocksDb { .. } => "RocksDb",
-			DatabaseSource::ParityDb { .. } => "ParityDb",
+			DatabaseSource::AxiaDb { .. } => "AxiaDb",
 			DatabaseSource::Custom(_) => "Custom",
 		};
 		write!(f, "{}", name)
@@ -2799,23 +2799,23 @@ pub(crate) mod tests {
 
 	#[test]
 	fn test_leaves_with_complex_block_tree() {
-		let backend: Arc<Backend<axlib_test_runtime_client::runtime::Block>> =
+		let backend: Arc<Backend<substrate_test_runtime_client::runtime::Block>> =
 			Arc::new(Backend::new_test(20, 20));
-		axlib_test_runtime_client::trait_tests::test_leaves_for_backend(backend);
+		substrate_test_runtime_client::trait_tests::test_leaves_for_backend(backend);
 	}
 
 	#[test]
 	fn test_children_with_complex_block_tree() {
-		let backend: Arc<Backend<axlib_test_runtime_client::runtime::Block>> =
+		let backend: Arc<Backend<substrate_test_runtime_client::runtime::Block>> =
 			Arc::new(Backend::new_test(20, 20));
-		axlib_test_runtime_client::trait_tests::test_children_for_backend(backend);
+		substrate_test_runtime_client::trait_tests::test_children_for_backend(backend);
 	}
 
 	#[test]
 	fn test_blockchain_query_by_number_gets_canonical() {
-		let backend: Arc<Backend<axlib_test_runtime_client::runtime::Block>> =
+		let backend: Arc<Backend<substrate_test_runtime_client::runtime::Block>> =
 			Arc::new(Backend::new_test(20, 20));
-		axlib_test_runtime_client::trait_tests::test_blockchain_query_by_number_gets_canonical(
+		substrate_test_runtime_client::trait_tests::test_blockchain_query_by_number_gets_canonical(
 			backend,
 		);
 	}
@@ -2849,7 +2849,7 @@ pub(crate) mod tests {
 
 	#[test]
 	fn test_aux() {
-		let backend: Backend<axlib_test_runtime_client::runtime::Block> =
+		let backend: Backend<substrate_test_runtime_client::runtime::Block> =
 			Backend::new_test(0, 0);
 		assert!(backend.get_aux(b"test").unwrap().is_none());
 		backend.insert_aux(&[(&b"test"[..], &b"hello"[..])], &[]).unwrap();

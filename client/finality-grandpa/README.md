@@ -1,4 +1,4 @@
-Integration of the GRANDPA finality gadget into axlib.
+Integration of the GRANDPA finality gadget into substrate.
 
 This crate is unstable and the API and usage may change.
 

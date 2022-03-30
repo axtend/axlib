@@ -1,4 +1,4 @@
-Utilities Primitives for Axlib
+Utilities Primitives for Substrate
 
 ## Features
 

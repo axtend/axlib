@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Axlib blockchain API.
+//! Substrate blockchain API.
 
 pub mod error;
 
@@ -28,7 +28,7 @@ use sp_rpc::{list::ListOrValue, number::NumberOrHex};
 
 pub use self::gen_client::Client as ChainClient;
 
-/// Axlib blockchain API
+/// Substrate blockchain API
 #[rpc]
 pub trait ChainApi<Number, Hash, Header, SignedBlock> {
 	/// RPC metadata

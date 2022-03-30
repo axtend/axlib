@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 use asynchronous_codec::Framed;
 /// Notifications protocol.
 ///
-/// The Axlib notifications protocol consists in the following:
+/// The Substrate notifications protocol consists in the following:
 ///
 /// - Node A opens a substream to node B and sends a message which contains some
 ///   protocol-specific higher-level logic. This message is prefixed with a variable-length

@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Axlib chain configurations.
+//! Substrate chain configurations.
 #![warn(missing_docs)]
 
 use crate::{extension::GetExtension, ChainType, Properties, RuntimeGenesis};
@@ -120,7 +120,7 @@ impl<G: RuntimeGenesis, E> BuildStorage for ChainSpec<G, E> {
 					.collect(),
 			}),
 			// The `StateRootHash` variant exists as a way to keep note that other clients support
-			// it, but Axlib itself isn't capable of loading chain specs with just a hash at the
+			// it, but Substrate itself isn't capable of loading chain specs with just a hash at the
 			// moment.
 			Genesis::StateRootHash(_) => Err("Genesis storage in hash format not supported".into()),
 		}

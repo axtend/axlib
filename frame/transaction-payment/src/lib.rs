@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -119,7 +119,7 @@ type BalanceOf<T> = <<T as Config>::OnChargeTransaction as OnChargeTransaction<T
 /// - in an empty chain: `p >= v * k * (-s')`.
 ///
 /// For example, when all blocks are full and there are 28800 blocks per day (default in
-/// `axlib-node`) and v == 0.00001, s' == 0.1875, we'd have:
+/// `substrate-node`) and v == 0.00001, s' == 0.1875, we'd have:
 ///
 /// p >= 0.00001 * 28800 * 0.8125
 /// p >= 0.234
@@ -297,7 +297,7 @@ pub mod pallet {
 
 	#[pallet::extra_constants]
 	impl<T: Config> Pallet<T> {
-		// TODO: rename to snake case after https://github.com/paritytech/axlib/issues/8826 fixed.
+		// TODO: rename to snake case after https://github.com/axiatech/substrate/issues/8826 fixed.
 		#[allow(non_snake_case)]
 		/// The polynomial that is applied in order to derive fee from weight.
 		fn WeightToFee() -> Vec<WeightToFeeCoefficient<BalanceOf<T>>> {

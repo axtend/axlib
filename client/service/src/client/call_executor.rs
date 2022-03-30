@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -364,7 +364,7 @@ mod tests {
 		testing::TaskExecutor,
 		traits::{FetchRuntimeCode, WrappedRuntimeCode},
 	};
-	use axlib_test_runtime_client::{runtime, GenesisInit, LocalExecutorDispatch};
+	use substrate_test_runtime_client::{runtime, GenesisInit, LocalExecutorDispatch};
 
 	#[test]
 	fn should_get_override_if_exists() {
@@ -376,7 +376,7 @@ mod tests {
 		);
 
 		let overrides = crate::client::wasm_override::dummy_overrides();
-		let onchain_code = WrappedRuntimeCode(axlib_test_runtime::wasm_binary_unwrap().into());
+		let onchain_code = WrappedRuntimeCode(substrate_test_runtime::wasm_binary_unwrap().into());
 		let onchain_code = RuntimeCode {
 			code_fetcher: &onchain_code,
 			heap_pages: Some(128),
@@ -390,7 +390,7 @@ mod tests {
 		let client_config = ClientConfig::default();
 
 		// client is used for the convenience of creating and inserting the genesis block.
-		let _client = axlib_test_runtime_client::client::new_with_backend::<
+		let _client = substrate_test_runtime_client::client::new_with_backend::<
 			_,
 			_,
 			runtime::Block,
@@ -399,7 +399,7 @@ mod tests {
 		>(
 			backend.clone(),
 			executor.clone(),
-			&axlib_test_runtime_client::GenesisParameters::default().genesis_storage(),
+			&substrate_test_runtime_client::GenesisParameters::default().genesis_storage(),
 			None,
 			Box::new(TaskExecutor::new()),
 			None,

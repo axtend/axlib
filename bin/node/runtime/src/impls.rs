@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Some configurable implementations as associated type for the axlib runtime.
+//! Some configurable implementations as associated type for the substrate runtime.
 
 use crate::{AccountId, Assets, Authorship, Balances, NegativeImbalance, Runtime};
 use frame_support::traits::{
@@ -168,7 +168,7 @@ mod multiplier_tests {
 
 	#[test]
 	fn time_to_reach_zero() {
-		// blocks per 24h in axlib-node: 28,800 (k)
+		// blocks per 24h in substrate-node: 28,800 (k)
 		// s* = 0.1875
 		// The bound from the research in an empty chain is:
 		// v <~ (p / k(0 - s*))
@@ -216,7 +216,7 @@ mod multiplier_tests {
 		// almost full. The entire quota of normal transactions is taken.
 		let block_weight = BlockWeights::get().get(DispatchClass::Normal).max_total.unwrap() - 100;
 
-		// Default axlib weight.
+		// Default substrate weight.
 		let tx_weight = frame_support::weights::constants::ExtrinsicBaseWeight::get();
 
 		run_with_system_weight(block_weight, || {

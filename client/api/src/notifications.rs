@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -233,7 +233,7 @@ impl<Hash> StorageNotificationsImpl<Hash> {
 		let metrics = prometheus_registry.and_then(|r| {
 			CounterVec::new(
 				Opts::new(
-					"axlib_storage_notification_subscribers",
+					"substrate_storage_notification_subscribers",
 					"Number of subscribers in storage notification sytem",
 				),
 				&["action"], // added | removed

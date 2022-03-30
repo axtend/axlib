@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -26,11 +26,11 @@ use futures::prelude::*;
 use libp2p::PeerId;
 use sp_runtime::traits::{Block as BlockT, Header as _};
 use std::{borrow::Cow, sync::Arc, time::Duration};
-use axlib_test_runtime_client::{TestClientBuilder, TestClientBuilderExt as _};
+use substrate_test_runtime_client::{TestClientBuilder, TestClientBuilderExt as _};
 
 type TestNetworkService = NetworkService<
-	axlib_test_runtime_client::runtime::Block,
-	axlib_test_runtime_client::runtime::Hash,
+	substrate_test_runtime_client::runtime::Block,
+	substrate_test_runtime_client::runtime::Hash,
 >;
 
 /// Builds a full node to be used for testing. Returns the node service and its associated events

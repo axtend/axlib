@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -130,7 +130,7 @@ impl<B: BlockT> InformantDisplay<B> {
 
 		if self.format.enable_color {
 			info!(
-				target: "axlib",
+				target: "substrate",
 				"{} {}{} ({} peers), best: #{} ({}), finalized #{} ({}), {} {}",
 				level,
 				Colour::White.bold().paint(&status),
@@ -145,7 +145,7 @@ impl<B: BlockT> InformantDisplay<B> {
 			)
 		} else {
 			info!(
-				target: "axlib",
+				target: "substrate",
 				"{} {}{} ({} peers), best: #{} ({}), finalized #{} ({}), ⬇ {} ⬆ {}",
 				level,
 				status,

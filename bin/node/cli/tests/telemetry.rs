@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -66,9 +66,9 @@ async fn telemetry_works() {
 		}
 	});
 
-	let mut axlib = process::Command::new(cargo_bin("axlib"));
+	let mut substrate = process::Command::new(cargo_bin("substrate"));
 
-	let mut axlib = axlib
+	let mut substrate = substrate
 		.args(&["--dev", "--tmp", "--telemetry-url"])
 		.arg(format!("ws://{} 10", addr))
 		.stdout(process::Stdio::piped())
@@ -79,13 +79,13 @@ async fn telemetry_works() {
 
 	server_task.await;
 
-	assert!(axlib.try_wait().unwrap().is_none(), "the process should still be running");
+	assert!(substrate.try_wait().unwrap().is_none(), "the process should still be running");
 
 	// Stop the process
-	kill(Pid::from_raw(axlib.id().try_into().unwrap()), SIGINT).unwrap();
-	assert!(common::wait_for(&mut axlib, 40).map(|x| x.success()).unwrap_or_default());
+	kill(Pid::from_raw(substrate.id().try_into().unwrap()), SIGINT).unwrap();
+	assert!(common::wait_for(&mut substrate, 40).map(|x| x.success()).unwrap_or_default());
 
-	let output = axlib.wait_with_output().unwrap();
+	let output = substrate.wait_with_output().unwrap();
 
 	println!("{}", String::from_utf8(output.stdout).unwrap());
 	eprintln!("{}", String::from_utf8(output.stderr).unwrap());

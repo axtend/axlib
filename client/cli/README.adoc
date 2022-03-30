@@ -1,6 +1,6 @@
 
-= Axlib CLI
+= Substrate CLI
 
-Axlib CLI library
+Substrate CLI library
 
 include::doc/shell-completion.adoc[]

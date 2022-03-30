@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,7 +62,7 @@ pub fn expand_outer_origin(
 				generics,
 			));
 			query_origin_part_macros.push(quote! {
-				#path::__axlib_origin_check::is_origin_part_defined!(#name);
+				#path::__substrate_origin_check::is_origin_part_defined!(#name);
 			});
 		}
 	}

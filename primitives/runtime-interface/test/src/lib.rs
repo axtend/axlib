@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,7 +41,7 @@ fn call_wasm_method_with_result<HF: HostFunctionsT>(
 	let mut ext_ext = ext.ext();
 
 	let executor = sc_executor::WasmExecutor::<
-		ExtendedHostFunctions<sp_io::AxlibHostFunctions, HF>,
+		ExtendedHostFunctions<sp_io::SubstrateHostFunctions, HF>,
 	>::new(sc_executor::WasmExecutionMethod::Interpreted, Some(8), 8, None, 2);
 
 	executor

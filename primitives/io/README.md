@@ -1,3 +1,3 @@
-I/O host interface for axlib runtime.
+I/O host interface for substrate runtime.
 
 License: Apache-2.0

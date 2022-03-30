@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Axlib state API.
+//! Substrate state API.
 
 pub mod error;
 pub mod helpers;
@@ -33,7 +33,7 @@ use sp_version::RuntimeVersion;
 
 pub use self::{gen_client::Client as StateClient, helpers::ReadProof};
 
-/// Axlib state API
+/// Substrate state API
 #[rpc]
 pub trait StateApi<Hash> {
 	/// RPC Metadata
@@ -166,7 +166,7 @@ pub trait StateApi<Hash> {
 	/// The Spans and Events are conceptually equivalent to those from the [Tracing][1] crate.
 	///
 	/// The structure of the traces follows that of the block execution pipeline, so meaningful
-	/// interpretation of the traces requires an understanding of the Axlib chain's block
+	/// interpretation of the traces requires an understanding of the Substrate chain's block
 	/// execution.
 	///
 	/// [Link to conceptual map of trace structure for Axia and AxiaTest block execution.][2]
@@ -189,7 +189,7 @@ pub trait StateApi<Hash> {
 	/// ## Creating tracing enabled WASM runtimes
 	///
 	/// - Checkout commit of chain version to compile with WASM traces
-	/// - [diener][1] can help to peg commit of axlib to what the chain expects.
+	/// - [diener][1] can help to peg commit of substrate to what the chain expects.
 	/// - Navigate to the `runtime` folder/package of the chain
 	/// - Add feature `with-tracing = ["frame-executive/with-tracing", "sp-io/with-tracing"]`
 	/// under `[features]` to the `runtime` packages' `Cargo.toml`.
@@ -203,13 +203,13 @@ pub trait StateApi<Hash> {
 	/// and passing the path of this folder to your chain, e.g.:
 	/// - `./target/release/axia --wasm-runtime-overrides /home/user/my-custom-wasm-runtimes`
 	///
-	/// You can also find some pre-built tracing enabled wasm runtimes in [axlib-archive][2]
+	/// You can also find some pre-built tracing enabled wasm runtimes in [substrate-archive][2]
 	///
 	/// [Source.][3]
 	///
 	/// [1]: https://crates.io/crates/diener
-	/// [2]: https://github.com/paritytech/axlib-archive/tree/master/wasm-tracing
-	/// [3]: https://github.com/paritytech/axlib-archive/wiki
+	/// [2]: https://github.com/axiatech/substrate-archive/tree/master/wasm-tracing
+	/// [3]: https://github.com/axiatech/substrate-archive/wiki
 	///
 	/// ## RPC Usage
 	///
@@ -276,7 +276,7 @@ pub trait StateApi<Hash> {
 	/// of a trace target it is considered a match). If an empty string is specified no
 	/// targets will be filtered out. The majority of targets correspond to Rust module names,
 	/// and the ones that do not are typically "hardcoded" into span or event location
-	/// somewhere in the Axlib source code. ("Non-hardcoded" targets typically come from frame
+	/// somewhere in the Substrate source code. ("Non-hardcoded" targets typically come from frame
 	/// support macros.)
 	/// - `storage_keys` (param index 2): String of comma separated (no spaces) hex encoded
 	/// (no `0x` prefix) storage keys. If an empty string is specified no events will
@@ -297,13 +297,13 @@ pub trait StateApi<Hash> {
 	/// Additionally you would want to track the extrinsic index, which is under the
 	/// `:extrinsic_index` key. The key for this would be the aforementioned string as bytes
 	/// in hex: `3a65787472696e7369635f696e646578`.
-	/// The following are some resources to learn more about storage keys in axlib:
-	/// [axlib storage][1], [transparent keys in axlib][2],
-	/// [querying axlib storage via rpc][3].
+	/// The following are some resources to learn more about storage keys in substrate:
+	/// [substrate storage][1], [transparent keys in substrate][2],
+	/// [querying substrate storage via rpc][3].
 	///
-	/// [1]: https://docs.axlib.io/v3/advanced/storage#storage-map-keys
-	/// [2]: https://www.shawntabrizi.com/axlib/transparent-keys-in-axlib/
-	/// [3]: https://www.shawntabrizi.com/axlib/querying-axlib-storage-via-rpc/
+	/// [1]: https://docs.substrate.io/v3/advanced/storage#storage-map-keys
+	/// [2]: https://www.shawntabrizi.com/substrate/transparent-keys-in-substrate/
+	/// [3]: https://www.shawntabrizi.com/substrate/querying-substrate-storage-via-rpc/
 	///
 	/// ### Maximum payload size
 	///

@@ -1,11 +1,11 @@
 [package]
 name = "sp-core-hashing"
 version = "4.0.0"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://axlib.dev"
-repository = "https://github.com/axtend/axlib/"
+homepage = "https://substrate.dev"
+repository = "https://github.com/axtend/substrate/"
 description = "Primitive core crate hashing implementation."
 documentation = "https://docs.rs/sp-core-hashing"
 

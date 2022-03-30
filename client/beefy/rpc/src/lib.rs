@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -207,7 +207,7 @@ mod tests {
 	use beefy_primitives::{known_payload_ids, Payload};
 	use codec::{Decode, Encode};
 	use sp_runtime::traits::{BlakeTwo256, Hash};
-	use axlib_test_runtime_client::runtime::Block;
+	use substrate_test_runtime_client::runtime::Block;
 
 	fn setup_io_handler(
 	) -> (jsonrpc_core::MetaIoHandler<sc_rpc::Metadata>, BeefySignedCommitmentSender<Block>) {

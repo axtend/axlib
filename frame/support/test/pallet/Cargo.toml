@@ -1,12 +1,12 @@
 [package]
 name = "frame-support-test-pallet"
 version = "4.0.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
 publish = false
-homepage = "https://axlib.io"
-repository = "https://github.com/axtend/axlib/"
+homepage = "https://substrate.io"
+repository = "https://github.com/axtend/substrate/"
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

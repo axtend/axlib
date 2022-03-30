@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@ use sp_runtime::{
 	generic::BlockId,
 	traits::{Block as BlockT, GetNodeBlockType},
 };
-use axlib_test_runtime_client::runtime::Block;
+use substrate_test_runtime_client::runtime::Block;
 
 /// The declaration of the `Runtime` type and the implementation of the `GetNodeBlockType`
 /// trait are done by the `construct_runtime!` macro in a real runtime.
@@ -134,9 +134,9 @@ mock_impl_runtime_apis! {
 	}
 }
 
-type TestClient = axlib_test_runtime_client::client::Client<
-	axlib_test_runtime_client::Backend,
-	axlib_test_runtime_client::ExecutorDispatch,
+type TestClient = substrate_test_runtime_client::client::Client<
+	substrate_test_runtime_client::Backend,
+	substrate_test_runtime_client::ExecutorDispatch,
 	Block,
 	RuntimeApi,
 >;

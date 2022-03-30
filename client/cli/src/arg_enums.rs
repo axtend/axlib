@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -80,7 +80,7 @@ impl Into<sc_service::config::WasmExecutionMethod> for WasmExecutionMethod {
 			WasmExecutionMethod::Compiled => sc_service::config::WasmExecutionMethod::Compiled,
 			#[cfg(not(feature = "wasmtime"))]
 			WasmExecutionMethod::Compiled => panic!(
-				"Axlib must be compiled with \"wasmtime\" feature for compiled Wasm execution"
+				"Substrate must be compiled with \"wasmtime\" feature for compiled Wasm execution"
 			),
 		}
 	}
@@ -198,10 +198,10 @@ impl Into<sc_service::config::RpcMethods> for RpcMethods {
 pub enum Database {
 	/// Facebooks RocksDB
 	RocksDb,
-	/// ParityDb. <https://github.com/paritytech/parity-db/>
-	ParityDb,
+	/// AxiaDb. <https://github.com/axiatech/parity-db/>
+	AxiaDb,
 	/// Detect whether there is an existing database. Use it, if there is, if not, create new
-	/// instance of paritydb
+	/// instance of axiadb
 	Auto,
 }
 
@@ -211,8 +211,8 @@ impl std::str::FromStr for Database {
 	fn from_str(s: &str) -> Result<Self, String> {
 		if s.eq_ignore_ascii_case("rocksdb") {
 			Ok(Self::RocksDb)
-		} else if s.eq_ignore_ascii_case("paritydb-experimental") {
-			Ok(Self::ParityDb)
+		} else if s.eq_ignore_ascii_case("axiadb-experimental") {
+			Ok(Self::AxiaDb)
 		} else if s.eq_ignore_ascii_case("auto") {
 			Ok(Self::Auto)
 		} else {
@@ -224,7 +224,7 @@ impl std::str::FromStr for Database {
 impl Database {
 	/// Returns all the variants of this enum to be shown in the cli.
 	pub fn variants() -> &'static [&'static str] {
-		&["rocksdb", "paritydb-experimental", "auto"]
+		&["rocksdb", "axiadb-experimental", "auto"]
 	}
 }
 

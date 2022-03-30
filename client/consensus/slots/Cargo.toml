@@ -1,13 +1,13 @@
 [package]
 name = "sc-consensus-slots"
 version = "0.10.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 description = "Generic slots-based utilities for consensus"
 edition = "2021"
 build = "build.rs"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
-homepage = "https://axlib.io"
-repository = "https://github.com/axtend/axlib/"
+homepage = "https://substrate.io"
+repository = "https://github.com/axtend/substrate/"
 readme = "README.md"
 
 [package.metadata.docs.rs]
@@ -34,4 +34,4 @@ thiserror = "1.0.30"
 async-trait = "0.1.50"
 
 [dev-dependencies]
-axlib-test-runtime-client = { version = "2.0.0", path = "../../../test-utils/runtime/client" }
+substrate-test-runtime-client = { version = "2.0.0", path = "../../../test-utils/runtime/client" }

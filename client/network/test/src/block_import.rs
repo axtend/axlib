@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -27,14 +27,14 @@ use sc_consensus::{
 };
 use sp_consensus::BlockOrigin;
 use sp_runtime::generic::BlockId;
-use axlib_test_runtime_client::{
+use substrate_test_runtime_client::{
 	self,
 	prelude::*,
 	runtime::{Block, Hash},
 };
 
 fn prepare_good_block() -> (TestClient, Hash, u64, PeerId, IncomingBlock<Block>) {
-	let mut client = axlib_test_runtime_client::new();
+	let mut client = substrate_test_runtime_client::new();
 	let block = client.new_block(Default::default()).unwrap().build().unwrap().block;
 	block_on(client.import(BlockOrigin::File, block)).unwrap();
 
@@ -70,7 +70,7 @@ fn import_single_good_block_works() {
 	expected_aux.is_new_best = true;
 
 	match block_on(import_single_block(
-		&mut axlib_test_runtime_client::new(),
+		&mut substrate_test_runtime_client::new(),
 		BlockOrigin::File,
 		block,
 		&mut PassThroughVerifier::new(true),
@@ -100,7 +100,7 @@ fn import_single_good_block_without_header_fails() {
 	let (_, _, _, peer_id, mut block) = prepare_good_block();
 	block.header = None;
 	match block_on(import_single_block(
-		&mut axlib_test_runtime_client::new(),
+		&mut substrate_test_runtime_client::new(),
 		BlockOrigin::File,
 		block,
 		&mut PassThroughVerifier::new(true),
@@ -119,7 +119,7 @@ fn async_import_queue_drops() {
 
 		let queue = BasicQueue::new(
 			verifier,
-			Box::new(axlib_test_runtime_client::new()),
+			Box::new(substrate_test_runtime_client::new()),
 			None,
 			&executor,
 			None,

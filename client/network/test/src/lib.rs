@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -73,8 +73,8 @@ use sp_runtime::{
 	traits::{Block as BlockT, Header as HeaderT, NumberFor},
 	Justification, Justifications,
 };
-use axlib_test_runtime_client::AccountKeyring;
-pub use axlib_test_runtime_client::{
+use substrate_test_runtime_client::AccountKeyring;
+pub use substrate_test_runtime_client::{
 	runtime::{Block, Extrinsic, Hash, Transfer},
 	TestClient, TestClientBuilder, TestClientBuilderExt,
 };
@@ -121,16 +121,16 @@ impl<B: BlockT> Verifier<B> for PassThroughVerifier {
 }
 
 pub type PeersFullClient = Client<
-	axlib_test_runtime_client::Backend,
-	axlib_test_runtime_client::ExecutorDispatch,
+	substrate_test_runtime_client::Backend,
+	substrate_test_runtime_client::ExecutorDispatch,
 	Block,
-	axlib_test_runtime_client::runtime::RuntimeApi,
+	substrate_test_runtime_client::runtime::RuntimeApi,
 >;
 
 #[derive(Clone)]
 pub struct PeersClient {
 	client: Arc<PeersFullClient>,
-	backend: Arc<axlib_test_runtime_client::Backend>,
+	backend: Arc<substrate_test_runtime_client::Backend>,
 }
 
 impl PeersClient {
@@ -138,7 +138,7 @@ impl PeersClient {
 		self.client.clone()
 	}
 
-	pub fn as_backend(&self) -> Arc<axlib_test_runtime_client::Backend> {
+	pub fn as_backend(&self) -> Arc<substrate_test_runtime_client::Backend> {
 		self.backend.clone()
 	}
 
@@ -221,8 +221,8 @@ pub struct Peer<D, BlockImport> {
 	/// We keep a copy of the block_import so that we can invoke it for locally-generated blocks,
 	/// instead of going through the import queue.
 	block_import: BlockImportAdapter<BlockImport>,
-	select_chain: Option<LongestChain<axlib_test_runtime_client::Backend, Block>>,
-	backend: Option<Arc<axlib_test_runtime_client::Backend>>,
+	select_chain: Option<LongestChain<substrate_test_runtime_client::Backend, Block>>,
+	backend: Option<Arc<substrate_test_runtime_client::Backend>>,
 	network: NetworkWorker<Block, <Block as BlockT>::Hash>,
 	imported_blocks_stream: Pin<Box<dyn Stream<Item = BlockImportNotification<Block>> + Send>>,
 	finality_notification_stream: Pin<Box<dyn Stream<Item = FinalityNotification<Block>> + Send>>,
@@ -247,7 +247,7 @@ where
 	// Returns a clone of the local SelectChain, only available on full nodes
 	pub fn select_chain(
 		&self,
-	) -> Option<LongestChain<axlib_test_runtime_client::Backend, Block>> {
+	) -> Option<LongestChain<substrate_test_runtime_client::Backend, Block>> {
 		self.select_chain.clone()
 	}
 
@@ -290,7 +290,7 @@ where
 	pub fn generate_blocks<F>(&mut self, count: usize, origin: BlockOrigin, edit_block: F) -> H256
 	where
 		F: FnMut(
-			BlockBuilder<Block, PeersFullClient, axlib_test_runtime_client::Backend>,
+			BlockBuilder<Block, PeersFullClient, substrate_test_runtime_client::Backend>,
 		) -> Block,
 	{
 		let best_hash = self.client.info().best_hash;
@@ -316,7 +316,7 @@ where
 	) -> H256
 	where
 		F: FnMut(
-			BlockBuilder<Block, PeersFullClient, axlib_test_runtime_client::Backend>,
+			BlockBuilder<Block, PeersFullClient, substrate_test_runtime_client::Backend>,
 		) -> Block,
 	{
 		let best_hash = self.client.info().best_hash;
@@ -347,7 +347,7 @@ where
 	) -> H256
 	where
 		F: FnMut(
-			BlockBuilder<Block, PeersFullClient, axlib_test_runtime_client::Backend>,
+			BlockBuilder<Block, PeersFullClient, substrate_test_runtime_client::Backend>,
 		) -> Block,
 	{
 		let full_client = self.client.as_client();
@@ -536,7 +536,7 @@ where
 pub trait BlockImportAdapterFull:
 	BlockImport<
 		Block,
-		Transaction = TransactionFor<axlib_test_runtime_client::Backend, Block>,
+		Transaction = TransactionFor<substrate_test_runtime_client::Backend, Block>,
 		Error = ConsensusError,
 	> + Send
 	+ Sync
@@ -547,7 +547,7 @@ pub trait BlockImportAdapterFull:
 impl<T> BlockImportAdapterFull for T where
 	T: BlockImport<
 			Block,
-			Transaction = TransactionFor<axlib_test_runtime_client::Backend, Block>,
+			Transaction = TransactionFor<substrate_test_runtime_client::Backend, Block>,
 			Error = ConsensusError,
 		> + Send
 		+ Sync

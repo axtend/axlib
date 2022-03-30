@@ -4,7 +4,7 @@
       "name": "VAR_METRIC_NAMESPACE",
       "type": "constant",
       "label": "Prefix of the metrics",
-      "value": "axlib",
+      "value": "substrate",
       "description": ""
     }
   ],
@@ -1021,8 +1021,8 @@
       {
         "current": {
           "selected": false,
-          "text": "prometheus.parity-mgmt",
-          "value": "prometheus.parity-mgmt"
+          "text": "prometheus.axia-mgmt",
+          "value": "prometheus.axia-mgmt"
         },
         "error": null,
         "hide": 0,
@@ -1058,7 +1058,7 @@
     ]
   },
   "timezone": "utc",
-  "title": "Axlib Service Tasks",
+  "title": "Substrate Service Tasks",
   "uid": "3LA6XNqZz",
   "version": 69
 }

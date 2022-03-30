@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,7 +41,7 @@ pub enum Error {
 	WrongNumber { expected: BlockNumber, got: BlockNumber },
 }
 
-/// Attempt to evaluate a axlib block as a node block, returning error
+/// Attempt to evaluate a substrate block as a node block, returning error
 /// upon any initial validity checks failing.
 pub fn evaluate_initial<Block: BlockT>(
 	proposal: &Block,

@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -35,7 +35,7 @@ use sp_version::RuntimeVersion;
 
 pub const VERSION: RuntimeVersion = RuntimeVersion {
 	spec_name: create_runtime_str!("frame-support-test-compile-pass"),
-	impl_name: create_runtime_str!("axlib-frame-support-test-compile-pass-runtime"),
+	impl_name: create_runtime_str!("substrate-frame-support-test-compile-pass-runtime"),
 	authoring_version: 0,
 	spec_version: 0,
 	impl_version: 0,

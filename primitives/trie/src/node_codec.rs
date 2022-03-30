@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2015-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2015-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! `NodeCodec` implementation for Axlib's trie format.
+//! `NodeCodec` implementation for Substrate's trie format.
 
 use super::node_header::{NodeHeader, NodeKind};
 use crate::{error::Error, trie_constants};
@@ -76,7 +76,7 @@ impl<'a> Input for ByteSliceInput<'a> {
 	}
 }
 
-/// Concrete implementation of a `NodeCodec` with Parity Codec encoding, generic over the `Hasher`
+/// Concrete implementation of a `NodeCodec` with Axia Codec encoding, generic over the `Hasher`
 #[derive(Default, Clone)]
 pub struct NodeCodec<H>(PhantomData<H>);
 

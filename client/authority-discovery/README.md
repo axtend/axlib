@@ -1,6 +1,6 @@
-# Axlib authority discovery
+# Substrate authority discovery
 
-This crate enables Axlib authorities to discover and directly connect to
+This crate enables Substrate authorities to discover and directly connect to
 other authorities. It is split into two components the [`Worker`] and the
 [`Service`].
 

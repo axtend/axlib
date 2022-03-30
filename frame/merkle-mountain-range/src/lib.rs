@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,9 +41,9 @@
 //! ## What for?
 //!
 //! Primary use case for this pallet is to generate MMR root hashes, that can latter on be used by
-//! BEEFY protocol (see <https://github.com/paritytech/grandpa-bridge-gadget>).
+//! BEEFY protocol (see <https://github.com/axiatech/grandpa-bridge-gadget>).
 //! MMR root hashes along with BEEFY will make it possible to build Super Light Clients (SLC) of
-//! Axlib-based chains. The SLC will be able to follow finality and can be shown proofs of more
+//! Substrate-based chains. The SLC will be able to follow finality and can be shown proofs of more
 //! details that happened on the source chain.
 //! In that case the chain which contains the pallet generates the Root Hashes and Proofs, which
 //! are then presented to another chain acting as a light client which can verify them.

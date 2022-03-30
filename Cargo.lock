@@ -68,7 +68,7 @@ version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47"
 dependencies = [
- "getrandom 0.2.5",
+ "getrandom 0.2.6",
  "once_cell",
  "version_check 0.9.4",
 ]
@@ -419,227 +419,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
-name = "axlib-build-script-utils"
-version = "3.0.0"
-dependencies = [
- "platforms",
-]
-
-[[package]]
-name = "axlib-frame-cli"
-version = "4.0.0-dev"
-dependencies = [
- "clap 3.1.6",
- "frame-support",
- "frame-system",
- "sc-cli",
- "sp-core",
- "sp-runtime",
-]
-
-[[package]]
-name = "axlib-frame-rpc-support"
-version = "3.0.0"
-dependencies = [
- "frame-support",
- "frame-system",
- "futures 0.3.21",
- "jsonrpc-client-transports",
- "parity-scale-codec",
- "sc-rpc-api",
- "scale-info",
- "serde",
- "sp-storage",
- "tokio",
-]
-
-[[package]]
-name = "axlib-frame-rpc-system"
-version = "4.0.0-dev"
-dependencies = [
- "axlib-test-runtime-client",
- "frame-system-rpc-runtime-api",
- "futures 0.3.21",
- "jsonrpc-core",
- "jsonrpc-core-client",
- "jsonrpc-derive",
- "log 0.4.16",
- "parity-scale-codec",
- "sc-client-api",
- "sc-rpc-api",
- "sc-transaction-pool",
- "sc-transaction-pool-api",
- "sp-api",
- "sp-block-builder",
- "sp-blockchain",
- "sp-core",
- "sp-runtime",
- "sp-tracing",
-]
-
-[[package]]
-name = "axlib-prometheus-endpoint"
-version = "0.10.0-dev"
-dependencies = [
- "async-std",
- "futures-util",
- "hyper 0.14.18",
- "log 0.4.16",
- "prometheus",
- "thiserror",
- "tokio",
-]
-
-[[package]]
-name = "axlib-test-client"
-version = "2.0.1"
-dependencies = [
- "async-trait",
- "futures 0.3.21",
- "hex",
- "parity-scale-codec",
- "sc-client-api",
- "sc-client-db",
- "sc-consensus",
- "sc-executor",
- "sc-offchain",
- "sc-service",
- "serde",
- "serde_json",
- "sp-blockchain",
- "sp-consensus",
- "sp-core",
- "sp-keyring",
- "sp-keystore",
- "sp-runtime",
- "sp-state-machine",
-]
-
-[[package]]
-name = "axlib-test-runtime"
-version = "2.0.0"
-dependencies = [
- "axlib-test-runtime-client",
- "axlib-wasm-builder",
- "cfg-if 1.0.0",
- "frame-support",
- "frame-system",
- "frame-system-rpc-runtime-api",
- "futures 0.3.21",
- "log 0.4.16",
- "memory-db 0.27.0",
- "pallet-babe",
- "pallet-timestamp",
- "parity-scale-codec",
- "parity-util-mem",
- "sc-block-builder",
- "sc-executor",
- "sc-service",
- "scale-info",
- "serde",
- "sp-api",
- "sp-application-crypto",
- "sp-block-builder",
- "sp-consensus",
- "sp-consensus-aura",
- "sp-consensus-babe",
- "sp-core",
- "sp-externalities",
- "sp-finality-grandpa",
- "sp-inherents",
- "sp-io",
- "sp-keyring",
- "sp-offchain",
- "sp-runtime",
- "sp-runtime-interface",
- "sp-session",
- "sp-state-machine",
- "sp-std",
- "sp-transaction-pool",
- "sp-trie",
- "sp-version",
- "trie-db",
-]
-
-[[package]]
-name = "axlib-test-runtime-client"
-version = "2.0.0"
-dependencies = [
- "axlib-test-client",
- "axlib-test-runtime",
- "futures 0.3.21",
- "parity-scale-codec",
- "sc-block-builder",
- "sc-client-api",
- "sc-consensus",
- "sp-api",
- "sp-blockchain",
- "sp-consensus",
- "sp-core",
- "sp-runtime",
-]
-
-[[package]]
-name = "axlib-test-runtime-transaction-pool"
-version = "2.0.0"
-dependencies = [
- "axlib-test-runtime-client",
- "futures 0.3.21",
- "parity-scale-codec",
- "parking_lot 0.11.2",
- "sc-transaction-pool",
- "sc-transaction-pool-api",
- "sp-blockchain",
- "sp-runtime",
- "thiserror",
-]
-
-[[package]]
-name = "axlib-test-utils"
-version = "4.0.0-dev"
-dependencies = [
- "axlib-test-utils-derive",
- "futures 0.3.21",
- "sc-service",
- "tokio",
- "trybuild",
-]
-
-[[package]]
-name = "axlib-test-utils-derive"
-version = "0.10.0-dev"
-dependencies = [
- "proc-macro-crate 1.1.3",
- "proc-macro2",
- "quote",
- "syn",
-]
-
-[[package]]
-name = "axlib-test-utils-test-crate"
-version = "0.1.0"
-dependencies = [
- "axlib-test-utils",
- "sc-service",
- "tokio",
-]
-
-[[package]]
-name = "axlib-wasm-builder"
-version = "5.0.0-dev"
-dependencies = [
- "ansi_term",
- "build-helper",
- "cargo_metadata",
- "sp-maybe-compressed-blob",
- "strum",
- "tempfile",
- "toml",
- "walkdir",
- "wasm-gc-api",
-]
-
-[[package]]
 name = "backtrace"
 version = "0.3.64"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -710,7 +489,6 @@ dependencies = [
 name = "beefy-gadget"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-prometheus-endpoint",
  "beefy-primitives",
  "fnv",
  "futures 0.3.21",
@@ -733,6 +511,7 @@ dependencies = [
  "sp-runtime",
  "sp-tracing",
  "strum",
+ "substrate-prometheus-endpoint",
  "thiserror",
  "wasm-timer",
 ]
@@ -741,7 +520,6 @@ dependencies = [
 name = "beefy-gadget-rpc"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-test-runtime-client",
  "beefy-gadget",
  "beefy-primitives",
  "futures 0.3.21",
@@ -758,6 +536,7 @@ dependencies = [
  "serde_json",
  "sp-core",
  "sp-runtime",
+ "substrate-test-runtime-client",
  "thiserror",
 ]
 
@@ -2426,7 +2205,6 @@ dependencies = [
 name = "frame-system"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-test-runtime-client",
  "criterion",
  "frame-support",
  "log 0.4.16",
@@ -2439,6 +2217,7 @@ dependencies = [
  "sp-runtime",
  "sp-std",
  "sp-version",
+ "substrate-test-runtime-client",
 ]
 
 [[package]]
@@ -2707,9 +2486,9 @@ dependencies = [
 
 [[package]]
 name = "getrandom"
-version = "0.2.5"
+version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d39cd93900197114fa1fcb7ae84ca742095eed9442088988ae74fa744e930e77"
+checksum = "9be70c98951c83b8d2f8f60d7065fa6d5146873094452a1008da8c2f1e4205ad"
 dependencies = [
  "cfg-if 1.0.0",
  "js-sys",
@@ -3170,9 +2949,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "1.8.0"
+version = "1.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "282a6247722caba404c065016bbfa522806e51714c34f5dfc3e4a3a46fcb4223"
+checksum = "0f647032dfaa1f8b6dc29bd3edb7bbef4861b8b8007ebb118d6db284fd59f6ee"
 dependencies = [
  "autocfg 1.1.0",
  "hashbrown 0.11.2",
@@ -4767,9 +4546,9 @@ dependencies = [
 
 [[package]]
 name = "native-tls"
-version = "0.2.9"
+version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "09bf6f32a3afefd0b587ee42ed19acd945c6d1f3b5424040f50b2f24ab16be77"
+checksum = "fd7e2f3618557f980e0b17e8856252eee3c97fa12c54dff0ca290fb6266ca4a9"
 dependencies = [
  "lazy_static",
  "libc",
@@ -4850,8 +4629,6 @@ version = "3.0.0-dev"
 dependencies = [
  "assert_cmd",
  "async-std",
- "axlib-build-script-utils",
- "axlib-frame-cli",
  "clap 3.1.6",
  "clap_complete",
  "criterion",
@@ -4921,6 +4698,8 @@ dependencies = [
  "sp-transaction-pool",
  "sp-transaction-storage-proof",
  "sp-trie",
+ "substrate-build-script-utils",
+ "substrate-frame-cli",
  "tempfile",
  "tokio",
  "try-runtime-cli",
@@ -4992,7 +4771,6 @@ dependencies = [
 name = "node-rpc"
 version = "3.0.0-dev"
 dependencies = [
- "axlib-frame-rpc-system",
  "jsonrpc-core",
  "node-primitives",
  "pallet-contracts-rpc",
@@ -5016,13 +4794,13 @@ dependencies = [
  "sp-consensus-babe",
  "sp-keystore",
  "sp-runtime",
+ "substrate-frame-rpc-system",
 ]
 
 [[package]]
 name = "node-runtime"
 version = "3.0.0-dev"
 dependencies = [
- "axlib-wasm-builder",
  "frame-benchmarking",
  "frame-election-provider-support",
  "frame-executive",
@@ -5103,6 +4881,7 @@ dependencies = [
  "sp-transaction-pool",
  "sp-version",
  "static_assertions",
+ "substrate-wasm-builder",
 ]
 
 [[package]]
@@ -5118,8 +4897,6 @@ dependencies = [
 name = "node-template"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-build-script-utils",
- "axlib-frame-rpc-system",
  "clap 3.1.6",
  "frame-benchmarking",
  "frame-benchmarking-cli",
@@ -5149,13 +4926,14 @@ dependencies = [
  "sp-finality-grandpa",
  "sp-runtime",
  "sp-timestamp",
+ "substrate-build-script-utils",
+ "substrate-frame-rpc-system",
 ]
 
 [[package]]
 name = "node-template-runtime"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-wasm-builder",
  "frame-benchmarking",
  "frame-executive",
  "frame-support",
@@ -5185,13 +4963,13 @@ dependencies = [
  "sp-std",
  "sp-transaction-pool",
  "sp-version",
+ "substrate-wasm-builder",
 ]
 
 [[package]]
 name = "node-testing"
 version = "3.0.0-dev"
 dependencies = [
- "axlib-test-client",
  "frame-system",
  "fs_extra",
  "futures 0.3.21",
@@ -5218,6 +4996,7 @@ dependencies = [
  "sp-keyring",
  "sp-runtime",
  "sp-timestamp",
+ "substrate-test-client",
  "tempfile",
 ]
 
@@ -5913,7 +5692,6 @@ dependencies = [
 name = "pallet-elections-phragmen"
 version = "5.0.0-dev"
 dependencies = [
- "axlib-test-utils",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
@@ -5926,6 +5704,7 @@ dependencies = [
  "sp-npos-elections",
  "sp-runtime",
  "sp-std",
+ "substrate-test-utils",
 ]
 
 [[package]]
@@ -6340,7 +6119,6 @@ dependencies = [
 name = "pallet-scheduler"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-test-utils",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
@@ -6352,6 +6130,7 @@ dependencies = [
  "sp-io",
  "sp-runtime",
  "sp-std",
+ "substrate-test-utils",
 ]
 
 [[package]]
@@ -6433,7 +6212,6 @@ dependencies = [
 name = "pallet-staking"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-test-utils",
  "frame-benchmarking",
  "frame-election-provider-support",
  "frame-support",
@@ -6457,6 +6235,7 @@ dependencies = [
  "sp-staking",
  "sp-std",
  "sp-tracing",
+ "substrate-test-utils",
 ]
 
 [[package]]
@@ -7474,7 +7253,7 @@ version = "0.6.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d34f1408f55294453790c48b2f1ebbb1c5b4b7563eb1f418bcfcfdbb06ebb4e7"
 dependencies = [
- "getrandom 0.2.5",
+ "getrandom 0.2.6",
 ]
 
 [[package]]
@@ -7637,7 +7416,7 @@ version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7776223e2696f1aa4c6b0170e83212f47296a00424305117d013dfe86fb0fe55"
 dependencies = [
- "getrandom 0.2.5",
+ "getrandom 0.2.6",
  "redox_syscall 0.2.12",
  "thiserror",
 ]
@@ -7989,8 +7768,6 @@ name = "sc-authority-discovery"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime-client",
  "futures 0.3.21",
  "futures-timer",
  "ip_network",
@@ -8010,6 +7787,8 @@ dependencies = [
  "sp-keystore",
  "sp-runtime",
  "sp-tracing",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime-client",
  "thiserror",
 ]
 
@@ -8017,8 +7796,6 @@ dependencies = [
 name = "sc-basic-authorship"
 version = "0.10.0-dev"
 dependencies = [
- "axlib-prometheus-endpoint",
- "axlib-test-runtime-client",
  "futures 0.3.21",
  "futures-timer",
  "log 0.4.16",
@@ -8036,13 +7813,14 @@ dependencies = [
  "sp-core",
  "sp-inherents",
  "sp-runtime",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime-client",
 ]
 
 [[package]]
 name = "sc-block-builder"
 version = "0.10.0-dev"
 dependencies = [
- "axlib-test-runtime-client",
  "parity-scale-codec",
  "sc-client-api",
  "sp-api",
@@ -8052,6 +7830,7 @@ dependencies = [
  "sp-inherents",
  "sp-runtime",
  "sp-state-machine",
+ "substrate-test-runtime-client",
 ]
 
 [[package]]
@@ -8122,8 +7901,6 @@ dependencies = [
 name = "sc-client-api"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-prometheus-endpoint",
- "axlib-test-runtime",
  "fnv",
  "futures 0.3.21",
  "hash-db",
@@ -8145,6 +7922,8 @@ dependencies = [
  "sp-storage",
  "sp-test-primitives",
  "sp-trie",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime",
  "thiserror",
 ]
 
@@ -8152,7 +7931,6 @@ dependencies = [
 name = "sc-client-db"
 version = "0.10.0-dev"
 dependencies = [
- "axlib-test-runtime-client",
  "hash-db",
  "kvdb",
  "kvdb-memorydb",
@@ -8173,6 +7951,7 @@ dependencies = [
  "sp-state-machine",
  "sp-tracing",
  "sp-trie",
+ "substrate-test-runtime-client",
  "tempfile",
 ]
 
@@ -8181,7 +7960,6 @@ name = "sc-consensus"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
- "axlib-prometheus-endpoint",
  "futures 0.3.21",
  "futures-timer",
  "libp2p",
@@ -8197,6 +7975,7 @@ dependencies = [
  "sp-runtime",
  "sp-state-machine",
  "sp-test-primitives",
+ "substrate-prometheus-endpoint",
  "thiserror",
 ]
 
@@ -8205,10 +7984,8 @@ name = "sc-consensus-aura"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime-client",
  "futures 0.3.21",
- "getrandom 0.2.5",
+ "getrandom 0.2.6",
  "log 0.4.16",
  "parity-scale-codec",
  "parking_lot 0.11.2",
@@ -8234,6 +8011,8 @@ dependencies = [
  "sp-runtime",
  "sp-timestamp",
  "sp-tracing",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime-client",
  "tempfile",
  "thiserror",
 ]
@@ -8243,8 +8022,6 @@ name = "sc-consensus-babe"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime-client",
  "fork-tree",
  "futures 0.3.21",
  "log 0.4.16",
@@ -8284,6 +8061,8 @@ dependencies = [
  "sp-timestamp",
  "sp-tracing",
  "sp-version",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime-client",
  "tempfile",
  "thiserror",
 ]
@@ -8292,7 +8071,6 @@ dependencies = [
 name = "sc-consensus-babe-rpc"
 version = "0.10.0-dev"
 dependencies = [
- "axlib-test-runtime-client",
  "futures 0.3.21",
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -8313,6 +8091,7 @@ dependencies = [
  "sp-keyring",
  "sp-keystore",
  "sp-runtime",
+ "substrate-test-runtime-client",
  "tempfile",
  "thiserror",
 ]
@@ -8335,9 +8114,6 @@ version = "0.10.0-dev"
 dependencies = [
  "assert_matches",
  "async-trait",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime-client",
- "axlib-test-runtime-transaction-pool",
  "futures 0.3.21",
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -8364,6 +8140,9 @@ dependencies = [
  "sp-keystore",
  "sp-runtime",
  "sp-timestamp",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime-client",
+ "substrate-test-runtime-transaction-pool",
  "thiserror",
  "tokio",
 ]
@@ -8373,7 +8152,6 @@ name = "sc-consensus-pow"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
- "axlib-prometheus-endpoint",
  "futures 0.3.21",
  "futures-timer",
  "log 0.4.16",
@@ -8389,6 +8167,7 @@ dependencies = [
  "sp-core",
  "sp-inherents",
  "sp-runtime",
+ "substrate-prometheus-endpoint",
  "thiserror",
 ]
 
@@ -8397,7 +8176,6 @@ name = "sc-consensus-slots"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
- "axlib-test-runtime-client",
  "futures 0.3.21",
  "futures-timer",
  "log 0.4.16",
@@ -8414,6 +8192,7 @@ dependencies = [
  "sp-runtime",
  "sp-state-machine",
  "sp-timestamp",
+ "substrate-test-runtime-client",
  "thiserror",
 ]
 
@@ -8431,7 +8210,6 @@ dependencies = [
 name = "sc-executor"
 version = "0.10.0-dev"
 dependencies = [
- "axlib-test-runtime",
  "hex-literal",
  "lazy_static",
  "libsecp256k1",
@@ -8460,6 +8238,7 @@ dependencies = [
  "sp-trie",
  "sp-version",
  "sp-wasm-interface",
+ "substrate-test-runtime",
  "tracing",
  "tracing-subscriber",
  "wasmi",
@@ -8525,8 +8304,6 @@ version = "0.10.0-dev"
 dependencies = [
  "assert_matches",
  "async-trait",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime-client",
  "dyn-clone",
  "finality-grandpa",
  "fork-tree",
@@ -8558,6 +8335,8 @@ dependencies = [
  "sp-keystore",
  "sp-runtime",
  "sp-tracing",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime-client",
  "tempfile",
  "thiserror",
  "tokio",
@@ -8567,7 +8346,6 @@ dependencies = [
 name = "sc-finality-grandpa-rpc"
 version = "0.10.0-dev"
 dependencies = [
- "axlib-test-runtime-client",
  "finality-grandpa",
  "futures 0.3.21",
  "jsonrpc-core",
@@ -8587,6 +8365,7 @@ dependencies = [
  "sp-finality-grandpa",
  "sp-keyring",
  "sp-runtime",
+ "substrate-test-runtime-client",
  "thiserror",
 ]
 
@@ -8629,9 +8408,6 @@ dependencies = [
  "async-std",
  "async-trait",
  "asynchronous-codec 0.5.0",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime",
- "axlib-test-runtime-client",
  "bitflags",
  "bytes 1.1.0",
  "cid",
@@ -8670,6 +8446,9 @@ dependencies = [
  "sp-runtime",
  "sp-test-primitives",
  "sp-tracing",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime",
+ "substrate-test-runtime-client",
  "tempfile",
  "thiserror",
  "unsigned-varint 0.6.0",
@@ -8682,8 +8461,6 @@ name = "sc-network-gossip"
 version = "0.10.0-dev"
 dependencies = [
  "async-std",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime-client",
  "futures 0.3.21",
  "futures-timer",
  "libp2p",
@@ -8692,6 +8469,8 @@ dependencies = [
  "quickcheck",
  "sc-network",
  "sp-runtime",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime-client",
  "tracing",
 ]
 
@@ -8701,8 +8480,6 @@ version = "0.8.0"
 dependencies = [
  "async-std",
  "async-trait",
- "axlib-test-runtime",
- "axlib-test-runtime-client",
  "futures 0.3.21",
  "futures-timer",
  "libp2p",
@@ -8720,13 +8497,14 @@ dependencies = [
  "sp-core",
  "sp-runtime",
  "sp-tracing",
+ "substrate-test-runtime",
+ "substrate-test-runtime-client",
 ]
 
 [[package]]
 name = "sc-offchain"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-test-runtime-client",
  "bytes 1.1.0",
  "fnv",
  "futures 0.3.21",
@@ -8753,6 +8531,7 @@ dependencies = [
  "sp-offchain",
  "sp-runtime",
  "sp-tracing",
+ "substrate-test-runtime-client",
  "threadpool",
  "tokio",
  "tracing",
@@ -8775,8 +8554,8 @@ dependencies = [
 name = "sc-proposer-metrics"
 version = "0.10.0-dev"
 dependencies = [
- "axlib-prometheus-endpoint",
  "log 0.4.16",
+ "substrate-prometheus-endpoint",
 ]
 
 [[package]]
@@ -8784,7 +8563,6 @@ name = "sc-rpc"
 version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
- "axlib-test-runtime-client",
  "futures 0.3.21",
  "hash-db",
  "jsonrpc-core",
@@ -8814,6 +8592,7 @@ dependencies = [
  "sp-runtime",
  "sp-session",
  "sp-version",
+ "substrate-test-runtime-client",
 ]
 
 [[package]]
@@ -8844,7 +8623,6 @@ dependencies = [
 name = "sc-rpc-server"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-prometheus-endpoint",
  "futures 0.3.21",
  "jsonrpc-core",
  "jsonrpc-http-server",
@@ -8853,6 +8631,7 @@ dependencies = [
  "jsonrpc-ws-server",
  "log 0.4.16",
  "serde_json",
+ "substrate-prometheus-endpoint",
  "tokio",
 ]
 
@@ -8860,7 +8639,6 @@ dependencies = [
 name = "sc-runtime-test"
 version = "2.0.0"
 dependencies = [
- "axlib-wasm-builder",
  "paste 1.0.7",
  "sp-core",
  "sp-io",
@@ -8868,6 +8646,7 @@ dependencies = [
  "sp-sandbox",
  "sp-std",
  "sp-tasks",
+ "substrate-wasm-builder",
 ]
 
 [[package]]
@@ -8876,9 +8655,6 @@ version = "0.10.0-dev"
 dependencies = [
  "async-std",
  "async-trait",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime",
- "axlib-test-runtime-client",
  "directories",
  "exit-future",
  "futures 0.3.21",
@@ -8929,6 +8705,9 @@ dependencies = [
  "sp-transaction-storage-proof",
  "sp-trie",
  "sp-version",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime",
+ "substrate-test-runtime-client",
  "tempfile",
  "thiserror",
  "tokio",
@@ -8940,8 +8719,6 @@ dependencies = [
 name = "sc-service-test"
 version = "2.0.0"
 dependencies = [
- "axlib-test-runtime",
- "axlib-test-runtime-client",
  "fdlimit",
  "futures 0.3.21",
  "hex",
@@ -8968,6 +8745,8 @@ dependencies = [
  "sp-storage",
  "sp-tracing",
  "sp-trie",
+ "substrate-test-runtime",
+ "substrate-test-runtime-client",
  "tempfile",
  "tokio",
 ]
@@ -9069,10 +8848,6 @@ name = "sc-transaction-pool"
 version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
- "axlib-prometheus-endpoint",
- "axlib-test-runtime",
- "axlib-test-runtime-client",
- "axlib-test-runtime-transaction-pool",
  "criterion",
  "futures 0.3.21",
  "futures-timer",
@@ -9095,6 +8870,10 @@ dependencies = [
  "sp-runtime",
  "sp-tracing",
  "sp-transaction-pool",
+ "substrate-prometheus-endpoint",
+ "substrate-test-runtime",
+ "substrate-test-runtime-client",
+ "substrate-test-runtime-transaction-pool",
  "thiserror",
 ]
 
@@ -9610,7 +9389,6 @@ dependencies = [
 name = "sp-api-test"
 version = "2.0.1"
 dependencies = [
- "axlib-test-runtime-client",
  "criterion",
  "futures 0.3.21",
  "log 0.4.16",
@@ -9624,6 +9402,7 @@ dependencies = [
  "sp-state-machine",
  "sp-tracing",
  "sp-version",
+ "substrate-test-runtime-client",
  "trybuild",
 ]
 
@@ -9643,12 +9422,12 @@ dependencies = [
 name = "sp-application-crypto-test"
 version = "2.0.0"
 dependencies = [
- "axlib-test-runtime-client",
  "sp-api",
  "sp-application-crypto",
  "sp-core",
  "sp-keystore",
  "sp-runtime",
+ "substrate-test-runtime-client",
 ]
 
 [[package]]
@@ -10015,7 +9794,6 @@ dependencies = [
 name = "sp-npos-elections"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-test-utils",
  "parity-scale-codec",
  "rand 0.7.3",
  "scale-info",
@@ -10025,6 +9803,7 @@ dependencies = [
  "sp-npos-elections-solution-type",
  "sp-runtime",
  "sp-std",
+ "substrate-test-utils",
 ]
 
 [[package]]
@@ -10087,7 +9866,6 @@ dependencies = [
 name = "sp-runtime"
 version = "5.0.0"
 dependencies = [
- "axlib-test-runtime-client",
  "either",
  "hash256-std-hasher",
  "impl-trait-for-tuples",
@@ -10107,6 +9885,7 @@ dependencies = [
  "sp-state-machine",
  "sp-std",
  "sp-tracing",
+ "substrate-test-runtime-client",
  "zstd",
 ]
 
@@ -10163,22 +9942,22 @@ dependencies = [
 name = "sp-runtime-interface-test-wasm"
 version = "2.0.0"
 dependencies = [
- "axlib-wasm-builder",
  "sp-core",
  "sp-io",
  "sp-runtime-interface",
  "sp-std",
+ "substrate-wasm-builder",
 ]
 
 [[package]]
 name = "sp-runtime-interface-test-wasm-deprecated"
 version = "2.0.0"
 dependencies = [
- "axlib-wasm-builder",
  "sp-core",
  "sp-io",
  "sp-runtime-interface",
  "sp-std",
+ "substrate-wasm-builder",
 ]
 
 [[package]]
@@ -10409,7 +10188,7 @@ checksum = "6e63cff320ae2c57904679ba7cb63280a3dc4613885beafb148ee7bf9aa9042d"
 [[package]]
 name = "ss58-registry"
 version = "1.11.0"
-source = "git+https://github.com/axtend/ss58?branch=1.11.0#4740685e8df6deb99baea75b211278e945feeb04"
+source = "git+https://github.com/axtend/ss58?branch=1.11.0#d889fa38025d485031003dc1222a401e7f674be6"
 dependencies = [
  "Inflector",
  "proc-macro2",
@@ -10494,6 +10273,227 @@ dependencies = [
 ]
 
 [[package]]
+name = "substrate-build-script-utils"
+version = "3.0.0"
+dependencies = [
+ "platforms",
+]
+
+[[package]]
+name = "substrate-frame-cli"
+version = "4.0.0-dev"
+dependencies = [
+ "clap 3.1.6",
+ "frame-support",
+ "frame-system",
+ "sc-cli",
+ "sp-core",
+ "sp-runtime",
+]
+
+[[package]]
+name = "substrate-frame-rpc-support"
+version = "3.0.0"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "futures 0.3.21",
+ "jsonrpc-client-transports",
+ "parity-scale-codec",
+ "sc-rpc-api",
+ "scale-info",
+ "serde",
+ "sp-storage",
+ "tokio",
+]
+
+[[package]]
+name = "substrate-frame-rpc-system"
+version = "4.0.0-dev"
+dependencies = [
+ "frame-system-rpc-runtime-api",
+ "futures 0.3.21",
+ "jsonrpc-core",
+ "jsonrpc-core-client",
+ "jsonrpc-derive",
+ "log 0.4.16",
+ "parity-scale-codec",
+ "sc-client-api",
+ "sc-rpc-api",
+ "sc-transaction-pool",
+ "sc-transaction-pool-api",
+ "sp-api",
+ "sp-block-builder",
+ "sp-blockchain",
+ "sp-core",
+ "sp-runtime",
+ "sp-tracing",
+ "substrate-test-runtime-client",
+]
+
+[[package]]
+name = "substrate-prometheus-endpoint"
+version = "0.10.0-dev"
+dependencies = [
+ "async-std",
+ "futures-util",
+ "hyper 0.14.18",
+ "log 0.4.16",
+ "prometheus",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "substrate-test-client"
+version = "2.0.1"
+dependencies = [
+ "async-trait",
+ "futures 0.3.21",
+ "hex",
+ "parity-scale-codec",
+ "sc-client-api",
+ "sc-client-db",
+ "sc-consensus",
+ "sc-executor",
+ "sc-offchain",
+ "sc-service",
+ "serde",
+ "serde_json",
+ "sp-blockchain",
+ "sp-consensus",
+ "sp-core",
+ "sp-keyring",
+ "sp-keystore",
+ "sp-runtime",
+ "sp-state-machine",
+]
+
+[[package]]
+name = "substrate-test-runtime"
+version = "2.0.0"
+dependencies = [
+ "cfg-if 1.0.0",
+ "frame-support",
+ "frame-system",
+ "frame-system-rpc-runtime-api",
+ "futures 0.3.21",
+ "log 0.4.16",
+ "memory-db 0.27.0",
+ "pallet-babe",
+ "pallet-timestamp",
+ "parity-scale-codec",
+ "parity-util-mem",
+ "sc-block-builder",
+ "sc-executor",
+ "sc-service",
+ "scale-info",
+ "serde",
+ "sp-api",
+ "sp-application-crypto",
+ "sp-block-builder",
+ "sp-consensus",
+ "sp-consensus-aura",
+ "sp-consensus-babe",
+ "sp-core",
+ "sp-externalities",
+ "sp-finality-grandpa",
+ "sp-inherents",
+ "sp-io",
+ "sp-keyring",
+ "sp-offchain",
+ "sp-runtime",
+ "sp-runtime-interface",
+ "sp-session",
+ "sp-state-machine",
+ "sp-std",
+ "sp-transaction-pool",
+ "sp-trie",
+ "sp-version",
+ "substrate-test-runtime-client",
+ "substrate-wasm-builder",
+ "trie-db",
+]
+
+[[package]]
+name = "substrate-test-runtime-client"
+version = "2.0.0"
+dependencies = [
+ "futures 0.3.21",
+ "parity-scale-codec",
+ "sc-block-builder",
+ "sc-client-api",
+ "sc-consensus",
+ "sp-api",
+ "sp-blockchain",
+ "sp-consensus",
+ "sp-core",
+ "sp-runtime",
+ "substrate-test-client",
+ "substrate-test-runtime",
+]
+
+[[package]]
+name = "substrate-test-runtime-transaction-pool"
+version = "2.0.0"
+dependencies = [
+ "futures 0.3.21",
+ "parity-scale-codec",
+ "parking_lot 0.11.2",
+ "sc-transaction-pool",
+ "sc-transaction-pool-api",
+ "sp-blockchain",
+ "sp-runtime",
+ "substrate-test-runtime-client",
+ "thiserror",
+]
+
+[[package]]
+name = "substrate-test-utils"
+version = "4.0.0-dev"
+dependencies = [
+ "futures 0.3.21",
+ "sc-service",
+ "substrate-test-utils-derive",
+ "tokio",
+ "trybuild",
+]
+
+[[package]]
+name = "substrate-test-utils-derive"
+version = "0.10.0-dev"
+dependencies = [
+ "proc-macro-crate 1.1.3",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "substrate-test-utils-test-crate"
+version = "0.1.0"
+dependencies = [
+ "sc-service",
+ "substrate-test-utils",
+ "tokio",
+]
+
+[[package]]
+name = "substrate-wasm-builder"
+version = "5.0.0-dev"
+dependencies = [
+ "ansi_term",
+ "build-helper",
+ "cargo_metadata",
+ "sp-maybe-compressed-blob",
+ "strum",
+ "tempfile",
+ "toml",
+ "walkdir",
+ "wasm-gc-api",
+]
+
+[[package]]
 name = "subtle"
 version = "2.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -10501,9 +10501,9 @@ checksum = "6bdef32e8150c2a081110b42772ffe7d7c9032b606bc226c8260fd97e0976601"
 
 [[package]]
 name = "syn"
-version = "1.0.89"
+version = "1.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ea297be220d52398dcc07ce15a209fce436d361735ac1db700cab3b6cdfb9f54"
+checksum = "704df27628939572cd88d33f171cd6f896f4eaca85252c6e0a72d8d8287ee86f"
 dependencies = [
  "proc-macro2",
  "quote",

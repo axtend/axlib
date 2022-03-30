@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ use tracing::{span::Attributes, Id, Subscriber};
 use tracing_subscriber::{layer::Context, registry::LookupSpan, Layer};
 
 /// Span name used for the logging prefix. See macro `sc_tracing::logging::prefix_logs_with!`
-pub const PREFIX_LOG_SPAN: &str = "axlib-log-prefix";
+pub const PREFIX_LOG_SPAN: &str = "substrate-log-prefix";
 
 /// A `Layer` that captures the prefix span ([`PREFIX_LOG_SPAN`]) which is then used by
 /// [`crate::logging::EventFormat`] to prefix the log lines by customizable string.

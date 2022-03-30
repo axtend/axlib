@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Axlib's client telemetry is a part of axlib that allows ingesting telemetry data
-//! with for example [Axia telemetry](https://github.com/paritytech/axlib-telemetry).
+//! Substrate's client telemetry is a part of substrate that allows ingesting telemetry data
+//! with for example [Axia telemetry](https://github.com/axiatech/substrate-telemetry).
 //!
 //! It works using Tokio's [tracing](https://github.com/tokio-rs/tracing/) library. The telemetry
 //! information uses tracing's logging to report the telemetry data which is then retrieved by a
@@ -25,11 +25,11 @@
 //! background task called [`TelemetryWorker`] which will send the information to the configured
 //! remote telemetry servers.
 //!
-//! If multiple axlib nodes are running in the same process, it uses a `tracing::Span` to
-//! identify which axlib node is reporting the telemetry. Every task spawned using sc-service's
+//! If multiple substrate nodes are running in the same process, it uses a `tracing::Span` to
+//! identify which substrate node is reporting the telemetry. Every task spawned using sc-service's
 //! `TaskManager` automatically inherit this span.
 //!
-//! Axlib's nodes initialize/register with the [`TelemetryWorker`] using a
+//! Substrate's nodes initialize/register with the [`TelemetryWorker`] using a
 //! [`TelemetryWorkerHandle`]. This handle can be cloned and passed around. It uses an asynchronous
 //! channel to communicate with the running [`TelemetryWorker`] dedicated to registration.
 //! Registering can happen at any point in time during the process execution.
@@ -59,9 +59,9 @@ pub use error::*;
 use node::*;
 use transport::*;
 
-/// Axlib DEBUG log level.
+/// Substrate DEBUG log level.
 pub const AXLIB_DEBUG: VerbosityLevel = 9;
-/// Axlib INFO log level.
+/// Substrate INFO log level.
 pub const AXLIB_INFO: VerbosityLevel = 0;
 
 /// Consensus TRACE log level.
@@ -306,7 +306,7 @@ impl TelemetryWorker {
 	}
 }
 
-/// Handle to the [`TelemetryWorker`] thats allows initializing the telemetry for a Axlib node.
+/// Handle to the [`TelemetryWorker`] thats allows initializing the telemetry for a Substrate node.
 #[derive(Debug, Clone)]
 pub struct TelemetryWorkerHandle {
 	message_sender: mpsc::Sender<TelemetryMessage>,
@@ -343,10 +343,10 @@ pub struct Telemetry {
 }
 
 impl Telemetry {
-	/// Initialize the telemetry with the endpoints provided in argument for the current axlib
+	/// Initialize the telemetry with the endpoints provided in argument for the current substrate
 	/// node.
 	///
-	/// This method must be called during the axlib node initialization.
+	/// This method must be called during the substrate node initialization.
 	///
 	/// The `endpoints` argument is a collection of telemetry WebSocket servers with a corresponding
 	/// verbosity level.

@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@
 //! Implementation of the `insert` subcommand
 
 use crate::{
-	utils, with_crypto_scheme, CryptoScheme, Error, KeystoreParams, SharedParams, AxlibCli,
+	utils, with_crypto_scheme, CryptoScheme, Error, KeystoreParams, SharedParams, SubstrateCli,
 };
 use clap::Parser;
 use sc_keystore::LocalKeystore;
@@ -56,7 +56,7 @@ pub struct InsertKeyCmd {
 
 impl InsertKeyCmd {
 	/// Run the command
-	pub fn run<C: AxlibCli>(&self, cli: &C) -> Result<(), Error> {
+	pub fn run<C: SubstrateCli>(&self, cli: &C) -> Result<(), Error> {
 		let suri = utils::read_uri(self.suri.as_ref())?;
 		let base_path = self
 			.shared_params
@@ -99,7 +99,7 @@ mod tests {
 
 	struct Cli;
 
-	impl AxlibCli for Cli {
+	impl SubstrateCli for Cli {
 		fn impl_name() -> String {
 			"test".into()
 		}

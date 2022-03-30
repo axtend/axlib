@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Axlib tracing primitives and macros.
+//! Substrate tracing primitives and macros.
 //!
-//! To trace functions or invidual code in Axlib, this crate provides [`within_span`]
+//! To trace functions or invidual code in Substrate, this crate provides [`within_span`]
 //! and [`enter_span`]. See the individual docs for how to use these macros.
 //!
 //! Note that to allow traces from wasm execution environment there are
@@ -30,7 +30,7 @@
 //! the associated Fields mentioned above.
 //!
 //! Note: The `tracing` crate requires trace metadata to be static. This does not work
-//! for wasm code in axlib, as it is regularly updated with new code from on-chain
+//! for wasm code in substrate, as it is regularly updated with new code from on-chain
 //! events. The workaround for this is for the wasm tracing wrappers to put the
 //! `name` and `target` data in the `values` map (normally they would be in the static
 //! metadata assembled at compile time).

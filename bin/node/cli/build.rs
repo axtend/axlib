@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,7 @@ mod cli {
 	use clap::{ArgEnum, IntoApp};
 	use clap_complete::{generate_to, Shell};
 	use std::{env, fs, path::Path};
-	use axlib_build_script_utils::{generate_cargo_keys, rerun_if_git_head_changed};
+	use substrate_build_script_utils::{generate_cargo_keys, rerun_if_git_head_changed};
 
 	pub fn main() {
 		build_shell_completion();
@@ -61,6 +61,6 @@ mod cli {
 
 		fs::create_dir(&path).ok();
 
-		let _ = generate_to(*shell, &mut Cli::into_app(), "axlib-node", &path);
+		let _ = generate_to(*shell, &mut Cli::into_app(), "substrate-node", &path);
 	}
 }

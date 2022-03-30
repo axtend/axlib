@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@
 //! EXECUTION: Some(Wasm), WASM-EXECUTION: Compiled, CHAIN: Some("dev"), DB CACHE: 128
 
 // Executed Command:
-// target/release/axlib
+// target/release/substrate
 // benchmark
 // --chain=dev
 // --steps=50
@@ -53,9 +53,9 @@ pub trait WeightInfo {
 	fn unlock() -> Weight;
 }
 
-/// Weights for pallet_conviction_voting using the Axlib node and recommended hardware.
-pub struct AxlibWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
+/// Weights for pallet_conviction_voting using the Substrate node and recommended hardware.
+pub struct SubstrateWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
 	// Storage: Referenda ReferendumInfoFor (r:1 w:1)
 	// Storage: ConvictionVoting VotingFor (r:1 w:1)
 	// Storage: ConvictionVoting ClassLocksFor (r:1 w:1)

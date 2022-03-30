@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -211,7 +211,7 @@ pub trait CryptoStore: Send + Sync {
 
 /// Sync version of the CryptoStore
 ///
-/// Some parts of Axlib still rely on a sync version of the `CryptoStore`.
+/// Some parts of Substrate still rely on a sync version of the `CryptoStore`.
 /// To make the transition easier this auto trait wraps any async `CryptoStore` and
 /// exposes a `sync` interface using `block_on`. Usage of this is deprecated and it
 /// will be removed as soon as the internal usage has transitioned successfully.

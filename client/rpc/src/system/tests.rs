@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,7 @@ use std::{
 	process::{Command, Stdio},
 	thread,
 };
-use axlib_test_runtime_client::runtime::Block;
+use substrate_test_runtime_client::runtime::Block;
 
 struct Status {
 	pub peers: usize,

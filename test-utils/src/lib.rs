@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,12 +28,12 @@ pub use futures;
 /// # Example
 ///
 /// ```
-/// #[axlib_test_utils::test]
+/// #[substrate_test_utils::test]
 /// async fn basic_test() {
 ///     assert!(true);
 /// }
 /// ```
-pub use axlib_test_utils_derive::test;
+pub use substrate_test_utils_derive::test;
 #[doc(hidden)]
 pub use tokio;
 
@@ -43,7 +43,7 @@ pub use tokio;
 ///
 /// ```rust
 /// #[macro_use]
-/// # use axlib_test_utils::{assert_eq_uvec};
+/// # use substrate_test_utils::{assert_eq_uvec};
 /// # fn main() {
 /// assert_eq_uvec!(vec![1,2], vec![2,1]);
 /// # }
@@ -51,7 +51,7 @@ pub use tokio;
 ///
 /// ```rust,should_panic
 /// #[macro_use]
-/// # use axlib_test_utils::{assert_eq_uvec};
+/// # use substrate_test_utils::{assert_eq_uvec};
 /// # fn main() {
 /// assert_eq_uvec!(vec![1,2,3], vec![2,1]);
 /// # }

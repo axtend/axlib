@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -491,7 +491,7 @@ where
 	fn max_encoded_len() -> usize {
 		// BoundedVec<T, S> encodes like Vec<T> which encodes like [T], which is a compact u32
 		// plus each item in the slice:
-		// https://docs.axlib.io/v3/advanced/scale-codec
+		// https://docs.substrate.io/v3/advanced/scale-codec
 		codec::Compact(S::get())
 			.encoded_size()
 			.saturating_add(Self::bound().saturating_mul(T::max_encoded_len()))

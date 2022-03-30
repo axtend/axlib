@@ -2,5 +2,5 @@
 brew install openssl cmake
 curl https://sh.rustup.rs -sSf | sh
 source ~/.cargo/env
-cargo install --git https://github.com/paritytech/axlib subkey
-cargo install --git https://github.com/paritytech/axlib axlib
+cargo install --git https://github.com/axiatech/substrate subkey
+cargo install --git https://github.com/axiatech/substrate substrate

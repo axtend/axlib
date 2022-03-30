@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -42,7 +42,7 @@ impl Metrics {
 			import_queue_processed: register(
 				CounterVec::new(
 					Opts::new(
-						"axlib_import_queue_processed_total",
+						"substrate_import_queue_processed_total",
 						"Blocks processed by import queue",
 					),
 					&["result"], // 'success or failure
@@ -52,7 +52,7 @@ impl Metrics {
 			block_verification_time: register(
 				HistogramVec::new(
 					HistogramOpts::new(
-						"axlib_block_verification_time",
+						"substrate_block_verification_time",
 						"Time taken to verify blocks",
 					),
 					&["result"],
@@ -61,14 +61,14 @@ impl Metrics {
 			)?,
 			block_verification_and_import_time: register(
 				Histogram::with_opts(HistogramOpts::new(
-					"axlib_block_verification_and_import_time",
+					"substrate_block_verification_and_import_time",
 					"Time taken to verify and import blocks",
 				))?,
 				registry,
 			)?,
 			justification_import_time: register(
 				Histogram::with_opts(HistogramOpts::new(
-					"axlib_justification_import_time",
+					"substrate_justification_import_time",
 					"Time taken to import justifications",
 				))?,
 				registry,

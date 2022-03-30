@@ -1,11 +1,11 @@
 [package]
 name = "pallet-contracts"
 version = "4.0.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://axlib.io"
-repository = "https://github.com/axtend/axlib/"
+homepage = "https://substrate.io"
+repository = "https://github.com/axtend/substrate/"
 description = "FRAME pallet for WASM contracts"
 readme = "README.md"
 
@@ -32,7 +32,7 @@ libsecp256k1 = { version = "0.7", optional = true, default-features = false, fea
 rand = { version = "0.8", optional = true, default-features = false }
 rand_pcg = { version = "0.3", optional = true }
 
-# Axlib Dependencies
+# Substrate Dependencies
 frame-benchmarking = { version = "4.0.0-dev", default-features = false, path = "../benchmarking", optional = true }
 frame-support = { version = "4.0.0-dev", default-features = false, path = "../support" }
 frame-system = { version = "4.0.0-dev", default-features = false, path = "../system" }
@@ -51,7 +51,7 @@ hex-literal = "0.3"
 pretty_assertions = "1"
 wat = "1"
 
-# Axlib Dependencies
+# Substrate Dependencies
 pallet-balances = { version = "4.0.0-dev", path = "../balances" }
 pallet-timestamp = { version = "4.0.0-dev", path = "../timestamp" }
 pallet-randomness-collective-flip = { version = "4.0.0-dev", path = "../randomness-collective-flip" }

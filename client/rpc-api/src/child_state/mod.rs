@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Axlib state API.
+//! Substrate state API.
 
 use crate::state::error::FutureResult;
 use jsonrpc_derive::rpc;
@@ -25,7 +25,7 @@ use sp_core::storage::{PrefixedStorageKey, StorageData, StorageKey};
 pub use self::gen_client::Client as ChildStateClient;
 use crate::state::ReadProof;
 
-/// Axlib child state API
+/// Substrate child state API
 ///
 /// Note that all `PrefixedStorageKey` are deserialized
 /// from json and not guaranteed valid.

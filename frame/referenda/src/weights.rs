@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@
 //! EXECUTION: Some(Wasm), WASM-EXECUTION: Compiled, CHAIN: Some("dev"), DB CACHE: 128
 
 // Executed Command:
-// target/release/axlib
+// target/release/substrate
 // benchmark
 // --chain=dev
 // --steps=50
@@ -73,9 +73,9 @@ pub trait WeightInfo {
 	fn nudge_referendum_rejected() -> Weight;
 }
 
-/// Weights for pallet_referenda using the Axlib node and recommended hardware.
-pub struct AxlibWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
+/// Weights for pallet_referenda using the Substrate node and recommended hardware.
+pub struct SubstrateWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
 	// Storage: Referenda ReferendumCount (r:1 w:1)
 	// Storage: Scheduler Agenda (r:1 w:1)
 	// Storage: Referenda ReferendumInfoFor (r:0 w:1)

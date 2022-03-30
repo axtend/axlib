@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@
 //! EXECUTION: Some(Wasm), WASM-EXECUTION: Compiled, CHAIN: Some("dev"), DB CACHE: 128
 
 // Executed Command:
-// ./target/release/axlib
+// ./target/release/substrate
 // benchmark
 // --chain
 // dev
@@ -59,9 +59,9 @@ pub trait WeightInfo {
 	fn sort_vector(x: u32, ) -> Weight;
 }
 
-/// Weights for pallet_example_basic using the Axlib node and recommended hardware.
-pub struct AxlibWeight<T>(PhantomData<T>);
-impl<T: frame_system::Config> WeightInfo for AxlibWeight<T> {
+/// Weights for pallet_example_basic using the Substrate node and recommended hardware.
+pub struct SubstrateWeight<T>(PhantomData<T>);
+impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
 	fn set_dummy_benchmark(b: u32, ) -> Weight {
 		(5_834_000 as Weight)
 			.saturating_add((24_000 as Weight).saturating_mul(b as Weight))

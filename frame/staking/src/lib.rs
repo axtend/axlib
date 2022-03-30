@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +49,7 @@
 //! ### Goals
 //! <!-- Original author of paragraph: @gavofyork -->
 //!
-//! The staking system in Axlib NPoS is designed to make the following possible:
+//! The staking system in Substrate NPoS is designed to make the following possible:
 //!
 //! - Stake funds that are controlled by a cold wallet.
 //! - Withdraw some, or deposit more, funds without interrupting the role of an entity.

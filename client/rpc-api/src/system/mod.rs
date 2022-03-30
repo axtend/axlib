@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Axlib system API.
+//! Substrate system API.
 
 pub mod error;
 pub mod helpers;
@@ -32,7 +32,7 @@ pub use self::{
 	helpers::{Health, NodeRole, PeerInfo, SyncState, SystemInfo},
 };
 
-/// Axlib system RPC API
+/// Substrate system RPC API
 #[rpc]
 pub trait SystemApi<Hash, Number> {
 	/// Get the node's implementation name. Plain old string.
@@ -82,8 +82,8 @@ pub trait SystemApi<Hash, Number> {
 	///
 	/// **Warning**: This API is not stable. Please do not programmatically interpret its output,
 	/// as its format might change at any time.
-	// TODO: the future of this call is uncertain: https://github.com/paritytech/axlib/issues/1890
-	// https://github.com/paritytech/axlib/issues/5541
+	// TODO: the future of this call is uncertain: https://github.com/axiatech/substrate/issues/1890
+	// https://github.com/axiatech/substrate/issues/5541
 	#[rpc(name = "system_unstable_networkState", returns = "jsonrpc_core::Value")]
 	fn system_network_state(&self) -> BoxFuture<jsonrpc_core::Result<jsonrpc_core::Value>>;
 
@@ -124,7 +124,7 @@ pub trait SystemApi<Hash, Number> {
 	#[rpc(name = "system_addLogFilter", returns = "()")]
 	fn system_add_log_filter(&self, directives: String) -> Result<(), jsonrpc_core::Error>;
 
-	/// Resets the log filter to Axlib defaults
+	/// Resets the log filter to Substrate defaults
 	#[rpc(name = "system_resetLogFilter", returns = "()")]
 	fn system_reset_log_filter(&self) -> Result<(), jsonrpc_core::Error>;
 }

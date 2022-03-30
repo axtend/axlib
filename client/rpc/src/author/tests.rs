@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -33,7 +33,7 @@ use sp_core::{
 };
 use sp_keystore::testing::KeyStore;
 use std::{mem, sync::Arc};
-use axlib_test_runtime_client::{
+use substrate_test_runtime_client::{
 	self,
 	runtime::{Block, Extrinsic, SessionKeys, Transfer},
 	AccountKeyring, Backend, Client, DefaultTestClientBuilderExt, TestClientBuilderExt,
@@ -60,7 +60,7 @@ struct TestSetup {
 impl Default for TestSetup {
 	fn default() -> Self {
 		let keystore = Arc::new(KeyStore::new());
-		let client_builder = axlib_test_runtime_client::TestClientBuilder::new();
+		let client_builder = substrate_test_runtime_client::TestClientBuilder::new();
 		let client = Arc::new(client_builder.set_keystore(keystore.clone()).build());
 
 		let spawner = sp_core::testing::TaskExecutor::new();

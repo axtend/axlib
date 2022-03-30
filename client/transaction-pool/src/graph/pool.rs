@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -447,7 +447,7 @@ mod tests {
 	use sc_transaction_pool_api::TransactionStatus;
 	use sp_runtime::transaction_validity::TransactionSource;
 	use std::{collections::HashMap, time::Instant};
-	use axlib_test_runtime::{AccountId, Extrinsic, Transfer, H256};
+	use substrate_test_runtime::{AccountId, Extrinsic, Transfer, H256};
 
 	const SOURCE: TransactionSource = TransactionSource::External;
 

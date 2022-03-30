@@ -1,7 +1,7 @@
-Axlib runtime interface
+Substrate runtime interface
 
 This crate provides types, traits and macros around runtime interfaces. A runtime interface is
-a fixed interface between a Axlib runtime and a Axlib node. For a native runtime the
+a fixed interface between a Substrate runtime and a Substrate node. For a native runtime the
 interface maps to a direct function call of the implementation. For a wasm runtime the interface
 maps to an external function call. These external functions are exported by the wasm executor
 and they map to the same implementation as the native calls.

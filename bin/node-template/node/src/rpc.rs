@@ -1,6 +1,6 @@
 //! A collection of node-specific RPC methods.
-//! Axlib provides the `sc-rpc` crate, which defines the core RPC layer
-//! used by Axlib nodes. This file extends those RPC definitions with
+//! Substrate provides the `sc-rpc` crate, which defines the core RPC layer
+//! used by Substrate nodes. This file extends those RPC definitions with
 //! capabilities that are specific to this project's runtime configuration.
 
 #![warn(missing_docs)]
@@ -30,13 +30,13 @@ where
 	C: ProvideRuntimeApi<Block>,
 	C: HeaderBackend<Block> + HeaderMetadata<Block, Error = BlockChainError> + 'static,
 	C: Send + Sync + 'static,
-	C::Api: axlib_frame_rpc_system::AccountNonceApi<Block, AccountId, Index>,
+	C::Api: substrate_frame_rpc_system::AccountNonceApi<Block, AccountId, Index>,
 	C::Api: pallet_transaction_payment_rpc::TransactionPaymentRuntimeApi<Block, Balance>,
 	C::Api: BlockBuilder<Block>,
 	P: TransactionPool + 'static,
 {
 	use pallet_transaction_payment_rpc::{TransactionPayment, TransactionPaymentApi};
-	use axlib_frame_rpc_system::{FullSystem, SystemApi};
+	use substrate_frame_rpc_system::{FullSystem, SystemApi};
 
 	let mut io = jsonrpc_core::IoHandler::default();
 	let FullDeps { client, pool, deny_unsafe } = deps;

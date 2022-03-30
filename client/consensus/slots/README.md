@@ -1,4 +1,4 @@
-Slots functionality for Axlib.
+Slots functionality for Substrate.
 
 Some consensus algorithms have a concept of *slots*, which are intervals in
 time during which certain events can and/or must occur.  This crate

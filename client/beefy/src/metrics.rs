@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -41,33 +41,33 @@ impl Metrics {
 		Ok(Self {
 			beefy_validator_set_id: register(
 				Gauge::new(
-					"axlib_beefy_validator_set_id",
+					"substrate_beefy_validator_set_id",
 					"Current BEEFY active validator set id.",
 				)?,
 				registry,
 			)?,
 			beefy_votes_sent: register(
-				Counter::new("axlib_beefy_votes_sent", "Number of votes sent by this node")?,
+				Counter::new("substrate_beefy_votes_sent", "Number of votes sent by this node")?,
 				registry,
 			)?,
 			beefy_round_concluded: register(
 				Gauge::new(
-					"axlib_beefy_round_concluded",
+					"substrate_beefy_round_concluded",
 					"Voting round, that has been concluded",
 				)?,
 				registry,
 			)?,
 			beefy_best_block: register(
-				Gauge::new("axlib_beefy_best_block", "Best block finalized by BEEFY")?,
+				Gauge::new("substrate_beefy_best_block", "Best block finalized by BEEFY")?,
 				registry,
 			)?,
 			beefy_should_vote_on: register(
-				Gauge::new("axlib_beefy_should_vote_on", "Next block, BEEFY should vote on")?,
+				Gauge::new("substrate_beefy_should_vote_on", "Next block, BEEFY should vote on")?,
 				registry,
 			)?,
 			beefy_skipped_sessions: register(
 				Counter::new(
-					"axlib_beefy_skipped_sessions",
+					"substrate_beefy_skipped_sessions",
 					"Number of sessions without a signed commitment",
 				)?,
 				registry,

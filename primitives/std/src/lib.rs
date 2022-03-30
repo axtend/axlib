@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,17 +15,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Lowest-abstraction level for the Axlib runtime: just exports useful primitives from std
+//! Lowest-abstraction level for the Substrate runtime: just exports useful primitives from std
 //! or client/alloc to be used with any code that depends on the runtime.
 
 #![cfg_attr(not(feature = "std"), no_std)]
 #![cfg_attr(
 	feature = "std",
-	doc = "Axlib runtime standard library as compiled when linked with Rust's standard library."
+	doc = "Substrate runtime standard library as compiled when linked with Rust's standard library."
 )]
 #![cfg_attr(
 	not(feature = "std"),
-	doc = "Axlib's runtime standard library as compiled without Rust's standard library."
+	doc = "Substrate's runtime standard library as compiled without Rust's standard library."
 )]
 
 #[macro_export]

@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
-//! Axlib externalities abstraction
+//! Substrate externalities abstraction
 //!
 //! The externalities mainly provide access to storage and to registered extensions. Extensions
 //! are for example the keystore or the offchain externalities. These externalities are used to
@@ -52,7 +52,7 @@ pub enum Error {
 	StorageUpdateFailed(&'static str),
 }
 
-/// The Axlib externalities.
+/// The Substrate externalities.
 ///
 /// Provides access to the storage and to other registered extensions.
 pub trait Externalities: ExtensionStore {

@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2021-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2021-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,7 +46,7 @@
 
 // Most of the business logic in this pallet has been
 // originally contributed by "https://github.com/shamb0",
-// as part of the PR - https://github.com/paritytech/axlib/pull/7965.
+// as part of the PR - https://github.com/axiatech/substrate/pull/7965.
 // The code has been moved here and then refactored in order to
 // extract child-bounties as a separate pallet.
 

@@ -2,7 +2,7 @@
 ;; https://github.com/WebAssembly/testsuite/blob/01efde81028c5b0d099eb836645a2dc5e7755449/skip-stack-guard-page.wast
 ;; Licensed Apache 2.0 https://github.com/WebAssembly/testsuite/blob/01efde81028c5b0d099eb836645a2dc5e7755449/LICENSE
 
-;; This wasm module implements a Axlib Runtime with one entrypoint: `test-many-locals`. This
+;; This wasm module implements a Substrate Runtime with one entrypoint: `test-many-locals`. This
 ;; entrypoint does not take any parameters nor returns a result. Each execution should end up with
 ;; a stack overflow trap.
 ;;

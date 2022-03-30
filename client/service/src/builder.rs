@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -904,7 +904,7 @@ where
 	// This entire hack should eventually be removed in favour of passing the list of protocols
 	// through the configuration.
 	//
-	// See also https://github.com/paritytech/axlib/issues/6827
+	// See also https://github.com/axiatech/substrate/issues/6827
 	let (network_start_tx, network_start_rx) = oneshot::channel();
 
 	// The network worker is responsible for gathering all network messages and processing

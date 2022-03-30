@@ -4,12 +4,12 @@ use crate::{
 	service,
 };
 use node_template_runtime::Block;
-use sc_cli::{ChainSpec, RuntimeVersion, AxlibCli};
+use sc_cli::{ChainSpec, RuntimeVersion, SubstrateCli};
 use sc_service::PartialComponents;
 
-impl AxlibCli for Cli {
+impl SubstrateCli for Cli {
 	fn impl_name() -> String {
-		"Axlib Node".into()
+		"Substrate Node".into()
 	}
 
 	fn impl_version() -> String {

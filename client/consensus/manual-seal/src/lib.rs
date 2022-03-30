@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -255,10 +255,10 @@ mod tests {
 	use sc_transaction_pool_api::{MaintainedTransactionPool, TransactionPool, TransactionSource};
 	use sp_inherents::InherentData;
 	use sp_runtime::generic::{BlockId, Digest, DigestItem};
-	use axlib_test_runtime_client::{
+	use substrate_test_runtime_client::{
 		AccountKeyring::*, DefaultTestClientBuilderExt, TestClientBuilder, TestClientBuilderExt,
 	};
-	use axlib_test_runtime_transaction_pool::{uxt, TestApi};
+	use substrate_test_runtime_transaction_pool::{uxt, TestApi};
 
 	fn api() -> Arc<TestApi> {
 		Arc::new(TestApi::empty())

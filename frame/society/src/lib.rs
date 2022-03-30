@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -1415,7 +1415,7 @@ impl<T: Config<I>, I: 'static> Pallet<T, I> {
 
 		// we'll need a random seed here.
 		// TODO: deal with randomness freshness
-		// https://github.com/paritytech/axlib/issues/8312
+		// https://github.com/axiatech/substrate/issues/8312
 		let (seed, _) = T::Randomness::random(phrase);
 		// seed needs to be guaranteed to be 32 bytes.
 		let seed = <[u8; 32]>::decode(&mut TrailingZeroInput::new(seed.as_ref()))
@@ -1711,7 +1711,7 @@ impl<T: Config<I>, I: 'static> Pallet<T, I> {
 				let phrase = b"society_challenge";
 				// we'll need a random seed here.
 				// TODO: deal with randomness freshness
-				// https://github.com/paritytech/axlib/issues/8312
+				// https://github.com/axiatech/substrate/issues/8312
 				let (seed, _) = T::Randomness::random(phrase);
 				// seed needs to be guaranteed to be 32 bytes.
 				let seed = <[u8; 32]>::decode(&mut TrailingZeroInput::new(seed.as_ref()))

@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -95,7 +95,7 @@ mod inner {
 		let extra_scheduler = scheduler.clone();
 		scheduler.spawn(
 			"parallel-runtime-spawn",
-			Some("axlib-runtime"),
+			Some("substrate-runtime"),
 			Box::pin(async move {
 				let result = match crate::new_async_externalities(extra_scheduler) {
 					Ok(mut ext) => {

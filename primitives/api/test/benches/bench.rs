@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,13 +19,13 @@ use criterion::{criterion_group, criterion_main, Criterion};
 use sp_api::ProvideRuntimeApi;
 use sp_runtime::generic::BlockId;
 use sp_state_machine::ExecutionStrategy;
-use axlib_test_runtime_client::{
+use substrate_test_runtime_client::{
 	runtime::TestAPI, DefaultTestClientBuilderExt, TestClientBuilder, TestClientBuilderExt,
 };
 
 fn sp_api_benchmark(c: &mut Criterion) {
 	c.bench_function("add one with same runtime api", |b| {
-		let client = axlib_test_runtime_client::new();
+		let client = substrate_test_runtime_client::new();
 		let runtime_api = client.runtime_api();
 		let block_id = BlockId::Number(client.chain_info().best_number);
 
@@ -33,14 +33,14 @@ fn sp_api_benchmark(c: &mut Criterion) {
 	});
 
 	c.bench_function("add one with recreating runtime api", |b| {
-		let client = axlib_test_runtime_client::new();
+		let client = substrate_test_runtime_client::new();
 		let block_id = BlockId::Number(client.chain_info().best_number);
 
 		b.iter(|| client.runtime_api().benchmark_add_one(&block_id, &1))
 	});
 
 	c.bench_function("vector add one with same runtime api", |b| {
-		let client = axlib_test_runtime_client::new();
+		let client = substrate_test_runtime_client::new();
 		let runtime_api = client.runtime_api();
 		let block_id = BlockId::Number(client.chain_info().best_number);
 		let data = vec![0; 1000];
@@ -49,7 +49,7 @@ fn sp_api_benchmark(c: &mut Criterion) {
 	});
 
 	c.bench_function("vector add one with recreating runtime api", |b| {
-		let client = axlib_test_runtime_client::new();
+		let client = substrate_test_runtime_client::new();
 		let block_id = BlockId::Number(client.chain_info().best_number);
 		let data = vec![0; 1000];
 

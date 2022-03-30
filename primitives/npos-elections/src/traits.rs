@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +35,7 @@ use sp_std::{
 };
 
 /// an aggregator trait for a generic type of a voter/target identifier. This usually maps to
-/// axlib's account id.
+/// substrate's account id.
 pub trait IdentifierT: Clone + Eq + Ord + Debug + codec::Codec {}
 impl<T: Clone + Eq + Ord + Debug + codec::Codec> IdentifierT for T {}
 

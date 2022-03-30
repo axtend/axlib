@@ -1,12 +1,12 @@
-Axlib runtime api
+Substrate runtime api
 
-The Axlib runtime api is the crucial interface between the node and the runtime.
+The Substrate runtime api is the crucial interface between the node and the runtime.
 Every call that goes into the runtime is done with a runtime api. The runtime apis are not fixed.
-Every Axlib user can define its own apis with
+Every Substrate user can define its own apis with
 [`decl_runtime_apis`](https://docs.rs/sp-api/latest/sp_api/macro.decl_runtime_apis.html) and implement them in
 the runtime with [`impl_runtime_apis`](https://docs.rs/sp-api/latest/sp_api/macro.impl_runtime_apis.html).
 
-Every Axlib runtime needs to implement the [`Core`] runtime api. This api provides the basic
+Every Substrate runtime needs to implement the [`Core`] runtime api. This api provides the basic
 functionality that every runtime needs to export.
 
 Besides the macros and the [`Core`] runtime api, this crates provides the [`Metadata`] runtime

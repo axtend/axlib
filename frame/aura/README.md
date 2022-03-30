@@ -21,7 +21,7 @@ consensus rounds (via `slots`).
 ## References
 
 If you're interested in hacking on this module, it is useful to understand the interaction with
-`axlib/primitives/inherents/src/lib.rs` and, specifically, the required implementation of
+`substrate/primitives/inherents/src/lib.rs` and, specifically, the required implementation of
 [`ProvideInherent`](https://docs.rs/sp-inherents/latest/sp_inherents/trait.ProvideInherent.html) and
 [`ProvideInherentData`](https://docs.rs/sp-inherents/latest/sp_inherents/trait.ProvideInherentData.html) to create and check inherents.
 

@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -19,9 +19,9 @@
 #![warn(missing_docs)]
 #![recursion_limit = "1024"]
 
-//! Axlib authority discovery.
+//! Substrate authority discovery.
 //!
-//! This crate enables Axlib authorities to discover and directly connect to
+//! This crate enables Substrate authorities to discover and directly connect to
 //! other authorities. It is split into two components the [`Worker`] and the
 //! [`Service`].
 //!

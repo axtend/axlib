@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # set -x
 
-# This script manages the deployment of Axlib rustdocs to https://paritytech.github.io/axlib/.
+# This script manages the deployment of Substrate rustdocs to https://axiatech.github.io/substrate/.
 # - With `deploy` sub-command, it will checkout the passed-in branch/tag ref, build the rustdocs
 #   locally (this takes some time), update the `index.html` index page, and push it to remote
 #   `gh-pages` branch. So users running this command need to have write access to the remote
-#   `gh-pages` branch. This sub-command depends on [@axlib/index-tpl-crud](https://www.npmjs.com/package/@axlib/index-tpl-crud)
+#   `gh-pages` branch. This sub-command depends on [@substrate/index-tpl-crud](https://www.npmjs.com/package/@substrate/index-tpl-crud)
 #   to update the DOM of index.html page.
 # - With `remove` sub-command, it will remove the deployed rustdocs from `gh-pages`, and update the
 #   index.html page as necessary. It may remove the `latest` symbolic link.
@@ -24,12 +24,12 @@
 #   rustdocs-release.sh remove monthly-2021-10
 #
 # Dependencies:
-#   - @axlib/index-tpl-crud - https://www.npmjs.com/package/@axlib/index-tpl-crud
+#   - @substrate/index-tpl-crud - https://www.npmjs.com/package/@substrate/index-tpl-crud
 #
 
 # Script setting
 # The git repo http URL
-REMOTE_REPO="https://github.com/paritytech/axlib.git"
+REMOTE_REPO="https://github.com/axiatech/substrate.git"
 TMP_PREFIX="/tmp"                             # tmp location that the built doc is copied to.
 DOC_INDEX_PAGE="sc_service/index.html"
 
@@ -93,12 +93,12 @@ build_rustdocs() {
 
 upsert_index_page() {
   # Check if `index-tpl-crud` exists
-  which index-tpl-crud &> /dev/null || yarn global add @axlib/index-tpl-crud
+  which index-tpl-crud &> /dev/null || yarn global add @substrate/index-tpl-crud
   index-tpl-crud upsert $($1 && echo "-l") ./index.html "$2"
 }
 
 rm_index_page() {
-  which index-tpl-crud &> /dev/null || yarn global add @axlib/index-tpl-crud
+  which index-tpl-crud &> /dev/null || yarn global add @substrate/index-tpl-crud
   index-tpl-crud rm ./index.html "$1"
 }
 

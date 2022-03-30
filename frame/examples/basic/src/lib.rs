@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2017-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2017-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,7 +29,7 @@
 //! ### Documentation Guidelines:
 //!
 //! <!-- Original author of paragraph: Various. Based on collation of review comments to PRs
-//! addressing issues with --> <!-- label 'S3-FRAME' in https://github.com/paritytech/axlib-developer-hub/issues -->
+//! addressing issues with --> <!-- label 'S3-FRAME' in https://github.com/axiatech/substrate-developer-hub/issues -->
 //! <ul>
 //! <li>Documentation comments (i.e. <code>/// comment</code>) - should
 //! accompany pallet functions and be restricted to the pallet interface,
@@ -38,7 +38,7 @@
 //! requires root, but without repeating the source code details.
 //! Capitalize the first word of each documentation comment and end it with
 //! a full stop. See
-//! <a href="https://github.com/paritytech/axlib#72-contributing-to-documentation-for-axlib-packages"
+//! <a href="https://github.com/axiatech/substrate#72-contributing-to-documentation-for-substrate-packages"
 //! target="_blank"> Generic example of annotating source code with documentation comments</a></li>
 //!
 //! <li>Self-documenting code - Try to refactor code to be self-documenting.</li>
@@ -79,7 +79,7 @@
 //!
 //! \## Overview
 //!
-//! <!-- Original author of paragraph: Various. See https://github.com/paritytech/axlib-developer-hub/issues/44 -->
+//! <!-- Original author of paragraph: Various. See https://github.com/axiatech/substrate-developer-hub/issues/44 -->
 //! // Short description of pallet's purpose.
 //! // Links to Traits that should be implemented.
 //! // What this pallet is for.
@@ -89,8 +89,8 @@
 //! // Inputs it uses and the source of each input.
 //! // Outputs it produces.
 //!
-//! <!-- Original author of paragraph: @Kianenigma in PR https://github.com/paritytech/axlib/pull/1951 -->
-//! <!-- and comment https://github.com/paritytech/axlib-developer-hub/issues/44#issuecomment-471982710 -->
+//! <!-- Original author of paragraph: @Kianenigma in PR https://github.com/axiatech/substrate/pull/1951 -->
+//! <!-- and comment https://github.com/axiatech/substrate-developer-hub/issues/44#issuecomment-471982710 -->
 //!
 //! \## Terminology
 //!
@@ -102,17 +102,17 @@
 //! be noted to give context to the pallet. // Please do not link to outside resources. The
 //! reference docs should be the ultimate source of truth.
 //!
-//! <!-- Original author of heading: @Kianenigma in PR https://github.com/paritytech/axlib/pull/1951 -->
+//! <!-- Original author of heading: @Kianenigma in PR https://github.com/axiatech/substrate/pull/1951 -->
 //!
 //! \## Goals
 //!
 //! // Add goals that the custom pallet is designed to achieve.
 //!
-//! <!-- Original author of heading: @Kianenigma in PR https://github.com/paritytech/axlib/pull/1951 -->
+//! <!-- Original author of heading: @Kianenigma in PR https://github.com/axiatech/substrate/pull/1951 -->
 //!
 //! \### Scenarios
 //!
-//! <!-- Original author of paragraph: @Kianenigma. Based on PR https://github.com/paritytech/axlib/pull/1951 -->
+//! <!-- Original author of paragraph: @Kianenigma. Based on PR https://github.com/axiatech/substrate/pull/1951 -->
 //!
 //! \#### <INSERT_SCENARIO_NAME>
 //!
@@ -132,7 +132,7 @@
 //! <code>\`inherent\`</code> <INSERT_DESCRIPTION>
 //!
 //! <!-- Original author of paragraph: @Kianenigma in comment -->
-//! <!-- https://github.com/paritytech/axlib-developer-hub/issues/44#issuecomment-471982710 -->
+//! <!-- https://github.com/axiatech/substrate-developer-hub/issues/44#issuecomment-471982710 -->
 //!
 //! \### Types
 //!
@@ -143,7 +143,7 @@
 //! <!-- Original author of paragraph: ??? -->
 //!
 //! // Reference documentation of aspects such as `storageItems` and `dispatchable` functions should
-//! // only be included in the <https://docs.rs> Rustdocs for Axlib and not repeated in the
+//! // only be included in the <https://docs.rs> Rustdocs for Substrate and not repeated in the
 //! // README file.
 //!
 //! \### Dispatchable Functions
@@ -240,8 +240,8 @@
 //! // Show a usage example in an actual runtime
 //!
 //! // See:
-//! // - Axlib TCR <https://github.com/parity-samples/axlib-tcr>
-//! // - Axlib Kitties <https://shawntabrizi.github.io/axlib-collectables-workshop/#/>
+//! // - Substrate TCR <https://github.com/axia-samples/substrate-tcr>
+//! // - Substrate Kitties <https://shawntabrizi.github.io/substrate-collectables-workshop/#/>
 //!
 //! \## Genesis Config
 //!
@@ -318,7 +318,7 @@ const MILLICENTS: u32 = 1_000_000_000;
 // - assigns a dispatch class `operational` if the argument of the call is more than 1000.
 //
 // More information can be read at:
-//   - https://docs.axlib.io/v3/runtime/weights-and-fees
+//   - https://docs.substrate.io/v3/runtime/weights-and-fees
 //
 // Manually configuring weight is an advanced operation and what you really need may well be
 //   fulfilled by running the benchmarking toolchain. Refer to `benchmarking.rs` file.
@@ -550,8 +550,8 @@ pub mod pallet {
 
 			// Print out log or debug message in the console via log::{error, warn, info, debug,
 			// trace}, accepting format strings similar to `println!`.
-			// https://paritytech.github.io/axlib/master/sp_io/logging/fn.log.html
-			// https://paritytech.github.io/axlib/master/frame_support/constant.LOG_TARGET.html
+			// https://axiatech.github.io/substrate/master/sp_io/logging/fn.log.html
+			// https://axiatech.github.io/substrate/master/frame_support/constant.LOG_TARGET.html
 			info!("New value is now: {:?}", new_value);
 
 			// Put the new value into storage.
@@ -586,7 +586,7 @@ pub mod pallet {
 		},
 	}
 
-	// pallet::storage attributes allow for type-safe usage of the Axlib storage database,
+	// pallet::storage attributes allow for type-safe usage of the Substrate storage database,
 	// so you can keep things around between blocks.
 	//
 	// Any storage must be one of `StorageValue`, `StorageMap` or `StorageDoubleMap`.
@@ -683,7 +683,7 @@ impl<T: Config> Pallet<T> {
 // Note that a signed extension can also indicate that a particular data must be present in the
 // _signing payload_ of a transaction by providing an implementation for the `additional_signed`
 // method. This example will not cover this type of extension. See `CheckSpecVersion` in
-// [FRAME System](https://github.com/paritytech/axlib/tree/master/frame/system#signed-extensions)
+// [FRAME System](https://github.com/axiatech/substrate/tree/master/frame/system#signed-extensions)
 // for an example.
 //
 // Using the extension, you can add some hooks to the life cycle of each transaction. Note that by
@@ -695,9 +695,9 @@ impl<T: Config> Pallet<T> {
 // sender of the transaction (if signed) are also provided.
 //
 // The full list of hooks that can be added to a signed extension can be found
-// [here](https://crates.parity.io/sp_runtime/traits/trait.SignedExtension.html).
+// [here](https://crates.axia.io/sp_runtime/traits/trait.SignedExtension.html).
 //
-// The signed extensions are aggregated in the runtime file of a axlib chain. All extensions
+// The signed extensions are aggregated in the runtime file of a substrate chain. All extensions
 // should be aggregated in a tuple and passed to the `CheckedExtrinsic` and `UncheckedExtrinsic`
 // types defined in the runtime. Lookup `pub type SignedExtra = (...)` in `node/runtime` and
 // `node-template` for an example of this.

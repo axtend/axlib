@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,13 +30,13 @@
 //! The `build.rs` file needs to contain the following code:
 //!
 //! ```no_run
-//! use axlib_wasm_builder::WasmBuilder;
+//! use substrate_wasm_builder::WasmBuilder;
 //!
 //! fn main() {
 //!     WasmBuilder::new()
 //!         // Tell the builder to build the project (crate) this `build.rs` is part of.
 //!         .with_current_project()
-//!         // Make sure to export the `heap_base` global, this is required by Axlib
+//!         // Make sure to export the `heap_base` global, this is required by Substrate
 //!         .export_heap_base()
 //!         // Build the Wasm file so that it imports the memory (need to be provided by at instantiation)
 //!         .import_memory()

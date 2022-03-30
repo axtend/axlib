@@ -11,7 +11,7 @@ use sp_runtime::traits::{IdentifyAccount, Verify};
 // The URL for the telemetry server.
 // const STAGING_TELEMETRY_URL: &str = "ws://localhost:8001/submit/";
 
-/// Specialized `ChainSpec`. This is a specialization of the general Axlib ChainSpec type.
+/// Specialized `ChainSpec`. This is a specialization of the general Substrate ChainSpec type.
 pub type ChainSpec = sc_service::GenericChainSpec<GenesisConfig>;
 
 /// Generate a crypto pair from seed.

@@ -1,12 +1,12 @@
 [package]
-name = "axlib-test-utils-derive"
+name = "substrate-test-utils-derive"
 version = "0.10.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://axlib.io"
-repository = "https://github.com/axtend/axlib/"
-description = "Axlib test utilities macros"
+homepage = "https://substrate.io"
+repository = "https://github.com/axtend/substrate/"
+description = "Substrate test utilities macros"
 
 [dependencies]
 quote = "1.0.10"

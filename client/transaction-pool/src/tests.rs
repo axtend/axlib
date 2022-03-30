@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2021 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2021 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -30,7 +30,7 @@ use sp_runtime::{
 	},
 };
 use std::{collections::HashSet, sync::Arc};
-use axlib_test_runtime::{Block, Extrinsic, Hashing, Transfer, H256};
+use substrate_test_runtime::{Block, Extrinsic, Hashing, Transfer, H256};
 
 pub(crate) const INVALID_NONCE: u64 = 254;
 

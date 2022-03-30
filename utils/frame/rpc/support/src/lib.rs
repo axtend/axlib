@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +35,7 @@ use sp_storage::{StorageData, StorageKey};
 /// # use jsonrpc_client_transports::transports::http;
 /// # use codec::Encode;
 /// # use frame_support::{decl_storage, decl_module};
-/// # use axlib_frame_rpc_support::StorageQuery;
+/// # use substrate_frame_rpc_support::StorageQuery;
 /// # use frame_system::Config;
 /// # use sc_rpc_api::state::StateClient;
 /// #

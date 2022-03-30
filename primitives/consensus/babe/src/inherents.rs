@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,7 +45,7 @@ impl BabeInherentData for InherentData {
 }
 
 /// Provides the slot duration inherent data for BABE.
-// TODO: Remove in the future. https://github.com/paritytech/axlib/issues/8029
+// TODO: Remove in the future. https://github.com/axiatech/substrate/issues/8029
 #[cfg(feature = "std")]
 pub struct InherentDataProvider {
 	slot: InherentType,

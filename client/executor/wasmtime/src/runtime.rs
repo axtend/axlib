@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -373,7 +373,7 @@ fn common_config(semantics: &Semantics) -> std::result::Result<wasmtime::Config,
 ///
 /// See [here][stack_height] for more details of the instrumentation
 ///
-/// [stack_height]: https://github.com/paritytech/wasm-utils/blob/d9432baf/src/stack_height/mod.rs#L1-L50
+/// [stack_height]: https://github.com/axiatech/wasm-utils/blob/d9432baf/src/stack_height/mod.rs#L1-L50
 pub struct DeterministicStackLimit {
 	/// A number of logical "values" that can be pushed on the wasm stack. A trap will be triggered
 	/// if exceeded.
@@ -427,7 +427,7 @@ pub struct Semantics {
 	/// depend on the particular machine that executes wasmtime generated JITed machine code. That
 	/// is a source of non-deterministic values.
 	///
-	/// The classical runtime environment for Axlib allowed it and punted this on the runtime
+	/// The classical runtime environment for Substrate allowed it and punted this on the runtime
 	/// developers. For PVFs, we want to ensure that execution is deterministic though. Therefore,
 	/// for PVF execution this flag is meant to be turned on.
 	pub canonicalize_nans: bool,
@@ -474,7 +474,7 @@ enum CodeSupplyMode<'a> {
 		// Rationale to take the `RuntimeBlob` here is so that the client will be able to reuse
 		// the blob e.g. if they did a prevalidation. If they didn't they can pass a `RuntimeBlob`
 		// instance and it will be used anyway in most cases, because we are going to do at least
-		// some instrumentations for both anticipated paths: axlib execution and PVF execution.
+		// some instrumentations for both anticipated paths: substrate execution and PVF execution.
 		//
 		// Should there raise a need in performing no instrumentation and the client doesn't need
 		// to do any checks, then we can provide a `Cow` like semantics here: if we need the blob

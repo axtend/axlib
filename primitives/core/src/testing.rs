@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -93,7 +93,7 @@ macro_rules! wasm_export_functions {
 				$( $fn_impl )*
 			}
 
-			$crate::to_axlib_wasm_fn_return_value(&())
+			$crate::to_substrate_wasm_fn_return_value(&())
 		}
 	};
 	(@IMPL
@@ -121,7 +121,7 @@ macro_rules! wasm_export_functions {
 				$( $fn_impl )*
 			};
 
-			$crate::to_axlib_wasm_fn_return_value(&output)
+			$crate::to_substrate_wasm_fn_return_value(&output)
 		}
 	};
 }

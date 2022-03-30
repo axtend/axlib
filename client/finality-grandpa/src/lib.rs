@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-//! Integration of the GRANDPA finality gadget into axlib.
+//! Integration of the GRANDPA finality gadget into substrate.
 //!
 //! This crate is unstable and the API and usage may change.
 //!
@@ -148,7 +148,7 @@ use std::marker::PhantomData;
 #[cfg(test)]
 mod tests;
 
-/// A GRANDPA message for a axlib chain.
+/// A GRANDPA message for a substrate chain.
 pub type Message<Block> = finality_grandpa::Message<<Block as BlockT>::Hash, NumberFor<Block>>;
 
 /// A signed message.

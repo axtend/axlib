@@ -71,7 +71,7 @@ const txHash = await api.tx.transactionStorage.store('0x' + file.toString('hex')
 Data can be queried over IPFS
 
 ```bash
-ipfs swarm connect <axlib peer address>
+ipfs swarm connect <substrate peer address>
 ipfs block get /ipfs/<CID> > kitten.jpeg
 ```
 

@@ -19,11 +19,11 @@
 # - The latest matching rule, if multiple, takes precedence.
 
 # CI
-/.maintain/ @paritytech/ci
-/.github/ @paritytech/ci
-/.gitlab-ci.yml @paritytech/ci
+/.maintain/ @axiatech/ci
+/.github/ @axiatech/ci
+/.gitlab-ci.yml @axiatech/ci
 
-# Sandboxing capability of Axlib Runtime
+# Sandboxing capability of Substrate Runtime
 /primitives/sr-sandbox/ @pepyakin
 /primitives/core/src/sandbox.rs @pepyakin
 

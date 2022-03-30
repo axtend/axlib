@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,7 +33,7 @@
 //! Examples of possible use-cases for this library are not limited to the following:
 //!
 //! - implementing smart-contract runtimes that use wasm for contract code
-//! - executing a wasm axlib runtime inside of a wasm allychain
+//! - executing a wasm substrate runtime inside of a wasm allychain
 
 #![warn(missing_docs)]
 #![cfg_attr(not(feature = "std"), no_std)]

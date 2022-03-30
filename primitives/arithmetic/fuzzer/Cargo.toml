@@ -1,11 +1,11 @@
 [package]
 name = "sp-arithmetic-fuzzer"
 version = "2.0.0"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Axia Technologies <admin@axia.io>"]
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://axlib.io"
-repository = "https://github.com/axtend/axlib/"
+homepage = "https://substrate.io"
+repository = "https://github.com/axtend/substrate/"
 description = "Fuzzer for fixed point arithmetic primitives."
 documentation = "https://docs.rs/sp-arithmetic-fuzzer"
 publish = false

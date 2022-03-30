@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -270,7 +270,7 @@ impl<T> super::SandboxInstance<T> for Instance<T> {
 	}
 }
 
-/// Convert the axlib value type to the wasmi value type.
+/// Convert the substrate value type to the wasmi value type.
 fn to_wasmi(value: Value) -> RuntimeValue {
 	match value {
 		Value::I32(val) => RuntimeValue::I32(val),
@@ -280,7 +280,7 @@ fn to_wasmi(value: Value) -> RuntimeValue {
 	}
 }
 
-/// Convert the wasmi value type to the axlib value type.
+/// Convert the wasmi value type to the substrate value type.
 fn to_interface(value: RuntimeValue) -> Value {
 	match value {
 		RuntimeValue::I32(val) => Value::I32(val),

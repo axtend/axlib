@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -35,7 +35,7 @@ pub mod common;
 
 #[tokio::test]
 async fn temp_base_path_works() {
-	let mut cmd = Command::new(cargo_bin("axlib"));
+	let mut cmd = Command::new(cargo_bin("substrate"));
 	let mut child = common::KillChildOnDrop(
 		cmd.args(&["--dev", "--tmp"])
 			.stdout(Stdio::piped())

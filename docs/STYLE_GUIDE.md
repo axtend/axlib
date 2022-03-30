@@ -1,5 +1,5 @@
 ---
-title: Style Guide for Rust in Axlib
+title: Style Guide for Rust in Substrate
 ---
 
 Where possible these styles are enforced by settings in `rustfmt.toml` so if you run `cargo fmt` 

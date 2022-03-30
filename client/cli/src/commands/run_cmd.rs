@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2018-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2018-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: GPL-3.0-or-later WITH Classpath-exception-2.0
 
 // This program is free software: you can redistribute it and/or modify
@@ -58,7 +58,7 @@ pub struct RunCmd {
 	///
 	/// Default is local. Note: not all RPC methods are safe to be exposed publicly. Use an RPC
 	/// proxy server to filter out dangerous methods. More details:
-	/// <https://docs.axlib.io/v3/runtime/custom-rpcs/#public-rpcs>.
+	/// <https://docs.substrate.io/v3/runtime/custom-rpcs/#public-rpcs>.
 	/// Use `--unsafe-rpc-external` to suppress the warning if you understand the risks.
 	#[clap(long)]
 	pub rpc_external: bool,
@@ -89,7 +89,7 @@ pub struct RunCmd {
 	///
 	/// Default is local. Note: not all RPC methods are safe to be exposed publicly. Use an RPC
 	/// proxy server to filter out dangerous methods. More details:
-	/// <https://docs.axlib.io/v3/runtime/custom-rpcs/#public-rpcs>.
+	/// <https://docs.substrate.io/v3/runtime/custom-rpcs/#public-rpcs>.
 	/// Use `--unsafe-ws-external` to suppress the warning if you understand the risks.
 	#[clap(long)]
 	pub ws_external: bool,
@@ -156,7 +156,7 @@ pub struct RunCmd {
 	#[clap(long, value_name = "NAME")]
 	pub name: Option<String>,
 
-	/// Disable connecting to the Axlib telemetry server.
+	/// Disable connecting to the Substrate telemetry server.
 	///
 	/// Telemetry is on by default on global chains.
 	#[clap(long)]

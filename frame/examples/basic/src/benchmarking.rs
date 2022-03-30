@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2019-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2019-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,13 +26,13 @@ use frame_system::RawOrigin;
 // To actually run this benchmark on pallet-example-basic, we need to put this pallet into the
 //   runtime and compile it with `runtime-benchmarks` feature. The detail procedures are
 //   documented at:
-//   https://docs.axlib.io/v3/runtime/benchmarking#how-to-benchmark
+//   https://docs.substrate.io/v3/runtime/benchmarking#how-to-benchmark
 //
 // The auto-generated weight estimate of this pallet is copied over to the `weights.rs` file.
 // The exact command of how the estimate generated is printed at the top of the file.
 
 // Details on using the benchmarks macro can be seen at:
-//   https://paritytech.github.io/axlib/master/frame_benchmarking/trait.Benchmarking.html#tymethod.benchmarks
+//   https://axiatech.github.io/substrate/master/frame_benchmarking/trait.Benchmarking.html#tymethod.benchmarks
 benchmarks! {
 	// This will measure the execution time of `set_dummy` for b in [1..1000] range.
 	set_dummy_benchmark {

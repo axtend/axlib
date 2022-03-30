@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +28,7 @@
 //! - [`Call`]
 //! - [`Pallet`]
 //!
-//! **This pallet serves as an example showcasing Axlib off-chain worker and is not meant to
+//! **This pallet serves as an example showcasing Substrate off-chain worker and is not meant to
 //! be used in production.**
 //!
 //! ## Overview

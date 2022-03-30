@@ -1,6 +1,6 @@
-// This file is part of Axlib.
+// This file is part of Substrate.
 
-// Copyright (C) 2020-2022 Parity Technologies (UK) Ltd.
+// Copyright (C) 2020-2022 Axia Technologies (UK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +40,7 @@ pub fn expand_validate_unsigned(def: &mut Def) -> TokenStream {
 
 	quote! {
 		#[doc(hidden)]
-		pub mod __axlib_validate_unsigned_check {
+		pub mod __substrate_validate_unsigned_check {
 			#[macro_export]
 			#[doc(hidden)]
 			macro_rules! #macro_ident {

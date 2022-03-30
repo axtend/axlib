@@ -24,7 +24,7 @@ The supported dispatchable functions are documented in the [`uniques::Call`](htt
 
 ### Goals
 
-The Uniques pallet in Axlib is designed to make the following possible:
+The Uniques pallet in Substrate is designed to make the following possible:
 
 * Allow accounts to permissionlessly create asset classes (collections of asset instances).
 * Allow a named (permissioned) account to mint and burn unique assets within a class.
